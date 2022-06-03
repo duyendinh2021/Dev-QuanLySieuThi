@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 using DAO;
 using DTO;
-using System.Data.SqlClient;
-using System.Data;
-using System.Windows.Forms;
 
 namespace BUS
 {
     public class B_TaiKhoan
     {
-        private static B_TaiKhoan _instance;
+        private static B_TaiKhoan instance;
 
         public static B_TaiKhoan Instance
         {
             get
             {
-                if (_instance == null)
+                if (instance == null)
                 {
-                    _instance = new B_TaiKhoan();
+                    instance = new B_TaiKhoan();
                 }
-                return _instance;
+                return instance;
             }       
         }
         public string quyen;
@@ -53,8 +53,5 @@ namespace BUS
             DAO.D_TaiKhoan.Instance.updateStatusLogin(id);
         }
 
-
-
-        // Test hop nhat 2 branch
     }
 }

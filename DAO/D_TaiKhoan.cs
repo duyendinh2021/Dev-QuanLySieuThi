@@ -5,28 +5,26 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using DTO;
 using System.Windows.Forms;
+using DTO;
 
 namespace DAO
 {
     public class D_TaiKhoan
     {
-        private static D_TaiKhoan _instance;
+        private static D_TaiKhoan instance;
 
         public static D_TaiKhoan Instance
         {
             get
             {
-                if (_instance == null)
+                if (instance == null)
                 {
-                    _instance = new D_TaiKhoan();
+                    instance = new D_TaiKhoan();
                 }
-                return _instance;
+                return instance;
             }
         }
-
-        // update status logon 
 
 
         [Obsolete]
