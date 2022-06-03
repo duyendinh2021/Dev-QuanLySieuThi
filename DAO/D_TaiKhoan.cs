@@ -53,7 +53,7 @@ namespace DAO
         [Obsolete]
         public void updateStatusLogin(int id)
         {
-            connectionData.Instance.excuteNonQueryStoreProcedure("EXEC UpdateStatusLogIn @id", new object[] { id });
+            connectionData.Instance.excuteNonQueryStoreProcedure("EXEC ChangeStatusLogIn @id", new object[] { id });
         }
     }
 }
