@@ -9,17 +9,17 @@ namespace GUI
 {
     public class Rule_Regex
     {
-        private static Rule_Regex _instance;
+        private static Rule_Regex instance;
 
         public static Rule_Regex Instance
         {
             get
             {
-                if (_instance == null)
+                if (instance == null)
                 {
-                    _instance = new Rule_Regex();
+                    instance = new Rule_Regex();
                 }
-                return _instance;
+                return instance;
             }
         }
 

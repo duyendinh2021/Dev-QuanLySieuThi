@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class FormLogin : Form
     {
+        [Obsolete]
         public FormLogin()
         {
             InitializeComponent();
@@ -90,23 +91,11 @@ namespace GUI
             string passUesrLogIn = txtMatKhau.Text;
 
             if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn,passUesrLogIn))
-            {
-                MessageBox.Show("thanh cong");
-                switch (B_TaiKhoan.Instance.quyen)
-                {
-                    //Admin, Cashier, Stoker
-                    case "Admin":
-                        MessageBox.Show("admin");
-                        break;
-                    case "Cashier":
-                        MessageBox.Show("Cashier");
-                        break;
-                    case "Stoker":
-                        MessageBox.Show("Stoker");
-                        break;
-                    default:
-                        break;
-                }
+            {              
+                FormMainApp formMainApp = new FormMainApp();
+                formMainApp.Show();
+                this.Hide();
+                formMainApp.LogOut += FormMainApp_LogOut;
             }
             else
             {
@@ -114,5 +103,13 @@ namespace GUI
 
             }
         }
+
+        private void FormMainApp_LogOut(object sender, EventArgs e)
+        {
+            (sender as FormMainApp).isThoat = false;
+            (sender as FormMainApp).Close();
+            this.Show();
+        }
+
     }
 }

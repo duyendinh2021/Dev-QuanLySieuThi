@@ -17,6 +17,7 @@ namespace DTO
         private string _sdt;
         private string _tennganhang;
         private string _sotaikhoan;
+        private string _gioitinh;
         private Decimal _luongcoban;
         private Decimal _luongphucap;
         private Decimal _tongluong;
@@ -24,7 +25,7 @@ namespace DTO
         private byte[] _hinh;
         private int _trangthai;
 
-        public NhanVien(int id, string name, string chucvu, DateTime ngaysinh, DateTime ngayvaolam, string diachi, string sdt, string tennganhang, string sotaikhoan, decimal luongcoban, decimal luongphucap, decimal tongluong, string email, byte[] hinh, int trangthai)
+        public NhanVien(int id, string name, string chucvu, DateTime ngaysinh, DateTime ngayvaolam, string diachi, string sdt, string tennganhang, string sotaikhoan, string gioitinh, decimal luongcoban, decimal luongphucap, decimal tongluong, string email, byte[] hinh, int trangthai)
         {
             _id = id;
             _name = name;
@@ -35,6 +36,7 @@ namespace DTO
             _sdt = sdt;
             _tennganhang = tennganhang;
             _sotaikhoan = sotaikhoan;
+            _gioitinh = gioitinh;
             _luongcoban = luongcoban;
             _luongphucap = luongphucap;
             _tongluong = tongluong;
@@ -42,6 +44,7 @@ namespace DTO
             _hinh = hinh;
             _trangthai = trangthai;
         }
+
 
         public int Id { get => _id; set => _id = value; }
         public string Name { get => _name; set => _name = value; }
@@ -58,5 +61,6 @@ namespace DTO
         public string Email { get => _email; set => _email = value; }
         public byte[] Hinh { get => _hinh; set => _hinh = value; }
         public int Trangthai { get => _trangthai; set => _trangthai = value; }
+        public string Gioitinh { get => _gioitinh; set => _gioitinh = value; }
     }
 }
