@@ -33,18 +33,26 @@ namespace BUS
         [Obsolete]
         public bool UserLogIn(string accUesrLogIn, string passUesrLogIn)
         {
+
+            bool result = false;
+
             TaiKhoan taiKhoan = DAO.D_TaiKhoan.Instance.userLogIn(accUesrLogIn, passUesrLogIn);
-            quyen = taiKhoan.Chuvu;
-            id = taiKhoan.Idnhanvien;
-            if (taiKhoan.Trangthai == 1)
+            result = taiKhoan != null ? true : false;
+
+            
+
+            if (result)
             {
-                if (taiKhoan.Statuslogin == 1)
+                if (taiKhoan.Trangthai == 0 || taiKhoan.Statuslogin  == 1)
                 {
                     return false;
                 }
+                quyen = taiKhoan.Chuvu;
+                id = taiKhoan.Idnhanvien;
+                updateStatusLogin(id);
             }
-            updateStatusLogin(id);
-            return true;
+            return  result;
+
         }
 
         [Obsolete]

@@ -37,7 +37,7 @@ namespace GUI
 
         private void chkBoxHienMK_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode  == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 chkBoxHienMK.Checked = true;
             }
@@ -60,7 +60,7 @@ namespace GUI
         {
             if (Rule_Regex.Instance.UserNam_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
             {
-                MessageBox.Show("Bạn Không thể nhập ký tự này !!!");                   
+                MessageBox.Show("Bạn Không thể nhập ký tự này !!!");
                 e.Handled = true;
             }
         }
@@ -90,8 +90,8 @@ namespace GUI
             string accUesrLogIn = txtTaiKhoan.Text;
             string passUesrLogIn = txtMatKhau.Text;
 
-            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn,passUesrLogIn))
-            {              
+            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn))
+            {
                 FormMainApp formMainApp = new FormMainApp();
                 formMainApp.Show();
                 this.Hide();
@@ -111,5 +111,15 @@ namespace GUI
             this.Show();
         }
 
+        [Obsolete]
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+                BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+            }
+        }
     }
 }
