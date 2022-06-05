@@ -68,5 +68,20 @@ namespace BUS
             //put a breakpoint here and check datatable
             return dataTable;
         }
+
+
+        public bool adminAddNhanVien(object[] parameter)
+        {
+            try
+            {
+                DAO.D_NhanVien.Instance.adminAddNhanVien(parameter);
+            }
+            catch (Exception)
+            {
+                return false;
+
+            }
+            return true;
+        }
     }
 }

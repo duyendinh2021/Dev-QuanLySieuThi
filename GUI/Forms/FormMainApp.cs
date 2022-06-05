@@ -23,7 +23,7 @@ namespace GUI
             panSideMenu.Controls.Add(SupportUI_UX.Instance.leftBorderBtn);
         }
         public bool isThoat = true;
-        private static Form formChild = null;
+        //private static Form formChild = null;
 
 
         public event EventHandler LogOut;
@@ -34,7 +34,7 @@ namespace GUI
         {
             LogOut(this, new EventArgs());
             //update status LogIn
-            BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+            //BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
 
 
         }
@@ -189,6 +189,7 @@ namespace GUI
             SupportUI_UX.Instance.HideSubmenu();
         }
 
+        [Obsolete]
         private void btnStaffs_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color3);

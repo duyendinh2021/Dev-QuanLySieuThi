@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using GUI.Forms;
 
 namespace GUI
 {
     public partial class FormQuanLyNhanVien : Form
     {
+        [Obsolete]
         public FormQuanLyNhanVien()
         {
             InitializeComponent();
@@ -33,6 +35,12 @@ namespace GUI
         private void dtGVDanhSachNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
                     
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FormThemNhanVien formThemNhanVien = new FormThemNhanVien();
+            formThemNhanVien.ShowDialog();
         }
     }
 }

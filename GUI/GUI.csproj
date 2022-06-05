@@ -75,43 +75,52 @@
     </Compile>
     <Compile Include="Conntrols\RJTextBox.Designer.cs" />
     <Compile Include="Conntrols\RJTextBox1.Designer.cs" />
-    <Compile Include="FormLogIn.cs">
+    <Compile Include="Forms\FormLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogIn.Designer.cs">
+    <Compile Include="Forms\FormLogIn.Designer.cs">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMainApp.cs">
+    <Compile Include="Forms\FormMainApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMainApp.Designer.cs">
+    <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormQuanLyNhanVien.cs">
+    <Compile Include="Forms\FormQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormQuanLyNhanVien.Designer.cs">
+    <Compile Include="Forms\FormQuanLyNhanVien.Designer.cs">
       <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSale.cs">
+    <Compile Include="Forms\FormSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSale.Designer.cs">
+    <Compile Include="Forms\FormSale.Designer.cs">
       <DependentUpon>FormSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormThemNhanVien.Designer.cs">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rule_Regex.cs" />
-    <Compile Include="SupportUI_UX.cs" />
+    <Compile Include="ClassSupport\Rule_Regex.cs" />
+    <Compile Include="ClassSupport\SupportUI_UX.cs" />
     <EmbeddedResource Include="Conntrols\RJTextBox.resx" />
-    <EmbeddedResource Include="FormLogIn.resx">
+    <EmbeddedResource Include="Forms\FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMainApp.resx">
+    <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormQuanLyNhanVien.resx">
+    <EmbeddedResource Include="Forms\FormQuanLyNhanVien.resx">
       <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormThemNhanVien.resx">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

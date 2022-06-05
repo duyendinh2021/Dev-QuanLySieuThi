@@ -55,5 +55,12 @@ namespace DAO
                 return nhanViens;
             }
         }
+
+        [Obsolete]
+        public void adminAddNhanVien(object[] parameter)
+        {
+            string query = "EXEC InsertNhanVien @hoten , @chucvu , @GoiTinh , @NgaySinh , @NgayVaolam  , @DiaChi , @SDT , @TenNganHang , @SoTKNganHang , @LuongCoBan , @email , @hinh";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
     }
 }
