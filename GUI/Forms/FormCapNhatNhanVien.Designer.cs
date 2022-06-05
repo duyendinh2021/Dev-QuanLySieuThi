@@ -516,6 +516,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCapNhatNhanVien";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCapNhatNhanVien_FormClosing);
+            this.Load += new System.EventHandler(this.FormCapNhatNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.grBThongtin.ResumeLayout(false);

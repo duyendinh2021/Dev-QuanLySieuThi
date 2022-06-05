@@ -54,46 +54,9 @@ namespace GUI
                 string soNganHang = row.Cells["Sotaikhoan"].Value.ToString();
                 string chucvu = row.Cells["colChucVu"].Value.ToString();          
 
-                FormCapNhatNhanVien formCapNhatNhanVien = new FormCapNhatNhanVien();
-                formCapNhatNhanVien.idNhanVien = id;
-                formCapNhatNhanVien.txtHoTen.Text = hoten;
-                formCapNhatNhanVien.txtEmail.Text = email;
-                formCapNhatNhanVien.txtSDT.Text = sdt;
-                formCapNhatNhanVien.dtpNgaySinh.Value = ngaySinh;
-                formCapNhatNhanVien.txtLuong.Text = luong.ToString();
-                formCapNhatNhanVien.txtTenNganHang.Text = tenNganHang;
-                formCapNhatNhanVien.txtSoNganHang.Text = soNganHang;
-                //formCapNhatNhanVien.dtpNgayVaoLam.Value
-                formCapNhatNhanVien.txtDiachi.Text = diachi;
-
-                formCapNhatNhanVien.img = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
-
-                switch (chucvu)
-                {
-                    case "Admin":
-                        formCapNhatNhanVien.cmbChucvu.SelectedIndex = 0;
-                        break;
-                    case "Cashier":
-                        formCapNhatNhanVien.cmbChucvu.SelectedIndex = 1;
-                        break;
-                    case "Stoker":
-                        formCapNhatNhanVien.cmbChucvu.SelectedIndex = 2;
-                        break;
-                    default:
-                        break;
-                }
-
-                switch (gioiTinh)
-                {
-                    case "Nữ":
-                        formCapNhatNhanVien.cmbGioiTinh.SelectedIndex = 1;
-                        break;
-                    case "Nam":
-                        formCapNhatNhanVien.cmbGioiTinh.SelectedIndex = 0;
-                        break;
-                    default:
-                        break;
-                }
+                Image tempImg = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+                FormCapNhatNhanVien formCapNhatNhanVien = new FormCapNhatNhanVien(id,hoten,email,sdt,ngaySinh,luong,tenNganHang,soNganHang,ngayVaoLam,diachi,tempImg,chucvu,gioiTinh);
+         
                 formCapNhatNhanVien.ShowDialog();
             }
         }

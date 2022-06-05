@@ -17,6 +17,57 @@ namespace GUI.Forms
         {
             InitializeComponent();
         }
+
+
+        public FormCapNhatNhanVien(int id , string hoTen, string email, string sdt, DateTime ngaysinh, Decimal luong, string tennganhang, string soNganhang,DateTime ngayvaolam, string diachi,Image img,string quyen,string gioitinh)
+        {
+            InitializeComponent();
+
+
+            idNhanVien = id;
+            txtHoTen.Text = hoTen;
+            txtEmail.Text = email;
+            txtSDT.Text = sdt;
+            dtpNgaySinh.Value = ngaysinh;
+            dtpNgayVaoLam.Value = ngayvaolam;
+            txtLuong.Text = luong.ToString();
+            txtTenNganHang.Text = tennganhang;
+            txtSoNganHang.Text = soNganhang;
+            //dtpNgayVaoLam.Value
+            txtDiachi.Text = diachi;
+            this.img = img;
+
+            switch (quyen)
+            {
+                case "Admin":
+                    cmbChucvu.SelectedIndex = 0;
+                    break;
+                case "Cashier":
+                    cmbChucvu.SelectedIndex = 1;
+                    break;
+                case "Stoker":
+                    cmbChucvu.SelectedIndex = 2;
+                    break;
+                default:
+                    break;
+            }
+
+            switch (gioitinh)
+            {
+                case "Nữ":
+                    cmbGioiTinh.SelectedIndex = 1;
+                    break;
+                case "Nam":
+                    cmbGioiTinh.SelectedIndex = 0;
+                    break;
+                default:
+                    break;
+            }
+
+
+        }
+
+
         public int idNhanVien;
         public string sPathImg = "";
         public Image img = null;
@@ -128,6 +179,11 @@ namespace GUI.Forms
         private void FormCapNhatNhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
              //BUS.B_NhanVien.Instance.getAllNhanVien(ref FormQuanLyNhanVien.dtGVDanhSachNV);
+        }
+
+        private void FormCapNhatNhanVien_Load(object sender, EventArgs e)
+        {
+            ptbShowImage.Image = img;
         }
     }
 }
