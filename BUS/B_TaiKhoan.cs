@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 using DAO;
 using DTO;
-using System.Data.SqlClient;
-using System.Data;
-using System.Windows.Forms;
 
 namespace BUS
 {
     public class B_TaiKhoan
     {
-        private static B_TaiKhoan _instance;
+        private static B_TaiKhoan instance;
 
         public static B_TaiKhoan Instance
         {
             get
             {
-                if (_instance == null)
+                if (instance == null)
                 {
-                    _instance = new B_TaiKhoan();
+                    instance = new B_TaiKhoan();
                 }
-                return _instance;
+                return instance;
             }       
         }
         public string quyen;
@@ -33,18 +33,26 @@ namespace BUS
         [Obsolete]
         public bool UserLogIn(string accUesrLogIn, string passUesrLogIn)
         {
+
+            bool result = false;
+
             TaiKhoan taiKhoan = DAO.D_TaiKhoan.Instance.userLogIn(accUesrLogIn, passUesrLogIn);
-            quyen = taiKhoan.Chuvu;
-            id = taiKhoan.Idnhanvien;
-            if (taiKhoan.Trangthai == 1)
+            result = taiKhoan != null ? true : false;
+
+            
+
+            if (result)
             {
-                if (taiKhoan.Statuslogin == 1)
+                if (taiKhoan.Trangthai == 0 || taiKhoan.Statuslogin  == 1)
                 {
                     return false;
                 }
+                quyen = taiKhoan.Chuvu;
+                id = taiKhoan.Idnhanvien;
+                updateStatusLogin(id);
             }
-            updateStatusLogin(id);
-            return true;
+            return  result;
+
         }
 
         [Obsolete]
@@ -53,8 +61,5 @@ namespace BUS
             DAO.D_TaiKhoan.Instance.updateStatusLogin(id);
         }
 
-
-
-        // Test hop nhat 2 branch
     }
 }

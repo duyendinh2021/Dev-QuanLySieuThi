@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class FormLogin : Form
     {
+        [Obsolete]
         public FormLogin()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace GUI
 
         private void chkBoxHienMK_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode  == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 chkBoxHienMK.Checked = true;
             }
@@ -57,9 +58,9 @@ namespace GUI
 
         private void txtTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Rule_Regex.Instance.UserNam_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            if (Rule_Regex.Instance.Email_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
             {
-                MessageBox.Show("Bạn Không thể nhập ký tự này !!!");                   
+                MessageBox.Show("Bạn Không thể nhập ký tự này !!!");
                 e.Handled = true;
             }
         }
@@ -89,24 +90,12 @@ namespace GUI
             string accUesrLogIn = txtTaiKhoan.Text;
             string passUesrLogIn = txtMatKhau.Text;
 
-            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn,passUesrLogIn))
+            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn))
             {
-                MessageBox.Show("thanh cong");
-                switch (B_TaiKhoan.Instance.quyen)
-                {
-                    //Admin, Cashier, Stoker
-                    case "Admin":
-                        MessageBox.Show("admin");
-                        break;
-                    case "Cashier":
-                        MessageBox.Show("Cashier");
-                        break;
-                    case "Stoker":
-                        MessageBox.Show("Stoker");
-                        break;
-                    default:
-                        break;
-                }
+                FormMainApp formMainApp = new FormMainApp();
+                formMainApp.Show();
+                this.Hide();
+                formMainApp.LogOut += FormMainApp_LogOut;
             }
             else
             {
@@ -114,5 +103,32 @@ namespace GUI
 
             }
         }
+
+        [Obsolete]
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+                //Application.Exit();
+                e.Cancel = false;
+
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+
+        private void FormMainApp_LogOut(object sender, EventArgs e)
+        {
+            (sender as FormMainApp).isThoat = false;
+            (sender as FormMainApp).Close();
+            this.Show();
+        }
+
+        
     }
 }

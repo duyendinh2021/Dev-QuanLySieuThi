@@ -48,10 +48,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,19 +67,76 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormLogIn.cs">
+    <Compile Include="ClassSupport\SupportLogic.cs" />
+    <Compile Include="Conntrols\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Conntrols\RJTextBox.Designer.cs" />
+    <Compile Include="Conntrols\RJTextBox1.Designer.cs" />
+    <Compile Include="Forms\FormCapNhatNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogIn.Designer.cs">
+    <Compile Include="Forms\FormCapNhatNhanVien.Designer.cs">
+      <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogIn.Designer.cs">
       <DependentUpon>FormLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMainApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMainApp.Designer.cs">
+      <DependentUpon>FormMainApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormQuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormQuanLyNhanVien.Designer.cs">
+      <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormQuanLySanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormQuanLySanPham.Designer.cs">
+      <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSale.Designer.cs">
+      <DependentUpon>FormSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormThemNhanVien.Designer.cs">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rule_Regex.cs" />
-    <EmbeddedResource Include="FormLogIn.resx">
+    <Compile Include="ClassSupport\Rule_Regex.cs" />
+    <Compile Include="ClassSupport\SupportUI_UX.cs" />
+    <EmbeddedResource Include="Conntrols\RJTextBox.resx" />
+    <EmbeddedResource Include="Forms\FormCapNhatNhanVien.resx">
+      <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMainApp.resx">
+      <DependentUpon>FormMainApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormQuanLyNhanVien.resx">
+      <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormThemNhanVien.resx">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +148,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
