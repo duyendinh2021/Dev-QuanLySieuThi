@@ -70,11 +70,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassSupport\SupportLogic.cs" />
     <Compile Include="Conntrols\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Conntrols\RJTextBox.Designer.cs" />
     <Compile Include="Conntrols\RJTextBox1.Designer.cs" />
+    <Compile Include="Forms\FormCapNhatNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCapNhatNhanVien.Designer.cs">
+      <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +100,12 @@
     <Compile Include="Forms\FormQuanLyNhanVien.Designer.cs">
       <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormQuanLySanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormQuanLySanPham.Designer.cs">
+      <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormSale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +123,9 @@
     <Compile Include="ClassSupport\Rule_Regex.cs" />
     <Compile Include="ClassSupport\SupportUI_UX.cs" />
     <EmbeddedResource Include="Conntrols\RJTextBox.resx" />
+    <EmbeddedResource Include="Forms\FormCapNhatNhanVien.resx">
+      <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </EmbeddedResource>

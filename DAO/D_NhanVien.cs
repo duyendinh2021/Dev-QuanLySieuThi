@@ -62,5 +62,12 @@ namespace DAO
             string query = "EXEC InsertNhanVien @hoten , @chucvu , @GoiTinh , @NgaySinh , @NgayVaolam  , @DiaChi , @SDT , @TenNganHang , @SoTKNganHang , @LuongCoBan , @email , @hinh";
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
+
+        [Obsolete]
+        public void admiUpdateNhanVien(object[] parameter)
+        {
+            String query = "EXEC UpdateNhanVien @id , @hoten , @chucvu , @GoiTinh , @NgaySinh , @NgayVaolam , @DiaChi , @SDT , @TenNganHang , @SoTKNganHang , @LuongCoBan , @email , @hinh";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
     }
 }

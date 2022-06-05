@@ -7,28 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
 using GUI.ClassSupport;
-
 
 namespace GUI.Forms
 {
-    public partial class FormThemNhanVien : Form
+    public partial class FormCapNhatNhanVien : Form
     {
-        public FormThemNhanVien()
+        public FormCapNhatNhanVien()
         {
             InitializeComponent();
         }
-        private string sPathImg = "";
-        private Image img = null;
-
-
-
-        private void grBThongtin_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        public int idNhanVien;
+        public string sPathImg = "";
+        public Image img = null;
         private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Rule_Regex.Instance.Name_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
@@ -92,12 +83,18 @@ namespace GUI.Forms
             }
         }
 
+        private void btnImage_Click(object sender, EventArgs e)
+        {
+            sPathImg = SupportLogic.Instance.getPathFile();
+            img = Image.FromFile(sPathImg);
+            ptbShowImage.Image = img;
+        }
         [Obsolete]
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (txtHoTen.Text == "" || txtEmail.Text == "" || txtSDT.Text == "" || txtLuong.Text == "" || txtTenNganHang.Text =="" || txtSoNganHang.Text =="" || txtDiachi.Text == "" || sPathImg == "" || img == null)
+            if (txtHoTen.Text == "" || txtEmail.Text == "" || txtSDT.Text == "" || txtLuong.Text == "" || txtTenNganHang.Text == "" || txtSoNganHang.Text == "" || txtDiachi.Text == "" || sPathImg == "" || img == null)
             {
-                MessageBox.Show("Bạn chư nhập dủ thông tin, vui lòng nhập lại");
+                MessageBox.Show("Bạn chưa điền thông tinh, vui lòng điền đủ");
             }
             else
             {
@@ -114,51 +111,23 @@ namespace GUI.Forms
                 DateTime ngayVaoLam = dtpNgayVaoLam.Value;
                 byte[] hinh = System.IO.File.ReadAllBytes(sPathImg);
 
-                object[] objects = new object[] { hoten, chucvu, gioiTinh, ngaySinh, ngayVaoLam, diachi, sdt, tenNganHang, soNganHang, luong, email, hinh };
 
-                if (BUS.B_NhanVien.Instance.adminAddNhanVien(objects))
+                object[] objects = new object[] {idNhanVien,hoten,chucvu,gioiTinh,ngaySinh,ngayVaoLam,diachi,sdt,tenNganHang,soNganHang,luong,email,hinh};
+
+                if (BUS.B_NhanVien.Instance.adminUpdateNhanVien(objects))
                 {
-                    MessageBox.Show("Thêm Nhân viên Thành Công", "Thật Tuyệt Vời");
+                    MessageBox.Show("Cập Nhật Thành Công", "Thật Tuyệt Vời");
                 }
                 else
                 {
-                    MessageBox.Show("Ô Nô !!!");
+                    MessageBox.Show("Ô nô !!!");
                 }
-            }                     
+            }
         }
-
-        private void btnImage_Click(object sender, EventArgs e)
+        [Obsolete]
+        private void FormCapNhatNhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-
-            sPathImg = SupportLogic.Instance.getPathFile();
-            img = Image.FromFile(sPathImg);
-            ptbShowImage.Image = img;
-        }
-
-        private void FormThemNhanVien_Load(object sender, EventArgs e)
-        {
-            cmbChucvu.Text = cmbChucvu.Items[0].ToString();
-            cmbGioiTinh.Text = cmbGioiTinh.Items[0].ToString();
-            //giới hạn ngày vào làm với giới hạn ngày sinh tuối nhỏ nhất có thể
-            dtpNgayVaoLam.MaxDate = DateTime.Now;
-            dtpNgaySinh.MinDate = DateTime.Parse("01/01/1980");
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtHoTen.Clear();
-            txtEmail.Clear();
-            txtSDT.Clear();
-            txtLuong.Clear();
-            txtSoNganHang.Clear();
-            txtTenNganHang.Clear();
-            txtDiachi.Clear();
-            sPathImg = "";
-            img = null;
-            ptbShowImage.Image = null;
-            dtpNgaySinh.Value = DateTime.Parse("01/01/1999");
-            dtpNgayVaoLam.Value = DateTime.Today;
+             //BUS.B_NhanVien.Instance.getAllNhanVien(ref FormQuanLyNhanVien.dtGVDanhSachNV);
         }
     }
 }

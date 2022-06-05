@@ -58,7 +58,7 @@ namespace GUI
 
         private void txtTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Rule_Regex.Instance.UserNam_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            if (Rule_Regex.Instance.Email_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
             {
                 MessageBox.Show("Bạn Không thể nhập ký tự này !!!");
                 e.Handled = true;

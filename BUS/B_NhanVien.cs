@@ -69,7 +69,7 @@ namespace BUS
             return dataTable;
         }
 
-
+        [Obsolete]
         public bool adminAddNhanVien(object[] parameter)
         {
             try
@@ -80,6 +80,24 @@ namespace BUS
             {
                 return false;
 
+            }
+            return true;
+        }
+
+
+
+        [Obsolete]
+
+        public bool adminUpdateNhanVien(object[] parameter)
+        {
+            try
+            {
+                DAO.D_NhanVien.Instance.admiUpdateNhanVien(parameter);
+            }
+            catch (Exception)
+            {
+
+                return false;
             }
             return true;
         }
