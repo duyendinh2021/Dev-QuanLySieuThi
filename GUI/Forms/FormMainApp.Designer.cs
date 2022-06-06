@@ -29,6 +29,7 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainApp));
             this.panelSettingsManage = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnChangePassWord = new System.Windows.Forms.Button();
@@ -492,6 +493,7 @@
             this.Controls.Add(this.panChildForm);
             this.Controls.Add(this.panSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMainApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMainApp_FormClosed);

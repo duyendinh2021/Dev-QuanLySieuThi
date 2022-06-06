@@ -33,12 +33,15 @@ namespace GUI
             BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
         }
 
+
+        [Obsolete]
         private void FormMainApp_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (isThoat)
             {
                 Application.Exit();
             }
+            //BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
         }
 
         [Obsolete]
