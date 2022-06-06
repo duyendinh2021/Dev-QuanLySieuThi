@@ -51,7 +51,7 @@ namespace GUI
                 DateTime ngayVaoLam = DateTime.Parse(row.Cells["Ngayvaolam"].Value.ToString());
                 string diachi = row.Cells["colDiachi"].Value.ToString();
                 string gioiTinh = row.Cells["colGioiTinh"].Value.ToString();
-                Decimal luong = decimal.Parse(row.Cells["colLuong"].Value.ToString());
+                Decimal luong = decimal.Parse(row.Cells["Luongcoban"].Value.ToString());
                 string tenNganHang = row.Cells["Tennganhang"].Value.ToString();
                 string soNganHang = row.Cells["Sotaikhoan"].Value.ToString();
                 string chucvu = row.Cells["colChucVu"].Value.ToString();
@@ -66,7 +66,11 @@ namespace GUI
             }
             else if (e.ColumnIndex == 2)
             {
-                delete(sender, e);
+                DialogResult dialog = MessageBox.Show("Bạn Có Chất Muốn Xóa", "Thông báo đặt biệt", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    delete(sender, e);
+                }
                 BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
 
             }
@@ -155,13 +159,13 @@ namespace GUI
             if (cmbTrangThai.SelectedIndex == 0)
             {
                 trangThai = 1;
-                BUS.B_NhanVien.Instance.getNhanVienByTrangThai(ref dtGVDanhSachNV,trangThai);
+                BUS.B_NhanVien.Instance.getNhanVienByTrangThai(ref dtGVDanhSachNV, trangThai);
 
             }
             else if (cmbTrangThai.SelectedIndex == 1)
             {
                 trangThai = 0;
-                BUS.B_NhanVien.Instance.getNhanVienByTrangThai(ref dtGVDanhSachNV,trangThai);
+                BUS.B_NhanVien.Instance.getNhanVienByTrangThai(ref dtGVDanhSachNV, trangThai);
 
             }
             else if (cmbTrangThai.SelectedIndex == 2)
@@ -169,6 +173,15 @@ namespace GUI
                 BUS.B_NhanVien.Instance.getAllNhanVien(ref dtGVDanhSachNV);
             }
 
+        }
+
+
+        [Obsolete]
+        private void txtSeacrch__TextChanged(object sender, EventArgs e)
+        {
+            string search = txtSeacrch.Text;
+
+            BUS.B_NhanVien.Instance.searchNhanVien(ref dtGVDanhSachNV, search);
         }
     }
 }

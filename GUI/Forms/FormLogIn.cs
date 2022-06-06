@@ -19,6 +19,25 @@ namespace GUI
             InitializeComponent();
         }
 
+        //private static FormLogin instance;
+
+
+        //[Obsolete]
+        //public static FormLogin Instance
+        //{
+        //    get
+        //    {
+        //        if (instance == null)
+        //        {
+        //            instance = new FormLogin();
+        //        }
+        //        return instance;
+        //    }
+        //}
+
+
+        //private Form formApp = null;
+
         private void txtTaiKhoan_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -104,24 +123,6 @@ namespace GUI
             }
         }
 
-        [Obsolete]
-        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
-                //Application.Exit();
-                e.Cancel = false;
-
-            }
-            else
-            {
-                e.Cancel = true;
-            }
-        }
-
-
         private void FormMainApp_LogOut(object sender, EventArgs e)
         {
             (sender as FormMainApp).isThoat = false;
@@ -129,6 +130,22 @@ namespace GUI
             this.Show();
         }
 
-        
+        //public DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+        [Obsolete]
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+                
+            }
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

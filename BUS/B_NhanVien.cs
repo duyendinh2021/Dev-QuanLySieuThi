@@ -140,5 +140,13 @@ namespace BUS
             List<NhanVien> allNhanVien = DAO.D_NhanVien.Instance.getAllNhanVien();
             data.DataSource = allNhanVien;
         }
+
+
+        [Obsolete]
+        public void searchNhanVien(ref DataGridView data, string search)
+        {
+            List<NhanVien> nhanVienSearch = DAO.D_NhanVien.Instance.searchNhanVien(search);
+            data.DataSource = nhanVienSearch;
+        }
     }
 }

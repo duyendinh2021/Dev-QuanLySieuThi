@@ -32,7 +32,6 @@
             this.panelSettingsManage = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnChangePassWord = new System.Windows.Forms.Button();
-            this.panDash = new System.Windows.Forms.Panel();
             this.btnManageDetailOrders = new System.Windows.Forms.Button();
             this.btnManageOrders = new System.Windows.Forms.Button();
             this.btnSetting = new FontAwesome.Sharp.IconButton();
@@ -50,9 +49,13 @@
             this.panLogo = new System.Windows.Forms.Panel();
             this.panSideMenu = new System.Windows.Forms.Panel();
             this.panChildForm = new System.Windows.Forms.Panel();
+            this.panHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panelSettingsManage.SuspendLayout();
             this.panOrdersManage.SuspendLayout();
             this.panSideMenu.SuspendLayout();
+            this.panChildForm.SuspendLayout();
+            this.panHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSettingsManage
@@ -101,16 +104,6 @@
             this.btnChangePassWord.Text = "Đổi mật khẩu";
             this.btnChangePassWord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChangePassWord.UseVisualStyleBackColor = true;
-            // 
-            // panDash
-            // 
-            this.panDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(33)))));
-            this.panDash.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panDash.Location = new System.Drawing.Point(244, 0);
-            this.panDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panDash.Name = "panDash";
-            this.panDash.Size = new System.Drawing.Size(1538, 5);
-            this.panDash.TabIndex = 14;
             // 
             // btnManageDetailOrders
             // 
@@ -457,11 +450,39 @@
             // 
             // panChildForm
             // 
+            this.panChildForm.Controls.Add(this.panHeader);
             this.panChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panChildForm.Location = new System.Drawing.Point(244, 5);
+            this.panChildForm.Location = new System.Drawing.Point(244, 0);
             this.panChildForm.Name = "panChildForm";
-            this.panChildForm.Size = new System.Drawing.Size(1538, 848);
+            this.panChildForm.Size = new System.Drawing.Size(1538, 853);
             this.panChildForm.TabIndex = 15;
+            // 
+            // panHeader
+            // 
+            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panHeader.Controls.Add(this.btnExit);
+            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panHeader.Location = new System.Drawing.Point(0, 0);
+            this.panHeader.Name = "panHeader";
+            this.panHeader.Size = new System.Drawing.Size(1538, 55);
+            this.panHeader.TabIndex = 7;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 50;
+            this.btnExit.Location = new System.Drawing.Point(1463, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 55);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormMainApp
             // 
@@ -469,16 +490,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1782, 853);
             this.Controls.Add(this.panChildForm);
-            this.Controls.Add(this.panDash);
             this.Controls.Add(this.panSideMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMainApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainApp_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMainApp_FormClosed);
             this.Load += new System.EventHandler(this.FormMainApp_Load);
             this.panelSettingsManage.ResumeLayout(false);
             this.panOrdersManage.ResumeLayout(false);
             this.panSideMenu.ResumeLayout(false);
             this.panSideMenu.PerformLayout();
+            this.panChildForm.ResumeLayout(false);
+            this.panHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -488,7 +511,6 @@
         private System.Windows.Forms.Panel panelSettingsManage;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnChangePassWord;
-        private System.Windows.Forms.Panel panDash;
         private System.Windows.Forms.Button btnManageDetailOrders;
         private System.Windows.Forms.Button btnManageOrders;
         private FontAwesome.Sharp.IconButton btnSetting;
@@ -506,5 +528,7 @@
         private System.Windows.Forms.Panel panLogo;
         private System.Windows.Forms.Panel panSideMenu;
         private System.Windows.Forms.Panel panChildForm;
+        private System.Windows.Forms.Panel panHeader;
+        private FontAwesome.Sharp.IconButton btnExit;
     }
 }

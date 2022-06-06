@@ -68,6 +68,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(485, 673);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnDangNhap
             // 
@@ -84,7 +85,7 @@
             // 
             this.label4.Location = new System.Drawing.Point(18, 343);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.Size = new System.Drawing.Size(127, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mật khẩu";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -101,7 +102,7 @@
             // 
             this.label3.Location = new System.Drawing.Point(18, 266);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.Size = new System.Drawing.Size(122, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Tên Tài Khoản";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -168,7 +169,7 @@
             this.ClientSize = new System.Drawing.Size(932, 673);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);

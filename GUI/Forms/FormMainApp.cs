@@ -23,32 +23,27 @@ namespace GUI
             panSideMenu.Controls.Add(SupportUI_UX.Instance.leftBorderBtn);
         }
         public bool isThoat = true;
+        public bool isResultmessage = false;
         //private static Form formChild = null;
 
 
         public event EventHandler LogOut;
-
-
         [Obsolete]
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             LogOut(this, new EventArgs());
-            //update status LogIn
-            //BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
-
-
+            BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
         }
 
-        [Obsolete]
-        private void FormMainApp_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormMainApp_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
             if (isThoat)
             {
                 Application.Exit();
             }
         }
 
+        [Obsolete]
         private void FormMainApp_Load(object sender, EventArgs e)
         {
             CustomizeDesing();
@@ -58,7 +53,6 @@ namespace GUI
         private void CustomizeDesing()
         {
             //Admin
-
             btnDashboard.Visible = false;
             btnOrders.Visible = false;
             panOrdersManage.Visible = false;
@@ -74,7 +68,6 @@ namespace GUI
             btnSTmanageProducts.Visible = false;
             btnStockReport.Visible = false;
         }
-
 
         private void CheckPower()
         {
@@ -105,30 +98,6 @@ namespace GUI
                 default:
                     break;
             }
-            //string user = B_TaiKhoan.Instance.chucvu;
-            //if (user == "Admin")
-            //{
-            //    //Admin
-            //    btnDashboard.Visible = true;
-            //    btnOrders.Visible = true;
-            //    btnProducts.Visible = true;
-            //    btnAccounts.Visible = true;
-            //}
-            //else if (user == "Cashier")
-            //{
-            //    //Cashier
-            //    btnSale.Visible = true;
-            //    btnCashierReport.Visible = true;
-            //}
-            //else if (user == "Stoker")
-            //{
-            //    //Stoker
-            //    btnSTmanageProducts.Visible = true;
-            //    btnbtnAdmissionSlip.Visible = true;
-            //    btnSTmanageProducts.Visible = true;
-            //    btnStockReport.Visible = true;
-            //}
-
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -148,12 +117,6 @@ namespace GUI
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color2);
             SupportUI_UX.Instance.HideSubmenu();
         }
-
-        //private void btnAccounts_Click(object sender, EventArgs e)
-        //{
-        //    SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color3);
-        //    SupportUI_UX.Instance.HideSubmenu();
-        //}
 
         private void btnSale_Click(object sender, EventArgs e)
         {
@@ -196,6 +159,13 @@ namespace GUI
             SupportUI_UX.Instance.HideSubmenu();
             FormQuanLyNhanVien formQuanLyNhanVien = new FormQuanLyNhanVien();
             SupportUI_UX.Instance.showChildForm(formQuanLyNhanVien, panChildForm);
+        }
+
+        [Obsolete]
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
         }
     }
 }
