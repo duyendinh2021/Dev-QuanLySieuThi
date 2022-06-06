@@ -13,6 +13,7 @@ namespace GUI.Forms
 {
     public partial class FormCapNhatNhanVien : Form
     {
+        [Obsolete]
         public FormCapNhatNhanVien()
         {
             InitializeComponent();

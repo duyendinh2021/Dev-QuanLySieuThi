@@ -24,8 +24,6 @@ namespace GUI
         }
         public bool isThoat = true;
         public bool isResultmessage = false;
-        //private static Form formChild = null;
-
 
         public event EventHandler LogOut;
         [Obsolete]

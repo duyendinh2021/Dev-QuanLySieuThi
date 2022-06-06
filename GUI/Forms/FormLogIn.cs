@@ -19,25 +19,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        //private static FormLogin instance;
-
-
-        //[Obsolete]
-        //public static FormLogin Instance
-        //{
-        //    get
-        //    {
-        //        if (instance == null)
-        //        {
-        //            instance = new FormLogin();
-        //        }
-        //        return instance;
-        //    }
-        //}
-
-
-        //private Form formApp = null;
-
         private void txtTaiKhoan_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -108,8 +89,8 @@ namespace GUI
         {
             string accUesrLogIn = txtTaiKhoan.Text;
             string passUesrLogIn = txtMatKhau.Text;
-
-            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn))
+            string message = "";
+            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn,ref message))
             {
                 FormMainApp formMainApp = new FormMainApp();
                 formMainApp.Show();
@@ -118,7 +99,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("that bai");
+                MessageBox.Show(message);
 
             }
         }

@@ -31,28 +31,33 @@ namespace BUS
 
 
         [Obsolete]
-        public bool UserLogIn(string accUesrLogIn, string passUesrLogIn)
+        public bool UserLogIn(string accUesrLogIn, string passUesrLogIn,ref string message)
         {
-
             bool result = false;
-
             TaiKhoan taiKhoan = DAO.D_TaiKhoan.Instance.userLogIn(accUesrLogIn, passUesrLogIn);
-            result = taiKhoan != null ? true : false;
-
-            
-
-            if (result)
+            result = taiKhoan.Idnhanvien != 0 ? true : false;
+            if (!result)
             {
-                if (taiKhoan.Trangthai == 0 || taiKhoan.Statuslogin  == 1)
-                {
-                    return false;
-                }
-                quyen = taiKhoan.Chuvu;
-                id = taiKhoan.Idnhanvien;
-                updateStatusLogin(id);
+                message = "tài khoản hoạt mật khẩu sai, vui lòng nhập lại";
             }
-            return  result;
-
+            else
+            {
+                if (taiKhoan.Trangthai == 0)
+                {
+                    message = "Tài khoản của bản bị vô hiệu hóa, vui lòng liên hệ quản trị viên dể biết thêm chi tiết";
+                }
+                if (taiKhoan.Statuslogin == 1)
+                {
+                    message = "Tài Khoản hiện dang đăng nhập trong hệ thống, vui long đăng xuất dể tiếp tục";
+                }
+                if (result && taiKhoan.Trangthai == 1 && taiKhoan.Statuslogin == 0)
+                {
+                    quyen = taiKhoan.Chuvu;
+                    id = taiKhoan.Idnhanvien;
+                    updateStatusLogin(id);
+                }
+            }
+            return result;
         }
 
         [Obsolete]
