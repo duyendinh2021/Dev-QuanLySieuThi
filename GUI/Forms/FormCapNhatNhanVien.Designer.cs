@@ -65,6 +65,7 @@
             this.grBThongtin = new System.Windows.Forms.GroupBox();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panHeader = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.grBThongtin.SuspendLayout();
@@ -365,7 +366,7 @@
             this.lblSDT.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSDT.Location = new System.Drawing.Point(36, 208);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(150, 25);
+            this.lblSDT.Size = new System.Drawing.Size(188, 25);
             this.lblSDT.TabIndex = 16;
             this.lblSDT.Text = "Số điện thoại";
             this.lblSDT.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -440,6 +441,7 @@
             // 
             // grBThongtin
             // 
+            this.grBThongtin.Controls.Add(this.label1);
             this.grBThongtin.Controls.Add(this.ptbShowImage);
             this.grBThongtin.Controls.Add(this.btnImage);
             this.grBThongtin.Controls.Add(this.panDash6);
@@ -494,6 +496,7 @@
             this.btnExit.Size = new System.Drawing.Size(75, 55);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panHeader
             // 
@@ -505,6 +508,15 @@
             this.panHeader.Size = new System.Drawing.Size(1485, 55);
             this.panHeader.TabIndex = 8;
             // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(37, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 20);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Chỉ Cập Nhật Lương Cơ Bản";
+            // 
             // FormCapNhatNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -512,6 +524,7 @@
             this.ClientSize = new System.Drawing.Size(1485, 853);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCapNhatNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCapNhatNhanVien";
@@ -565,5 +578,6 @@
         public System.Windows.Forms.GroupBox grBThongtin;
         public FontAwesome.Sharp.IconButton btnExit;
         public System.Windows.Forms.Panel panHeader;
+        private System.Windows.Forms.Label label1;
     }
 }

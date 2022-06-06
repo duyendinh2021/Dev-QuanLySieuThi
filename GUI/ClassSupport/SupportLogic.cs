@@ -34,11 +34,20 @@ namespace GUI.ClassSupport
             file.Multiselect = false;
             if (file.ShowDialog() == DialogResult.OK)
             {
-                sPathImg = file.FileName;
+
+                try
+                {
+                    sPathImg = file.FileName;
+                }
+                catch (Exception)
+                {
+                    sPathImg = "";
+                }
+
             }
             return sPathImg;
         }
-               
+
         public Image ConvertBinaryToImage(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream(data))

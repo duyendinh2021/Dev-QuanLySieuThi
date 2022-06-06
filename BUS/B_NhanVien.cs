@@ -30,9 +30,9 @@ namespace BUS
             }
         }
         [Obsolete]
-        public void getAllNhanVien(ref DataGridView dt)
+        public void getAllNhanVienHoatDong(ref DataGridView dt)
         {
-            List<NhanVien> nhanViens = D_NhanVien.Instance.getAllNhanVien();
+            List<NhanVien> nhanViens = D_NhanVien.Instance.getAllNhanVienHoatDong();
             dt.DataSource = nhanViens;
         }
 
@@ -92,7 +92,7 @@ namespace BUS
         {
             try
             {
-                DAO.D_NhanVien.Instance.admiUpdateNhanVien(parameter);
+                DAO.D_NhanVien.Instance.adminUpdateNhanVien(parameter);
             }
             catch (Exception)
             {
@@ -100,6 +100,45 @@ namespace BUS
                 return false;
             }
             return true;
+        }
+
+
+        [Obsolete]
+        public Boolean adminDeleteNhanVien(int id)
+        {
+            try
+            {
+                DAO.D_NhanVien.Instance.adminDeleteNhanVien(id);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+        [Obsolete]
+        public void getNhanVienByChucVu(ref DataGridView data,string chuvu)
+        {
+            List<NhanVien> nhanVienAdmins = DAO.D_NhanVien.Instance.getNhanVienByChucVu(chuvu);
+            data.DataSource = nhanVienAdmins;
+        }
+
+
+        [Obsolete]
+        public void getNhanVienByTrangThai(ref DataGridView data, int trangThai)
+        {
+            List<NhanVien> nhanVienByTrangThai = DAO.D_NhanVien.Instance.getNhanVienByTrangThai(trangThai);
+            data.DataSource = nhanVienByTrangThai;
+        }
+
+
+        [Obsolete]
+        public void getAllNhanVien(ref DataGridView data)
+        {
+            List<NhanVien> allNhanVien = DAO.D_NhanVien.Instance.getAllNhanVien();
+            data.DataSource = allNhanVien;
         }
     }
 }
