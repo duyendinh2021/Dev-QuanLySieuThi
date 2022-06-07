@@ -74,6 +74,8 @@ namespace GUI
                 BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
 
             }
+            DataGridViewRow row2 = dtGVDanhSachNV.Rows[e.RowIndex];
+            picBoxImg.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row2.Cells["Hinh"].Value);
 
         }
         [Obsolete]

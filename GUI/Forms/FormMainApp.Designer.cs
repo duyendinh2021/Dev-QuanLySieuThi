@@ -446,7 +446,7 @@
             this.panSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panSideMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panSideMenu.Name = "panSideMenu";
-            this.panSideMenu.Size = new System.Drawing.Size(244, 853);
+            this.panSideMenu.Size = new System.Drawing.Size(244, 950);
             this.panSideMenu.TabIndex = 12;
             // 
             // panChildForm
@@ -455,7 +455,7 @@
             this.panChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panChildForm.Location = new System.Drawing.Point(244, 0);
             this.panChildForm.Name = "panChildForm";
-            this.panChildForm.Size = new System.Drawing.Size(1538, 853);
+            this.panChildForm.Size = new System.Drawing.Size(1538, 950);
             this.panChildForm.TabIndex = 15;
             // 
             // panHeader
@@ -489,7 +489,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1782, 853);
+            this.ClientSize = new System.Drawing.Size(1782, 950);
             this.Controls.Add(this.panChildForm);
             this.Controls.Add(this.panSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

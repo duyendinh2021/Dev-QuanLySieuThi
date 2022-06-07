@@ -111,17 +111,13 @@ namespace GUI
             this.Show();
         }
 
-        //public DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
         [Obsolete]
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
             {
-                e.Cancel = true;
-                
+                e.Cancel = true;               
             }
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
