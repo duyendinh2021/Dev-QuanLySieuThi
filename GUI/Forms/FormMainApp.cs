@@ -29,7 +29,8 @@ namespace GUI
         [Obsolete]
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            //BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+            BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+            BUS.B_TaiKhoan.Instance.id = -1;
             LogOut(this, new EventArgs());
         }
 
@@ -39,7 +40,7 @@ namespace GUI
         {
             if (isThoat)
             {
-                //BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+                BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
                 Application.Exit();
             }
         }

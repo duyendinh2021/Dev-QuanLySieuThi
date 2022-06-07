@@ -54,6 +54,7 @@ namespace BUS
                 }
                 quyen = taiKhoan.Chuvu;
                 id = taiKhoan.Idnhanvien;
+                updateStatusLogin(id);
             }
             return result;
         }
