@@ -144,11 +144,87 @@ namespace GUI
         private void cmbChucvu_SelectedIndexChanged(object sender, EventArgs e)
         {
             string chucvu = "";
-            chucvu = cmbChucvu.Text;
-            BUS.B_NhanVien.Instance.getNhanVienByChucVu(ref dtGVDanhSachNV, chucvu);
-            if (cmbChucvu.SelectedIndex == 3)
+            int trangThai = -1;
+            if (cmbChucvu.SelectedIndex == 0)
             {
-                BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
+                chucvu = cmbChucvu.Text;
+                if (cmbTrangThai.SelectedIndex == 0)
+                {
+                    trangThai = 1;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+
+                }
+                else if (cmbTrangThai.SelectedIndex == 1)
+                {
+                    trangThai = 0;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbTrangThai.SelectedIndex == 2)
+                {
+                    trangThai = -1;
+
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+            }else if (cmbChucvu.SelectedIndex == 1)
+            {
+                chucvu = cmbChucvu.Text;
+                if (cmbTrangThai.SelectedIndex == 0)
+                {
+                    trangThai = 1;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+
+                }
+                else if (cmbTrangThai.SelectedIndex == 1)
+                {
+                    trangThai = 0;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbTrangThai.SelectedIndex == 2)
+                {
+                    trangThai = -1;
+
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+            }
+            else if (cmbChucvu.SelectedIndex == 2)
+            {
+                chucvu = cmbChucvu.Text;
+                if (cmbTrangThai.SelectedIndex == 0)
+                {
+                    trangThai = 1;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+
+                }
+                else if (cmbTrangThai.SelectedIndex == 1)
+                {
+                    trangThai = 0;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbTrangThai.SelectedIndex == 2)
+                {
+                    trangThai = -1;
+
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+            }
+            else if (cmbChucvu.SelectedIndex == 3)
+            {
+                chucvu = cmbChucvu.Text;
+                if (cmbTrangThai.SelectedIndex == 0)
+                {
+                    //trangThai = 1;
+                    BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
+
+                }
+                else if (cmbTrangThai.SelectedIndex == 1)
+                {
+                    trangThai = 0;
+                    BUS.B_NhanVien.Instance.getNhanVienByTrangThai(ref dtGVDanhSachNV,trangThai);
+                }
+                else if (cmbTrangThai.SelectedIndex == 2)
+                {
+                    BUS.B_NhanVien.Instance.getAllNhanVien(ref dtGVDanhSachNV);
+                }
             }
         }
 
@@ -156,25 +232,82 @@ namespace GUI
         [Obsolete]
         private void cmbTrangThai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int trangThai;
+            int trangThai = -1;
             string chucvu = "";
             if (cmbTrangThai.SelectedIndex == 0)
             {
                 trangThai = 1;
-                BUS.B_NhanVien.Instance.getNhanVienByTrangThai(ref dtGVDanhSachNV, trangThai);
-
+                if (cmbChucvu.SelectedIndex == 0)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 1)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 2)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 3)
+                {
+                    //chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
+                }
             }
+
+
+
             else if (cmbTrangThai.SelectedIndex == 1)
             {
                 trangThai = 0;
-                BUS.B_NhanVien.Instance.getNhanVienByTrangThai(ref dtGVDanhSachNV, trangThai);
-
+                if (cmbChucvu.SelectedIndex == 0)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 1)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 2)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 3)
+                {
+                    //get all nhan vien khong hoat dong
+                    BUS.B_NhanVien.Instance.getNhanVienByTrangThai(ref dtGVDanhSachNV, trangThai);
+                }
             }
             else if (cmbTrangThai.SelectedIndex == 2)
             {
-                BUS.B_NhanVien.Instance.getAllNhanVien(ref dtGVDanhSachNV);
+                trangThai = -1;
+                if (cmbChucvu.SelectedIndex == 0)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 1)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 2)
+                {
+                    chucvu = cmbChucvu.Text;
+                    BUS.B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
+                }
+                else if (cmbChucvu.SelectedIndex == 3)
+                {
+                    BUS.B_NhanVien.Instance.getAllNhanVien(ref dtGVDanhSachNV);
+                }
             }
-
         }
 
 

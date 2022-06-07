@@ -42,6 +42,7 @@
             this.cmbTrangThai = new System.Windows.Forms.ComboBox();
             this.cmbChucvu = new System.Windows.Forms.ComboBox();
             this.panelTimkiem = new System.Windows.Forms.Panel();
+            this.txtSeacrch = new System.Windows.Forms.TextBox();
             this.dtGVDanhSachNV = new System.Windows.Forms.DataGridView();
             this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -56,7 +57,6 @@
             this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picBoxImg = new System.Windows.Forms.PictureBox();
-            this.txtSeacrch = new System.Windows.Forms.TextBox();
             btnTimkiem = new FontAwesome.Sharp.IconButton();
             this.panelTimkiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGVDanhSachNV)).BeginInit();
@@ -165,7 +165,7 @@
             "Admin",
             "Cashier",
             "Stoker",
-            "Tất Cả Nhân Viên"});
+            "Tất Cả Loại  Nhân Viên"});
             this.cmbChucvu.Location = new System.Drawing.Point(132, 25);
             this.cmbChucvu.Name = "cmbChucvu";
             this.cmbChucvu.Size = new System.Drawing.Size(170, 24);
@@ -187,6 +187,14 @@
             this.panelTimkiem.Name = "panelTimkiem";
             this.panelTimkiem.Size = new System.Drawing.Size(1448, 65);
             this.panelTimkiem.TabIndex = 26;
+            // 
+            // txtSeacrch
+            // 
+            this.txtSeacrch.Location = new System.Drawing.Point(947, 25);
+            this.txtSeacrch.Name = "txtSeacrch";
+            this.txtSeacrch.Size = new System.Drawing.Size(286, 22);
+            this.txtSeacrch.TabIndex = 10;
+            this.txtSeacrch.TextChanged += new System.EventHandler(this.txtSeacrch__TextChanged);
             // 
             // dtGVDanhSachNV
             // 
@@ -385,14 +393,6 @@
             this.picBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxImg.TabIndex = 30;
             this.picBoxImg.TabStop = false;
-            // 
-            // txtSeacrch
-            // 
-            this.txtSeacrch.Location = new System.Drawing.Point(947, 25);
-            this.txtSeacrch.Name = "txtSeacrch";
-            this.txtSeacrch.Size = new System.Drawing.Size(286, 22);
-            this.txtSeacrch.TabIndex = 10;
-            this.txtSeacrch.TextChanged += new System.EventHandler(this.txtSeacrch__TextChanged);
             // 
             // FormQuanLyNhanVien
             // 

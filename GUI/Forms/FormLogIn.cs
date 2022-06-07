@@ -119,6 +119,7 @@ namespace GUI
             {
                 e.Cancel = true;               
             }
+            BUS.B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {

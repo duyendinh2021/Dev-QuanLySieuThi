@@ -54,20 +54,6 @@ namespace BUS
                 }
                 quyen = taiKhoan.Chuvu;
                 id = taiKhoan.Idnhanvien;
-                //if (taiKhoan.Trangthai == 0)
-                //{
-                //    message = "Tài khoản của bản bị vô hiệu hóa, vui lòng liên hệ quản trị viên dể biết thêm chi tiết";
-                //}
-                //if (taiKhoan.Statuslogin == 1)
-                //{
-                //    message = "Tài Khoản hiện dang đăng nhập trong hệ thống, vui long đăng xuất dể tiếp tục";
-                //}
-                //if (taiKhoan.Trangthai == 1 && taiKhoan.Statuslogin == 0)
-                //{
-                //    quyen = taiKhoan.Chuvu;
-                //    id = taiKhoan.Idnhanvien;
-                //    updateStatusLogin(id);
-                //}
             }
             return result;
         }

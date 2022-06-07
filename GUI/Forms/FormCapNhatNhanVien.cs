@@ -23,6 +23,8 @@ namespace GUI.Forms
         public Image img = null;
         public byte[] dataImg = null;
 
+
+        [Obsolete]
         public FormCapNhatNhanVien(int id, string hoTen, string email, string sdt, DateTime ngaysinh, Decimal luong, string tennganhang, string soNganhang, DateTime ngayvaolam, string diachi, Image img, string quyen, string gioitinh, byte[] dataImg)
         {
             InitializeComponent();

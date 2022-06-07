@@ -220,5 +220,73 @@ namespace DAO
                 return nhanVienSearch;
             }
         }
+
+
+        [Obsolete]
+        public List<NhanVien> getNhanVienByChucVuAndTrangThai(string chucvu,int trangthai)
+        {
+            List<NhanVien> nhanViens = new List<NhanVien>();
+            string query = "";
+            if (trangthai == -1)
+            {
+                query = "EXEC SelectNhanVienByChucVuAndTrangThai @chucVu";             
+                using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { chucvu}))
+                {
+                    foreach (DataRow item in dataTable.Rows)
+                    {
+                        int id = Convert.ToInt32(item["ID_NhanVien"].ToString());
+                        string name = item["HoTen"].ToString();
+                        string chuVu = item["ChucVu"].ToString();
+                        string goiTinh = item["GoiTinh"].ToString();
+                        DateTime ngaySinh = DateTime.Parse(item["NgaySinh"].ToString());
+                        DateTime ngayVaoLam = DateTime.Parse(item["NgayVaolam"].ToString());
+                        string sdt = item["SDT"].ToString();
+                        string diaChi = item["DiaChi"].ToString();
+                        string tenNganHang = item["TenNganHang"].ToString();
+                        string soTKNganHang = item["SoTKNganHang"].ToString();
+                        Decimal LuongCB = Decimal.Parse(item["LuongCoBan"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongPC = Decimal.Parse(item["LuongPhuCap"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongTong = Decimal.Parse(item["TongLuong"].ToString(), System.Globalization.NumberStyles.Currency);
+                        string email = item["email"].ToString();
+                        byte[] hinh = (byte[])item["Hinh"];
+                        int trangThai = int.Parse(item["TrangThai"].ToString());
+
+                        NhanVien nhanVien = new NhanVien(id, name, chuVu, ngaySinh, ngayVaoLam, diaChi, sdt, tenNganHang, soTKNganHang, goiTinh, LuongCB, LuongPC, LuongTong, email, hinh, trangThai);
+                        nhanViens.Add(nhanVien);
+                    }
+                    return nhanViens;
+                }
+            }
+            else
+            {
+                query = "EXEC SelectNhanVienByChucVuAndTrangThai @chucVu , @trangthai";
+                using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { chucvu, trangthai }))
+                {
+                    foreach (DataRow item in dataTable.Rows)
+                    {
+                        int id = Convert.ToInt32(item["ID_NhanVien"].ToString());
+                        string name = item["HoTen"].ToString();
+                        string chuVu = item["ChucVu"].ToString();
+                        string goiTinh = item["GoiTinh"].ToString();
+                        DateTime ngaySinh = DateTime.Parse(item["NgaySinh"].ToString());
+                        DateTime ngayVaoLam = DateTime.Parse(item["NgayVaolam"].ToString());
+                        string sdt = item["SDT"].ToString();
+                        string diaChi = item["DiaChi"].ToString();
+                        string tenNganHang = item["TenNganHang"].ToString();
+                        string soTKNganHang = item["SoTKNganHang"].ToString();
+                        Decimal LuongCB = Decimal.Parse(item["LuongCoBan"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongPC = Decimal.Parse(item["LuongPhuCap"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongTong = Decimal.Parse(item["TongLuong"].ToString(), System.Globalization.NumberStyles.Currency);
+                        string email = item["email"].ToString();
+                        byte[] hinh = (byte[])item["Hinh"];
+                        int trangThai = int.Parse(item["TrangThai"].ToString());
+
+                        NhanVien nhanVien = new NhanVien(id, name, chuVu, ngaySinh, ngayVaoLam, diaChi, sdt, tenNganHang, soTKNganHang, goiTinh, LuongCB, LuongPC, LuongTong, email, hinh, trangThai);
+                        nhanViens.Add(nhanVien);
+                    }
+                    return nhanViens;
+                }
+            }          
+        }
     }
 }
