@@ -336,8 +336,105 @@ namespace GUI
         [Obsolete]
         private void txtSeacrch__TextChanged(object sender, EventArgs e)
         {
+            int trangthai;
+            string chuvu;
+
+
             string search = txtSeacrch.Text;
-            BUS.B_NhanVien.Instance.searchNhanVien(ref dtGVDanhSachNV, search);
+
+
+            // Search nhân viên Admin dang hoạt động
+            if (cmbChucvu.SelectedIndex == 0 && cmbTrangThai.SelectedIndex == 0)
+            {
+                trangthai = 1;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+            // Search nhân viên Admin không hoạt động
+            else if (cmbChucvu.SelectedIndex == 0 && cmbTrangThai.SelectedIndex == 1)
+            {
+                trangthai = 0;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+            // Search nhân viên Admin bao gồm đang hoạt động với không hoạt động
+            else if (cmbChucvu.SelectedIndex == 0 && cmbTrangThai.SelectedIndex == 2)
+            {
+                trangthai = -1;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+
+
+
+            // Search nhân viên Cashier dang hoạt động
+            if (cmbChucvu.SelectedIndex == 1 && cmbTrangThai.SelectedIndex == 0)
+            {
+                trangthai = 1;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+            // Search nhân viên Cashier không hoạt động
+            else if (cmbChucvu.SelectedIndex == 1 && cmbTrangThai.SelectedIndex == 1)
+            {
+                trangthai = 0;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+            // Search nhân viên Cashier bao gồm đang hoạt động với không hoạt động
+            else if (cmbChucvu.SelectedIndex == 1 && cmbTrangThai.SelectedIndex == 2)
+            {
+                trangthai = -1;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+
+
+
+            // Search nhân viên Stoker dang hoạt động
+            if (cmbChucvu.SelectedIndex == 2 && cmbTrangThai.SelectedIndex == 0)
+            {
+                trangthai = 1;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+            // Search nhân viên Stoker không hoạt động
+            else if (cmbChucvu.SelectedIndex == 2 && cmbTrangThai.SelectedIndex == 1)
+            {
+                trangthai = 0;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+            // Search nhân viên Stoker bao gồm đang hoạt động với không hoạt động
+            else if (cmbChucvu.SelectedIndex == 2 && cmbTrangThai.SelectedIndex == 2)
+            {
+                trangthai = -1;
+                chuvu = cmbChucvu.Text;
+                BUS.B_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(ref dtGVDanhSachNV, search, chuvu, trangthai);
+            }
+
+
+
+            // Search tất cả loại nhân viên dang hoạt động
+            if (cmbChucvu.SelectedIndex == 3 && cmbTrangThai.SelectedIndex == 0)
+            {
+                trangthai = 1;
+                BUS.B_NhanVien.Instance.searchNhanVienByTrangThai(ref dtGVDanhSachNV, search, trangthai);
+            }
+            // Search tất cả loại nhân viên không hoạt động
+            else if (cmbChucvu.SelectedIndex == 3 && cmbTrangThai.SelectedIndex == 1)
+            {
+                trangthai = 0;
+                BUS.B_NhanVien.Instance.searchNhanVienByTrangThai(ref dtGVDanhSachNV, search, trangthai);
+            }
+            // Search tất cả loại nhân viên bao gồm đang hoạt động với không hoạt động
+            else if (cmbChucvu.SelectedIndex == 3 && cmbTrangThai.SelectedIndex == 2)
+            {
+                trangthai = -1;
+                BUS.B_NhanVien.Instance.searchNhanVienByTrangThai(ref dtGVDanhSachNV, search, trangthai);
+            }
+
+            //BUS.B_NhanVien.Instance.searchNhanVien(ref dtGVDanhSachNV, search);
         }
 
 
@@ -350,6 +447,8 @@ namespace GUI
 
                 // Click vào btn cập nhật nhân viên
                 DataGridViewRow row = dtGVDanhSachNV.Rows[e.RowIndex];
+                Image image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+                picBoxImg.Image = image;
                 if (e.ColumnIndex == 1)
                 {
                     int id = int.Parse(row.Cells["colManv"].Value.ToString());
@@ -394,7 +493,16 @@ namespace GUI
                 // Click vào btn xem tài khoản
                 if (e.ColumnIndex == 3)
                 {
-                    MessageBox.Show("chua lam");
+                    int id = int.Parse(row.Cells["colManv"].Value.ToString());
+                    string usernam = "";
+                    string pass = "";
+                    string chucvu = "";
+
+                    int trangthai = -1;
+                    BUS.B_NhanVien.Instance.GetTaiKhoanByID(id,ref usernam,ref pass,ref chucvu, ref trangthai);
+                    FormViewAccout formViewAccout = new FormViewAccout(id,usernam,pass,trangthai,chucvu);
+                    formViewAccout.ShowDialog();
+
                 }
             }
         }

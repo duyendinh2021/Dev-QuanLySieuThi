@@ -157,5 +157,39 @@ namespace BUS
             List<NhanVien> nhanViens = DAO.D_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(chucvu,trangthai);
             data.DataSource = nhanViens;
         }
+
+
+
+        [Obsolete]
+        public void searchNhanVienByChuVuAndTrangThai(ref DataGridView data,string search, string chucvu,int trangthai)
+        {
+            List<NhanVien> nhanViens = DAO.D_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(search, chucvu, trangthai);
+            data.DataSource = nhanViens;
+        }
+
+
+
+
+
+
+
+        [Obsolete]
+        public void searchNhanVienByTrangThai(ref DataGridView data, string search ,int trangthai)
+        {
+            List<NhanVien> nhanViens = DAO.D_NhanVien.Instance.searchNhanVienByTrangThai(search ,trangthai);
+            data.DataSource = nhanViens;
+        }
+
+
+        [Obsolete]
+        public void GetTaiKhoanByID(int id,ref string usernam,ref string pass,ref string chucvu,ref int trangthai)
+        {
+            TaiKhoan tk = DAO.D_NhanVien.Instance.getTaiKhoanByID(id);
+            usernam = tk.Uesrname;
+            pass = tk.Pass;
+            chucvu = tk.Chuvu;
+            trangthai = tk.Trangthai;
+        }
+
     }
 }

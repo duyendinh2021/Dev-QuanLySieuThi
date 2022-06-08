@@ -96,6 +96,7 @@
             this.btnExit.Size = new System.Drawing.Size(75, 55);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel1
             // 
@@ -513,6 +514,7 @@
             this.ClientSize = new System.Drawing.Size(1285, 691);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThemNhanVien";
             this.Load += new System.EventHandler(this.FormThemNhanVien_Load);
             this.panHeader.ResumeLayout(false);

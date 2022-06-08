@@ -190,9 +190,6 @@ namespace DAO
             List<NhanVien> nhanVienSearch = new List<NhanVien>();
 
             string query = "EXEC SearchMultiColumn @value";
-
-
-
             using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { search }))
             {
                 foreach (DataRow item in dataTable.Rows)
@@ -287,6 +284,170 @@ namespace DAO
                     return nhanViens;
                 }
             }          
+        }
+
+
+
+
+        [Obsolete]
+        public List<NhanVien> searchNhanVienByChuVuAndTrangThai(string search,string chucvu,int trangthai)
+        {
+            List<NhanVien> nhanViens = new List<NhanVien>();
+
+            string query;
+            if (trangthai == -1)
+            {
+                query = "EXEC SearchNhanVienByChucVuAndTrangThai @value , @chucVu";
+                using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { search, chucvu }))
+                {
+                    foreach (DataRow item in dataTable.Rows)
+                    {
+                        int id = Convert.ToInt32(item["ID_NhanVien"].ToString());
+                        string name = item["HoTen"].ToString();
+                        string chuVu = item["ChucVu"].ToString();
+                        string goiTinh = item["GoiTinh"].ToString();
+                        DateTime ngaySinh = DateTime.Parse(item["NgaySinh"].ToString());
+                        DateTime ngayVaoLam = DateTime.Parse(item["NgayVaolam"].ToString());
+                        string sdt = item["SDT"].ToString();
+                        string diaChi = item["DiaChi"].ToString();
+                        string tenNganHang = item["TenNganHang"].ToString();
+                        string soTKNganHang = item["SoTKNganHang"].ToString();
+                        Decimal LuongCB = Decimal.Parse(item["LuongCoBan"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongPC = Decimal.Parse(item["LuongPhuCap"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongTong = Decimal.Parse(item["TongLuong"].ToString(), System.Globalization.NumberStyles.Currency);
+                        string email = item["email"].ToString();
+                        byte[] hinh = (byte[])item["Hinh"];
+                        int trangThai = int.Parse(item["TrangThai"].ToString());
+
+                        NhanVien nhanVien = new NhanVien(id, name, chuVu, ngaySinh, ngayVaoLam, diaChi, sdt, tenNganHang, soTKNganHang, goiTinh, LuongCB, LuongPC, LuongTong, email, hinh, trangThai);
+                        nhanViens.Add(nhanVien);
+                    }
+                    
+                }
+            }
+            else
+            {
+                query = "SearchNhanVienByChucVuAndTrangThai @value , @chucVu , @trangthai";
+                using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { search, chucvu , trangthai}))
+                {
+                    foreach (DataRow item in dataTable.Rows)
+                    {
+                        int id = Convert.ToInt32(item["ID_NhanVien"].ToString());
+                        string name = item["HoTen"].ToString();
+                        string chuVu = item["ChucVu"].ToString();
+                        string goiTinh = item["GoiTinh"].ToString();
+                        DateTime ngaySinh = DateTime.Parse(item["NgaySinh"].ToString());
+                        DateTime ngayVaoLam = DateTime.Parse(item["NgayVaolam"].ToString());
+                        string sdt = item["SDT"].ToString();
+                        string diaChi = item["DiaChi"].ToString();
+                        string tenNganHang = item["TenNganHang"].ToString();
+                        string soTKNganHang = item["SoTKNganHang"].ToString();
+                        Decimal LuongCB = Decimal.Parse(item["LuongCoBan"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongPC = Decimal.Parse(item["LuongPhuCap"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongTong = Decimal.Parse(item["TongLuong"].ToString(), System.Globalization.NumberStyles.Currency);
+                        string email = item["email"].ToString();
+                        byte[] hinh = (byte[])item["Hinh"];
+                        int trangThai = int.Parse(item["TrangThai"].ToString());
+
+                        NhanVien nhanVien = new NhanVien(id, name, chuVu, ngaySinh, ngayVaoLam, diaChi, sdt, tenNganHang, soTKNganHang, goiTinh, LuongCB, LuongPC, LuongTong, email, hinh, trangThai);
+                        nhanViens.Add(nhanVien);
+                    }
+                }
+            }
+            return nhanViens;
+        }
+
+
+
+        [Obsolete]
+        public List<NhanVien> searchNhanVienByTrangThai(string search ,int trangthai)
+        {
+            List<NhanVien> nhanViens = new List<NhanVien>();
+            string query;
+            if (trangthai == -1)
+            {
+                query = "EXEC SearchNhanVienByTrangThaiMultiColumn @value";
+                using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { search}))
+                {
+                    foreach (DataRow item in dataTable.Rows)
+                    {
+                        int id = Convert.ToInt32(item["ID_NhanVien"].ToString());
+                        string name = item["HoTen"].ToString();
+                        string chuVu = item["ChucVu"].ToString();
+                        string goiTinh = item["GoiTinh"].ToString();
+                        DateTime ngaySinh = DateTime.Parse(item["NgaySinh"].ToString());
+                        DateTime ngayVaoLam = DateTime.Parse(item["NgayVaolam"].ToString());
+                        string sdt = item["SDT"].ToString();
+                        string diaChi = item["DiaChi"].ToString();
+                        string tenNganHang = item["TenNganHang"].ToString();
+                        string soTKNganHang = item["SoTKNganHang"].ToString();
+                        Decimal LuongCB = Decimal.Parse(item["LuongCoBan"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongPC = Decimal.Parse(item["LuongPhuCap"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongTong = Decimal.Parse(item["TongLuong"].ToString(), System.Globalization.NumberStyles.Currency);
+                        string email = item["email"].ToString();
+                        byte[] hinh = (byte[])item["Hinh"];
+                        int trangThai = int.Parse(item["TrangThai"].ToString());
+
+                        NhanVien nhanVien = new NhanVien(id, name, chuVu, ngaySinh, ngayVaoLam, diaChi, sdt, tenNganHang, soTKNganHang, goiTinh, LuongCB, LuongPC, LuongTong, email, hinh, trangThai);
+                        nhanViens.Add(nhanVien);
+                    }
+                }
+            }
+            else
+            {
+                query = "EXEC SearchNhanVienByTrangThaiMultiColumn @value , @trangthai";
+                using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { search , trangthai}))
+                {
+                    foreach (DataRow item in dataTable.Rows)
+                    {
+                        int id = Convert.ToInt32(item["ID_NhanVien"].ToString());
+                        string name = item["HoTen"].ToString();
+                        string chuVu = item["ChucVu"].ToString();
+                        string goiTinh = item["GoiTinh"].ToString();
+                        DateTime ngaySinh = DateTime.Parse(item["NgaySinh"].ToString());
+                        DateTime ngayVaoLam = DateTime.Parse(item["NgayVaolam"].ToString());
+                        string sdt = item["SDT"].ToString();
+                        string diaChi = item["DiaChi"].ToString();
+                        string tenNganHang = item["TenNganHang"].ToString();
+                        string soTKNganHang = item["SoTKNganHang"].ToString();
+                        Decimal LuongCB = Decimal.Parse(item["LuongCoBan"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongPC = Decimal.Parse(item["LuongPhuCap"].ToString(), System.Globalization.NumberStyles.Currency);
+                        Decimal LuongTong = Decimal.Parse(item["TongLuong"].ToString(), System.Globalization.NumberStyles.Currency);
+                        string email = item["email"].ToString();
+                        byte[] hinh = (byte[])item["Hinh"];
+                        int trangThai = int.Parse(item["TrangThai"].ToString());
+
+                        NhanVien nhanVien = new NhanVien(id, name, chuVu, ngaySinh, ngayVaoLam, diaChi, sdt, tenNganHang, soTKNganHang, goiTinh, LuongCB, LuongPC, LuongTong, email, hinh, trangThai);
+                        nhanViens.Add(nhanVien);
+                    }
+                }
+            }
+            return nhanViens;
+        }
+
+
+
+
+
+
+        [Obsolete]
+        public TaiKhoan getTaiKhoanByID(int id)
+        {
+            TaiKhoan TaiKhoan = new TaiKhoan();
+            string query = "EXEC SearchTaiKhoanByID @id";
+            using(DataTable data = connectionData.Instance.excuteQuery(query,new object[] { id }))
+            {
+                foreach (DataRow item in data.Rows)
+                {
+                    TaiKhoan.Idnhanvien = int.Parse(item["ID_NhanVien"].ToString());
+                    TaiKhoan.Uesrname = item["TenTK"].ToString();
+                    TaiKhoan.Pass = item["MK"].ToString();
+                    TaiKhoan.Chuvu = item["ChucVu"].ToString();
+                    TaiKhoan.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    TaiKhoan.Statuslogin = int.Parse(item["StatusLogIn"].ToString());
+                }
+            }
+            return TaiKhoan;
         }
     }
 }

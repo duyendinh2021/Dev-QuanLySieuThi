@@ -65,5 +65,22 @@ namespace BUS
             DAO.D_TaiKhoan.Instance.updateStatusLogin(id);
         }
 
+
+
+
+        [Obsolete]
+        public bool updateTaikhoan(object[] parameter)
+        {
+            try
+            {
+                DAO.D_TaiKhoan.Instance.updateTaiKhoan(parameter);
+            }
+            catch (Exception)
+            {
+
+               return false;
+            }
+            return true;
+        }
     }
 }
