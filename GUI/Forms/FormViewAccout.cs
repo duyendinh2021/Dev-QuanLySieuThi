@@ -62,6 +62,8 @@ namespace GUI.Forms
             this.Close();
         }
 
+
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             setBtn(true);
@@ -69,7 +71,7 @@ namespace GUI.Forms
 
 
 
-
+        //btn cập nhật click
         [Obsolete]
         private void btnCapNhat_Click(object sender, EventArgs e)
         {

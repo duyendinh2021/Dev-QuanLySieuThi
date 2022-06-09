@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using GUI.Forms;
 
 namespace GUI
 {
@@ -134,6 +135,8 @@ namespace GUI
         private void btnSTmanageProducts_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color2);
+            FormQuanLySanPham formQuanLySanPham = new FormQuanLySanPham();
+            SupportUI_UX.Instance.showChildForm(formQuanLySanPham, panChildForm);
         }
 
         private void btnbtnAdmissionSlip_Click(object sender, EventArgs e)

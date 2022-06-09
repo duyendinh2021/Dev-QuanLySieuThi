@@ -46,7 +46,7 @@
             this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(59, 171);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 36);
+            this.label1.Size = new System.Drawing.Size(210, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Tài Khoản";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -66,7 +66,7 @@
             this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(565, 172);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 38);
+            this.label3.Size = new System.Drawing.Size(150, 38);
             this.label3.TabIndex = 0;
             this.label3.Text = "Trạng Thái";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,7 +100,7 @@
             // 
             // txtTaiKhoan
             // 
-            this.txtTaiKhoan.Location = new System.Drawing.Point(224, 179);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(275, 179);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(221, 22);
             this.txtTaiKhoan.TabIndex = 9;
@@ -108,7 +108,7 @@
             // 
             // txtMk
             // 
-            this.txtMk.Location = new System.Drawing.Point(224, 298);
+            this.txtMk.Location = new System.Drawing.Point(275, 298);
             this.txtMk.Name = "txtMk";
             this.txtMk.Size = new System.Drawing.Size(221, 22);
             this.txtMk.TabIndex = 9;

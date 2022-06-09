@@ -97,6 +97,12 @@
     <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormNhapSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNhapSanPham.Designer.cs">
+      <DependentUpon>FormNhapSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,8 +147,14 @@
     <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNhapSanPham.resx">
+      <DependentUpon>FormNhapSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormQuanLyNhanVien.resx">
       <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormQuanLySanPham.resx">
+      <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormThemNhanVien.resx">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
@@ -194,6 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\other.png" />
     <None Include="Resources\view.png" />
     <None Include="Resources\delete1.png" />
     <None Include="Resources\eye.png" />

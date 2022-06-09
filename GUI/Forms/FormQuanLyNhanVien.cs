@@ -144,6 +144,9 @@ namespace GUI
         {
             string chucvu;
             int trangThai;
+
+            txtSeacrch.Clear();
+
             // select all nhân viên Admin
             if (cmbChucvu.SelectedIndex == 0)
             {
@@ -245,6 +248,9 @@ namespace GUI
         {
             int trangThai;
             string chucvu;
+
+            txtSeacrch.Clear();
+
             // nhân viên còn hoạt động
             if (cmbTrangThai.SelectedIndex == 0)
             {

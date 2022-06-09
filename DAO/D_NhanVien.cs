@@ -23,6 +23,9 @@ namespace DAO
                 return instance;
             }
         }
+
+
+        // Get tất cả nhân viên trạng thái đang làm việt 
         [Obsolete]
         public List<NhanVien> getAllNhanVienHoatDong()
         {
@@ -56,6 +59,8 @@ namespace DAO
             }
         }
 
+
+        // nhân viên admin thêm nhân viên mới
         [Obsolete]
         public void adminAddNhanVien(object[] parameter)
         {
@@ -63,12 +68,17 @@ namespace DAO
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
 
+
+        // nhân viên admin cập nhật thông tin cho nhân viên
         [Obsolete]
         public void adminUpdateNhanVien(object[] parameter)
         {
             String query = "EXEC UpdateNhanVien @id , @hoten , @chucvu , @GoiTinh , @NgaySinh , @NgayVaolam , @DiaChi , @SDT , @TenNganHang , @SoTKNganHang , @LuongCoBan , @email , @hinh";
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
+
+
+        // nhân viên tiến hành tính hành delete nhân viên
         [Obsolete]
         public void adminDeleteNhanVien(int id)
         {
@@ -76,6 +86,8 @@ namespace DAO
             connectionData.Instance.excuteNonQueryStoreProcedure(query, new object[] { id });
         }
 
+
+        // Get nhân viên theo chúc vụ
         [Obsolete]
         public List<NhanVien> getNhanVienByChucVu(string chucvu)
         {
@@ -111,7 +123,7 @@ namespace DAO
             }
         }
 
-
+        // Get nhân viên theo trạng thái
         [Obsolete]
         public List<NhanVien> getNhanVienByTrangThai(int trangThaiquery)
         {
@@ -147,7 +159,7 @@ namespace DAO
         }
 
 
-
+        // Get tất cả các nhân viên trong hệ thống
         [Obsolete]
         public List<NhanVien> getAllNhanVien()
         {
@@ -183,7 +195,7 @@ namespace DAO
             }
         }
 
-
+        // tìm kiến nhân viên
         [Obsolete]
         public List<NhanVien> searchNhanVien(string search)
         {
@@ -218,12 +230,12 @@ namespace DAO
             }
         }
 
-
+        
         [Obsolete]
         public List<NhanVien> getNhanVienByChucVuAndTrangThai(string chucvu,int trangthai)
         {
             List<NhanVien> nhanViens = new List<NhanVien>();
-            string query = "";
+            string query;
             if (trangthai == -1)
             {
                 query = "EXEC SelectNhanVienByChucVuAndTrangThai @chucVu";             
