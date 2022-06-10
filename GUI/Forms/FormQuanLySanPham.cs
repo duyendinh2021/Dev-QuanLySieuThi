@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.Forms;
 
 namespace GUI.Forms
 {
@@ -15,6 +16,12 @@ namespace GUI.Forms
         public FormQuanLySanPham()
         {
             InitializeComponent();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FormNhapSanPham formNhapSanPham = new FormNhapSanPham();
+            formNhapSanPham.ShowDialog();
         }
     }
 }

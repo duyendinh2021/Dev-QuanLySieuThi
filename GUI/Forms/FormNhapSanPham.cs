@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using GUI.ClassSupport;
+using BUS;
 
 namespace GUI.Forms
 {
@@ -49,6 +50,30 @@ namespace GUI.Forms
                 MessageBox.Show("Bạn Không được nhập ký tự này !!!", "Thông Báo");
                 e.Handled = true;
             }
+        }
+
+        [Obsolete]
+        private void btnThemNCC_Click(object sender, EventArgs e)
+        {
+            FormThemNhaCungCap formThemNhaCungCap = new FormThemNhaCungCap();
+            formThemNhaCungCap.ShowDialog();
+            BUS.B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNcc);
+        }
+
+
+        [Obsolete]
+        private void FormNhapSanPham_Load(object sender, EventArgs e)
+        {
+            BUS.B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNcc);
+            BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSp);
+            cmbNcc.SelectedIndex = -1;
+            cmbLoaiSp.SelectedIndex = -1;
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            int idNCC = int.Parse(cmbNcc.SelectedValue.ToString());
+            MessageBox.Show(idNCC.ToString());
         }
     }
 }

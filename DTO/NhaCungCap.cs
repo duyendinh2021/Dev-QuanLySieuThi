@@ -27,6 +27,11 @@ namespace DTO
             _trangthai = trangthai;
         }
 
+        public NhaCungCap()
+        {
+
+        }
+
         public int Idnhacungcap { get => _idnhacungcap; set => _idnhacungcap = value; }
         public string Tencongty { get => _tencongty; set => _tencongty = value; }
         public string Diachi { get => _diachi; set => _diachi = value; }

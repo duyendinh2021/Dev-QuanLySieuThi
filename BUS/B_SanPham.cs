@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DAO;
 using DTO;
 
@@ -23,5 +24,23 @@ namespace BUS
                 return instance;
             }
         }
+
+        //public List<SanPham> SanPhamList(List<int> ids)
+        //{
+        //    List<SanPham> list = new List<SanPham>();
+        //    for (int i = 0; i < ids.Count; i++)
+        //    {
+        //        List<SanPham> temp = new List<SanPham>();
+        //        foreach (SanPham item in temp)
+        //        {
+        //            list.Add(item);
+        //        }
+        //    }
+        //    return list;
+        //}
+
+
+
+
     }
 }

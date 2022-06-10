@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAO;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -23,5 +24,16 @@ namespace BUS
                 return instance;
             }
         }
+
+
+        [Obsolete]
+        public void loadDataSourcecmbLoaiSp(ref ComboBox comboBox)
+        {
+            List<LoaiSanPham> loaiSanPhams = DAO.D_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp();
+            comboBox.DataSource = loaiSanPhams;
+            comboBox.DisplayMember = "Tensanpham";
+            comboBox.ValueMember = "Idloaisanpham";
+        }
+
     }
 }

@@ -121,6 +121,12 @@
     <Compile Include="Forms\FormSale.Designer.cs">
       <DependentUpon>FormSale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormThemNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormThemNhaCungCap.Designer.cs">
+      <DependentUpon>FormThemNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormThemNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormQuanLySanPham.resx">
       <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormThemNhaCungCap.resx">
+      <DependentUpon>FormThemNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormThemNhanVien.resx">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>

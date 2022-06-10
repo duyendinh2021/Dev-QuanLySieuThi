@@ -170,9 +170,6 @@ namespace BUS
 
 
 
-
-
-
         [Obsolete]
         public void searchNhanVienByTrangThai(ref DataGridView data, string search ,int trangthai)
         {
@@ -191,5 +188,21 @@ namespace BUS
             trangthai = tk.Trangthai;
         }
 
+
+
+
+        [Obsolete]
+        public bool stokerAddNhaCungCap(object[] parameter)
+        {
+            try
+            {
+                DAO.D_NhanVien.Instance.stokerAddNhaCungCap(parameter);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
