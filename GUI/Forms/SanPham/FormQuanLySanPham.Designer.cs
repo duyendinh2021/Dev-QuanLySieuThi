@@ -140,7 +140,7 @@
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(389, 0);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(867, 757);
+            this.panMain.Size = new System.Drawing.Size(981, 790);
             this.panMain.TabIndex = 17;
             // 
             // panDash
@@ -190,7 +190,7 @@
             this.dtDanhSachSP.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtDanhSachSP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtDanhSachSP.EnableHeadersVisualStyles = false;
-            this.dtDanhSachSP.Location = new System.Drawing.Point(0, 281);
+            this.dtDanhSachSP.Location = new System.Drawing.Point(0, 314);
             this.dtDanhSachSP.Name = "dtDanhSachSP";
             this.dtDanhSachSP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -206,7 +206,7 @@
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtDanhSachSP.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtDanhSachSP.RowTemplate.Height = 50;
-            this.dtDanhSachSP.Size = new System.Drawing.Size(867, 476);
+            this.dtDanhSachSP.Size = new System.Drawing.Size(981, 476);
             this.dtDanhSachSP.TabIndex = 27;
             // 
             // Checked
@@ -257,6 +257,9 @@
             // 
             // btnXuatFile
             // 
+            this.btnXuatFile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXuatFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
             this.btnXuatFile.FlatAppearance.BorderSize = 0;
             this.btnXuatFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -265,7 +268,7 @@
             this.btnXuatFile.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnXuatFile.IconColor = System.Drawing.Color.Black;
             this.btnXuatFile.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXuatFile.Location = new System.Drawing.Point(326, 119);
+            this.btnXuatFile.Location = new System.Drawing.Point(364, 143);
             this.btnXuatFile.Name = "btnXuatFile";
             this.btnXuatFile.Size = new System.Drawing.Size(116, 50);
             this.btnXuatFile.TabIndex = 25;
@@ -274,6 +277,9 @@
             // 
             // btnNhapHang
             // 
+            this.btnNhapHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNhapHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
             this.btnNhapHang.FlatAppearance.BorderSize = 0;
             this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -282,15 +288,19 @@
             this.btnNhapHang.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnNhapHang.IconColor = System.Drawing.Color.Black;
             this.btnNhapHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNhapHang.Location = new System.Drawing.Point(164, 119);
+            this.btnNhapHang.Location = new System.Drawing.Point(191, 143);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(116, 50);
             this.btnNhapHang.TabIndex = 25;
             this.btnNhapHang.Text = "Nhập hàng";
             this.btnNhapHang.UseVisualStyleBackColor = false;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -299,7 +309,7 @@
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAdd.IconColor = System.Drawing.Color.Black;
             this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdd.Location = new System.Drawing.Point(16, 119);
+            this.btnAdd.Location = new System.Drawing.Point(19, 143);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 50);
             this.btnAdd.TabIndex = 25;
@@ -312,7 +322,7 @@
             this.panDashside2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panDashside2.Location = new System.Drawing.Point(369, 0);
             this.panDashside2.Name = "panDashside2";
-            this.panDashside2.Size = new System.Drawing.Size(20, 757);
+            this.panDashside2.Size = new System.Drawing.Size(20, 790);
             this.panDashside2.TabIndex = 16;
             // 
             // panTimKiem
@@ -428,7 +438,7 @@
             this.panSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panSideMenu.Name = "panSideMenu";
-            this.panSideMenu.Size = new System.Drawing.Size(369, 757);
+            this.panSideMenu.Size = new System.Drawing.Size(369, 790);
             this.panSideMenu.TabIndex = 15;
             // 
             // btnTonKho
@@ -499,7 +509,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 757);
+            this.ClientSize = new System.Drawing.Size(1370, 790);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.panDashside2);
             this.Controls.Add(this.panSideMenu);

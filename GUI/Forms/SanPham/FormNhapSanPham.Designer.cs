@@ -47,8 +47,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClear = new FontAwesome.Sharp.IconButton();
-            this.btnConfirm = new FontAwesome.Sharp.IconButton();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
@@ -110,7 +110,6 @@
             // btnBrowsImg
             // 
             this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
-            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
             this.btnBrowsImg.Location = new System.Drawing.Point(1017, 159);
             this.btnBrowsImg.Name = "btnBrowsImg";
             this.btnBrowsImg.Size = new System.Drawing.Size(123, 44);
@@ -121,7 +120,6 @@
             // btnThemLoaiSp
             // 
             this.btnThemLoaiSp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnThemLoaiSp.Image = global::GUI.Properties.Resources.other;
             this.btnThemLoaiSp.Location = new System.Drawing.Point(654, 220);
             this.btnThemLoaiSp.Name = "btnThemLoaiSp";
             this.btnThemLoaiSp.Size = new System.Drawing.Size(85, 28);
@@ -132,7 +130,6 @@
             // btnThemNCC
             // 
             this.btnThemNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnThemNCC.Image = global::GUI.Properties.Resources.other;
             this.btnThemNCC.Location = new System.Drawing.Point(654, 145);
             this.btnThemNCC.Name = "btnThemNCC";
             this.btnThemNCC.Size = new System.Drawing.Size(85, 28);
@@ -255,52 +252,35 @@
             this.label1.Text = "Tên Sản Phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClear.FlatAppearance.BorderSize = 2;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnClear.IconColor = System.Drawing.Color.Black;
-            this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClear.Location = new System.Drawing.Point(654, 657);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(137, 53);
-            this.btnClear.TabIndex = 64;
-            this.btnClear.Text = "Xóa tất cả";
-            this.btnClear.UseVisualStyleBackColor = false;
-            // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnConfirm.FlatAppearance.BorderSize = 2;
-            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnConfirm.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnConfirm.IconColor = System.Drawing.Color.Black;
-            this.btnConfirm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnConfirm.Location = new System.Drawing.Point(384, 657);
+            this.btnConfirm.Location = new System.Drawing.Point(384, 653);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(152, 53);
+            this.btnConfirm.Size = new System.Drawing.Size(157, 62);
             this.btnConfirm.TabIndex = 65;
-            this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnClear.Location = new System.Drawing.Point(654, 653);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(157, 62);
+            this.btnClear.TabIndex = 65;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // FormNhapSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1416, 742);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panHeader);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormNhapSanPham";
             this.Text = "FormNhapSanPham";
@@ -333,8 +313,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        public FontAwesome.Sharp.IconButton btnClear;
         private System.Windows.Forms.Button btnBrowsImg;
-        public FontAwesome.Sharp.IconButton btnConfirm;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnClear;
     }
 }

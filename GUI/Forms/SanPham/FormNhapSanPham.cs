@@ -20,6 +20,9 @@ namespace GUI.Forms
             InitializeComponent();
         }
         string sPathImg;
+
+        public object[] sanpham;
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -110,22 +113,14 @@ namespace GUI.Forms
                 byte[] hinh = System.IO.File.ReadAllBytes(sPathImg);
 
                 // object chứa thông tinh san phẩm dc nhập
-                object[] sanpham = new object[] { tensp, id_ncc,id_loai,sl,dvt,dongai,hinh };
-
-                // chưa xong  
-
-                DateTime ngaylap_Phieunhapkho = DateTime.Today;
-                decimal tongGia = sl * dongai;
-
-                object[] phieunhapkho = new object[] { BUS.B_TaiKhoan.Instance.id, id_ncc, ngaylap_Phieunhapkho, tongGia };
-                if (BUS.B_NhanVien.Instance.stokerAddSanPham(sanpham))
-                {
-                    MessageBox.Show("Thật Tuyệt vời (❁´◡`❁)", "Thêm Thành Công");
-                }
+                sanpham = new object[] { tensp, id_ncc, id_loai, sl,dvt, dongai, hinh};
             }
             
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

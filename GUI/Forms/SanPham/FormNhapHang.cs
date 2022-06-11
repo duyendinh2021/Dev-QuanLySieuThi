@@ -7,21 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GUI.Forms;
 
-namespace GUI.Forms
+namespace GUI.Forms.SanPham
 {
-    public partial class FormQuanLySanPham : Form
+    public partial class FormNhapHang : Form
     {
-        public FormQuanLySanPham()
+        public FormNhapHang()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            FormNhapSanPham formNhapSanPham = new FormNhapSanPham();
-            formNhapSanPham.ShowDialog();
+            this.Close();
         }
     }
 }

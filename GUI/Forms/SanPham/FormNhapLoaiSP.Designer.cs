@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.grbLoaiSP = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
-            this.txtMoTa = new System.Windows.Forms.TextBox();
-            this.btnClearAll = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.btnBrowsImg = new System.Windows.Forms.Button();
             this.ptcbShowImg = new System.Windows.Forms.PictureBox();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.txtMoTa = new System.Windows.Forms.TextBox();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.panHeader.SuspendLayout();
             this.grbLoaiSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptcbShowImg)).BeginInit();
@@ -51,8 +51,25 @@
             this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHeader.Location = new System.Drawing.Point(0, 0);
             this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1067, 59);
+            this.panHeader.Size = new System.Drawing.Size(1067, 53);
             this.panHeader.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 42;
+            this.btnExit.Location = new System.Drawing.Point(966, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(101, 53);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // grbLoaiSP
             // 
@@ -64,12 +81,51 @@
             this.grbLoaiSP.Controls.Add(this.label1);
             this.grbLoaiSP.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbLoaiSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbLoaiSP.Location = new System.Drawing.Point(0, 59);
+            this.grbLoaiSP.Location = new System.Drawing.Point(0, 53);
             this.grbLoaiSP.Name = "grbLoaiSP";
             this.grbLoaiSP.Size = new System.Drawing.Size(1067, 320);
             this.grbLoaiSP.TabIndex = 0;
             this.grbLoaiSP.TabStop = false;
             this.grbLoaiSP.Text = "Thông Tin Loại Sản Phẩm";
+            // 
+            // btnBrowsImg
+            // 
+            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
+            this.btnBrowsImg.Location = new System.Drawing.Point(714, 54);
+            this.btnBrowsImg.Name = "btnBrowsImg";
+            this.btnBrowsImg.Size = new System.Drawing.Size(123, 44);
+            this.btnBrowsImg.TabIndex = 2;
+            this.btnBrowsImg.UseVisualStyleBackColor = false;
+            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
+            this.btnBrowsImg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnBrowsImg_KeyDown);
+            // 
+            // ptcbShowImg
+            // 
+            this.ptcbShowImg.Location = new System.Drawing.Point(714, 107);
+            this.ptcbShowImg.Name = "ptcbShowImg";
+            this.ptcbShowImg.Size = new System.Drawing.Size(180, 180);
+            this.ptcbShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcbShowImg.TabIndex = 21;
+            this.ptcbShowImg.TabStop = false;
+            // 
+            // txtMoTa
+            // 
+            this.txtMoTa.Location = new System.Drawing.Point(322, 159);
+            this.txtMoTa.Multiline = true;
+            this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.Size = new System.Drawing.Size(246, 85);
+            this.txtMoTa.TabIndex = 1;
+            this.txtMoTa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMoTa_KeyDown);
+            this.txtMoTa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMoTa_KeyPress);
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.Location = new System.Drawing.Point(322, 77);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(246, 30);
+            this.txtTenSP.TabIndex = 0;
+            this.txtTenSP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenSP_KeyDown);
+            this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
             // 
             // label3
             // 
@@ -91,30 +147,10 @@
             this.label1.Text = "Tên Loại Sản Phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // txtTenSP
-            // 
-            this.txtTenSP.Location = new System.Drawing.Point(322, 77);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(246, 30);
-            this.txtTenSP.TabIndex = 0;
-            this.txtTenSP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenSP_KeyDown);
-            this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
-            // 
-            // txtMoTa
-            // 
-            this.txtMoTa.Location = new System.Drawing.Point(322, 159);
-            this.txtMoTa.Multiline = true;
-            this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(246, 85);
-            this.txtMoTa.TabIndex = 1;
-            this.txtMoTa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMoTa_KeyDown);
-            this.txtMoTa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMoTa_KeyPress);
-            // 
             // btnClearAll
             // 
             this.btnClearAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(147)))), ((int)(((byte)(53)))));
             this.btnClearAll.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearAll.Image = global::GUI.Properties.Resources.clear;
             this.btnClearAll.Location = new System.Drawing.Point(411, 422);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(157, 71);
@@ -126,51 +162,12 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
             this.btnConfirm.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
             this.btnConfirm.Location = new System.Drawing.Point(134, 422);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(157, 71);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnBrowsImg
-            // 
-            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
-            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
-            this.btnBrowsImg.Location = new System.Drawing.Point(714, 54);
-            this.btnBrowsImg.Name = "btnBrowsImg";
-            this.btnBrowsImg.Size = new System.Drawing.Size(123, 44);
-            this.btnBrowsImg.TabIndex = 2;
-            this.btnBrowsImg.UseVisualStyleBackColor = false;
-            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
-            this.btnBrowsImg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnBrowsImg_KeyDown);
-            // 
-            // ptcbShowImg
-            // 
-            this.ptcbShowImg.Location = new System.Drawing.Point(714, 107);
-            this.ptcbShowImg.Name = "ptcbShowImg";
-            this.ptcbShowImg.Size = new System.Drawing.Size(180, 180);
-            this.ptcbShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptcbShowImg.TabIndex = 21;
-            this.ptcbShowImg.TabStop = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 42;
-            this.btnExit.Location = new System.Drawing.Point(966, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(101, 59);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormNhapLoaiSP
             // 
