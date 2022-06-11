@@ -167,7 +167,7 @@ namespace GUI.Forms
                 string chucvu = cmbChucvu.Text;
                 DateTime ngaySinh = dtpNgaySinh.Value;
                 DateTime ngayVaoLam = dtpNgayVaoLam.Value;
-                byte[] hinh = null;
+                byte[] hinh;
                 if (sPathImg == "")
                 {
                     hinh = dataImg;

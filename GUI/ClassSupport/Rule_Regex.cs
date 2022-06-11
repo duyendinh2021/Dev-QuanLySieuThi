@@ -37,5 +37,6 @@ namespace GUI
 
         public Regex Number_Regex = new Regex(@"([^0-9])");
 
+        public Regex Describe_Regex = new Regex(@"([^\w\s^0-9{,. }])");
     }
 }

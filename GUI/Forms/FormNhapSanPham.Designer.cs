@@ -31,11 +31,10 @@
             this.panHeader = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnBrowsImg = new System.Windows.Forms.Button();
             this.btnThemLoaiSp = new System.Windows.Forms.Button();
             this.btnThemNCC = new System.Windows.Forms.Button();
             this.ptbShowImage = new System.Windows.Forms.PictureBox();
-            this.btnImage = new FontAwesome.Sharp.IconButton();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.cmbDVT = new System.Windows.Forms.ComboBox();
             this.cmbLoaiSp = new System.Windows.Forms.ComboBox();
@@ -84,11 +83,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.iconButton1);
+            this.groupBox1.Controls.Add(this.btnBrowsImg);
             this.groupBox1.Controls.Add(this.btnThemLoaiSp);
             this.groupBox1.Controls.Add(this.btnThemNCC);
             this.groupBox1.Controls.Add(this.ptbShowImage);
-            this.groupBox1.Controls.Add(this.btnImage);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.cmbDVT);
             this.groupBox1.Controls.Add(this.cmbLoaiSp);
@@ -109,29 +107,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
             // 
-            // iconButton1
+            // btnBrowsImg
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.iconButton1.FlatAppearance.BorderSize = 2;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Images;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 32;
-            this.iconButton1.Location = new System.Drawing.Point(1017, 167);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(108, 39);
-            this.iconButton1.TabIndex = 68;
-            this.iconButton1.Text = "...";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
+            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
+            this.btnBrowsImg.Location = new System.Drawing.Point(1017, 159);
+            this.btnBrowsImg.Name = "btnBrowsImg";
+            this.btnBrowsImg.Size = new System.Drawing.Size(123, 44);
+            this.btnBrowsImg.TabIndex = 68;
+            this.btnBrowsImg.UseVisualStyleBackColor = false;
+            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
             // 
             // btnThemLoaiSp
             // 
@@ -142,6 +127,7 @@
             this.btnThemLoaiSp.Size = new System.Drawing.Size(85, 28);
             this.btnThemLoaiSp.TabIndex = 67;
             this.btnThemLoaiSp.UseVisualStyleBackColor = false;
+            this.btnThemLoaiSp.Click += new System.EventHandler(this.btnThemLoaiSp_Click);
             // 
             // btnThemNCC
             // 
@@ -163,30 +149,6 @@
             this.ptbShowImage.TabIndex = 63;
             this.ptbShowImage.TabStop = false;
             // 
-            // btnImage
-            // 
-            this.btnImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnImage.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImage.FlatAppearance.BorderSize = 2;
-            this.btnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnImage.IconChar = FontAwesome.Sharp.IconChar.Images;
-            this.btnImage.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnImage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImage.IconSize = 32;
-            this.btnImage.Location = new System.Drawing.Point(1017, 150);
-            this.btnImage.Name = "btnImage";
-            this.btnImage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnImage.Size = new System.Drawing.Size(127, 0);
-            this.btnImage.TabIndex = 62;
-            this.btnImage.Text = "...";
-            this.btnImage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnImage.UseVisualStyleBackColor = false;
-            // 
             // txtDonGia
             // 
             this.txtDonGia.Location = new System.Drawing.Point(1017, 63);
@@ -204,6 +166,7 @@
             // 
             // cmbLoaiSp
             // 
+            this.cmbLoaiSp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLoaiSp.FormattingEnabled = true;
             this.cmbLoaiSp.Location = new System.Drawing.Point(384, 222);
             this.cmbLoaiSp.Name = "cmbLoaiSp";
@@ -212,6 +175,7 @@
             // 
             // cmbNcc
             // 
+            this.cmbNcc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNcc.FormattingEnabled = true;
             this.cmbNcc.Location = new System.Drawing.Point(384, 145);
             this.cmbNcc.Name = "cmbNcc";
@@ -357,7 +321,6 @@
         private System.Windows.Forms.Button btnThemLoaiSp;
         private System.Windows.Forms.Button btnThemNCC;
         public System.Windows.Forms.PictureBox ptbShowImage;
-        public FontAwesome.Sharp.IconButton btnImage;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.ComboBox cmbDVT;
         private System.Windows.Forms.ComboBox cmbLoaiSp;
@@ -371,7 +334,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public FontAwesome.Sharp.IconButton btnClear;
+        private System.Windows.Forms.Button btnBrowsImg;
         public FontAwesome.Sharp.IconButton btnConfirm;
-        public FontAwesome.Sharp.IconButton iconButton1;
     }
 }

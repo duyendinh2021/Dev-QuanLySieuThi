@@ -204,5 +204,37 @@ namespace BUS
             }
             return true;
         }
+
+
+        [Obsolete]
+        public bool stokerAddLoaiSanPham(object[] parameter)
+        {
+            try
+            {
+                DAO.D_NhanVien.Instance.stokerAddLoaiSanPham(parameter);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+
+        [Obsolete]
+        public bool stokerAddSanPham(object[] parameter)
+        {
+            try
+            {
+                DAO.D_NhanVien.Instance.stokerAddSanPham(parameter);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
     }
 }

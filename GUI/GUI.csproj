@@ -74,6 +74,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassSupport\SupportLogic.cs" />
+    <Compile Include="Components\ButtonCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ButtonCategory.Designer.cs" />
+    <Compile Include="Components\Tag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Tag.Designer.cs" />
+    <Compile Include="Components\Wiget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Wiget.Designer.cs" />
     <Compile Include="Conntrols\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +108,12 @@
     </Compile>
     <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNhapLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNhapLoaiSP.Designer.cs">
+      <DependentUpon>FormNhapLoaiSP.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormNhapSanPham.cs">
       <SubType>Form</SubType>
@@ -143,6 +161,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClassSupport\Rule_Regex.cs" />
     <Compile Include="ClassSupport\SupportUI_UX.cs" />
+    <EmbeddedResource Include="Components\ButtonCategory.resx" />
+    <EmbeddedResource Include="Components\Tag.resx" />
+    <EmbeddedResource Include="Components\Wiget.resx" />
     <EmbeddedResource Include="Conntrols\RJTextBox.resx" />
     <EmbeddedResource Include="Forms\FormCapNhatNhanVien.resx">
       <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
@@ -152,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNhapLoaiSP.resx">
+      <DependentUpon>FormNhapLoaiSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNhapSanPham.resx">
       <DependentUpon>FormNhapSanPham.cs</DependentUpon>
@@ -215,6 +239,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\confirmation.png" />
+    <None Include="Resources\photo.png" />
     <None Include="Resources\other.png" />
     <None Include="Resources\view.png" />
     <None Include="Resources\delete1.png" />

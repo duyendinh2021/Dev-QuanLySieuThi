@@ -19,7 +19,7 @@ namespace GUI.Forms
         {
             InitializeComponent();
         }
-
+        string sPathImg;
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -66,14 +66,66 @@ namespace GUI.Forms
         {
             BUS.B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNcc);
             BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSp);
+            BUS.B_SanPham.Instance.loaiDataSourceDVT(ref cmbDVT);
+            cmbDVT.SelectedIndex = -1;
             cmbNcc.SelectedIndex = -1;
             cmbLoaiSp.SelectedIndex = -1;
         }
 
+        [Obsolete]
+        private void btnThemLoaiSp_Click(object sender, EventArgs e)
+        {
+            FormNhapLoaiSP formNhapLoaiSP = new FormNhapLoaiSP();
+            formNhapLoaiSP.ShowDialog();
+            BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSp);
+        }
+
+        private void btnBrowsImg_Click(object sender, EventArgs e)
+        {
+            sPathImg = SupportLogic.Instance.getPathFile();
+            if (sPathImg != "")
+            {
+                Image image = Image.FromFile(sPathImg);
+                ptbShowImage.Image = image;
+            }
+        }
+
+
+        [Obsolete]
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            int idNCC = int.Parse(cmbNcc.SelectedValue.ToString());
-            MessageBox.Show(idNCC.ToString());
+            // tí phải làm phiếu nhập kho chi tiết phiếu nhập kho + với insert sản phẩm
+
+            if (txtTenSp.Text == "" || cmbNcc.SelectedIndex == -1 || cmbLoaiSp.SelectedIndex == -1 || txtSoLuong.Text == "" || cmbDVT.Text  == "" || txtDonGia.Text == "" || sPathImg == "")
+            {
+                MessageBox.Show("Bạn Chưa Nhập Dủ Thông Tin, Vui Lòng Kiểm tra Lại, Tks !!!");
+            }else
+            {
+                string tensp = txtTenSp.Text;
+                int id_ncc = int.Parse(cmbNcc.SelectedValue.ToString());
+                int id_loai = int.Parse(cmbLoaiSp.SelectedValue.ToString());
+                int sl = int.Parse(txtSoLuong.Text);
+                string dvt = cmbDVT.Text;
+                decimal dongai = decimal.Parse(txtDonGia.Text);
+                byte[] hinh = System.IO.File.ReadAllBytes(sPathImg);
+
+                // object chứa thông tinh san phẩm dc nhập
+                object[] sanpham = new object[] { tensp, id_ncc,id_loai,sl,dvt,dongai,hinh };
+
+                // chưa xong  
+
+                DateTime ngaylap_Phieunhapkho = DateTime.Today;
+                decimal tongGia = sl * dongai;
+
+                object[] phieunhapkho = new object[] { BUS.B_TaiKhoan.Instance.id, id_ncc, ngaylap_Phieunhapkho, tongGia };
+                if (BUS.B_NhanVien.Instance.stokerAddSanPham(sanpham))
+                {
+                    MessageBox.Show("Thật Tuyệt vời (❁´◡`❁)", "Thêm Thành Công");
+                }
+            }
+            
         }
+
+
     }
 }

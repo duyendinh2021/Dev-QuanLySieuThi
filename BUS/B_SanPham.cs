@@ -40,6 +40,15 @@ namespace BUS
         //}
 
 
+        [Obsolete]
+        public void loaiDataSourceDVT(ref ComboBox comboBox)
+        {
+            List<SanPham> sanPhams = DAO.D_SanPham.Instance.selectAllSanPhamDanghoatDong();
+            comboBox.DataSource = sanPhams;
+            comboBox.DisplayMember = "Dvt";
+            comboBox.ValueMember = "Dvt";
+        }
+
 
 
     }
