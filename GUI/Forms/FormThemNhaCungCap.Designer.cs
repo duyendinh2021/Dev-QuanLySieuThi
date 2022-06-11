@@ -225,7 +225,7 @@
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            //this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // FormThemNhaCungCap
             // 

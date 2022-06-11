@@ -29,13 +29,8 @@
         private void InitializeComponent()
         {
             this.panHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClear = new FontAwesome.Sharp.IconButton();
-            this.btnConfirm = new FontAwesome.Sharp.IconButton();
             this.grBThongtin = new System.Windows.Forms.GroupBox();
-            this.ptbShowImage = new System.Windows.Forms.PictureBox();
-            this.btnImage = new FontAwesome.Sharp.IconButton();
             this.panDash6 = new System.Windows.Forms.Panel();
             this.panDash7 = new System.Windows.Forms.Panel();
             this.panDash5 = new System.Windows.Forms.Panel();
@@ -65,6 +60,11 @@
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblNgayVaoLam = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
+            this.ptbShowImage = new System.Windows.Forms.PictureBox();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnImage = new System.Windows.Forms.Button();
             this.panHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grBThongtin.SuspendLayout();
@@ -81,23 +81,6 @@
             this.panHeader.Size = new System.Drawing.Size(1285, 55);
             this.panHeader.TabIndex = 6;
             // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 50;
-            this.btnExit.Location = new System.Drawing.Point(1210, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 55);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnClear);
@@ -109,48 +92,10 @@
             this.panel1.Size = new System.Drawing.Size(1285, 636);
             this.panel1.TabIndex = 7;
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClear.FlatAppearance.BorderSize = 2;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnClear.IconColor = System.Drawing.Color.Black;
-            this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClear.Location = new System.Drawing.Point(231, 538);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(137, 53);
-            this.btnClear.TabIndex = 9;
-            this.btnClear.Text = "Xóa tất cả";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnConfirm.FlatAppearance.BorderSize = 2;
-            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnConfirm.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnConfirm.IconColor = System.Drawing.Color.Black;
-            this.btnConfirm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnConfirm.Location = new System.Drawing.Point(48, 538);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(137, 53);
-            this.btnConfirm.TabIndex = 10;
-            this.btnConfirm.Text = "Xác nhận";
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
             // grBThongtin
             // 
-            this.grBThongtin.Controls.Add(this.ptbShowImage);
             this.grBThongtin.Controls.Add(this.btnImage);
+            this.grBThongtin.Controls.Add(this.ptbShowImage);
             this.grBThongtin.Controls.Add(this.panDash6);
             this.grBThongtin.Controls.Add(this.panDash7);
             this.grBThongtin.Controls.Add(this.panDash5);
@@ -188,40 +133,6 @@
             this.grBThongtin.TabStop = false;
             this.grBThongtin.Text = "Thông tin nhân viên";
             this.grBThongtin.Enter += new System.EventHandler(this.grBThongtin_Enter);
-            // 
-            // ptbShowImage
-            // 
-            this.ptbShowImage.Location = new System.Drawing.Point(1045, 179);
-            this.ptbShowImage.Name = "ptbShowImage";
-            this.ptbShowImage.Size = new System.Drawing.Size(216, 216);
-            this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbShowImage.TabIndex = 44;
-            this.ptbShowImage.TabStop = false;
-            // 
-            // btnImage
-            // 
-            this.btnImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnImage.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImage.FlatAppearance.BorderSize = 2;
-            this.btnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnImage.IconChar = FontAwesome.Sharp.IconChar.Images;
-            this.btnImage.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnImage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImage.IconSize = 32;
-            this.btnImage.Location = new System.Drawing.Point(1045, 113);
-            this.btnImage.Name = "btnImage";
-            this.btnImage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnImage.Size = new System.Drawing.Size(106, 39);
-            this.btnImage.TabIndex = 37;
-            this.btnImage.Text = "...";
-            this.btnImage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnImage.UseVisualStyleBackColor = false;
-            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // panDash6
             // 
@@ -507,6 +418,65 @@
             this.lblNgaySinh.Text = "Ngày sinh";
             this.lblNgaySinh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // ptbShowImage
+            // 
+            this.ptbShowImage.Location = new System.Drawing.Point(1045, 179);
+            this.ptbShowImage.Name = "ptbShowImage";
+            this.ptbShowImage.Size = new System.Drawing.Size(216, 216);
+            this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbShowImage.TabIndex = 44;
+            this.ptbShowImage.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 50;
+            this.btnExit.Location = new System.Drawing.Point(1210, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 55);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
+            this.btnConfirm.Location = new System.Drawing.Point(79, 538);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(153, 64);
+            this.btnConfirm.TabIndex = 10;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnClear.Image = global::GUI.Properties.Resources.clear;
+            this.btnClear.Location = new System.Drawing.Point(412, 538);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(153, 64);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnImage
+            // 
+            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnImage.Image = global::GUI.Properties.Resources.photo;
+            this.btnImage.Location = new System.Drawing.Point(1045, 109);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(146, 45);
+            this.btnImage.TabIndex = 10;
+            this.btnImage.UseVisualStyleBackColor = false;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
+            // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -531,11 +501,8 @@
         private System.Windows.Forms.Panel panHeader;
         private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton btnClear;
-        private FontAwesome.Sharp.IconButton btnConfirm;
         private System.Windows.Forms.GroupBox grBThongtin;
         private System.Windows.Forms.PictureBox ptbShowImage;
-        private FontAwesome.Sharp.IconButton btnImage;
         private System.Windows.Forms.Panel panDash6;
         private System.Windows.Forms.Panel panDash7;
         private System.Windows.Forms.Panel panDash5;
@@ -565,5 +532,8 @@
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.Label lblNgayVaoLam;
         private System.Windows.Forms.Label lblNgaySinh;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnImage;
     }
 }

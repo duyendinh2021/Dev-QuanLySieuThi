@@ -91,9 +91,10 @@
             // btnBrowsImg
             // 
             this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
-            this.btnBrowsImg.Location = new System.Drawing.Point(714, 54);
+            this.btnBrowsImg.Image = global::GUI.Properties.Resources.add_image;
+            this.btnBrowsImg.Location = new System.Drawing.Point(714, 61);
             this.btnBrowsImg.Name = "btnBrowsImg";
-            this.btnBrowsImg.Size = new System.Drawing.Size(123, 44);
+            this.btnBrowsImg.Size = new System.Drawing.Size(123, 37);
             this.btnBrowsImg.TabIndex = 2;
             this.btnBrowsImg.UseVisualStyleBackColor = false;
             this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
@@ -151,6 +152,7 @@
             // 
             this.btnClearAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(147)))), ((int)(((byte)(53)))));
             this.btnClearAll.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearAll.Image = global::GUI.Properties.Resources.clear;
             this.btnClearAll.Location = new System.Drawing.Point(411, 422);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(157, 71);
@@ -162,12 +164,12 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
             this.btnConfirm.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
             this.btnConfirm.Location = new System.Drawing.Point(134, 422);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(157, 71);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // FormNhapLoaiSP
             // 

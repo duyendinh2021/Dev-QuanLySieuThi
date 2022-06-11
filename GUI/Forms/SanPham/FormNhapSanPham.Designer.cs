@@ -29,12 +29,7 @@
         private void InitializeComponent()
         {
             this.panHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBrowsImg = new System.Windows.Forms.Button();
-            this.btnThemLoaiSp = new System.Windows.Forms.Button();
-            this.btnThemNCC = new System.Windows.Forms.Button();
-            this.ptbShowImage = new System.Windows.Forms.PictureBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.cmbDVT = new System.Windows.Forms.ComboBox();
             this.cmbLoaiSp = new System.Windows.Forms.ComboBox();
@@ -47,8 +42,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnBrowsImg = new System.Windows.Forms.Button();
+            this.btnThemLoaiSp = new System.Windows.Forms.Button();
+            this.btnThemNCC = new System.Windows.Forms.Button();
+            this.ptbShowImage = new System.Windows.Forms.PictureBox();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
@@ -63,23 +63,6 @@
             this.panHeader.Name = "panHeader";
             this.panHeader.Size = new System.Drawing.Size(1416, 45);
             this.panHeader.TabIndex = 13;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 42;
-            this.btnExit.Location = new System.Drawing.Point(1341, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 45);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // groupBox1
             // 
@@ -106,45 +89,6 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
-            // 
-            // btnBrowsImg
-            // 
-            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
-            this.btnBrowsImg.Location = new System.Drawing.Point(1017, 159);
-            this.btnBrowsImg.Name = "btnBrowsImg";
-            this.btnBrowsImg.Size = new System.Drawing.Size(123, 44);
-            this.btnBrowsImg.TabIndex = 68;
-            this.btnBrowsImg.UseVisualStyleBackColor = false;
-            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
-            // 
-            // btnThemLoaiSp
-            // 
-            this.btnThemLoaiSp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnThemLoaiSp.Location = new System.Drawing.Point(654, 220);
-            this.btnThemLoaiSp.Name = "btnThemLoaiSp";
-            this.btnThemLoaiSp.Size = new System.Drawing.Size(85, 28);
-            this.btnThemLoaiSp.TabIndex = 67;
-            this.btnThemLoaiSp.UseVisualStyleBackColor = false;
-            this.btnThemLoaiSp.Click += new System.EventHandler(this.btnThemLoaiSp_Click);
-            // 
-            // btnThemNCC
-            // 
-            this.btnThemNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnThemNCC.Location = new System.Drawing.Point(654, 145);
-            this.btnThemNCC.Name = "btnThemNCC";
-            this.btnThemNCC.Size = new System.Drawing.Size(85, 28);
-            this.btnThemNCC.TabIndex = 66;
-            this.btnThemNCC.UseVisualStyleBackColor = false;
-            this.btnThemNCC.Click += new System.EventHandler(this.btnThemNCC_Click);
-            // 
-            // ptbShowImage
-            // 
-            this.ptbShowImage.Location = new System.Drawing.Point(1017, 222);
-            this.ptbShowImage.Name = "ptbShowImage";
-            this.ptbShowImage.Size = new System.Drawing.Size(255, 266);
-            this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbShowImage.TabIndex = 63;
-            this.ptbShowImage.TabStop = false;
             // 
             // txtDonGia
             // 
@@ -252,9 +196,21 @@
             this.label1.Text = "Tên Sản Phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnClear.Image = global::GUI.Properties.Resources.clear;
+            this.btnClear.Location = new System.Drawing.Point(654, 653);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(157, 62);
+            this.btnClear.TabIndex = 65;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
             this.btnConfirm.Location = new System.Drawing.Point(384, 653);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(157, 62);
@@ -262,15 +218,64 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // btnClear
+            // btnBrowsImg
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnClear.Location = new System.Drawing.Point(654, 653);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(157, 62);
-            this.btnClear.TabIndex = 65;
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
+            this.btnBrowsImg.Image = global::GUI.Properties.Resources.add_image;
+            this.btnBrowsImg.Location = new System.Drawing.Point(1017, 145);
+            this.btnBrowsImg.Name = "btnBrowsImg";
+            this.btnBrowsImg.Size = new System.Drawing.Size(123, 63);
+            this.btnBrowsImg.TabIndex = 68;
+            this.btnBrowsImg.UseVisualStyleBackColor = false;
+            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
+            // 
+            // btnThemLoaiSp
+            // 
+            this.btnThemLoaiSp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnThemLoaiSp.Image = global::GUI.Properties.Resources.other;
+            this.btnThemLoaiSp.Location = new System.Drawing.Point(654, 220);
+            this.btnThemLoaiSp.Name = "btnThemLoaiSp";
+            this.btnThemLoaiSp.Size = new System.Drawing.Size(85, 28);
+            this.btnThemLoaiSp.TabIndex = 67;
+            this.btnThemLoaiSp.UseVisualStyleBackColor = false;
+            this.btnThemLoaiSp.Click += new System.EventHandler(this.btnThemLoaiSp_Click);
+            // 
+            // btnThemNCC
+            // 
+            this.btnThemNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnThemNCC.Image = global::GUI.Properties.Resources.other;
+            this.btnThemNCC.Location = new System.Drawing.Point(654, 145);
+            this.btnThemNCC.Name = "btnThemNCC";
+            this.btnThemNCC.Size = new System.Drawing.Size(85, 28);
+            this.btnThemNCC.TabIndex = 66;
+            this.btnThemNCC.UseVisualStyleBackColor = false;
+            this.btnThemNCC.Click += new System.EventHandler(this.btnThemNCC_Click);
+            // 
+            // ptbShowImage
+            // 
+            this.ptbShowImage.Location = new System.Drawing.Point(1017, 222);
+            this.ptbShowImage.Name = "ptbShowImage";
+            this.ptbShowImage.Size = new System.Drawing.Size(255, 266);
+            this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbShowImage.TabIndex = 63;
+            this.ptbShowImage.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 42;
+            this.btnExit.Location = new System.Drawing.Point(1341, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 45);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormNhapSanPham
             // 

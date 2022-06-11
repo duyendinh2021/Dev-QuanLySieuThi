@@ -128,22 +128,21 @@
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Consolas", 10.2F);
+            this.btnCapNhat.Image = global::GUI.Properties.Resources.update;
             this.btnCapNhat.Location = new System.Drawing.Point(547, 419);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(187, 66);
             this.btnCapNhat.TabIndex = 11;
-            this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Consolas", 10.2F);
+            this.btnSua.Image = global::GUI.Properties.Resources.edit;
             this.btnSua.Location = new System.Drawing.Point(224, 419);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(187, 66);
             this.btnSua.TabIndex = 11;
-            this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 

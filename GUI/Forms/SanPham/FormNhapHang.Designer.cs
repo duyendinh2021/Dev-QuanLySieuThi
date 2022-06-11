@@ -29,23 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapHang));
             this.panHeader = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.grbDSHangHoa = new System.Windows.Forms.GroupBox();
-            this.cmbLoaiSP = new System.Windows.Forms.ComboBox();
-            this.dtgDSHangHoa = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSl = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.grbDSNhapHang = new System.Windows.Forms.GroupBox();
             this.dgvHoaDonNhap = new System.Windows.Forms.DataGridView();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,25 +45,33 @@
             this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtTongGia = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbLoaiSP = new System.Windows.Forms.ComboBox();
+            this.grbDSHangHoa = new System.Windows.Forms.GroupBox();
+            this.dtgDSHangHoa = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSl = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnHangMoi = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.Add = new System.Windows.Forms.DataGridViewImageColumn();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.grbDSHangHoa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDSHangHoa)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.grbDSNhapHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonNhap)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.grbDSHangHoa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDSHangHoa)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panHeader
@@ -107,145 +107,33 @@
             this.splitContainer1.SplitterDistance = 726;
             this.splitContainer1.TabIndex = 12;
             // 
-            // panel1
+            // txtSearch
             // 
-            this.panel1.Controls.Add(this.txtSl);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 616);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 95);
-            this.panel1.TabIndex = 0;
+            this.txtSearch.Location = new System.Drawing.Point(175, 60);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(267, 22);
+            this.txtSearch.TabIndex = 6;
             // 
-            // grbDSHangHoa
+            // label3
             // 
-            this.grbDSHangHoa.Controls.Add(this.dtgDSHangHoa);
-            this.grbDSHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grbDSHangHoa.Location = new System.Drawing.Point(0, 114);
-            this.grbDSHangHoa.Name = "grbDSHangHoa";
-            this.grbDSHangHoa.Size = new System.Drawing.Size(738, 502);
-            this.grbDSHangHoa.TabIndex = 1;
-            this.grbDSHangHoa.TabStop = false;
-            this.grbDSHangHoa.Text = "Danh Sách Hàng Hóa";
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(39, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 31);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Tìm Kiếm";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // cmbLoaiSP
+            // panel3
             // 
-            this.cmbLoaiSP.FormattingEnabled = true;
-            this.cmbLoaiSP.Location = new System.Drawing.Point(28, 60);
-            this.cmbLoaiSP.Name = "cmbLoaiSP";
-            this.cmbLoaiSP.Size = new System.Drawing.Size(256, 24);
-            this.cmbLoaiSP.TabIndex = 2;
-            // 
-            // dtgDSHangHoa
-            // 
-            this.dtgDSHangHoa.AllowUserToAddRows = false;
-            this.dtgDSHangHoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgDSHangHoa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dtgDSHangHoa.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dtgDSHangHoa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgDSHangHoa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgDSHangHoa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgDSHangHoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgDSHangHoa.ColumnHeadersHeight = 40;
-            this.dtgDSHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgDSHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Add});
-            this.dtgDSHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgDSHangHoa.EnableHeadersVisualStyles = false;
-            this.dtgDSHangHoa.GridColor = System.Drawing.Color.Gainsboro;
-            this.dtgDSHangHoa.Location = new System.Drawing.Point(3, 18);
-            this.dtgDSHangHoa.Name = "dtgDSHangHoa";
-            this.dtgDSHangHoa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dtgDSHangHoa.RowHeadersVisible = false;
-            this.dtgDSHangHoa.RowHeadersWidth = 51;
-            this.dtgDSHangHoa.RowTemplate.Height = 24;
-            this.dtgDSHangHoa.Size = new System.Drawing.Size(732, 481);
-            this.dtgDSHangHoa.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nhập Số Lượng Cần Nhập";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // txtSl
-            // 
-            this.txtSl.Location = new System.Drawing.Point(293, 38);
-            this.txtSl.Name = "txtSl";
-            this.txtSl.Size = new System.Drawing.Size(255, 22);
-            this.txtSl.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.btnConfirm);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 594);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(726, 117);
-            this.panel2.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.button3.Image = global::GUI.Properties.Resources.clear;
-            this.button3.Location = new System.Drawing.Point(470, 24);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 58);
-            this.button3.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.button3, "Nhấn Xóa Danh Sách Hàng Nhập");
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.button2.Image = global::GUI.Properties.Resources.add;
-            this.button2.Location = new System.Drawing.Point(266, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 58);
-            this.button2.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.button2, "Nhấn Thêm Sản Phẩm Mới");
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnConfirm.Image = global::GUI.Properties.Resources.add_Hang;
-            this.btnConfirm.Location = new System.Drawing.Point(52, 24);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(147, 58);
-            this.btnConfirm.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnConfirm, "Nhấn Tạo Phiếu Nhập Kho");
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 40;
-            this.btnExit.Location = new System.Drawing.Point(1393, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 45);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.panel3.Controls.Add(this.grbDSNhapHang);
+            this.panel3.Controls.Add(this.txtTongGia);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 114);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(726, 480);
+            this.panel3.TabIndex = 4;
             // 
             // grbDSNhapHang
             // 
@@ -341,6 +229,13 @@
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             // 
+            // txtTongGia
+            // 
+            this.txtTongGia.Location = new System.Drawing.Point(266, 441);
+            this.txtTongGia.Name = "txtTongGia";
+            this.txtTongGia.Size = new System.Drawing.Size(242, 22);
+            this.txtTongGia.TabIndex = 3;
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -351,40 +246,145 @@
             this.label2.Text = "Tổng Giá Trị";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // txtTongGia
+            // panel2
             // 
-            this.txtTongGia.Location = new System.Drawing.Point(266, 441);
-            this.txtTongGia.Name = "txtTongGia";
-            this.txtTongGia.Size = new System.Drawing.Size(242, 22);
-            this.txtTongGia.TabIndex = 3;
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.btnHangMoi);
+            this.panel2.Controls.Add(this.btnConfirm);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 594);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(726, 117);
+            this.panel2.TabIndex = 0;
             // 
-            // panel3
+            // cmbLoaiSP
             // 
-            this.panel3.Controls.Add(this.grbDSNhapHang);
-            this.panel3.Controls.Add(this.txtTongGia);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 114);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(726, 480);
-            this.panel3.TabIndex = 4;
+            this.cmbLoaiSP.FormattingEnabled = true;
+            this.cmbLoaiSP.Location = new System.Drawing.Point(28, 60);
+            this.cmbLoaiSP.Name = "cmbLoaiSP";
+            this.cmbLoaiSP.Size = new System.Drawing.Size(256, 24);
+            this.cmbLoaiSP.TabIndex = 2;
             // 
-            // label3
+            // grbDSHangHoa
             // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 31);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tìm Kiếm";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.grbDSHangHoa.Controls.Add(this.dtgDSHangHoa);
+            this.grbDSHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grbDSHangHoa.Location = new System.Drawing.Point(0, 114);
+            this.grbDSHangHoa.Name = "grbDSHangHoa";
+            this.grbDSHangHoa.Size = new System.Drawing.Size(738, 502);
+            this.grbDSHangHoa.TabIndex = 1;
+            this.grbDSHangHoa.TabStop = false;
+            this.grbDSHangHoa.Text = "Danh Sách Hàng Hóa";
             // 
-            // txtSearch
+            // dtgDSHangHoa
             // 
-            this.txtSearch.Location = new System.Drawing.Point(175, 60);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(267, 22);
-            this.txtSearch.TabIndex = 6;
+            this.dtgDSHangHoa.AllowUserToAddRows = false;
+            this.dtgDSHangHoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgDSHangHoa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtgDSHangHoa.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dtgDSHangHoa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgDSHangHoa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgDSHangHoa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgDSHangHoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgDSHangHoa.ColumnHeadersHeight = 40;
+            this.dtgDSHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgDSHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Add});
+            this.dtgDSHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgDSHangHoa.EnableHeadersVisualStyles = false;
+            this.dtgDSHangHoa.GridColor = System.Drawing.Color.Gainsboro;
+            this.dtgDSHangHoa.Location = new System.Drawing.Point(3, 18);
+            this.dtgDSHangHoa.Name = "dtgDSHangHoa";
+            this.dtgDSHangHoa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtgDSHangHoa.RowHeadersVisible = false;
+            this.dtgDSHangHoa.RowHeadersWidth = 51;
+            this.dtgDSHangHoa.RowTemplate.Height = 24;
+            this.dtgDSHangHoa.Size = new System.Drawing.Size(732, 481);
+            this.dtgDSHangHoa.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtSl);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 616);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(738, 95);
+            this.panel1.TabIndex = 0;
+            // 
+            // txtSl
+            // 
+            this.txtSl.Location = new System.Drawing.Point(293, 38);
+            this.txtSl.Name = "txtSl";
+            this.txtSl.Size = new System.Drawing.Size(255, 22);
+            this.txtSl.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(233, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nhập Số Lượng Cần Nhập";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.button3.Image = global::GUI.Properties.Resources.clear;
+            this.button3.Location = new System.Drawing.Point(470, 24);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(147, 58);
+            this.button3.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.button3, "Nhấn Xóa Danh Sách Hàng Nhập");
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // btnHangMoi
+            // 
+            this.btnHangMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnHangMoi.Image = global::GUI.Properties.Resources.add;
+            this.btnHangMoi.Location = new System.Drawing.Point(266, 24);
+            this.btnHangMoi.Name = "btnHangMoi";
+            this.btnHangMoi.Size = new System.Drawing.Size(147, 58);
+            this.btnHangMoi.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnHangMoi, "Nhấn Thêm Sản Phẩm Mới");
+            this.btnHangMoi.UseVisualStyleBackColor = false;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnConfirm.Image = global::GUI.Properties.Resources.add_Hang;
+            this.btnConfirm.Location = new System.Drawing.Point(52, 24);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(147, 58);
+            this.btnConfirm.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnConfirm, "Nhấn Tạo Phiếu Nhập Kho");
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 40;
+            this.btnExit.Location = new System.Drawing.Point(1393, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 45);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Add
             // 
@@ -411,15 +411,15 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.grbDSHangHoa.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDSHangHoa)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.grbDSNhapHang.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonNhap)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.grbDSNhapHang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonNhap)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.grbDSHangHoa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDSHangHoa)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -431,7 +431,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHangMoi;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.ComboBox cmbLoaiSP;
         private System.Windows.Forms.GroupBox grbDSHangHoa;

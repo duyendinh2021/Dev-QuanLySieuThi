@@ -29,6 +29,7 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            FontAwesome.Sharp.IconButton btnTimkiem;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            FontAwesome.Sharp.IconButton btnTimkiem;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyNhanVien));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -71,6 +71,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGVDanhSachNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnTimkiem
+            // 
+            btnTimkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            btnTimkiem.BackColor = System.Drawing.Color.Transparent;
+            btnTimkiem.Cursor = System.Windows.Forms.Cursors.Default;
+            btnTimkiem.FlatAppearance.BorderSize = 0;
+            btnTimkiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnTimkiem.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            btnTimkiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            btnTimkiem.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btnTimkiem.IconColor = System.Drawing.Color.Black;
+            btnTimkiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTimkiem.IconSize = 28;
+            btnTimkiem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            btnTimkiem.Location = new System.Drawing.Point(1264, 18);
+            btnTimkiem.Name = "btnTimkiem";
+            btnTimkiem.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
+            btnTimkiem.Size = new System.Drawing.Size(69, 36);
+            btnTimkiem.TabIndex = 2;
+            btnTimkiem.UseMnemonic = false;
+            btnTimkiem.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -235,7 +259,6 @@
             this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewImageColumn1.FillWeight = 94.50655F;
             this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::GUI.Properties.Resources.edit;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
@@ -251,7 +274,6 @@
             this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewImageColumn2.FillWeight = 94.50655F;
             this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::GUI.Properties.Resources.delete;
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
@@ -265,7 +287,6 @@
             dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
             this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewImageColumn3.HeaderText = "";
-            this.dataGridViewImageColumn3.Image = global::GUI.Properties.Resources.eye;
             this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.dataGridViewImageColumn3.MinimumWidth = 6;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
@@ -300,30 +321,6 @@
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnTimkiem
-            // 
-            btnTimkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            btnTimkiem.BackColor = System.Drawing.Color.Transparent;
-            btnTimkiem.Cursor = System.Windows.Forms.Cursors.Default;
-            btnTimkiem.FlatAppearance.BorderSize = 0;
-            btnTimkiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnTimkiem.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            btnTimkiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            btnTimkiem.IconChar = FontAwesome.Sharp.IconChar.Search;
-            btnTimkiem.IconColor = System.Drawing.Color.Black;
-            btnTimkiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTimkiem.IconSize = 28;
-            btnTimkiem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            btnTimkiem.Location = new System.Drawing.Point(1264, 18);
-            btnTimkiem.Name = "btnTimkiem";
-            btnTimkiem.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
-            btnTimkiem.Size = new System.Drawing.Size(69, 36);
-            btnTimkiem.TabIndex = 2;
-            btnTimkiem.UseMnemonic = false;
-            btnTimkiem.UseVisualStyleBackColor = false;
             // 
             // Checked
             // 
@@ -360,7 +357,7 @@
             this.btnXoa.DefaultCellStyle = dataGridViewCellStyle3;
             this.btnXoa.FillWeight = 94.50655F;
             this.btnXoa.HeaderText = "";
-            this.btnXoa.Image = global::GUI.Properties.Resources.delete1;
+            this.btnXoa.Image = global::GUI.Properties.Resources.delete;
             this.btnXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.btnXoa.MinimumWidth = 6;
             this.btnXoa.Name = "btnXoa";
@@ -374,7 +371,7 @@
             dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
             this.btnXemAcc.DefaultCellStyle = dataGridViewCellStyle4;
             this.btnXemAcc.HeaderText = "";
-            this.btnXemAcc.Image = global::GUI.Properties.Resources.view;
+            this.btnXemAcc.Image = global::GUI.Properties.Resources.eye;
             this.btnXemAcc.MinimumWidth = 6;
             this.btnXemAcc.Name = "btnXemAcc";
             this.btnXemAcc.Width = 50;

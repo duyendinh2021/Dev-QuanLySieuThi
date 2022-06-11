@@ -206,19 +206,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -248,18 +248,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
-    <None Include="Resources\left-arrow.png" />
-    <None Include="Resources\add_Hang.png" />
-    <None Include="Resources\add.png" />
-    <None Include="Resources\close.png" />
-    <None Include="Resources\clear.png" />
-    <None Include="Resources\confirmation.png" />
     <None Include="Resources\photo.png" />
-    <None Include="Resources\other.png" />
-    <None Include="Resources\view.png" />
-    <None Include="Resources\delete1.png" />
+    <None Include="Resources\update.png" />
     <None Include="Resources\eye.png" />
+    <None Include="Resources\delete1.png" />
     <None Include="Resources\edit.png" />
+    <None Include="Resources\add-image.png" />
+    <None Include="Resources\other.png" />
+    <None Include="Resources\confirmation.png" />
+    <None Include="Resources\left-arrow.png" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\add_Hang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
