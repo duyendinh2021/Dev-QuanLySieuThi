@@ -31,16 +31,16 @@
             this.panHeader = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.grbThongTinNCC = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTenCongTy = new System.Windows.Forms.TextBox();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
-            this.txtSoNganHang = new System.Windows.Forms.TextBox();
             this.txtTenNganHang = new System.Windows.Forms.TextBox();
+            this.txtSoNganHang = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtTenCongTy = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnConfirm = new FontAwesome.Sharp.IconButton();
             this.panHeader.SuspendLayout();
@@ -94,25 +94,50 @@
             this.grbThongTinNCC.TabStop = false;
             this.grbThongTinNCC.Text = "Thông Tin Nhà Cung Cấp";
             // 
-            // label2
+            // txtTenNganHang
             // 
-            this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(82, 183);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Dịa Chỉ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.txtTenNganHang.Location = new System.Drawing.Point(876, 187);
+            this.txtTenNganHang.Name = "txtTenNganHang";
+            this.txtTenNganHang.Size = new System.Drawing.Size(253, 22);
+            this.txtTenNganHang.TabIndex = 4;
+            this.txtTenNganHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenNganHang_KeyDown);
+            this.txtTenNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNganHang_KeyPress);
             // 
-            // label3
+            // txtSoNganHang
             // 
-            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(82, 261);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Số Điện Thoại";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.txtSoNganHang.Location = new System.Drawing.Point(876, 90);
+            this.txtSoNganHang.Name = "txtSoNganHang";
+            this.txtSoNganHang.Size = new System.Drawing.Size(253, 22);
+            this.txtSoNganHang.TabIndex = 3;
+            this.txtSoNganHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoNganHang_KeyDown);
+            this.txtSoNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoNganHang_KeyPress);
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(267, 264);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(321, 22);
+            this.txtSDT.TabIndex = 2;
+            this.txtSDT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSDT_KeyDown);
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(267, 187);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(321, 22);
+            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDiaChi_KeyDown);
+            this.txtDiaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiaChi_KeyPress);
+            // 
+            // txtTenCongTy
+            // 
+            this.txtTenCongTy.Location = new System.Drawing.Point(267, 89);
+            this.txtTenCongTy.Name = "txtTenCongTy";
+            this.txtTenCongTy.Size = new System.Drawing.Size(321, 22);
+            this.txtTenCongTy.TabIndex = 0;
+            this.txtTenCongTy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenCongTy_KeyDown);
+            this.txtTenCongTy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenCongTy_KeyPress);
             // 
             // label4
             // 
@@ -124,15 +149,15 @@
             this.label4.Text = "Tên Ngân Hàng";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label1
+            // label3
             // 
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(82, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên Công Ty";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(82, 261);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(197, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Số Điện Thoại";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label5
             // 
@@ -144,50 +169,25 @@
             this.label5.Text = "Số Ngân Hàng";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // txtTenCongTy
+            // label1
             // 
-            this.txtTenCongTy.Location = new System.Drawing.Point(267, 89);
-            this.txtTenCongTy.Name = "txtTenCongTy";
-            this.txtTenCongTy.Size = new System.Drawing.Size(321, 22);
-            this.txtTenCongTy.TabIndex = 0;
-            this.txtTenCongTy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenCongTy_KeyDown);
-            this.txtTenCongTy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenCongTy_KeyPress);
+            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(82, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tên Công Ty";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // txtDiaChi
+            // label2
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(267, 187);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(321, 22);
-            this.txtDiaChi.TabIndex = 1;
-            this.txtDiaChi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDiaChi_KeyDown);
-            this.txtDiaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiaChi_KeyPress);
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(267, 264);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(321, 22);
-            this.txtSDT.TabIndex = 2;
-            this.txtSDT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSDT_KeyDown);
-            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
-            // 
-            // txtSoNganHang
-            // 
-            this.txtSoNganHang.Location = new System.Drawing.Point(876, 90);
-            this.txtSoNganHang.Name = "txtSoNganHang";
-            this.txtSoNganHang.Size = new System.Drawing.Size(253, 22);
-            this.txtSoNganHang.TabIndex = 3;
-            this.txtSoNganHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoNganHang_KeyDown);
-            this.txtSoNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoNganHang_KeyPress);
-            // 
-            // txtTenNganHang
-            // 
-            this.txtTenNganHang.Location = new System.Drawing.Point(876, 187);
-            this.txtTenNganHang.Name = "txtTenNganHang";
-            this.txtTenNganHang.Size = new System.Drawing.Size(253, 22);
-            this.txtTenNganHang.TabIndex = 4;
-            this.txtTenNganHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenNganHang_KeyDown);
-            this.txtTenNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNganHang_KeyPress);
+            this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(82, 183);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Dịa Chỉ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // btnClear
             // 
@@ -225,7 +225,7 @@
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = false;
-            //this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // FormThemNhaCungCap
             // 

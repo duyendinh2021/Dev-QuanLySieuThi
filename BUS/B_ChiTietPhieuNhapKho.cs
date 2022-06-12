@@ -23,5 +23,14 @@ namespace BUS
                 return instance;
             }
         }
+
+
+
+
+        [Obsolete]
+        public void stokerCreateDetailsReceipt(object[] parameter)
+        {
+            D_ChiTietPhieuNhapKho.Instance.stokerCreateDetailsReceipt(parameter);
+        }
     }
 }

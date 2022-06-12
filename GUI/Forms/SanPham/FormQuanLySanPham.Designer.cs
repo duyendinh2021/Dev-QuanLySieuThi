@@ -41,8 +41,13 @@
             this.chkThitca = new System.Windows.Forms.CheckBox();
             this.panMain = new System.Windows.Forms.Panel();
             this.panDash = new System.Windows.Forms.Panel();
+            this.ptbXemSanPham = new System.Windows.Forms.PictureBox();
             this.dtDanhSachSP = new System.Windows.Forms.DataGridView();
+            this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colbtnXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblHangHoa = new System.Windows.Forms.Label();
+            this.btnNhapHang = new FontAwesome.Sharp.IconButton();
             this.panDashside2 = new System.Windows.Forms.Panel();
             this.panTimKiem = new System.Windows.Forms.Panel();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -53,23 +58,16 @@
             this.radAll = new System.Windows.Forms.RadioButton();
             this.panTonKho = new System.Windows.Forms.Panel();
             this.panSideMenu = new System.Windows.Forms.Panel();
-            this.panBottom1 = new System.Windows.Forms.Panel();
-            this.ptbXemSanPham = new System.Windows.Forms.PictureBox();
-            this.btnXuatFile = new FontAwesome.Sharp.IconButton();
-            this.btnNhapHang = new FontAwesome.Sharp.IconButton();
-            this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.btnTonKho = new FontAwesome.Sharp.IconButton();
             this.btnLoaiHang = new FontAwesome.Sharp.IconButton();
+            this.panBottom1 = new System.Windows.Forms.Panel();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colbtnXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.panMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDanhSachSP)).BeginInit();
             this.panLoaiHang.SuspendLayout();
             this.panTonKho.SuspendLayout();
             this.panSideMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).BeginInit();
             this.SuspendLayout();
             // 
             // chkSua
@@ -134,9 +132,7 @@
             this.panMain.Controls.Add(this.ptbXemSanPham);
             this.panMain.Controls.Add(this.dtDanhSachSP);
             this.panMain.Controls.Add(this.lblHangHoa);
-            this.panMain.Controls.Add(this.btnXuatFile);
             this.panMain.Controls.Add(this.btnNhapHang);
-            this.panMain.Controls.Add(this.btnAdd);
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(389, 0);
             this.panMain.Name = "panMain";
@@ -150,6 +146,14 @@
             this.panDash.Name = "panDash";
             this.panDash.Size = new System.Drawing.Size(277, 4);
             this.panDash.TabIndex = 29;
+            // 
+            // ptbXemSanPham
+            // 
+            this.ptbXemSanPham.Location = new System.Drawing.Point(641, 40);
+            this.ptbXemSanPham.Name = "ptbXemSanPham";
+            this.ptbXemSanPham.Size = new System.Drawing.Size(277, 163);
+            this.ptbXemSanPham.TabIndex = 28;
+            this.ptbXemSanPham.TabStop = false;
             // 
             // dtDanhSachSP
             // 
@@ -201,6 +205,42 @@
             this.dtDanhSachSP.Size = new System.Drawing.Size(981, 476);
             this.dtDanhSachSP.TabIndex = 27;
             // 
+            // Checked
+            // 
+            this.Checked.HeaderText = "";
+            this.Checked.MinimumWidth = 6;
+            this.Checked.Name = "Checked";
+            this.Checked.Width = 35;
+            // 
+            // colbtnSua
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.colbtnSua.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colbtnSua.HeaderText = "";
+            this.colbtnSua.Image = global::GUI.Properties.Resources.edit;
+            this.colbtnSua.MinimumWidth = 6;
+            this.colbtnSua.Name = "colbtnSua";
+            this.colbtnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colbtnSua.Width = 45;
+            // 
+            // colbtnXoa
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            this.colbtnXoa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colbtnXoa.HeaderText = "";
+            this.colbtnXoa.Image = global::GUI.Properties.Resources.delete;
+            this.colbtnXoa.MinimumWidth = 6;
+            this.colbtnXoa.Name = "colbtnXoa";
+            this.colbtnXoa.Width = 45;
+            // 
             // lblHangHoa
             // 
             this.lblHangHoa.AutoSize = true;
@@ -210,6 +250,24 @@
             this.lblHangHoa.Size = new System.Drawing.Size(124, 29);
             this.lblHangHoa.TabIndex = 26;
             this.lblHangHoa.Text = "Hàng hóa";
+            // 
+            // btnNhapHang
+            // 
+            this.btnNhapHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnNhapHang.FlatAppearance.BorderSize = 0;
+            this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapHang.ForeColor = System.Drawing.Color.White;
+            this.btnNhapHang.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNhapHang.IconColor = System.Drawing.Color.Black;
+            this.btnNhapHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNhapHang.Location = new System.Drawing.Point(30, 143);
+            this.btnNhapHang.Name = "btnNhapHang";
+            this.btnNhapHang.Size = new System.Drawing.Size(116, 50);
+            this.btnNhapHang.TabIndex = 25;
+            this.btnNhapHang.Text = "Nhập hàng";
+            this.btnNhapHang.UseVisualStyleBackColor = false;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
             // panDashside2
             // 
@@ -335,75 +393,6 @@
             this.panSideMenu.Size = new System.Drawing.Size(369, 790);
             this.panSideMenu.TabIndex = 15;
             // 
-            // panBottom1
-            // 
-            this.panBottom1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panBottom1.Location = new System.Drawing.Point(0, 50);
-            this.panBottom1.Name = "panBottom1";
-            this.panBottom1.Size = new System.Drawing.Size(369, 14);
-            this.panBottom1.TabIndex = 2;
-            // 
-            // ptbXemSanPham
-            // 
-            this.ptbXemSanPham.Location = new System.Drawing.Point(641, 40);
-            this.ptbXemSanPham.Name = "ptbXemSanPham";
-            this.ptbXemSanPham.Size = new System.Drawing.Size(277, 163);
-            this.ptbXemSanPham.TabIndex = 28;
-            this.ptbXemSanPham.TabStop = false;
-            // 
-            // btnXuatFile
-            // 
-            this.btnXuatFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnXuatFile.FlatAppearance.BorderSize = 0;
-            this.btnXuatFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuatFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatFile.ForeColor = System.Drawing.Color.White;
-            this.btnXuatFile.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnXuatFile.IconColor = System.Drawing.Color.Black;
-            this.btnXuatFile.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXuatFile.Location = new System.Drawing.Point(364, 143);
-            this.btnXuatFile.Name = "btnXuatFile";
-            this.btnXuatFile.Size = new System.Drawing.Size(116, 50);
-            this.btnXuatFile.TabIndex = 25;
-            this.btnXuatFile.Text = "Xuất file ";
-            this.btnXuatFile.UseVisualStyleBackColor = false;
-            // 
-            // btnNhapHang
-            // 
-            this.btnNhapHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnNhapHang.FlatAppearance.BorderSize = 0;
-            this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapHang.ForeColor = System.Drawing.Color.White;
-            this.btnNhapHang.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnNhapHang.IconColor = System.Drawing.Color.Black;
-            this.btnNhapHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNhapHang.Location = new System.Drawing.Point(191, 143);
-            this.btnNhapHang.Name = "btnNhapHang";
-            this.btnNhapHang.Size = new System.Drawing.Size(116, 50);
-            this.btnNhapHang.TabIndex = 25;
-            this.btnNhapHang.Text = "Nhập hàng";
-            this.btnNhapHang.UseVisualStyleBackColor = false;
-            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAdd.IconColor = System.Drawing.Color.Black;
-            this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdd.Location = new System.Drawing.Point(19, 143);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 50);
-            this.btnAdd.TabIndex = 25;
-            this.btnAdd.Text = "Thêm mới";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // btnTonKho
             // 
             this.btnTonKho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
@@ -442,6 +431,14 @@
             this.btnLoaiHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnLoaiHang.UseVisualStyleBackColor = false;
             // 
+            // panBottom1
+            // 
+            this.panBottom1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panBottom1.Location = new System.Drawing.Point(0, 50);
+            this.panBottom1.Name = "panBottom1";
+            this.panBottom1.Size = new System.Drawing.Size(369, 14);
+            this.panBottom1.TabIndex = 2;
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
@@ -460,42 +457,6 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // Checked
-            // 
-            this.Checked.HeaderText = "";
-            this.Checked.MinimumWidth = 6;
-            this.Checked.Name = "Checked";
-            this.Checked.Width = 35;
-            // 
-            // colbtnSua
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.colbtnSua.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colbtnSua.HeaderText = "";
-            this.colbtnSua.Image = global::GUI.Properties.Resources.edit;
-            this.colbtnSua.MinimumWidth = 6;
-            this.colbtnSua.Name = "colbtnSua";
-            this.colbtnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colbtnSua.Width = 45;
-            // 
-            // colbtnXoa
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            this.colbtnXoa.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colbtnXoa.HeaderText = "";
-            this.colbtnXoa.Image = global::GUI.Properties.Resources.delete;
-            this.colbtnXoa.MinimumWidth = 6;
-            this.colbtnXoa.Name = "colbtnXoa";
-            this.colbtnXoa.Width = 45;
-            // 
             // FormQuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -509,6 +470,7 @@
             this.Text = "FormQuanLySanPham";
             this.panMain.ResumeLayout(false);
             this.panMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDanhSachSP)).EndInit();
             this.panLoaiHang.ResumeLayout(false);
             this.panLoaiHang.PerformLayout();
@@ -516,7 +478,6 @@
             this.panTonKho.PerformLayout();
             this.panSideMenu.ResumeLayout(false);
             this.panSideMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -532,9 +493,7 @@
         private System.Windows.Forms.PictureBox ptbXemSanPham;
         private System.Windows.Forms.DataGridView dtDanhSachSP;
         private System.Windows.Forms.Label lblHangHoa;
-        private FontAwesome.Sharp.IconButton btnXuatFile;
         private FontAwesome.Sharp.IconButton btnNhapHang;
-        private FontAwesome.Sharp.IconButton btnAdd;
         private System.Windows.Forms.Panel panDashside2;
         private System.Windows.Forms.Panel panTimKiem;
         private System.Windows.Forms.CheckBox checkBox4;

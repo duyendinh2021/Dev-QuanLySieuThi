@@ -485,11 +485,6 @@ namespace DAO
 
 
 
-        [Obsolete]
-        public void stokerAddSanPham(object[] parameter)
-        {
-            string query = "EXEC InsertSanPham @tenSP , @id_ncc , @id_loaiSP , @sl , @dvt , @donGia , @hinh";
-            connectionData.Instance.excuteNonQueryStoreProcedure(query,parameter);
-        }
+
     }
 }

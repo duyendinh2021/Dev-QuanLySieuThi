@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.Forms.SanPham;
+using BUS;
 
 namespace GUI.Forms.SanPham
 {
@@ -20,6 +22,151 @@ namespace GUI.Forms.SanPham
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        [Obsolete]
+        private void FormNhapHang_Load(object sender, EventArgs e)
+        {
+            BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSP);
+            BUS.B_SanPham.Instance.getAllSanPham(ref dtgDSHangHoa);
+            cmbLoaiSP.SelectedIndex = -1;
+
+            dtgDSHangHoa.Columns["Hinh"].Visible = false;
+            dtgDSHangHoa.Columns["Trangthai"].Visible = false;
+        }
+
+
+        [Obsolete]
+        private void cmbLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id;
+            if (cmbLoaiSP.SelectedIndex == -1)
+            {
+                id = 0;
+            }
+            else
+            {
+                id = int.Parse(cmbLoaiSP.SelectedValue.ToString());
+            }
+            BUS.B_SanPham.Instance.loadSanPhamByLoaiSp(ref dtgDSHangHoa, id);
+        }
+
+        private void dtgDSHangHoa_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dtgDSHangHoa.Rows[e.RowIndex];
+            if (e.RowIndex != -1)
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    if (txtSl.Text == "")
+                    {
+                        MessageBox.Show("Vui lòng nhập sồ lượng muốn nhập");
+                        txtSl.Focus();
+                    }
+                    else
+                    {
+                        int sl = int.Parse(txtSl.Text);
+
+                        if (dgvHoaDonNhap.Rows.Count > 0)
+                        {
+
+                            foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
+                            {
+
+                                if (item.Cells["ID"].Value.ToString() == row.Cells["ID_SP"].Value.ToString())
+                                {
+                                    item.Cells["QTY"].Value = (int.Parse(item.Cells["QTY"].Value.ToString()) + int.Parse(txtSl.Text));
+                                    item.Cells["COST"].Value = decimal.Parse(item.Cells["QTY"].Value.ToString()) * decimal.Parse(row.Cells["dongia"].Value.ToString());
+                                    tinhTongGia();
+
+                                    return;
+                                }
+
+                            }
+                            dgvHoaDonNhap.Rows.Add(row.Cells["Ten"].Value.ToString(), sl, decimal.Parse(row.Cells["dongia"].Value.ToString()) * decimal.Parse(txtSl.Text), row.Cells["ID_SP"].Value.ToString(), row.Cells["id_ncc"].Value.ToString());
+                        }
+                        else
+                        {
+                            dgvHoaDonNhap.Rows.Add(row.Cells["Ten"].Value.ToString(), sl, (decimal.Parse(row.Cells["dongia"].Value.ToString()) * decimal.Parse(txtSl.Text)).ToString(), row.Cells["ID_SP"].Value.ToString(), row.Cells["id_ncc"].Value.ToString());
+                        }
+
+                        tinhTongGia();
+                    }
+                }
+            }
+        }
+
+        private void tinhTongGia()
+        {
+            decimal tonggia = 0;
+            foreach (DataGridViewRow item_gia in dgvHoaDonNhap.Rows)
+            {
+                tonggia += decimal.Parse(item_gia.Cells["COST"].Value.ToString());
+            }
+            txtTongGia.Clear();
+            txtTongGia.Text = tonggia.ToString();
+        }
+
+
+        [Obsolete]
+        private void btnHangMoi_Click(object sender, EventArgs e)
+        {
+            FormNhapSanPham formNhapSanPham = new FormNhapSanPham();
+            formNhapSanPham.ShowDialog();
+            BUS.B_SanPham.Instance.getAllSanPham(ref dtgDSHangHoa);
+
+        }
+
+
+
+        [Obsolete]
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Xác nhận nhập các mặt hàng trên chứ", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                string ngaylap = DateTime.Now.ToShortDateString();
+                decimal tonggia = decimal.Parse(txtTongGia.Text);
+                object[] phieunhatkho = new object[] { BUS.B_TaiKhoan.Instance.id, ngaylap, tonggia };
+                if (BUS.B_PhieuNhapKho.Instance.stokerCreatePhieuNhapKho(phieunhatkho))
+                {
+                    int id_phieuNhap = B_PhieuNhapKho.Instance.stokerGetNewReceipt();
+
+                    foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
+                    {
+                        object[] chitietPhieuNhap = new object[] { id_phieuNhap, int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["id_ncc_PhieuNhap"].Value.ToString()), decimal.Parse(item.Cells["COST"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
+                        B_ChiTietPhieuNhapKho.Instance.stokerCreateDetailsReceipt(chitietPhieuNhap);
+
+                        object[] UpdateSLSanPham = new object[] { int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
+
+                        B_SanPham.Instance.UpdateSLSanPham(UpdateSLSanPham);
+                    }
+                    MessageBox.Show("Tạo Phiếu Nhập kho Thành Công", "Tuyệt vời");
+                }
+
+            }
+            BUS.B_SanPham.Instance.getAllSanPham(ref dtgDSHangHoa);
+        }
+
+        private void dgvHoaDonNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dgvHoaDonNhap.Rows[e.RowIndex];
+                if (e.ColumnIndex == 5)
+                {
+                    dgvHoaDonNhap.Rows.RemoveAt(e.RowIndex);
+                }
+            }
+        }
+
+
+        [Obsolete]
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            cmbLoaiSP.SelectedIndex = -1;
+            BUS.B_SanPham.Instance.getAllSanPham(ref dtgDSHangHoa);
         }
     }
 }

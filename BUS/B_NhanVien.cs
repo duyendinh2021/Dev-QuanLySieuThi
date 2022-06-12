@@ -223,18 +223,10 @@ namespace BUS
 
 
         [Obsolete]
-        public bool stokerAddSanPham(object[] parameter)
+        public void stokerGetNewProduct(ref DataTable dataTable)
         {
-            try
-            {
-                DAO.D_NhanVien.Instance.stokerAddSanPham(parameter);
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-            return true;
+            SanPham sanPham = D_SanPham.Instance.stokerGetNewProduct();
+            dataTable.Rows.Add(sanPham);
         }
     }
 }

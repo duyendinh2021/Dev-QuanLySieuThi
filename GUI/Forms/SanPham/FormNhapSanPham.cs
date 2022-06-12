@@ -21,7 +21,7 @@ namespace GUI.Forms
         }
         string sPathImg;
 
-        public object[] sanpham;
+        public DataTable sanpham = new DataTable();
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -99,7 +99,7 @@ namespace GUI.Forms
         {
             // tí phải làm phiếu nhập kho chi tiết phiếu nhập kho + với insert sản phẩm
 
-            if (txtTenSp.Text == "" || cmbNcc.SelectedIndex == -1 || cmbLoaiSp.SelectedIndex == -1 || txtSoLuong.Text == "" || cmbDVT.Text  == "" || txtDonGia.Text == "" || sPathImg == "")
+            if (txtTenSp.Text == "" || cmbNcc.SelectedIndex == -1 || cmbLoaiSp.SelectedIndex == -1 || cmbDVT.Text  == "" || txtDonGia.Text == "" || sPathImg == "")
             {
                 MessageBox.Show("Bạn Chưa Nhập Dủ Thông Tin, Vui Lòng Kiểm tra Lại, Tks !!!");
             }else
@@ -107,15 +107,20 @@ namespace GUI.Forms
                 string tensp = txtTenSp.Text;
                 int id_ncc = int.Parse(cmbNcc.SelectedValue.ToString());
                 int id_loai = int.Parse(cmbLoaiSp.SelectedValue.ToString());
-                int sl = int.Parse(txtSoLuong.Text);
+                //int sl = int.Parse(txtSoLuong.Text);
                 string dvt = cmbDVT.Text;
                 decimal dongai = decimal.Parse(txtDonGia.Text);
                 byte[] hinh = System.IO.File.ReadAllBytes(sPathImg);
 
                 // object chứa thông tinh san phẩm dc nhập
-                sanpham = new object[] { tensp, id_ncc, id_loai, sl,dvt, dongai, hinh};
+                object[] objects = new object[] { tensp, id_ncc, id_loai, 0, dvt, dongai, hinh };
+
+                if (B_SanPham.Instance.stokerAddSanPham(objects))
+                {
+                    B_SanPham.Instance.stokerGetNewProduct(ref sanpham);
+                }      
             }
-            
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)

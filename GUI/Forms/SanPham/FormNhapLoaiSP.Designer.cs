@@ -64,9 +64,9 @@
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 42;
-            this.btnExit.Location = new System.Drawing.Point(966, 0);
+            this.btnExit.Location = new System.Drawing.Point(983, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(101, 53);
+            this.btnExit.Size = new System.Drawing.Size(84, 53);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -91,7 +91,7 @@
             // btnBrowsImg
             // 
             this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
-            this.btnBrowsImg.Image = global::GUI.Properties.Resources.add_image;
+            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
             this.btnBrowsImg.Location = new System.Drawing.Point(714, 61);
             this.btnBrowsImg.Name = "btnBrowsImg";
             this.btnBrowsImg.Size = new System.Drawing.Size(123, 37);
@@ -170,6 +170,7 @@
             this.btnConfirm.Size = new System.Drawing.Size(157, 71);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // FormNhapLoaiSP
             // 

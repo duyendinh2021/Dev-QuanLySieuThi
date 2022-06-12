@@ -35,31 +35,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapHang));
             this.panHeader = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grbDSNhapHang = new System.Windows.Forms.GroupBox();
             this.dgvHoaDonNhap = new System.Windows.Forms.DataGridView();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtTongGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cmbLoaiSP = new System.Windows.Forms.ComboBox();
             this.grbDSHangHoa = new System.Windows.Forms.GroupBox();
             this.dtgDSHangHoa = new System.Windows.Forms.DataGridView();
+            this.ID_SP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_ncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_loaisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSl = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_ncc_PhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.btnHangMoi = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -82,7 +91,7 @@
             this.panHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panHeader.Location = new System.Drawing.Point(0, 0);
             this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1468, 45);
+            this.panHeader.Size = new System.Drawing.Size(1837, 45);
             this.panHeader.TabIndex = 11;
             // 
             // splitContainer1
@@ -93,36 +102,18 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.txtSearch);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.panel3);
             this.splitContainer1.Panel1.Controls.Add(this.panel2);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnRefresh);
             this.splitContainer1.Panel2.Controls.Add(this.cmbLoaiSP);
             this.splitContainer1.Panel2.Controls.Add(this.grbDSHangHoa);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1468, 711);
-            this.splitContainer1.SplitterDistance = 726;
+            this.splitContainer1.Size = new System.Drawing.Size(1837, 711);
+            this.splitContainer1.SplitterDistance = 651;
             this.splitContainer1.TabIndex = 12;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(175, 60);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(267, 22);
-            this.txtSearch.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 31);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tìm Kiếm";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel3
             // 
@@ -132,7 +123,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 114);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(726, 480);
+            this.panel3.Size = new System.Drawing.Size(651, 480);
             this.panel3.TabIndex = 4;
             // 
             // grbDSNhapHang
@@ -141,7 +132,7 @@
             this.grbDSNhapHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbDSNhapHang.Location = new System.Drawing.Point(0, 0);
             this.grbDSNhapHang.Name = "grbDSNhapHang";
-            this.grbDSNhapHang.Size = new System.Drawing.Size(726, 418);
+            this.grbDSNhapHang.Size = new System.Drawing.Size(651, 418);
             this.grbDSNhapHang.TabIndex = 1;
             this.grbDSNhapHang.TabStop = false;
             this.grbDSNhapHang.Text = "Danh Sách Hàng Nhập";
@@ -170,6 +161,7 @@
             this.QTY,
             this.COST,
             this.ID,
+            this.id_ncc_PhieuNhap,
             this.Delete});
             this.dgvHoaDonNhap.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -187,47 +179,12 @@
             this.dgvHoaDonNhap.Name = "dgvHoaDonNhap";
             this.dgvHoaDonNhap.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvHoaDonNhap.RowHeadersVisible = false;
-            this.dgvHoaDonNhap.RowHeadersWidth = 51;
-            this.dgvHoaDonNhap.RowTemplate.Height = 24;
+            this.dgvHoaDonNhap.RowHeadersWidth = 40;
+            this.dgvHoaDonNhap.RowTemplate.Height = 20;
             this.dgvHoaDonNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvHoaDonNhap.Size = new System.Drawing.Size(720, 397);
+            this.dgvHoaDonNhap.Size = new System.Drawing.Size(645, 397);
             this.dgvHoaDonNhap.TabIndex = 12;
-            // 
-            // Item
-            // 
-            this.Item.DataPropertyName = "Item";
-            this.Item.HeaderText = "SẢN PHẨM";
-            this.Item.MinimumWidth = 6;
-            this.Item.Name = "Item";
-            // 
-            // QTY
-            // 
-            this.QTY.DataPropertyName = "QTY";
-            this.QTY.HeaderText = "SỐ LƯỢNG";
-            this.QTY.MinimumWidth = 6;
-            this.QTY.Name = "QTY";
-            // 
-            // COST
-            // 
-            this.COST.DataPropertyName = "COST";
-            this.COST.HeaderText = "GIÁ";
-            this.COST.MinimumWidth = 6;
-            this.COST.Name = "COST";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.HeaderText = "XÓA";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
+            this.dgvHoaDonNhap.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHoaDonNhap_CellMouseClick);
             // 
             // txtTongGia
             // 
@@ -254,16 +211,17 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 594);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(726, 117);
+            this.panel2.Size = new System.Drawing.Size(651, 117);
             this.panel2.TabIndex = 0;
             // 
             // cmbLoaiSP
             // 
             this.cmbLoaiSP.FormattingEnabled = true;
-            this.cmbLoaiSP.Location = new System.Drawing.Point(28, 60);
+            this.cmbLoaiSP.Location = new System.Drawing.Point(3, 60);
             this.cmbLoaiSP.Name = "cmbLoaiSP";
             this.cmbLoaiSP.Size = new System.Drawing.Size(256, 24);
             this.cmbLoaiSP.TabIndex = 2;
+            this.cmbLoaiSP.SelectedIndexChanged += new System.EventHandler(this.cmbLoaiSP_SelectedIndexChanged);
             // 
             // grbDSHangHoa
             // 
@@ -271,7 +229,7 @@
             this.grbDSHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grbDSHangHoa.Location = new System.Drawing.Point(0, 114);
             this.grbDSHangHoa.Name = "grbDSHangHoa";
-            this.grbDSHangHoa.Size = new System.Drawing.Size(738, 502);
+            this.grbDSHangHoa.Size = new System.Drawing.Size(1182, 502);
             this.grbDSHangHoa.TabIndex = 1;
             this.grbDSHangHoa.TabStop = false;
             this.grbDSHangHoa.Text = "Danh Sách Hàng Hóa";
@@ -293,10 +251,17 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgDSHangHoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgDSHangHoa.ColumnHeadersHeight = 40;
+            this.dtgDSHangHoa.ColumnHeadersHeight = 45;
             this.dtgDSHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgDSHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Add});
+            this.Add,
+            this.ID_SP,
+            this.Ten,
+            this.id_ncc,
+            this.id_loaisp,
+            this.sl,
+            this.dvt,
+            this.dongia});
             this.dtgDSHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDSHangHoa.EnableHeadersVisualStyles = false;
             this.dtgDSHangHoa.GridColor = System.Drawing.Color.Gainsboro;
@@ -306,8 +271,58 @@
             this.dtgDSHangHoa.RowHeadersVisible = false;
             this.dtgDSHangHoa.RowHeadersWidth = 51;
             this.dtgDSHangHoa.RowTemplate.Height = 24;
-            this.dtgDSHangHoa.Size = new System.Drawing.Size(732, 481);
+            this.dtgDSHangHoa.Size = new System.Drawing.Size(1176, 481);
             this.dtgDSHangHoa.TabIndex = 13;
+            this.dtgDSHangHoa.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDSHangHoa_CellMouseClick);
+            // 
+            // ID_SP
+            // 
+            this.ID_SP.DataPropertyName = "Idsanpham";
+            this.ID_SP.HeaderText = "ID Sản Phẩm";
+            this.ID_SP.MinimumWidth = 6;
+            this.ID_SP.Name = "ID_SP";
+            // 
+            // Ten
+            // 
+            this.Ten.DataPropertyName = "Tensanpham";
+            this.Ten.HeaderText = "Tên Sản Phẩm";
+            this.Ten.MinimumWidth = 6;
+            this.Ten.Name = "Ten";
+            // 
+            // id_ncc
+            // 
+            this.id_ncc.DataPropertyName = "Idnhacungcap";
+            this.id_ncc.HeaderText = "ID Nhà Cung Cấp";
+            this.id_ncc.MinimumWidth = 6;
+            this.id_ncc.Name = "id_ncc";
+            // 
+            // id_loaisp
+            // 
+            this.id_loaisp.DataPropertyName = "Idloaisanpham";
+            this.id_loaisp.HeaderText = "ID Loại Sản Phẩm";
+            this.id_loaisp.MinimumWidth = 6;
+            this.id_loaisp.Name = "id_loaisp";
+            // 
+            // sl
+            // 
+            this.sl.DataPropertyName = "Sl";
+            this.sl.HeaderText = "Số Lượng Còn";
+            this.sl.MinimumWidth = 6;
+            this.sl.Name = "sl";
+            // 
+            // dvt
+            // 
+            this.dvt.DataPropertyName = "Dvt";
+            this.dvt.HeaderText = "Đơn Vị Tính";
+            this.dvt.MinimumWidth = 6;
+            this.dvt.Name = "dvt";
+            // 
+            // dongia
+            // 
+            this.dongia.DataPropertyName = "Dongia";
+            this.dongia.HeaderText = "Đơn Giá";
+            this.dongia.MinimumWidth = 6;
+            this.dongia.Name = "dongia";
             // 
             // panel1
             // 
@@ -316,7 +331,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 616);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 95);
+            this.panel1.Size = new System.Drawing.Size(1182, 95);
             this.panel1.TabIndex = 0;
             // 
             // txtSl
@@ -335,6 +350,78 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhập Số Lượng Cần Nhập";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // Item
+            // 
+            this.Item.DataPropertyName = "Item";
+            this.Item.FillWeight = 96.9697F;
+            this.Item.HeaderText = "SẢN PHẨM";
+            this.Item.MinimumWidth = 6;
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
+            // 
+            // QTY
+            // 
+            this.QTY.DataPropertyName = "QTY";
+            this.QTY.FillWeight = 96.9697F;
+            this.QTY.HeaderText = "SỐ LƯỢNG";
+            this.QTY.MinimumWidth = 6;
+            this.QTY.Name = "QTY";
+            this.QTY.ReadOnly = true;
+            // 
+            // COST
+            // 
+            this.COST.DataPropertyName = "COST";
+            this.COST.FillWeight = 96.9697F;
+            this.COST.HeaderText = "GIÁ";
+            this.COST.MinimumWidth = 6;
+            this.COST.Name = "COST";
+            this.COST.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // id_ncc_PhieuNhap
+            // 
+            this.id_ncc_PhieuNhap.HeaderText = "";
+            this.id_ncc_PhieuNhap.MinimumWidth = 6;
+            this.id_ncc_PhieuNhap.Name = "id_ncc_PhieuNhap";
+            this.id_ncc_PhieuNhap.ReadOnly = true;
+            this.id_ncc_PhieuNhap.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Delete";
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::GUI.Properties.Resources.delete;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.Width = 165;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::GUI.Properties.Resources.left_arrow;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 146;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::GUI.Properties.Resources.delete;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // button3
             // 
@@ -357,6 +444,7 @@
             this.btnHangMoi.TabIndex = 0;
             this.toolTip1.SetToolTip(this.btnHangMoi, "Nhấn Thêm Sản Phẩm Mới");
             this.btnHangMoi.UseVisualStyleBackColor = false;
+            this.btnHangMoi.Click += new System.EventHandler(this.btnHangMoi_Click);
             // 
             // btnConfirm
             // 
@@ -368,6 +456,25 @@
             this.btnConfirm.TabIndex = 0;
             this.toolTip1.SetToolTip(this.btnConfirm, "Nhấn Tạo Phiếu Nhập Kho");
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::GUI.Properties.Resources.refresh;
+            this.btnRefresh.Location = new System.Drawing.Point(293, 47);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(93, 49);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // Add
+            // 
+            this.Add.HeaderText = "";
+            this.Add.Image = global::GUI.Properties.Resources.left_arrow;
+            this.Add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Add.MinimumWidth = 6;
+            this.Add.Name = "Add";
             // 
             // btnExit
             // 
@@ -379,35 +486,28 @@
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 40;
-            this.btnExit.Location = new System.Drawing.Point(1393, 0);
+            this.btnExit.Location = new System.Drawing.Point(1762, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 45);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // Add
-            // 
-            this.Add.HeaderText = "";
-            this.Add.Image = global::GUI.Properties.Resources.left_arrow;
-            this.Add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Add.MinimumWidth = 6;
-            this.Add.Name = "Add";
-            // 
             // FormNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1468, 756);
+            this.ClientSize = new System.Drawing.Size(1837, 756);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNhapHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNhapHang";
+            this.Load += new System.EventHandler(this.FormNhapHang_Load);
             this.panHeader.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -439,19 +539,28 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtSl;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox grbDSNhapHang;
         public System.Windows.Forms.DataGridView dgvHoaDonNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COST;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.TextBox txtTongGia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewImageColumn Add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_SP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_ncc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_loaisp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_ncc_PhieuNhap;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
