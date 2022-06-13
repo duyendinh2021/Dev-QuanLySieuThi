@@ -42,16 +42,27 @@ namespace GUI.Forms.SanPham
         [Obsolete]
         private void cmbLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
+            int id_loai;
+            int id_ncc;
             if (cmbLoaiSP.SelectedIndex == -1)
             {
-                id = 0;
+                id_loai = 0;
+                BUS.B_SanPham.Instance.loadSanPhamByLoaiSp(ref dtgDSHangHoa, id_loai);
             }
             else
             {
-                id = int.Parse(cmbLoaiSP.SelectedValue.ToString());
+                if (cmbNCC.SelectedIndex == -1)
+                {
+                    id_loai = int.Parse(cmbLoaiSP.SelectedValue.ToString());
+                    BUS.B_SanPham.Instance.loadSanPhamByLoaiSp(ref dtgDSHangHoa, id_loai);
+                }
+                else
+                {
+                    id_loai = int.Parse(cmbLoaiSP.SelectedValue.ToString());
+                    id_ncc = int.Parse(cmbNCC.SelectedValue.ToString());
+                    B_SanPham.Instance.SelectSanPhamByLoaiAndNCC(id_loai,id_ncc,ref dtgDSHangHoa);
+                }
             }
-            BUS.B_SanPham.Instance.loadSanPhamByLoaiSp(ref dtgDSHangHoa, id);
         }
 
         private void dtgDSHangHoa_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -182,7 +193,15 @@ namespace GUI.Forms.SanPham
             }
             else
             {
+                if (cmbLoaiSP.SelectedIndex == -1)
+                {
+
                 B_SanPham.Instance.getSanPhamByNCC(int.Parse(cmbNCC.SelectedValue.ToString()), ref dtgDSHangHoa);
+                }
+                else
+                {
+                    B_SanPham.Instance.SelectSanPhamByLoaiAndNCC(int.Parse(cmbLoaiSP.SelectedValue.ToString()), int.Parse(cmbNCC.SelectedValue.ToString()),ref dtgDSHangHoa);
+                }
             }
         }
     }

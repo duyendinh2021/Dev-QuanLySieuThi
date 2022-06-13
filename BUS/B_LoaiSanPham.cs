@@ -35,8 +35,22 @@ namespace BUS
             comboBox.DataSource = loaiSanPhams;
         }
 
+        [Obsolete]
+        public void loadLoaiSanPhamByID(int id,ref ComboBox comboBox)
+        {
+            List<LoaiSanPham> loaiSanPham = D_LoaiSanPham.Instance.loadloaiSanPhamByID(id);
 
+            comboBox.DisplayMember = "Tensanpham";
+            comboBox.ValueMember = "Idloaisanpham";
+            comboBox.DataSource = loaiSanPham;
 
-        
+        }
+
+        [Obsolete]
+        public void loadDataSourcecmbLoaiSp(ref DataGridView dataGridView)
+        {
+            List<LoaiSanPham> loaiSanPhams = DAO.D_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp();
+            dataGridView.DataSource = loaiSanPhams;
+        }
     }
 }

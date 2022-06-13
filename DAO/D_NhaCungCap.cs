@@ -50,5 +50,33 @@ namespace DAO
 
             return nhaCungCaps;
         }
+
+
+
+        [Obsolete]
+        public List<NhaCungCap> loadNhaCungCapByID(int id)
+        {
+            string query = "EXEC SelectNhaCungCapByID @id";
+            List<NhaCungCap> nhaCungCaps = new List<NhaCungCap>();
+
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { id }))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    NhaCungCap nhaCungCap = new NhaCungCap();
+                    nhaCungCap.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    nhaCungCap.Tencongty = item["TenCongTy"].ToString();
+                    nhaCungCap.Diachi = item["DiaChi"].ToString();
+                    nhaCungCap.Sdt = item["SDT"].ToString();
+                    nhaCungCap.Sotaikhoan = item["SoTKNganHang"].ToString();
+                    nhaCungCap.Tennganhang = item["TenNganHang"].ToString();
+                    nhaCungCap.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    nhaCungCaps.Add(nhaCungCap);
+                }
+
+            }
+            return nhaCungCaps;
+
+        }
     }
 }

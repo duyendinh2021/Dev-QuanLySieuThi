@@ -35,15 +35,18 @@
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.ptcShowImg = new System.Windows.Forms.PictureBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnRowImg = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.cmbNCC = new System.Windows.Forms.ComboBox();
             this.cmbID_Loaisp = new System.Windows.Forms.ComboBox();
             this.cmbDVT = new System.Windows.Forms.ComboBox();
+            this.btnEditNCC = new System.Windows.Forms.Button();
+            this.btnRowImg = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.ptcShowImg = new System.Windows.Forms.PictureBox();
+            this.btnEditID = new System.Windows.Forms.Button();
+            this.btnEditDVT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptcShowImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,44 +100,6 @@
             this.txtDonGia.Size = new System.Drawing.Size(225, 22);
             this.txtDonGia.TabIndex = 1;
             // 
-            // ptcShowImg
-            // 
-            this.ptcShowImg.Location = new System.Drawing.Point(794, 188);
-            this.ptcShowImg.Name = "ptcShowImg";
-            this.ptcShowImg.Size = new System.Drawing.Size(425, 369);
-            this.ptcShowImg.TabIndex = 2;
-            this.ptcShowImg.TabStop = false;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
-            this.btnConfirm.Location = new System.Drawing.Point(327, 630);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(151, 74);
-            this.btnConfirm.TabIndex = 3;
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Image = global::GUI.Properties.Resources.clear;
-            this.btnClear.Location = new System.Drawing.Point(615, 630);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(151, 74);
-            this.btnClear.TabIndex = 3;
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnRowImg
-            // 
-            this.btnRowImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRowImg.Image = global::GUI.Properties.Resources.photo;
-            this.btnRowImg.Location = new System.Drawing.Point(794, 95);
-            this.btnRowImg.Name = "btnRowImg";
-            this.btnRowImg.Size = new System.Drawing.Size(128, 66);
-            this.btnRowImg.TabIndex = 4;
-            this.btnRowImg.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.Location = new System.Drawing.Point(81, 306);
@@ -146,6 +111,7 @@
             // 
             // cmbNCC
             // 
+            this.cmbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNCC.FormattingEnabled = true;
             this.cmbNCC.Location = new System.Drawing.Point(327, 183);
             this.cmbNCC.Name = "cmbNCC";
@@ -154,6 +120,7 @@
             // 
             // cmbID_Loaisp
             // 
+            this.cmbID_Loaisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbID_Loaisp.FormattingEnabled = true;
             this.cmbID_Loaisp.Location = new System.Drawing.Point(327, 302);
             this.cmbID_Loaisp.Name = "cmbID_Loaisp";
@@ -162,17 +129,101 @@
             // 
             // cmbDVT
             // 
+            this.cmbDVT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDVT.FormattingEnabled = true;
             this.cmbDVT.Location = new System.Drawing.Point(327, 428);
             this.cmbDVT.Name = "cmbDVT";
             this.cmbDVT.Size = new System.Drawing.Size(225, 24);
             this.cmbDVT.TabIndex = 5;
             // 
+            // btnEditNCC
+            // 
+            this.btnEditNCC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditNCC.Image = global::GUI.Properties.Resources.writing;
+            this.btnEditNCC.Location = new System.Drawing.Point(595, 178);
+            this.btnEditNCC.Name = "btnEditNCC";
+            this.btnEditNCC.Size = new System.Drawing.Size(84, 33);
+            this.btnEditNCC.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnEditNCC, "Click dể Sửa Nhà Cung Cấp");
+            this.btnEditNCC.UseVisualStyleBackColor = true;
+            this.btnEditNCC.Click += new System.EventHandler(this.btnEditNCC_Click);
+            // 
+            // btnRowImg
+            // 
+            this.btnRowImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRowImg.Image = global::GUI.Properties.Resources.photo;
+            this.btnRowImg.Location = new System.Drawing.Point(794, 95);
+            this.btnRowImg.Name = "btnRowImg";
+            this.btnRowImg.Size = new System.Drawing.Size(128, 66);
+            this.btnRowImg.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnRowImg, "Click dể tiến hành thay đổi hình ảnh sản phẩm");
+            this.btnRowImg.UseVisualStyleBackColor = true;
+            this.btnRowImg.Click += new System.EventHandler(this.btnRowImg_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Image = global::GUI.Properties.Resources.clear;
+            this.btnClear.Location = new System.Drawing.Point(615, 630);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(151, 74);
+            this.btnClear.TabIndex = 3;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
+            this.btnConfirm.Location = new System.Drawing.Point(327, 630);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(151, 74);
+            this.btnConfirm.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnConfirm, "Click dể tiến hành cập nhật sản phẩm");
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // ptcShowImg
+            // 
+            this.ptcShowImg.Location = new System.Drawing.Point(794, 188);
+            this.ptcShowImg.Name = "ptcShowImg";
+            this.ptcShowImg.Size = new System.Drawing.Size(425, 369);
+            this.ptcShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcShowImg.TabIndex = 2;
+            this.ptcShowImg.TabStop = false;
+            // 
+            // btnEditID
+            // 
+            this.btnEditID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditID.Image = global::GUI.Properties.Resources.writing;
+            this.btnEditID.Location = new System.Drawing.Point(595, 297);
+            this.btnEditID.Name = "btnEditID";
+            this.btnEditID.Size = new System.Drawing.Size(84, 33);
+            this.btnEditID.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnEditID, "Click dể sửa loại sản phẩm");
+            this.btnEditID.UseVisualStyleBackColor = true;
+            this.btnEditID.Click += new System.EventHandler(this.btnEditID_Click);
+            // 
+            // btnEditDVT
+            // 
+            this.btnEditDVT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditDVT.Image = global::GUI.Properties.Resources.writing;
+            this.btnEditDVT.Location = new System.Drawing.Point(595, 423);
+            this.btnEditDVT.Name = "btnEditDVT";
+            this.btnEditDVT.Size = new System.Drawing.Size(84, 33);
+            this.btnEditDVT.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnEditDVT, "Cick dể sửa đơn vị tính");
+            this.btnEditDVT.UseVisualStyleBackColor = true;
+            this.btnEditDVT.Click += new System.EventHandler(this.btnEditDVT_Click);
+            // 
             // FormCapNhatSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 744);
+            this.Controls.Add(this.btnEditDVT);
+            this.Controls.Add(this.btnEditID);
+            this.Controls.Add(this.btnEditNCC);
             this.Controls.Add(this.cmbDVT);
             this.Controls.Add(this.cmbID_Loaisp);
             this.Controls.Add(this.cmbNCC);
@@ -187,6 +238,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "FormCapNhatSanPham";
             this.Text = "FormCapNhatSanPham";
             this.Load += new System.EventHandler(this.FormCapNhatSanPham_Load);
@@ -213,5 +265,8 @@
         private System.Windows.Forms.ComboBox cmbNCC;
         private System.Windows.Forms.ComboBox cmbID_Loaisp;
         private System.Windows.Forms.ComboBox cmbDVT;
+        private System.Windows.Forms.Button btnEditNCC;
+        private System.Windows.Forms.Button btnEditID;
+        private System.Windows.Forms.Button btnEditDVT;
     }
 }

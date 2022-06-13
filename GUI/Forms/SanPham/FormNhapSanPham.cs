@@ -69,7 +69,7 @@ namespace GUI.Forms
         {
             BUS.B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNcc);
             BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSp);
-            BUS.B_SanPham.Instance.loaiDataSourceDVT(ref cmbDVT);
+            BUS.B_SanPham.Instance.loadDataSourceDVT(ref cmbDVT);
             cmbDVT.SelectedIndex = -1;
             cmbNcc.SelectedIndex = -1;
             cmbLoaiSp.SelectedIndex = -1;
@@ -80,7 +80,7 @@ namespace GUI.Forms
         {
             FormNhapLoaiSP formNhapLoaiSP = new FormNhapLoaiSP();
             formNhapLoaiSP.ShowDialog();
-            BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSp);
+            B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSp);
         }
 
         private void btnBrowsImg_Click(object sender, EventArgs e)

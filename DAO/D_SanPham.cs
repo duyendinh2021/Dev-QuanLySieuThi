@@ -52,8 +52,35 @@ namespace DAO
         }
 
 
-        [Obsolete]
 
+        [Obsolete]
+        public List<SanPham> loadComboBoxDVT()
+        {
+            List<SanPham> sanPhams = new List<SanPham>();
+            string query = "EXEC LoadComboBoxDVT";
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    //sanPham.Idsanpham = int.Parse(item["ID_SanPham"].ToString());
+                    //sanPham.Tensanpham = item["TenSanPham"].ToString();
+                    //sanPham.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    //sanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    //sanPham.Sl = int.Parse(item["SoLuong"].ToString());
+                    sanPham.Dvt = item["DVT"].ToString();
+                    //sanPham.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    //sanPham.Hinh = (Byte[])item["Hinh"];
+                    //sanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    sanPhams.Add(sanPham);
+                }
+            }
+            //var list2 = sanPhams
+            return sanPhams;
+        }
+
+
+        [Obsolete]
         public List<SanPham> loadSanPhamByLoaiSP(int id)
         {
             List<SanPham> sanPhams = new List<SanPham>();
@@ -199,6 +226,129 @@ namespace DAO
                 }
             }
 
+            return sanPhams;
+        }
+
+
+
+        [Obsolete]
+        public void stokerUpdateSanPham(object[] parameter)
+        {
+            string query = "EXEC UpdateSanPham @id_sp , @tenSP , @id_ncc , @id_loaiSP , @dvt , @dongia , @hinh , @trangthai";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
+
+
+
+
+        [Obsolete]
+        public void stokerDeleteSanPham(int id)
+        {
+            string query = "EXEC DeleteSanPham @id_sp";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query,new object[] {id});
+        }
+
+
+        [Obsolete]
+        public List<SanPham> SelectSanPhamByLoaiAndNCC(int id_loai, int id_ncc)
+        {
+            string query = "EXEC SelectSanPhamByLoaiAndNCC @id_loai , @id_ncc";
+            List<SanPham> sanPhams = new List<SanPham>();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { id_loai,id_ncc }))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.Idsanpham = int.Parse(item["ID_SanPham"].ToString());
+                    sanPham.Tensanpham = item["TenSanPham"].ToString();
+                    sanPham.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    sanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    sanPham.Sl = int.Parse(item["SoLuong"].ToString());
+                    sanPham.Dvt = item["DVT"].ToString();
+                    sanPham.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    sanPham.Hinh = (Byte[])item["Hinh"];
+                    sanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    sanPhams.Add(sanPham);
+                }
+            }
+            return sanPhams;
+        }
+
+
+        [Obsolete]
+        public List<SanPham> getSanPhamByLoai(int id)
+        {
+            string query = "EXEC SearchSanPhamByLoaiSP @id_loaiSP";
+            List<SanPham> sanPhams = new List<SanPham>();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[]{ id }))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.Idsanpham = int.Parse(item["ID_SanPham"].ToString());
+                    sanPham.Tensanpham = item["TenSanPham"].ToString();
+                    sanPham.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    sanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    sanPham.Sl = int.Parse(item["SoLuong"].ToString());
+                    sanPham.Dvt = item["DVT"].ToString();
+                    sanPham.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    sanPham.Hinh = (Byte[])item["Hinh"];
+                    sanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    sanPhams.Add(sanPham);
+                }
+            }
+            return sanPhams;
+        }
+
+
+        [Obsolete]
+        public List<SanPham> getSanPamHetHang()
+        {
+            string query = "EXEC SelectSanPhamhetHang";
+            List<SanPham> sanPhams = new List<SanPham>();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.Idsanpham = int.Parse(item["ID_SanPham"].ToString());
+                    sanPham.Tensanpham = item["TenSanPham"].ToString();
+                    sanPham.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    sanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    sanPham.Sl = int.Parse(item["SoLuong"].ToString());
+                    sanPham.Dvt = item["DVT"].ToString();
+                    sanPham.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    sanPham.Hinh = (Byte[])item["Hinh"];
+                    sanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    sanPhams.Add(sanPham);
+                }
+            }
+            return sanPhams;
+        }
+
+
+        [Obsolete]
+        public List<SanPham> getSanPamConHang()
+        {
+            string query = "EXEC SelectSanPhamConHang";
+            List<SanPham> sanPhams = new List<SanPham>();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.Idsanpham = int.Parse(item["ID_SanPham"].ToString());
+                    sanPham.Tensanpham = item["TenSanPham"].ToString();
+                    sanPham.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    sanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    sanPham.Sl = int.Parse(item["SoLuong"].ToString());
+                    sanPham.Dvt = item["DVT"].ToString();
+                    sanPham.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    sanPham.Hinh = (Byte[])item["Hinh"];
+                    sanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    sanPhams.Add(sanPham);
+                }
+            }
             return sanPhams;
         }
     }

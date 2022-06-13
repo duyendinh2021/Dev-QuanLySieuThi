@@ -65,5 +65,14 @@ namespace BUS
             comboBox.ValueMember = "Idnhacungcap";
             comboBox.DataSource = nhaCungCaps;
         }
+
+
+        [Obsolete]
+        public void LoadNhaCungCapByID(int id, ref ComboBox comboBox){
+            List<NhaCungCap> nhaCungCap = D_NhaCungCap.Instance.loadNhaCungCapByID(id);
+            comboBox.DisplayMember = "Tencongty";
+            comboBox.ValueMember = "Idnhacungcap";
+            comboBox.DataSource = nhaCungCap;
+        }
     }
 }

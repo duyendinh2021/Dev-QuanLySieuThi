@@ -49,5 +49,27 @@ namespace DAO
         }
 
 
+
+        [Obsolete]
+        public List<LoaiSanPham> loadloaiSanPhamByID(int id)
+        {
+            string query = "EXEC SelectLoaiSanPhamByID @id";
+            List<LoaiSanPham> loaiSanPhams = new List<LoaiSanPham>();
+
+            using(DataTable dataTable = connectionData.Instance.excuteQuery(query,new object[] { id }))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+                    loaiSanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    loaiSanPham.Tensanpham = item["TenLoaiSanPham"].ToString();
+                    loaiSanPham.Mota = item["MoTa"].ToString();
+                    loaiSanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    loaiSanPhams.Add(loaiSanPham);
+                }
+            }
+            return loaiSanPhams;
+        }
     }
 }

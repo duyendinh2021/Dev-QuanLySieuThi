@@ -27,29 +27,47 @@ namespace BUS
             }
         }
 
-        //public List<SanPham> SanPhamList(List<int> ids)
-        //{
-        //    List<SanPham> list = new List<SanPham>();
-        //    for (int i = 0; i < ids.Count; i++)
-        //    {
-        //        List<SanPham> temp = new List<SanPham>();
-        //        foreach (SanPham item in temp)
-        //        {
-        //            list.Add(item);
-        //        }
-        //    }
-        //    return list;
-        //}
-        //public DataTable sanpham = new DataTable();
+
 
         [Obsolete]
-        public void loaiDataSourceDVT(ref ComboBox comboBox)
+        public void getSanPhamByLoai_array(List<int> ids, ref DataGridView data)
         {
-            List<SanPham> sanPhams = DAO.D_SanPham.Instance.selectAllSanPhamDanghoatDong();
-            comboBox.DataSource = sanPhams;
+            List<SanPham> list = new List<SanPham>();
+            for (int i = 0; i < ids.Count; i++)
+            {
+                List<SanPham> temp = D_SanPham.Instance.getSanPhamByLoai(ids[i]);
+                foreach (SanPham item in temp)
+                {
+                    list.Add(item);
+                }
+            }
+            data.DataSource = list;
+        }
+
+
+
+        [Obsolete]
+        public void loadDataSourceDVT(ref ComboBox comboBox)
+        {
+
+            List<SanPham> sanPhams = D_SanPham.Instance.loadComboBoxDVT();
+            
             comboBox.DisplayMember = "Dvt";
             comboBox.ValueMember = "Dvt";
+            comboBox.DataSource = sanPhams;
         }
+
+
+        [Obsolete]
+        public void LoadDataSourceByID(int id, ref ComboBox combox)
+        {
+            List<SanPham> sanPhams = new List<SanPham>();
+            sanPhams.Add(D_SanPham.Instance.LoadSanPhamTheoid(id));
+            combox.DataSource = sanPhams;
+            combox.DisplayMember = "Dvt";
+            combox.ValueMember = "Dvt";
+        }
+
 
          
         [Obsolete]
@@ -128,6 +146,66 @@ namespace BUS
         public void getSanPhamByNCC(int id, ref DataGridView data)
         {
             List<SanPham> sanPhams = D_SanPham.Instance.getSanPhamByNCC(id);
+            data.DataSource = sanPhams;
+        }
+
+
+
+        [Obsolete]
+        public bool stokerUpdateSanPham(object[] parameter)
+        {
+            try
+            {
+                D_SanPham.Instance.stokerUpdateSanPham(parameter);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+
+
+
+        [Obsolete]
+        public bool stokerDeleteSanPham(int id)
+        {
+            try
+            {
+                D_SanPham.Instance.stokerDeleteSanPham(id);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+
+        [Obsolete]
+        public void SelectSanPhamByLoaiAndNCC(int id_loai, int id_ncc,ref DataGridView data)
+        {
+            List<SanPham> sanPhams = D_SanPham.Instance.SelectSanPhamByLoaiAndNCC(id_loai, id_ncc);
+
+            data.DataSource = sanPhams;
+        }
+
+
+        [Obsolete]
+        public void getSanPamHetHang(ref DataGridView data)
+        {
+            List<SanPham> sanPhams = D_SanPham.Instance.getSanPamHetHang();
+            data.DataSource = sanPhams;
+        }
+
+
+        [Obsolete]
+        public void getSanPamConHang(ref DataGridView data)
+        {
+            List<SanPham> sanPhams = D_SanPham.Instance.getSanPamConHang();
             data.DataSource = sanPhams;
         }
     }

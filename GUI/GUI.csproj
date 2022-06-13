@@ -151,10 +151,10 @@
     <Compile Include="Forms\FormSale.Designer.cs">
       <DependentUpon>FormSale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormThemNhaCungCap.cs">
+    <Compile Include="Forms\NhaCungCap\FormThemNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormThemNhaCungCap.Designer.cs">
+    <Compile Include="Forms\NhaCungCap\FormThemNhaCungCap.Designer.cs">
       <DependentUpon>FormThemNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NhanVien\FormThemNhanVien.cs">
@@ -204,7 +204,7 @@
     <EmbeddedResource Include="Forms\SanPham\FormQuanLySanPham.resx">
       <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormThemNhaCungCap.resx">
+    <EmbeddedResource Include="Forms\NhaCungCap\FormThemNhaCungCap.resx">
       <DependentUpon>FormThemNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien\FormThemNhanVien.resx">
@@ -257,6 +257,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\writing.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\photo.png" />
     <None Include="Resources\update.png" />

@@ -471,6 +471,7 @@ namespace GUI
                     string chucvu = row.Cells["colChucVu"].Value.ToString();
 
                     Image tempImg = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+        
                     byte[] dataImg = (byte[])row.Cells["Hinh"].Value;
                     FormCapNhatNhanVien formCapNhatNhanVien = new FormCapNhatNhanVien(id, hoten, email, sdt, ngaySinh, luong, tenNganHang, soNganHang, ngayVaoLam, diachi, tempImg, chucvu, gioiTinh, dataImg);
 

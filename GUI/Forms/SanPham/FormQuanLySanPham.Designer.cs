@@ -32,36 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLySanPham));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.chkSua = new System.Windows.Forms.CheckBox();
-            this.chkNuocNgot = new System.Windows.Forms.CheckBox();
-            this.chkDoAnHop = new System.Windows.Forms.CheckBox();
-            this.chkThitca = new System.Windows.Forms.CheckBox();
             this.panMain = new System.Windows.Forms.Panel();
             this.panDash = new System.Windows.Forms.Panel();
-            this.ptbXemSanPham = new System.Windows.Forms.PictureBox();
             this.dtDanhSachSP = new System.Windows.Forms.DataGridView();
-            this.lblHangHoa = new System.Windows.Forms.Label();
-            this.btnNhapHang = new FontAwesome.Sharp.IconButton();
-            this.panDashside2 = new System.Windows.Forms.Panel();
-            this.panTimKiem = new System.Windows.Forms.Panel();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.chkRau = new System.Windows.Forms.CheckBox();
-            this.panLoaiHang = new System.Windows.Forms.Panel();
-            this.radHetHang = new System.Windows.Forms.RadioButton();
-            this.radConHang = new System.Windows.Forms.RadioButton();
-            this.radAll = new System.Windows.Forms.RadioButton();
-            this.panTonKho = new System.Windows.Forms.Panel();
-            this.panSideMenu = new System.Windows.Forms.Panel();
-            this.btnTonKho = new FontAwesome.Sharp.IconButton();
-            this.btnLoaiHang = new FontAwesome.Sharp.IconButton();
-            this.panBottom1 = new System.Windows.Forms.Panel();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colbtnXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.id_sp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten_sp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,72 +48,38 @@
             this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHangHoa = new System.Windows.Forms.Label();
+            this.panDashside2 = new System.Windows.Forms.Panel();
+            this.panTimKiem = new System.Windows.Forms.Panel();
+            this.radHetHang = new System.Windows.Forms.RadioButton();
+            this.radConHang = new System.Windows.Forms.RadioButton();
+            this.radAll = new System.Windows.Forms.RadioButton();
+            this.panTonKho = new System.Windows.Forms.Panel();
+            this.panSideMenu = new System.Windows.Forms.Panel();
+            this.panBottom1 = new System.Windows.Forms.Panel();
+            this.flpCategory = new System.Windows.Forms.FlowLayoutPanel();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ptbXemSanPham = new System.Windows.Forms.PictureBox();
+            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colbtnXoa = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnNhapHang = new FontAwesome.Sharp.IconButton();
+            this.btnBrowField = new System.Windows.Forms.Button();
+            this.btnTonKho = new FontAwesome.Sharp.IconButton();
+            this.btnLoaiHang = new FontAwesome.Sharp.IconButton();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.panMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDanhSachSP)).BeginInit();
-            this.panLoaiHang.SuspendLayout();
             this.panTonKho.SuspendLayout();
             this.panSideMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).BeginInit();
             this.SuspendLayout();
-            // 
-            // chkSua
-            // 
-            this.chkSua.AutoSize = true;
-            this.chkSua.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkSua.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSua.ForeColor = System.Drawing.Color.Black;
-            this.chkSua.Location = new System.Drawing.Point(159, 95);
-            this.chkSua.Name = "chkSua";
-            this.chkSua.Size = new System.Drawing.Size(107, 20);
-            this.chkSua.TabIndex = 0;
-            this.chkSua.Text = "Sữa, yogurt";
-            this.chkSua.UseVisualStyleBackColor = true;
-            // 
-            // chkNuocNgot
-            // 
-            this.chkNuocNgot.AutoSize = true;
-            this.chkNuocNgot.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkNuocNgot.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkNuocNgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNuocNgot.ForeColor = System.Drawing.Color.Black;
-            this.chkNuocNgot.Location = new System.Drawing.Point(19, 95);
-            this.chkNuocNgot.Name = "chkNuocNgot";
-            this.chkNuocNgot.Size = new System.Drawing.Size(99, 20);
-            this.chkNuocNgot.TabIndex = 0;
-            this.chkNuocNgot.Text = "Nước ngọt";
-            this.chkNuocNgot.UseVisualStyleBackColor = true;
-            // 
-            // chkDoAnHop
-            // 
-            this.chkDoAnHop.AutoSize = true;
-            this.chkDoAnHop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkDoAnHop.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkDoAnHop.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDoAnHop.ForeColor = System.Drawing.Color.Black;
-            this.chkDoAnHop.Location = new System.Drawing.Point(159, 55);
-            this.chkDoAnHop.Name = "chkDoAnHop";
-            this.chkDoAnHop.Size = new System.Drawing.Size(138, 20);
-            this.chkDoAnHop.TabIndex = 0;
-            this.chkDoAnHop.Text = "Đồ ăn đóng hộp";
-            this.chkDoAnHop.UseVisualStyleBackColor = true;
-            // 
-            // chkThitca
-            // 
-            this.chkThitca.AutoSize = true;
-            this.chkThitca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkThitca.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkThitca.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkThitca.ForeColor = System.Drawing.Color.Black;
-            this.chkThitca.Location = new System.Drawing.Point(19, 55);
-            this.chkThitca.Name = "chkThitca";
-            this.chkThitca.Size = new System.Drawing.Size(80, 20);
-            this.chkThitca.TabIndex = 0;
-            this.chkThitca.Text = "Thịt, cá";
-            this.chkThitca.UseVisualStyleBackColor = true;
             // 
             // panMain
             // 
+            this.panMain.Controls.Add(this.dataGridView);
             this.panMain.Controls.Add(this.panDash);
             this.panMain.Controls.Add(this.ptbXemSanPham);
             this.panMain.Controls.Add(this.dtDanhSachSP);
@@ -153,14 +98,6 @@
             this.panDash.Name = "panDash";
             this.panDash.Size = new System.Drawing.Size(277, 4);
             this.panDash.TabIndex = 29;
-            // 
-            // ptbXemSanPham
-            // 
-            this.ptbXemSanPham.Location = new System.Drawing.Point(641, 40);
-            this.ptbXemSanPham.Name = "ptbXemSanPham";
-            this.ptbXemSanPham.Size = new System.Drawing.Size(277, 163);
-            this.ptbXemSanPham.TabIndex = 28;
-            this.ptbXemSanPham.TabStop = false;
             // 
             // dtDanhSachSP
             // 
@@ -221,6 +158,78 @@
             this.dtDanhSachSP.TabIndex = 27;
             this.dtDanhSachSP.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtDanhSachSP_CellMouseClick);
             // 
+            // Checked
+            // 
+            this.Checked.HeaderText = "";
+            this.Checked.MinimumWidth = 6;
+            this.Checked.Name = "Checked";
+            this.Checked.Width = 35;
+            // 
+            // id_sp
+            // 
+            this.id_sp.DataPropertyName = "Idsanpham";
+            this.id_sp.HeaderText = "ID Sản Phẩm";
+            this.id_sp.MinimumWidth = 6;
+            this.id_sp.Name = "id_sp";
+            this.id_sp.ReadOnly = true;
+            this.id_sp.Width = 150;
+            // 
+            // ten_sp
+            // 
+            this.ten_sp.DataPropertyName = "Tensanpham";
+            this.ten_sp.HeaderText = "Tên Sản Phẩm";
+            this.ten_sp.MinimumWidth = 6;
+            this.ten_sp.Name = "ten_sp";
+            this.ten_sp.ReadOnly = true;
+            this.ten_sp.Width = 150;
+            // 
+            // id_ncc
+            // 
+            this.id_ncc.DataPropertyName = "Idnhacungcap";
+            this.id_ncc.HeaderText = "ID Nhà Cung Cấp";
+            this.id_ncc.MinimumWidth = 6;
+            this.id_ncc.Name = "id_ncc";
+            this.id_ncc.ReadOnly = true;
+            this.id_ncc.Visible = false;
+            this.id_ncc.Width = 175;
+            // 
+            // id_loaisp
+            // 
+            this.id_loaisp.DataPropertyName = "Idloaisanpham";
+            this.id_loaisp.HeaderText = "ID Loại Sản Phẩm";
+            this.id_loaisp.MinimumWidth = 6;
+            this.id_loaisp.Name = "id_loaisp";
+            this.id_loaisp.ReadOnly = true;
+            this.id_loaisp.Visible = false;
+            this.id_loaisp.Width = 175;
+            // 
+            // sl
+            // 
+            this.sl.DataPropertyName = "Sl";
+            this.sl.HeaderText = "Số Lượng Tồn Kho";
+            this.sl.MinimumWidth = 6;
+            this.sl.Name = "sl";
+            this.sl.ReadOnly = true;
+            this.sl.Width = 200;
+            // 
+            // dvt
+            // 
+            this.dvt.DataPropertyName = "Dvt";
+            this.dvt.HeaderText = "Đơn Vị Tính";
+            this.dvt.MinimumWidth = 6;
+            this.dvt.Name = "dvt";
+            this.dvt.ReadOnly = true;
+            this.dvt.Width = 125;
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "Dongia";
+            this.donGia.HeaderText = "Đơn Giá";
+            this.donGia.MinimumWidth = 6;
+            this.donGia.Name = "donGia";
+            this.donGia.ReadOnly = true;
+            this.donGia.Width = 150;
+            // 
             // lblHangHoa
             // 
             this.lblHangHoa.AutoSize = true;
@@ -230,24 +239,6 @@
             this.lblHangHoa.Size = new System.Drawing.Size(124, 29);
             this.lblHangHoa.TabIndex = 26;
             this.lblHangHoa.Text = "Hàng hóa";
-            // 
-            // btnNhapHang
-            // 
-            this.btnNhapHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnNhapHang.FlatAppearance.BorderSize = 0;
-            this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapHang.ForeColor = System.Drawing.Color.White;
-            this.btnNhapHang.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnNhapHang.IconColor = System.Drawing.Color.Black;
-            this.btnNhapHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNhapHang.Location = new System.Drawing.Point(30, 143);
-            this.btnNhapHang.Name = "btnNhapHang";
-            this.btnNhapHang.Size = new System.Drawing.Size(116, 50);
-            this.btnNhapHang.TabIndex = 25;
-            this.btnNhapHang.Text = "Nhập hàng";
-            this.btnNhapHang.UseVisualStyleBackColor = false;
-            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
             // panDashside2
             // 
@@ -266,49 +257,6 @@
             this.panTimKiem.Size = new System.Drawing.Size(369, 0);
             this.panTimKiem.TabIndex = 1;
             // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.checkBox4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.ForeColor = System.Drawing.Color.Black;
-            this.checkBox4.Location = new System.Drawing.Point(159, 15);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(90, 20);
-            this.checkBox4.TabIndex = 0;
-            this.checkBox4.Text = "Bia, rượu";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // chkRau
-            // 
-            this.chkRau.AutoSize = true;
-            this.chkRau.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkRau.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.chkRau.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkRau.ForeColor = System.Drawing.Color.Black;
-            this.chkRau.Location = new System.Drawing.Point(19, 15);
-            this.chkRau.Name = "chkRau";
-            this.chkRau.Size = new System.Drawing.Size(81, 20);
-            this.chkRau.TabIndex = 0;
-            this.chkRau.Text = "Rau, củ";
-            this.chkRau.UseVisualStyleBackColor = true;
-            // 
-            // panLoaiHang
-            // 
-            this.panLoaiHang.AutoSize = true;
-            this.panLoaiHang.Controls.Add(this.chkSua);
-            this.panLoaiHang.Controls.Add(this.chkNuocNgot);
-            this.panLoaiHang.Controls.Add(this.chkDoAnHop);
-            this.panLoaiHang.Controls.Add(this.chkThitca);
-            this.panLoaiHang.Controls.Add(this.checkBox4);
-            this.panLoaiHang.Controls.Add(this.chkRau);
-            this.panLoaiHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panLoaiHang.Location = new System.Drawing.Point(0, 128);
-            this.panLoaiHang.Name = "panLoaiHang";
-            this.panLoaiHang.Size = new System.Drawing.Size(369, 118);
-            this.panLoaiHang.TabIndex = 4;
-            // 
             // radHetHang
             // 
             this.radHetHang.AutoSize = true;
@@ -320,6 +268,7 @@
             this.radHetHang.TabStop = true;
             this.radHetHang.Text = "Hết hàng trong kho";
             this.radHetHang.UseVisualStyleBackColor = true;
+            this.radHetHang.CheckedChanged += new System.EventHandler(this.radHetHang_CheckedChanged);
             // 
             // radConHang
             // 
@@ -332,6 +281,7 @@
             this.radConHang.TabStop = true;
             this.radConHang.Text = "Còn hàng trong kho";
             this.radConHang.UseVisualStyleBackColor = true;
+            this.radConHang.CheckedChanged += new System.EventHandler(this.radConHang_CheckedChanged);
             // 
             // radAll
             // 
@@ -344,6 +294,7 @@
             this.radAll.TabStop = true;
             this.radAll.Text = "Tất cả";
             this.radAll.UseVisualStyleBackColor = true;
+            this.radAll.CheckedChanged += new System.EventHandler(this.radAll_CheckedChanged);
             // 
             // panTonKho
             // 
@@ -351,8 +302,7 @@
             this.panTonKho.Controls.Add(this.radHetHang);
             this.panTonKho.Controls.Add(this.radConHang);
             this.panTonKho.Controls.Add(this.radAll);
-            this.panTonKho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panTonKho.Location = new System.Drawing.Point(0, 296);
+            this.panTonKho.Location = new System.Drawing.Point(3, 518);
             this.panTonKho.Name = "panTonKho";
             this.panTonKho.Size = new System.Drawing.Size(369, 125);
             this.panTonKho.TabIndex = 7;
@@ -360,9 +310,10 @@
             // panSideMenu
             // 
             this.panSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(220)))), ((int)(((byte)(232)))));
+            this.panSideMenu.Controls.Add(this.btnBrowField);
+            this.panSideMenu.Controls.Add(this.flpCategory);
             this.panSideMenu.Controls.Add(this.panTonKho);
             this.panSideMenu.Controls.Add(this.btnTonKho);
-            this.panSideMenu.Controls.Add(this.panLoaiHang);
             this.panSideMenu.Controls.Add(this.btnLoaiHang);
             this.panSideMenu.Controls.Add(this.panBottom1);
             this.panSideMenu.Controls.Add(this.panTimKiem);
@@ -373,44 +324,6 @@
             this.panSideMenu.Size = new System.Drawing.Size(369, 790);
             this.panSideMenu.TabIndex = 15;
             // 
-            // btnTonKho
-            // 
-            this.btnTonKho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnTonKho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTonKho.FlatAppearance.BorderSize = 0;
-            this.btnTonKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTonKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTonKho.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTonKho.IconChar = FontAwesome.Sharp.IconChar.CaretUp;
-            this.btnTonKho.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTonKho.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTonKho.Location = new System.Drawing.Point(0, 246);
-            this.btnTonKho.Name = "btnTonKho";
-            this.btnTonKho.Size = new System.Drawing.Size(369, 50);
-            this.btnTonKho.TabIndex = 6;
-            this.btnTonKho.Text = "Tồn kho";
-            this.btnTonKho.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnTonKho.UseVisualStyleBackColor = false;
-            // 
-            // btnLoaiHang
-            // 
-            this.btnLoaiHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnLoaiHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLoaiHang.FlatAppearance.BorderSize = 0;
-            this.btnLoaiHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoaiHang.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLoaiHang.IconChar = FontAwesome.Sharp.IconChar.CaretUp;
-            this.btnLoaiHang.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLoaiHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLoaiHang.Location = new System.Drawing.Point(0, 64);
-            this.btnLoaiHang.Name = "btnLoaiHang";
-            this.btnLoaiHang.Size = new System.Drawing.Size(369, 64);
-            this.btnLoaiHang.TabIndex = 3;
-            this.btnLoaiHang.Text = "Loại hàng";
-            this.btnLoaiHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnLoaiHang.UseVisualStyleBackColor = false;
-            // 
             // panBottom1
             // 
             this.panBottom1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -419,30 +332,67 @@
             this.panBottom1.Size = new System.Drawing.Size(369, 14);
             this.panBottom1.TabIndex = 2;
             // 
-            // btnSearch
+            // flpCategory
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnSearch.IconColor = System.Drawing.Color.Black;
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearch.Location = new System.Drawing.Point(0, 0);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(369, 50);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
+            this.flpCategory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpCategory.Location = new System.Drawing.Point(0, 128);
+            this.flpCategory.Name = "flpCategory";
+            this.flpCategory.Size = new System.Drawing.Size(369, 240);
+            this.flpCategory.TabIndex = 8;
             // 
-            // Checked
+            // dataGridView
             // 
-            this.Checked.HeaderText = "";
-            this.Checked.MinimumWidth = 6;
-            this.Checked.Name = "Checked";
-            this.Checked.Width = 35;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(363, 128);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView.TabIndex = 30;
+            this.dataGridView.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::GUI.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.ToolTipText = "Nhấn Để Tiến Hành Edit";
+            this.dataGridViewImageColumn1.Width = 45;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::GUI.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ToolTipText = "Nhấn Dể Xóa";
+            this.dataGridViewImageColumn2.Width = 45;
+            // 
+            // ptbXemSanPham
+            // 
+            this.ptbXemSanPham.Location = new System.Drawing.Point(641, 40);
+            this.ptbXemSanPham.Name = "ptbXemSanPham";
+            this.ptbXemSanPham.Size = new System.Drawing.Size(277, 163);
+            this.ptbXemSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbXemSanPham.TabIndex = 28;
+            this.ptbXemSanPham.TabStop = false;
             // 
             // colbtnSua
             // 
@@ -478,68 +428,88 @@
             this.colbtnXoa.ToolTipText = "Nhấn Dể Xóa";
             this.colbtnXoa.Width = 45;
             // 
-            // id_sp
+            // btnNhapHang
             // 
-            this.id_sp.DataPropertyName = "Idsanpham";
-            this.id_sp.HeaderText = "ID Sản Phẩm";
-            this.id_sp.MinimumWidth = 6;
-            this.id_sp.Name = "id_sp";
-            this.id_sp.ReadOnly = true;
-            this.id_sp.Width = 150;
+            this.btnNhapHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnNhapHang.FlatAppearance.BorderSize = 0;
+            this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapHang.ForeColor = System.Drawing.Color.White;
+            this.btnNhapHang.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnNhapHang.IconColor = System.Drawing.Color.Black;
+            this.btnNhapHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNhapHang.Location = new System.Drawing.Point(103, 156);
+            this.btnNhapHang.Name = "btnNhapHang";
+            this.btnNhapHang.Size = new System.Drawing.Size(186, 70);
+            this.btnNhapHang.TabIndex = 25;
+            this.btnNhapHang.Text = "Nhập hàng";
+            this.btnNhapHang.UseVisualStyleBackColor = false;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
-            // ten_sp
+            // btnBrowField
             // 
-            this.ten_sp.DataPropertyName = "Tensanpham";
-            this.ten_sp.HeaderText = "Tên Sản Phẩm";
-            this.ten_sp.MinimumWidth = 6;
-            this.ten_sp.Name = "ten_sp";
-            this.ten_sp.ReadOnly = true;
-            this.ten_sp.Width = 150;
+            this.btnBrowField.Image = global::GUI.Properties.Resources.search;
+            this.btnBrowField.Location = new System.Drawing.Point(46, 374);
+            this.btnBrowField.Name = "btnBrowField";
+            this.btnBrowField.Size = new System.Drawing.Size(257, 67);
+            this.btnBrowField.TabIndex = 9;
+            this.btnBrowField.UseVisualStyleBackColor = true;
+            this.btnBrowField.Click += new System.EventHandler(this.btnBrowField_Click);
             // 
-            // id_ncc
+            // btnTonKho
             // 
-            this.id_ncc.DataPropertyName = "Idnhacungcap";
-            this.id_ncc.HeaderText = "ID Nhà Cung Cấp";
-            this.id_ncc.MinimumWidth = 6;
-            this.id_ncc.Name = "id_ncc";
-            this.id_ncc.ReadOnly = true;
-            this.id_ncc.Width = 175;
+            this.btnTonKho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnTonKho.FlatAppearance.BorderSize = 0;
+            this.btnTonKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTonKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTonKho.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTonKho.IconChar = FontAwesome.Sharp.IconChar.CaretUp;
+            this.btnTonKho.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTonKho.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTonKho.Location = new System.Drawing.Point(3, 462);
+            this.btnTonKho.Name = "btnTonKho";
+            this.btnTonKho.Size = new System.Drawing.Size(369, 50);
+            this.btnTonKho.TabIndex = 6;
+            this.btnTonKho.Text = "Tồn kho";
+            this.btnTonKho.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnTonKho.UseVisualStyleBackColor = false;
             // 
-            // id_loaisp
+            // btnLoaiHang
             // 
-            this.id_loaisp.DataPropertyName = "Idloaisanpham";
-            this.id_loaisp.HeaderText = "ID Loại Sản Phẩm";
-            this.id_loaisp.MinimumWidth = 6;
-            this.id_loaisp.Name = "id_loaisp";
-            this.id_loaisp.ReadOnly = true;
-            this.id_loaisp.Width = 175;
+            this.btnLoaiHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnLoaiHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLoaiHang.FlatAppearance.BorderSize = 0;
+            this.btnLoaiHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaiHang.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLoaiHang.IconChar = FontAwesome.Sharp.IconChar.CaretUp;
+            this.btnLoaiHang.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLoaiHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLoaiHang.Location = new System.Drawing.Point(0, 64);
+            this.btnLoaiHang.Name = "btnLoaiHang";
+            this.btnLoaiHang.Size = new System.Drawing.Size(369, 64);
+            this.btnLoaiHang.TabIndex = 3;
+            this.btnLoaiHang.Text = "Loại hàng";
+            this.btnLoaiHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLoaiHang.UseVisualStyleBackColor = false;
             // 
-            // sl
+            // btnSearch
             // 
-            this.sl.DataPropertyName = "Sl";
-            this.sl.HeaderText = "Số Lượng Tồn Kho";
-            this.sl.MinimumWidth = 6;
-            this.sl.Name = "sl";
-            this.sl.ReadOnly = true;
-            this.sl.Width = 200;
-            // 
-            // dvt
-            // 
-            this.dvt.DataPropertyName = "Dvt";
-            this.dvt.HeaderText = "Đơn Vị Tính";
-            this.dvt.MinimumWidth = 6;
-            this.dvt.Name = "dvt";
-            this.dvt.ReadOnly = true;
-            this.dvt.Width = 125;
-            // 
-            // donGia
-            // 
-            this.donGia.DataPropertyName = "Dongia";
-            this.donGia.HeaderText = "Đơn Giá";
-            this.donGia.MinimumWidth = 6;
-            this.donGia.Name = "donGia";
-            this.donGia.ReadOnly = true;
-            this.donGia.Width = 150;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSearch.IconColor = System.Drawing.Color.Black;
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.Location = new System.Drawing.Point(0, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(369, 50);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // FormQuanLySanPham
             // 
@@ -555,23 +525,18 @@
             this.Load += new System.EventHandler(this.FormQuanLySanPham_Load);
             this.panMain.ResumeLayout(false);
             this.panMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDanhSachSP)).EndInit();
-            this.panLoaiHang.ResumeLayout(false);
-            this.panLoaiHang.PerformLayout();
             this.panTonKho.ResumeLayout(false);
             this.panTonKho.PerformLayout();
             this.panSideMenu.ResumeLayout(false);
             this.panSideMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox chkSua;
-        private System.Windows.Forms.CheckBox chkNuocNgot;
-        private System.Windows.Forms.CheckBox chkDoAnHop;
-        private System.Windows.Forms.CheckBox chkThitca;
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.Panel panMain;
         private System.Windows.Forms.Panel panDash;
@@ -581,10 +546,7 @@
         private FontAwesome.Sharp.IconButton btnNhapHang;
         private System.Windows.Forms.Panel panDashside2;
         private System.Windows.Forms.Panel panTimKiem;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox chkRau;
         private FontAwesome.Sharp.IconButton btnTonKho;
-        private System.Windows.Forms.Panel panLoaiHang;
         private System.Windows.Forms.RadioButton radHetHang;
         private System.Windows.Forms.RadioButton radConHang;
         private System.Windows.Forms.RadioButton radAll;
@@ -602,5 +564,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sl;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvt;
         private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
+        private System.Windows.Forms.FlowLayoutPanel flpCategory;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btnBrowField;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
