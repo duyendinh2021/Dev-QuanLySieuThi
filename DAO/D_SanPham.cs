@@ -146,5 +146,60 @@ namespace DAO
             string query = "EXEC UpdateSLSanPham @id , @sl";
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
+
+
+        [Obsolete]
+        public SanPham LoadSanPhamTheoid(int id)
+        {
+            string query = "EXEC SearchSanPhamByID @id";
+            SanPham sanPham = new SanPham();
+
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query,new object[] {id}))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    sanPham.Idsanpham = int.Parse(item["ID_SanPham"].ToString());
+                    sanPham.Tensanpham = item["TenSanPham"].ToString();
+                    sanPham.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    sanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    sanPham.Sl = int.Parse(item["SoLuong"].ToString());
+                    sanPham.Dvt = item["DVT"].ToString();
+                    sanPham.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    sanPham.Hinh = (Byte[])item["Hinh"];
+                    sanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+
+                }
+            }
+            return sanPham;
+        }
+
+
+        [Obsolete]
+        public List<SanPham> getSanPhamByNCC(int id)
+        {
+            string query = "EXEC SearchSanPhamByNhaCungCap @id_ncc";
+            List<SanPham> sanPhams = new List<SanPham>();
+
+
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query,new object[] {id}))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.Idsanpham = int.Parse(item["ID_SanPham"].ToString());
+                    sanPham.Tensanpham = item["TenSanPham"].ToString();
+                    sanPham.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    sanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    sanPham.Sl = int.Parse(item["SoLuong"].ToString());
+                    sanPham.Dvt = item["DVT"].ToString();
+                    sanPham.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    sanPham.Hinh = (Byte[])item["Hinh"];
+                    sanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    sanPhams.Add(sanPham);
+                }
+            }
+
+            return sanPhams;
+        }
     }
 }

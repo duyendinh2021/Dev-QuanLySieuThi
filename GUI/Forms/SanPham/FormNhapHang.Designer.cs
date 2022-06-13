@@ -34,16 +34,28 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapHang));
             this.panHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grbDSNhapHang = new System.Windows.Forms.GroupBox();
             this.dgvHoaDonNhap = new System.Windows.Forms.DataGridView();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_ncc_PhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtTongGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnHangMoi = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.cmbLoaiSP = new System.Windows.Forms.ComboBox();
             this.grbDSHangHoa = new System.Windows.Forms.GroupBox();
             this.dtgDSHangHoa = new System.Windows.Forms.DataGridView();
+            this.Add = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID_SP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,20 +67,11 @@
             this.txtSl = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_ncc_PhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnHangMoi = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.Add = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.cmbNCC = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -94,6 +97,23 @@
             this.panHeader.Size = new System.Drawing.Size(1837, 45);
             this.panHeader.TabIndex = 11;
             // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 40;
+            this.btnExit.Location = new System.Drawing.Point(1762, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 45);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -107,6 +127,9 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
+            this.splitContainer1.Panel2.Controls.Add(this.cmbNCC);
             this.splitContainer1.Panel2.Controls.Add(this.btnRefresh);
             this.splitContainer1.Panel2.Controls.Add(this.cmbLoaiSP);
             this.splitContainer1.Panel2.Controls.Add(this.grbDSHangHoa);
@@ -186,6 +209,59 @@
             this.dgvHoaDonNhap.TabIndex = 12;
             this.dgvHoaDonNhap.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHoaDonNhap_CellMouseClick);
             // 
+            // Item
+            // 
+            this.Item.DataPropertyName = "Item";
+            this.Item.FillWeight = 96.9697F;
+            this.Item.HeaderText = "SẢN PHẨM";
+            this.Item.MinimumWidth = 6;
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
+            // 
+            // QTY
+            // 
+            this.QTY.DataPropertyName = "QTY";
+            this.QTY.FillWeight = 96.9697F;
+            this.QTY.HeaderText = "SỐ LƯỢNG";
+            this.QTY.MinimumWidth = 6;
+            this.QTY.Name = "QTY";
+            this.QTY.ReadOnly = true;
+            // 
+            // COST
+            // 
+            this.COST.DataPropertyName = "COST";
+            this.COST.FillWeight = 96.9697F;
+            this.COST.HeaderText = "GIÁ";
+            this.COST.MinimumWidth = 6;
+            this.COST.Name = "COST";
+            this.COST.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // id_ncc_PhieuNhap
+            // 
+            this.id_ncc_PhieuNhap.HeaderText = "";
+            this.id_ncc_PhieuNhap.MinimumWidth = 6;
+            this.id_ncc_PhieuNhap.Name = "id_ncc_PhieuNhap";
+            this.id_ncc_PhieuNhap.ReadOnly = true;
+            this.id_ncc_PhieuNhap.Visible = false;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::GUI.Properties.Resources.delete;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // txtTongGia
             // 
             this.txtTongGia.Location = new System.Drawing.Point(266, 441);
@@ -214,10 +290,55 @@
             this.panel2.Size = new System.Drawing.Size(651, 117);
             this.panel2.TabIndex = 0;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.button3.Image = global::GUI.Properties.Resources.clear;
+            this.button3.Location = new System.Drawing.Point(470, 24);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(147, 58);
+            this.button3.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.button3, "Nhấn Xóa Danh Sách Hàng Nhập");
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // btnHangMoi
+            // 
+            this.btnHangMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnHangMoi.Image = global::GUI.Properties.Resources.add;
+            this.btnHangMoi.Location = new System.Drawing.Point(266, 24);
+            this.btnHangMoi.Name = "btnHangMoi";
+            this.btnHangMoi.Size = new System.Drawing.Size(147, 58);
+            this.btnHangMoi.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnHangMoi, "Nhấn Thêm Sản Phẩm Mới");
+            this.btnHangMoi.UseVisualStyleBackColor = false;
+            this.btnHangMoi.Click += new System.EventHandler(this.btnHangMoi_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnConfirm.Image = global::GUI.Properties.Resources.add_Hang;
+            this.btnConfirm.Location = new System.Drawing.Point(52, 24);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(147, 58);
+            this.btnConfirm.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnConfirm, "Nhấn Tạo Phiếu Nhập Kho");
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::GUI.Properties.Resources.refresh;
+            this.btnRefresh.Location = new System.Drawing.Point(925, 52);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(93, 49);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // cmbLoaiSP
             // 
             this.cmbLoaiSP.FormattingEnabled = true;
-            this.cmbLoaiSP.Location = new System.Drawing.Point(3, 60);
+            this.cmbLoaiSP.Location = new System.Drawing.Point(187, 65);
             this.cmbLoaiSP.Name = "cmbLoaiSP";
             this.cmbLoaiSP.Size = new System.Drawing.Size(256, 24);
             this.cmbLoaiSP.TabIndex = 2;
@@ -274,6 +395,14 @@
             this.dtgDSHangHoa.Size = new System.Drawing.Size(1176, 481);
             this.dtgDSHangHoa.TabIndex = 13;
             this.dtgDSHangHoa.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDSHangHoa_CellMouseClick);
+            // 
+            // Add
+            // 
+            this.Add.HeaderText = "";
+            this.Add.Image = global::GUI.Properties.Resources.left_arrow;
+            this.Add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Add.MinimumWidth = 6;
+            this.Add.Name = "Add";
             // 
             // ID_SP
             // 
@@ -351,50 +480,6 @@
             this.label1.Text = "Nhập Số Lượng Cần Nhập";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // Item
-            // 
-            this.Item.DataPropertyName = "Item";
-            this.Item.FillWeight = 96.9697F;
-            this.Item.HeaderText = "SẢN PHẨM";
-            this.Item.MinimumWidth = 6;
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // QTY
-            // 
-            this.QTY.DataPropertyName = "QTY";
-            this.QTY.FillWeight = 96.9697F;
-            this.QTY.HeaderText = "SỐ LƯỢNG";
-            this.QTY.MinimumWidth = 6;
-            this.QTY.Name = "QTY";
-            this.QTY.ReadOnly = true;
-            // 
-            // COST
-            // 
-            this.COST.DataPropertyName = "COST";
-            this.COST.FillWeight = 96.9697F;
-            this.COST.HeaderText = "GIÁ";
-            this.COST.MinimumWidth = 6;
-            this.COST.Name = "COST";
-            this.COST.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // id_ncc_PhieuNhap
-            // 
-            this.id_ncc_PhieuNhap.HeaderText = "";
-            this.id_ncc_PhieuNhap.MinimumWidth = 6;
-            this.id_ncc_PhieuNhap.Name = "id_ncc_PhieuNhap";
-            this.id_ncc_PhieuNhap.ReadOnly = true;
-            this.id_ncc_PhieuNhap.Visible = false;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.DataPropertyName = "Delete";
@@ -414,84 +499,34 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 146;
             // 
-            // Delete
+            // cmbNCC
             // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::GUI.Properties.Resources.delete;
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cmbNCC.FormattingEnabled = true;
+            this.cmbNCC.Location = new System.Drawing.Point(658, 68);
+            this.cmbNCC.Name = "cmbNCC";
+            this.cmbNCC.Size = new System.Drawing.Size(205, 24);
+            this.cmbNCC.TabIndex = 4;
+            this.cmbNCC.SelectedIndexChanged += new System.EventHandler(this.cmbNCC_SelectedIndexChanged);
             // 
-            // button3
+            // label3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.button3.Image = global::GUI.Properties.Resources.clear;
-            this.button3.Location = new System.Drawing.Point(470, 24);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 58);
-            this.button3.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.button3, "Nhấn Xóa Danh Sách Hàng Nhập");
-            this.button3.UseVisualStyleBackColor = false;
+            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 23);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Loại Sản Phẩm";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // btnHangMoi
+            // label4
             // 
-            this.btnHangMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnHangMoi.Image = global::GUI.Properties.Resources.add;
-            this.btnHangMoi.Location = new System.Drawing.Point(266, 24);
-            this.btnHangMoi.Name = "btnHangMoi";
-            this.btnHangMoi.Size = new System.Drawing.Size(147, 58);
-            this.btnHangMoi.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnHangMoi, "Nhấn Thêm Sản Phẩm Mới");
-            this.btnHangMoi.UseVisualStyleBackColor = false;
-            this.btnHangMoi.Click += new System.EventHandler(this.btnHangMoi_Click);
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnConfirm.Image = global::GUI.Properties.Resources.add_Hang;
-            this.btnConfirm.Location = new System.Drawing.Point(52, 24);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(147, 58);
-            this.btnConfirm.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnConfirm, "Nhấn Tạo Phiếu Nhập Kho");
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = global::GUI.Properties.Resources.refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(293, 47);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(93, 49);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // Add
-            // 
-            this.Add.HeaderText = "";
-            this.Add.Image = global::GUI.Properties.Resources.left_arrow;
-            this.Add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Add.MinimumWidth = 6;
-            this.Add.Name = "Add";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 40;
-            this.btnExit.Location = new System.Drawing.Point(1762, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 45);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.label4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(496, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 23);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Nhà Cung Cấp";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // FormNhapHang
             // 
@@ -562,5 +597,8 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.ComboBox cmbNCC;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

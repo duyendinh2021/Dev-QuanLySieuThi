@@ -43,9 +43,6 @@
             this.panDash = new System.Windows.Forms.Panel();
             this.ptbXemSanPham = new System.Windows.Forms.PictureBox();
             this.dtDanhSachSP = new System.Windows.Forms.DataGridView();
-            this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colbtnXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblHangHoa = new System.Windows.Forms.Label();
             this.btnNhapHang = new FontAwesome.Sharp.IconButton();
             this.panDashside2 = new System.Windows.Forms.Panel();
@@ -62,6 +59,16 @@
             this.btnLoaiHang = new FontAwesome.Sharp.IconButton();
             this.panBottom1 = new System.Windows.Forms.Panel();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colbtnXoa = new System.Windows.Forms.DataGridViewImageColumn();
+            this.id_sp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten_sp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_ncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_loaisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDanhSachSP)).BeginInit();
@@ -175,7 +182,15 @@
             this.dtDanhSachSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Checked,
             this.colbtnSua,
-            this.colbtnXoa});
+            this.colbtnXoa,
+            this.id_sp,
+            this.ten_sp,
+            this.id_ncc,
+            this.id_loaisp,
+            this.sl,
+            this.dvt,
+            this.donGia});
+            this.dtDanhSachSP.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,42 +219,7 @@
             this.dtDanhSachSP.RowTemplate.Height = 50;
             this.dtDanhSachSP.Size = new System.Drawing.Size(981, 476);
             this.dtDanhSachSP.TabIndex = 27;
-            // 
-            // Checked
-            // 
-            this.Checked.HeaderText = "";
-            this.Checked.MinimumWidth = 6;
-            this.Checked.Name = "Checked";
-            this.Checked.Width = 35;
-            // 
-            // colbtnSua
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.colbtnSua.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colbtnSua.HeaderText = "";
-            this.colbtnSua.Image = global::GUI.Properties.Resources.edit;
-            this.colbtnSua.MinimumWidth = 6;
-            this.colbtnSua.Name = "colbtnSua";
-            this.colbtnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colbtnSua.Width = 45;
-            // 
-            // colbtnXoa
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            this.colbtnXoa.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colbtnXoa.HeaderText = "";
-            this.colbtnXoa.Image = global::GUI.Properties.Resources.delete;
-            this.colbtnXoa.MinimumWidth = 6;
-            this.colbtnXoa.Name = "colbtnXoa";
-            this.colbtnXoa.Width = 45;
+            this.dtDanhSachSP.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtDanhSachSP_CellMouseClick);
             // 
             // lblHangHoa
             // 
@@ -457,6 +437,110 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
+            // Checked
+            // 
+            this.Checked.HeaderText = "";
+            this.Checked.MinimumWidth = 6;
+            this.Checked.Name = "Checked";
+            this.Checked.Width = 35;
+            // 
+            // colbtnSua
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.colbtnSua.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colbtnSua.HeaderText = "";
+            this.colbtnSua.Image = global::GUI.Properties.Resources.edit;
+            this.colbtnSua.MinimumWidth = 6;
+            this.colbtnSua.Name = "colbtnSua";
+            this.colbtnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colbtnSua.ToolTipText = "Nhấn Để Tiến Hành Edit";
+            this.colbtnSua.Width = 45;
+            // 
+            // colbtnXoa
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            this.colbtnXoa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colbtnXoa.HeaderText = "";
+            this.colbtnXoa.Image = global::GUI.Properties.Resources.delete;
+            this.colbtnXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.colbtnXoa.MinimumWidth = 6;
+            this.colbtnXoa.Name = "colbtnXoa";
+            this.colbtnXoa.ToolTipText = "Nhấn Dể Xóa";
+            this.colbtnXoa.Width = 45;
+            // 
+            // id_sp
+            // 
+            this.id_sp.DataPropertyName = "Idsanpham";
+            this.id_sp.HeaderText = "ID Sản Phẩm";
+            this.id_sp.MinimumWidth = 6;
+            this.id_sp.Name = "id_sp";
+            this.id_sp.ReadOnly = true;
+            this.id_sp.Width = 150;
+            // 
+            // ten_sp
+            // 
+            this.ten_sp.DataPropertyName = "Tensanpham";
+            this.ten_sp.HeaderText = "Tên Sản Phẩm";
+            this.ten_sp.MinimumWidth = 6;
+            this.ten_sp.Name = "ten_sp";
+            this.ten_sp.ReadOnly = true;
+            this.ten_sp.Width = 150;
+            // 
+            // id_ncc
+            // 
+            this.id_ncc.DataPropertyName = "Idnhacungcap";
+            this.id_ncc.HeaderText = "ID Nhà Cung Cấp";
+            this.id_ncc.MinimumWidth = 6;
+            this.id_ncc.Name = "id_ncc";
+            this.id_ncc.ReadOnly = true;
+            this.id_ncc.Width = 175;
+            // 
+            // id_loaisp
+            // 
+            this.id_loaisp.DataPropertyName = "Idloaisanpham";
+            this.id_loaisp.HeaderText = "ID Loại Sản Phẩm";
+            this.id_loaisp.MinimumWidth = 6;
+            this.id_loaisp.Name = "id_loaisp";
+            this.id_loaisp.ReadOnly = true;
+            this.id_loaisp.Width = 175;
+            // 
+            // sl
+            // 
+            this.sl.DataPropertyName = "Sl";
+            this.sl.HeaderText = "Số Lượng Tồn Kho";
+            this.sl.MinimumWidth = 6;
+            this.sl.Name = "sl";
+            this.sl.ReadOnly = true;
+            this.sl.Width = 200;
+            // 
+            // dvt
+            // 
+            this.dvt.DataPropertyName = "Dvt";
+            this.dvt.HeaderText = "Đơn Vị Tính";
+            this.dvt.MinimumWidth = 6;
+            this.dvt.Name = "dvt";
+            this.dvt.ReadOnly = true;
+            this.dvt.Width = 125;
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "Dongia";
+            this.donGia.HeaderText = "Đơn Giá";
+            this.donGia.MinimumWidth = 6;
+            this.donGia.Name = "donGia";
+            this.donGia.ReadOnly = true;
+            this.donGia.Width = 150;
+            // 
             // FormQuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -468,6 +552,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuanLySanPham";
             this.Text = "FormQuanLySanPham";
+            this.Load += new System.EventHandler(this.FormQuanLySanPham_Load);
             this.panMain.ResumeLayout(false);
             this.panMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).EndInit();
@@ -510,5 +595,12 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Checked;
         private System.Windows.Forms.DataGridViewImageColumn colbtnSua;
         private System.Windows.Forms.DataGridViewImageColumn colbtnXoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_sp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ten_sp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_ncc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_loaisp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
     }
 }

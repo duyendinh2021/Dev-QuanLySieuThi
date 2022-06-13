@@ -53,7 +53,7 @@ namespace BUS
 
          
         [Obsolete]
-        public void getAllSanPham(ref DataGridView data)
+        public void getAllSanPhamHoatDong(ref DataGridView data)
         {
             List<SanPham> sanPhams = DAO.D_SanPham.Instance.selectAllSanPhamDanghoatDong();
             data.DataSource = sanPhams;
@@ -105,6 +105,30 @@ namespace BUS
         public void UpdateSLSanPham(object[] parameter)
         {
             D_SanPham.Instance.UpdateSLSanPham(parameter);
+        }
+
+
+        [Obsolete]
+        public void LoadSamPhamtheoid(int id,ref string ten_sp, ref int id_loai, ref int id_ncc, ref int sl, ref decimal dongia, ref byte[] hinh, ref int trangthai)
+        {
+           SanPham sanPham =  D_SanPham.Instance.LoadSanPhamTheoid(id);
+            //int id_sp = sanPham.Idsanpham;
+            id_loai = sanPham.Idloaisanpham;
+            id_ncc = sanPham.Idnhacungcap;
+            ten_sp = sanPham.Tensanpham;
+            sl = sanPham.Sl;
+            dongia = sanPham.Dongia;
+            hinh = sanPham.Hinh;
+            trangthai = sanPham.Trangthai;
+        }
+
+
+
+        [Obsolete]
+        public void getSanPhamByNCC(int id, ref DataGridView data)
+        {
+            List<SanPham> sanPhams = D_SanPham.Instance.getSanPhamByNCC(id);
+            data.DataSource = sanPhams;
         }
     }
 }

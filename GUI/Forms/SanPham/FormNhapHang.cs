@@ -29,8 +29,10 @@ namespace GUI.Forms.SanPham
         private void FormNhapHang_Load(object sender, EventArgs e)
         {
             BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSP);
-            BUS.B_SanPham.Instance.getAllSanPham(ref dtgDSHangHoa);
+            BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
+            B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNCC);
             cmbLoaiSP.SelectedIndex = -1;
+            cmbNCC.SelectedIndex = -1;
 
             dtgDSHangHoa.Columns["Hinh"].Visible = false;
             dtgDSHangHoa.Columns["Trangthai"].Visible = false;
@@ -114,7 +116,7 @@ namespace GUI.Forms.SanPham
         {
             FormNhapSanPham formNhapSanPham = new FormNhapSanPham();
             formNhapSanPham.ShowDialog();
-            BUS.B_SanPham.Instance.getAllSanPham(ref dtgDSHangHoa);
+            BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
 
         }
 
@@ -146,7 +148,7 @@ namespace GUI.Forms.SanPham
                 }
 
             }
-            BUS.B_SanPham.Instance.getAllSanPham(ref dtgDSHangHoa);
+            BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
         }
 
         private void dgvHoaDonNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -166,7 +168,22 @@ namespace GUI.Forms.SanPham
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             cmbLoaiSP.SelectedIndex = -1;
-            BUS.B_SanPham.Instance.getAllSanPham(ref dtgDSHangHoa);
+            BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
+        }
+
+
+
+        [Obsolete]
+        private void cmbNCC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbNCC.SelectedIndex == -1)
+            {
+                BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
+            }
+            else
+            {
+                B_SanPham.Instance.getSanPhamByNCC(int.Parse(cmbNCC.SelectedValue.ToString()), ref dtgDSHangHoa);
+            }
         }
     }
 }
