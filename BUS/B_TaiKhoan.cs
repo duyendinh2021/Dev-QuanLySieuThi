@@ -31,28 +31,32 @@ namespace BUS
 
 
         [Obsolete]
-        public bool UserLogIn(string accUesrLogIn, string passUesrLogIn)
+        public bool UserLogIn(string accUesrLogIn, string passUesrLogIn,ref string message)
         {
-
             bool result = false;
-
             TaiKhoan taiKhoan = DAO.D_TaiKhoan.Instance.userLogIn(accUesrLogIn, passUesrLogIn);
-            result = taiKhoan != null ? true : false;
-
-            
-
-            if (result)
+            result = taiKhoan.Idnhanvien != 0 ? true : false;
+            if (!result)
             {
-                if (taiKhoan.Trangthai == 0 || taiKhoan.Statuslogin  == 1)
+                message = "tài khoản hoạt mật khẩu sai, vui lòng nhập lại";
+            }
+            else
+            {
+                if (taiKhoan.Idnhanvien != 0 && taiKhoan.Trangthai == 0)
                 {
-                    return false;
+                    message = "Tài khoản của bản bị vô hiệu hóa, vui lòng liên hệ quản trị viên dể biết thêm chi tiết";
+                    result = false;
+                }
+                else if (taiKhoan.Idnhanvien != 0 && taiKhoan.Trangthai == 1 && taiKhoan.Statuslogin == 1)
+                {
+                    message = "Tài Khoản hiện dang đăng nhập trong hệ thống, vui long đăng xuất dể tiếp tục";
+                    result = false;
                 }
                 quyen = taiKhoan.Chuvu;
                 id = taiKhoan.Idnhanvien;
                 updateStatusLogin(id);
             }
-            return  result;
-
+            return result;
         }
 
         [Obsolete]
@@ -61,5 +65,22 @@ namespace BUS
             DAO.D_TaiKhoan.Instance.updateStatusLogin(id);
         }
 
+
+
+
+        [Obsolete]
+        public bool updateTaikhoan(object[] parameter)
+        {
+            try
+            {
+                DAO.D_TaiKhoan.Instance.updateTaiKhoan(parameter);
+            }
+            catch (Exception)
+            {
+
+               return false;
+            }
+            return true;
+        }
     }
 }

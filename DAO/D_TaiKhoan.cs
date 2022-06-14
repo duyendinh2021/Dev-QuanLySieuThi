@@ -53,5 +53,13 @@ namespace DAO
         {
             connectionData.Instance.excuteNonQueryStoreProcedure("EXEC ChangeStatusLogIn @id", new object[] { id });
         }
+
+
+        [Obsolete]
+        public void updateTaiKhoan(object[] parameter)
+        {
+            string query = "EXEC UpdateTaiKhoan @id , @tentk , @mk , @chucVu , @trangthai";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
     }
 }

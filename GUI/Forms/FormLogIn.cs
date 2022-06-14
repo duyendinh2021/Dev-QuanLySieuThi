@@ -89,8 +89,8 @@ namespace GUI
         {
             string accUesrLogIn = txtTaiKhoan.Text;
             string passUesrLogIn = txtMatKhau.Text;
-
-            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn))
+            string message = "";
+            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn,ref message))
             {
                 FormMainApp formMainApp = new FormMainApp();
                 formMainApp.Show();
@@ -99,28 +99,10 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("that bai");
+                MessageBox.Show(message);
 
             }
         }
-
-        [Obsolete]
-        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
-                //Application.Exit();
-                e.Cancel = false;
-
-            }
-            else
-            {
-                e.Cancel = true;
-            }
-        }
-
 
         private void FormMainApp_LogOut(object sender, EventArgs e)
         {
@@ -129,6 +111,19 @@ namespace GUI
             this.Show();
         }
 
-        
+        [Obsolete]
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;               
+            }
+            BUS.B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

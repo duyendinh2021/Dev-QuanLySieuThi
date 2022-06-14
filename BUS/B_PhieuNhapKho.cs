@@ -23,5 +23,27 @@ namespace BUS
                 return instance;
             }
         }
+
+
+        [Obsolete]
+        public bool stokerCreatePhieuNhapKho(object[] parameter)
+        {
+            try
+            {
+                D_PhieuNhapKho.Instance.stokerCreatePhieuNhapKho(parameter);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+
+        [Obsolete]
+        public int stokerGetNewReceipt() { 
+            return D_PhieuNhapKho.Instance.stokerGetNewReceipt();
+        }
     }
 }

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -46,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>263142.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
@@ -71,15 +74,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassSupport\SupportLogic.cs" />
+    <Compile Include="Components\ButtonCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ButtonCategory.Designer.cs" />
+    <Compile Include="Components\Tag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Tag.Designer.cs" />
+    <Compile Include="Components\Wiget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Wiget.Designer.cs" />
     <Compile Include="Conntrols\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Conntrols\RJTextBox.Designer.cs" />
     <Compile Include="Conntrols\RJTextBox1.Designer.cs" />
-    <Compile Include="Forms\FormCapNhatNhanVien.cs">
+    <Compile Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormCapNhatNhanVien.Designer.cs">
+    <Compile Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.Designer.cs">
+      <DependentUpon>FormCapNhatNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhaCungCap\FormQuanLyNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhaCungCap\FormQuanLyNhaCungCap.Designer.cs">
+      <DependentUpon>FormQuanLyNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormCapNhatNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormCapNhatNhanVien.Designer.cs">
       <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormLogIn.cs">
@@ -94,16 +121,40 @@
     <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormQuanLyNhanVien.cs">
+    <Compile Include="Forms\SanPham\FormCapNhatSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormQuanLyNhanVien.Designer.cs">
+    <Compile Include="Forms\SanPham\FormCapNhatSanPham.Designer.cs">
+      <DependentUpon>FormCapNhatSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SanPham\FormNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SanPham\FormNhapHang.Designer.cs">
+      <DependentUpon>FormNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SanPham\FormNhapLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SanPham\FormNhapLoaiSP.Designer.cs">
+      <DependentUpon>FormNhapLoaiSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SanPham\FormNhapSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SanPham\FormNhapSanPham.Designer.cs">
+      <DependentUpon>FormNhapSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormQuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormQuanLyNhanVien.Designer.cs">
       <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormQuanLySanPham.cs">
+    <Compile Include="Forms\SanPham\FormQuanLySanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormQuanLySanPham.Designer.cs">
+    <Compile Include="Forms\SanPham\FormQuanLySanPham.Designer.cs">
       <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSale.cs">
@@ -112,18 +163,39 @@
     <Compile Include="Forms\FormSale.Designer.cs">
       <DependentUpon>FormSale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormThemNhanVien.cs">
+    <Compile Include="Forms\NhaCungCap\FormThemNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormThemNhanVien.Designer.cs">
+    <Compile Include="Forms\NhaCungCap\FormThemNhaCungCap.Designer.cs">
+      <DependentUpon>FormThemNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormThemNhanVien.Designer.cs">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormViewAccout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormViewAccout.Designer.cs">
+      <DependentUpon>FormViewAccout.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClassSupport\Rule_Regex.cs" />
     <Compile Include="ClassSupport\SupportUI_UX.cs" />
+    <EmbeddedResource Include="Components\ButtonCategory.resx" />
+    <EmbeddedResource Include="Components\Tag.resx" />
+    <EmbeddedResource Include="Components\Wiget.resx" />
     <EmbeddedResource Include="Conntrols\RJTextBox.resx" />
-    <EmbeddedResource Include="Forms\FormCapNhatNhanVien.resx">
+    <EmbeddedResource Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.resx">
+      <DependentUpon>FormCapNhatNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhaCungCap\FormQuanLyNhaCungCap.resx">
+      <DependentUpon>FormQuanLyNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhanVien\FormCapNhatNhanVien.resx">
       <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogIn.resx">
@@ -132,27 +204,48 @@
     <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormQuanLyNhanVien.resx">
+    <EmbeddedResource Include="Forms\SanPham\FormCapNhatSanPham.resx">
+      <DependentUpon>FormCapNhatSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SanPham\FormNhapHang.resx">
+      <DependentUpon>FormNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SanPham\FormNhapLoaiSP.resx">
+      <DependentUpon>FormNhapLoaiSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SanPham\FormNhapSanPham.resx">
+      <DependentUpon>FormNhapSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhanVien\FormQuanLyNhanVien.resx">
       <DependentUpon>FormQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormThemNhanVien.resx">
+    <EmbeddedResource Include="Forms\SanPham\FormQuanLySanPham.resx">
+      <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhaCungCap\FormThemNhaCungCap.resx">
+      <DependentUpon>FormThemNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhanVien\FormThemNhanVien.resx">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhanVien\FormViewAccout.resx">
+      <DependentUpon>FormViewAccout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -179,6 +272,25 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="263142.ico" />
+    <None Include="Resources\resume.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\writing.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\photo.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\add-image.png" />
+    <None Include="Resources\other.png" />
+    <None Include="Resources\confirmation.png" />
+    <None Include="Resources\left-arrow.png" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\add_Hang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

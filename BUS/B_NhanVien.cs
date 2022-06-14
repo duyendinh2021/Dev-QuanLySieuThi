@@ -30,9 +30,9 @@ namespace BUS
             }
         }
         [Obsolete]
-        public void getAllNhanVien(ref DataGridView dt)
+        public void getAllNhanVienHoatDong(ref DataGridView dt)
         {
-            List<NhanVien> nhanViens = D_NhanVien.Instance.getAllNhanVien();
+            List<NhanVien> nhanViens = D_NhanVien.Instance.getAllNhanVienHoatDong();
             dt.DataSource = nhanViens;
         }
 
@@ -92,7 +92,7 @@ namespace BUS
         {
             try
             {
-                DAO.D_NhanVien.Instance.admiUpdateNhanVien(parameter);
+                DAO.D_NhanVien.Instance.adminUpdateNhanVien(parameter);
             }
             catch (Exception)
             {
@@ -100,6 +100,116 @@ namespace BUS
                 return false;
             }
             return true;
+        }
+
+
+        [Obsolete]
+        public Boolean adminDeleteNhanVien(int id)
+        {
+            try
+            {
+                DAO.D_NhanVien.Instance.adminDeleteNhanVien(id);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+        [Obsolete]
+        public void getNhanVienByChucVu(ref DataGridView data,string chuvu)
+        {
+            List<NhanVien> nhanVienAdmins = DAO.D_NhanVien.Instance.getNhanVienByChucVu(chuvu);
+            data.DataSource = nhanVienAdmins;
+        }
+
+
+        [Obsolete]
+        public void getNhanVienByTrangThai(ref DataGridView data, int trangThai)
+        {
+            List<NhanVien> nhanVienByTrangThai = DAO.D_NhanVien.Instance.getNhanVienByTrangThai(trangThai);
+            data.DataSource = nhanVienByTrangThai;
+        }
+
+
+        [Obsolete]
+        public void getAllNhanVien(ref DataGridView data)
+        {
+            List<NhanVien> allNhanVien = DAO.D_NhanVien.Instance.getAllNhanVien();
+            data.DataSource = allNhanVien;
+        }
+
+
+        [Obsolete]
+        public void searchNhanVien(ref DataGridView data, string search)
+        {
+            List<NhanVien> nhanVienSearch = DAO.D_NhanVien.Instance.searchNhanVien(search);
+            data.DataSource = nhanVienSearch;
+        }
+
+
+
+        [Obsolete]
+        public void getNhanVienByChucVuAndTrangThai(ref DataGridView data,string chucvu,int trangthai)
+        {
+            List<NhanVien> nhanViens = DAO.D_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(chucvu,trangthai);
+            data.DataSource = nhanViens;
+        }
+
+
+
+        [Obsolete]
+        public void searchNhanVienByChuVuAndTrangThai(ref DataGridView data,string search, string chucvu,int trangthai)
+        {
+            List<NhanVien> nhanViens = DAO.D_NhanVien.Instance.searchNhanVienByChuVuAndTrangThai(search, chucvu, trangthai);
+            data.DataSource = nhanViens;
+        }
+
+
+
+
+        [Obsolete]
+        public void searchNhanVienByTrangThai(ref DataGridView data, string search ,int trangthai)
+        {
+            List<NhanVien> nhanViens = DAO.D_NhanVien.Instance.searchNhanVienByTrangThai(search ,trangthai);
+            data.DataSource = nhanViens;
+        }
+
+
+        [Obsolete]
+        public void GetTaiKhoanByID(int id,ref string usernam,ref string pass,ref string chucvu,ref int trangthai)
+        {
+            TaiKhoan tk = DAO.D_NhanVien.Instance.getTaiKhoanByID(id);
+            usernam = tk.Uesrname;
+            pass = tk.Pass;
+            chucvu = tk.Chuvu;
+            trangthai = tk.Trangthai;
+        }
+
+
+        [Obsolete]
+        public bool stokerAddLoaiSanPham(object[] parameter)
+        {
+            try
+            {
+                D_NhanVien.Instance.stokerAddLoaiSanPham(parameter);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+
+        [Obsolete]
+        public void stokerGetNewProduct(ref DataTable dataTable)
+        {
+            SanPham sanPham = D_SanPham.Instance.stokerGetNewProduct();
+            dataTable.Rows.Add(sanPham);
         }
     }
 }

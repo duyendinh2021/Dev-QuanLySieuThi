@@ -29,15 +29,15 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainApp));
             this.panelSettingsManage = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnChangePassWord = new System.Windows.Forms.Button();
-            this.panDash = new System.Windows.Forms.Panel();
             this.btnManageDetailOrders = new System.Windows.Forms.Button();
             this.btnManageOrders = new System.Windows.Forms.Button();
             this.btnSetting = new FontAwesome.Sharp.IconButton();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
-            this.btnStockReport = new FontAwesome.Sharp.IconButton();
+            this.btnStockSupplierManagement = new FontAwesome.Sharp.IconButton();
             this.btnbtnAdmissionSlip = new FontAwesome.Sharp.IconButton();
             this.btnSTmanageProducts = new FontAwesome.Sharp.IconButton();
             this.btnCashierReport = new FontAwesome.Sharp.IconButton();
@@ -50,9 +50,13 @@
             this.panLogo = new System.Windows.Forms.Panel();
             this.panSideMenu = new System.Windows.Forms.Panel();
             this.panChildForm = new System.Windows.Forms.Panel();
+            this.panHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panelSettingsManage.SuspendLayout();
             this.panOrdersManage.SuspendLayout();
             this.panSideMenu.SuspendLayout();
+            this.panChildForm.SuspendLayout();
+            this.panHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSettingsManage
@@ -101,16 +105,6 @@
             this.btnChangePassWord.Text = "Đổi mật khẩu";
             this.btnChangePassWord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChangePassWord.UseVisualStyleBackColor = true;
-            // 
-            // panDash
-            // 
-            this.panDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(33)))));
-            this.panDash.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panDash.Location = new System.Drawing.Point(244, 0);
-            this.panDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panDash.Name = "panDash";
-            this.panDash.Size = new System.Drawing.Size(1538, 5);
-            this.panDash.TabIndex = 14;
             // 
             // btnManageDetailOrders
             // 
@@ -194,28 +188,29 @@
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
-            // btnStockReport
+            // btnStockSupplierManagement
             // 
-            this.btnStockReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStockReport.FlatAppearance.BorderSize = 0;
-            this.btnStockReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockReport.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnStockReport.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
-            this.btnStockReport.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnStockReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnStockReport.IconSize = 32;
-            this.btnStockReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockReport.Location = new System.Drawing.Point(0, 832);
-            this.btnStockReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStockReport.Name = "btnStockReport";
-            this.btnStockReport.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnStockReport.Size = new System.Drawing.Size(223, 74);
-            this.btnStockReport.TabIndex = 11;
-            this.btnStockReport.Text = "Create Report";
-            this.btnStockReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStockReport.UseVisualStyleBackColor = true;
+            this.btnStockSupplierManagement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStockSupplierManagement.FlatAppearance.BorderSize = 0;
+            this.btnStockSupplierManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockSupplierManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockSupplierManagement.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnStockSupplierManagement.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnStockSupplierManagement.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnStockSupplierManagement.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnStockSupplierManagement.IconSize = 32;
+            this.btnStockSupplierManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockSupplierManagement.Location = new System.Drawing.Point(0, 832);
+            this.btnStockSupplierManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStockSupplierManagement.Name = "btnStockSupplierManagement";
+            this.btnStockSupplierManagement.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnStockSupplierManagement.Size = new System.Drawing.Size(223, 74);
+            this.btnStockSupplierManagement.TabIndex = 11;
+            this.btnStockSupplierManagement.Text = "Supplier management";
+            this.btnStockSupplierManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockSupplierManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStockSupplierManagement.UseVisualStyleBackColor = true;
+            this.btnStockSupplierManagement.Click += new System.EventHandler(this.btnStockSupplierManagement_Click);
             // 
             // btnbtnAdmissionSlip
             // 
@@ -437,7 +432,7 @@
             this.panSideMenu.Controls.Add(this.panelSettingsManage);
             this.panSideMenu.Controls.Add(this.btnSetting);
             this.panSideMenu.Controls.Add(this.btnHelp);
-            this.panSideMenu.Controls.Add(this.btnStockReport);
+            this.panSideMenu.Controls.Add(this.btnStockSupplierManagement);
             this.panSideMenu.Controls.Add(this.btnbtnAdmissionSlip);
             this.panSideMenu.Controls.Add(this.btnSTmanageProducts);
             this.panSideMenu.Controls.Add(this.btnCashierReport);
@@ -452,33 +447,64 @@
             this.panSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panSideMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panSideMenu.Name = "panSideMenu";
-            this.panSideMenu.Size = new System.Drawing.Size(244, 853);
+            this.panSideMenu.Size = new System.Drawing.Size(244, 950);
             this.panSideMenu.TabIndex = 12;
             // 
             // panChildForm
             // 
+            this.panChildForm.Controls.Add(this.panHeader);
             this.panChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panChildForm.Location = new System.Drawing.Point(244, 5);
+            this.panChildForm.Location = new System.Drawing.Point(244, 0);
             this.panChildForm.Name = "panChildForm";
-            this.panChildForm.Size = new System.Drawing.Size(1538, 848);
+            this.panChildForm.Size = new System.Drawing.Size(1538, 950);
             this.panChildForm.TabIndex = 15;
+            // 
+            // panHeader
+            // 
+            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panHeader.Controls.Add(this.btnExit);
+            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panHeader.Location = new System.Drawing.Point(0, 0);
+            this.panHeader.Name = "panHeader";
+            this.panHeader.Size = new System.Drawing.Size(1538, 55);
+            this.panHeader.TabIndex = 7;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 50;
+            this.btnExit.Location = new System.Drawing.Point(1463, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 55);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormMainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1782, 853);
+            this.ClientSize = new System.Drawing.Size(1782, 950);
             this.Controls.Add(this.panChildForm);
-            this.Controls.Add(this.panDash);
             this.Controls.Add(this.panSideMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMainApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainApp_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMainApp_FormClosed);
             this.Load += new System.EventHandler(this.FormMainApp_Load);
             this.panelSettingsManage.ResumeLayout(false);
             this.panOrdersManage.ResumeLayout(false);
             this.panSideMenu.ResumeLayout(false);
             this.panSideMenu.PerformLayout();
+            this.panChildForm.ResumeLayout(false);
+            this.panHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -488,12 +514,11 @@
         private System.Windows.Forms.Panel panelSettingsManage;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnChangePassWord;
-        private System.Windows.Forms.Panel panDash;
         private System.Windows.Forms.Button btnManageDetailOrders;
         private System.Windows.Forms.Button btnManageOrders;
         private FontAwesome.Sharp.IconButton btnSetting;
         private FontAwesome.Sharp.IconButton btnHelp;
-        private FontAwesome.Sharp.IconButton btnStockReport;
+        private FontAwesome.Sharp.IconButton btnStockSupplierManagement;
         private FontAwesome.Sharp.IconButton btnbtnAdmissionSlip;
         private FontAwesome.Sharp.IconButton btnSTmanageProducts;
         private FontAwesome.Sharp.IconButton btnCashierReport;
@@ -506,5 +531,7 @@
         private System.Windows.Forms.Panel panLogo;
         private System.Windows.Forms.Panel panSideMenu;
         private System.Windows.Forms.Panel panChildForm;
+        private System.Windows.Forms.Panel panHeader;
+        private FontAwesome.Sharp.IconButton btnExit;
     }
 }

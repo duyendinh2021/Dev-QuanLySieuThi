@@ -31,6 +31,12 @@ namespace DTO
             _trangthai = trangthai;
         }
 
+        public SanPham()
+        {
+
+        }
+
+
         public int Idsanpham { get => _idsanpham; set => _idsanpham = value; }
         public string Tensanpham { get => _tensanpham; set => _tensanpham = value; }
         public int Idnhacungcap { get => _idnhacungcap; set => _idnhacungcap = value; }

@@ -13,13 +13,19 @@ namespace GUI.Forms
 {
     public partial class FormCapNhatNhanVien : Form
     {
+        [Obsolete]
         public FormCapNhatNhanVien()
         {
             InitializeComponent();
         }
+        public int idNhanVien;
+        public string sPathImg = "";
+        public Image img = null;
+        public byte[] dataImg = null;
 
 
-        public FormCapNhatNhanVien(int id , string hoTen, string email, string sdt, DateTime ngaysinh, Decimal luong, string tennganhang, string soNganhang,DateTime ngayvaolam, string diachi,Image img,string quyen,string gioitinh)
+        [Obsolete]
+        public FormCapNhatNhanVien(int id, string hoTen, string email, string sdt, DateTime ngaysinh, Decimal luong, string tennganhang, string soNganhang, DateTime ngayvaolam, string diachi, Image img, string quyen, string gioitinh, byte[] dataImg)
         {
             InitializeComponent();
 
@@ -36,7 +42,7 @@ namespace GUI.Forms
             //dtpNgayVaoLam.Value
             txtDiachi.Text = diachi;
             this.img = img;
-
+            this.dataImg = dataImg;
             switch (quyen)
             {
                 case "Admin":
@@ -64,13 +70,11 @@ namespace GUI.Forms
                     break;
             }
 
-
+            this.dataImg = dataImg;
         }
 
 
-        public int idNhanVien;
-        public string sPathImg = "";
-        public Image img = null;
+
         private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Rule_Regex.Instance.Name_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
@@ -137,13 +141,16 @@ namespace GUI.Forms
         private void btnImage_Click(object sender, EventArgs e)
         {
             sPathImg = SupportLogic.Instance.getPathFile();
-            img = Image.FromFile(sPathImg);
+            if (sPathImg != "")
+            {
+                img = Image.FromFile(sPathImg);
+            }
             ptbShowImage.Image = img;
         }
         [Obsolete]
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (txtHoTen.Text == "" || txtEmail.Text == "" || txtSDT.Text == "" || txtLuong.Text == "" || txtTenNganHang.Text == "" || txtSoNganHang.Text == "" || txtDiachi.Text == "" || sPathImg == "" || img == null)
+            if (txtHoTen.Text == "" || txtEmail.Text == "" || txtSDT.Text == "" || txtLuong.Text == "" || txtTenNganHang.Text == "" || txtSoNganHang.Text == "" || txtDiachi.Text == "" || img == null)
             {
                 MessageBox.Show("Bạn chưa điền thông tinh, vui lòng điền đủ");
             }
@@ -160,10 +167,18 @@ namespace GUI.Forms
                 string chucvu = cmbChucvu.Text;
                 DateTime ngaySinh = dtpNgaySinh.Value;
                 DateTime ngayVaoLam = dtpNgayVaoLam.Value;
-                byte[] hinh = System.IO.File.ReadAllBytes(sPathImg);
+                byte[] hinh;
+                if (sPathImg == "")
+                {
+                    hinh = dataImg;
+                }
+                else
+                {
+                    hinh = System.IO.File.ReadAllBytes(sPathImg);
+                }
 
 
-                object[] objects = new object[] {idNhanVien,hoten,chucvu,gioiTinh,ngaySinh,ngayVaoLam,diachi,sdt,tenNganHang,soNganHang,luong,email,hinh};
+                object[] objects = new object[] { idNhanVien, hoten, chucvu, gioiTinh, ngaySinh, ngayVaoLam, diachi, sdt, tenNganHang, soNganHang, luong, email, hinh };
 
                 if (BUS.B_NhanVien.Instance.adminUpdateNhanVien(objects))
                 {
@@ -178,12 +193,17 @@ namespace GUI.Forms
         [Obsolete]
         private void FormCapNhatNhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-             //BUS.B_NhanVien.Instance.getAllNhanVien(ref FormQuanLyNhanVien.dtGVDanhSachNV);
+            //BUS.B_NhanVien.Instance.getAllNhanVien(ref FormQuanLyNhanVien.dtGVDanhSachNV);
         }
 
         private void FormCapNhatNhanVien_Load(object sender, EventArgs e)
         {
             ptbShowImage.Image = img;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -23,5 +23,14 @@ namespace DAO
                 return instance;
             }
         }
+
+
+
+        [Obsolete]
+        public void stokerCreateDetailsReceipt(object[] parameter)
+        {
+            string query = "EXEC InsertChiTietPhieuNhapKho @id_phieuNhap , @id_sp , @id_ncc , @dongia , @sl";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
     }
 }

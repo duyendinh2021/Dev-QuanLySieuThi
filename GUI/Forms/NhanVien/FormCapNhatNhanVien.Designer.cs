@@ -26,6 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        [System.Obsolete]
         private void InitializeComponent()
         {
             this.ptbShowImage = new System.Windows.Forms.PictureBox();
@@ -63,6 +64,7 @@
             this.btnConfirm = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grBThongtin = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panHeader = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
@@ -285,7 +287,7 @@
             this.lblGioiTinh.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGioiTinh.Location = new System.Drawing.Point(513, 325);
             this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Size = new System.Drawing.Size(175, 25);
+            this.lblGioiTinh.Size = new System.Drawing.Size(209, 25);
             this.lblGioiTinh.TabIndex = 24;
             this.lblGioiTinh.Text = "Giới tính";
             this.lblGioiTinh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -295,7 +297,7 @@
             this.lblHoten.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoten.Location = new System.Drawing.Point(36, 86);
             this.lblHoten.Name = "lblHoten";
-            this.lblHoten.Size = new System.Drawing.Size(150, 25);
+            this.lblHoten.Size = new System.Drawing.Size(188, 25);
             this.lblHoten.TabIndex = 23;
             this.lblHoten.Text = "Họ tên";
             this.lblHoten.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -305,7 +307,7 @@
             this.lblChucvu.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChucvu.Location = new System.Drawing.Point(513, 261);
             this.lblChucvu.Name = "lblChucvu";
-            this.lblChucvu.Size = new System.Drawing.Size(175, 25);
+            this.lblChucvu.Size = new System.Drawing.Size(209, 25);
             this.lblChucvu.TabIndex = 22;
             this.lblChucvu.Text = "Chức vụ";
             this.lblChucvu.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -315,7 +317,7 @@
             this.lblSoTK.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoTK.Location = new System.Drawing.Point(513, 81);
             this.lblSoTK.Name = "lblSoTK";
-            this.lblSoTK.Size = new System.Drawing.Size(175, 25);
+            this.lblSoTK.Size = new System.Drawing.Size(209, 25);
             this.lblSoTK.TabIndex = 21;
             this.lblSoTK.Text = "Số ngân hàng";
             this.lblSoTK.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -325,7 +327,7 @@
             this.lblTenNganHang.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNganHang.Location = new System.Drawing.Point(513, 141);
             this.lblTenNganHang.Name = "lblTenNganHang";
-            this.lblTenNganHang.Size = new System.Drawing.Size(175, 25);
+            this.lblTenNganHang.Size = new System.Drawing.Size(209, 25);
             this.lblTenNganHang.TabIndex = 20;
             this.lblTenNganHang.Text = "Tên ngân hàng";
             this.lblTenNganHang.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -335,7 +337,7 @@
             this.lblDiachi.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiachi.Location = new System.Drawing.Point(513, 206);
             this.lblDiachi.Name = "lblDiachi";
-            this.lblDiachi.Size = new System.Drawing.Size(175, 27);
+            this.lblDiachi.Size = new System.Drawing.Size(209, 27);
             this.lblDiachi.TabIndex = 19;
             this.lblDiachi.Text = "Địa Chỉ\r\n";
             this.lblDiachi.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -345,7 +347,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(36, 146);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(150, 25);
+            this.lblEmail.Size = new System.Drawing.Size(188, 25);
             this.lblEmail.TabIndex = 18;
             this.lblEmail.Text = "Email";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -355,9 +357,9 @@
             this.lblLuong.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLuong.Location = new System.Drawing.Point(36, 261);
             this.lblLuong.Name = "lblLuong";
-            this.lblLuong.Size = new System.Drawing.Size(150, 25);
+            this.lblLuong.Size = new System.Drawing.Size(188, 25);
             this.lblLuong.TabIndex = 17;
-            this.lblLuong.Text = "Lương";
+            this.lblLuong.Text = "Lương Cơ Bản";
             this.lblLuong.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // lblSDT
@@ -365,7 +367,7 @@
             this.lblSDT.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSDT.Location = new System.Drawing.Point(36, 208);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(150, 25);
+            this.lblSDT.Size = new System.Drawing.Size(188, 25);
             this.lblSDT.TabIndex = 16;
             this.lblSDT.Text = "Số điện thoại";
             this.lblSDT.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -375,7 +377,7 @@
             this.lblNgayVaoLam.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgayVaoLam.Location = new System.Drawing.Point(36, 382);
             this.lblNgayVaoLam.Name = "lblNgayVaoLam";
-            this.lblNgayVaoLam.Size = new System.Drawing.Size(150, 25);
+            this.lblNgayVaoLam.Size = new System.Drawing.Size(188, 25);
             this.lblNgayVaoLam.TabIndex = 26;
             this.lblNgayVaoLam.Text = "Ngày vào làm";
             this.lblNgayVaoLam.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -385,7 +387,7 @@
             this.lblNgaySinh.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgaySinh.Location = new System.Drawing.Point(36, 325);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(150, 25);
+            this.lblNgaySinh.Size = new System.Drawing.Size(188, 25);
             this.lblNgaySinh.TabIndex = 15;
             this.lblNgaySinh.Text = "Ngày sinh";
             this.lblNgaySinh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -440,6 +442,7 @@
             // 
             // grBThongtin
             // 
+            this.grBThongtin.Controls.Add(this.label1);
             this.grBThongtin.Controls.Add(this.ptbShowImage);
             this.grBThongtin.Controls.Add(this.btnImage);
             this.grBThongtin.Controls.Add(this.panDash6);
@@ -479,6 +482,15 @@
             this.grBThongtin.TabStop = false;
             this.grBThongtin.Text = "Thông tin nhân viên";
             // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(37, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 20);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Chỉ Cập Nhật Lương Cơ Bản";
+            // 
             // btnExit
             // 
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -494,6 +506,7 @@
             this.btnExit.Size = new System.Drawing.Size(75, 55);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panHeader
             // 
@@ -512,6 +525,7 @@
             this.ClientSize = new System.Drawing.Size(1485, 853);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCapNhatNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCapNhatNhanVien";
@@ -565,5 +579,6 @@
         public System.Windows.Forms.GroupBox grBThongtin;
         public FontAwesome.Sharp.IconButton btnExit;
         public System.Windows.Forms.Panel panHeader;
+        private System.Windows.Forms.Label label1;
     }
 }

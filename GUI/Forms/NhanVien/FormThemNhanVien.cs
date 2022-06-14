@@ -160,5 +160,10 @@ namespace GUI.Forms
             dtpNgaySinh.Value = DateTime.Parse("01/01/1999");
             dtpNgayVaoLam.Value = DateTime.Today;
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

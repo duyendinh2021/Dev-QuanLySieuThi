@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using GUI.Forms;
+using GUI.Forms.NhaCungCap;
 
 namespace GUI
 {
@@ -23,32 +25,29 @@ namespace GUI
             panSideMenu.Controls.Add(SupportUI_UX.Instance.leftBorderBtn);
         }
         public bool isThoat = true;
-        //private static Form formChild = null;
-
+        public bool isResultmessage = false;
 
         public event EventHandler LogOut;
-
-
         [Obsolete]
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+            BUS.B_TaiKhoan.Instance.id = -1;
             LogOut(this, new EventArgs());
-            //update status LogIn
-            //BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
-
-
         }
 
+
         [Obsolete]
-        private void FormMainApp_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormMainApp_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
             if (isThoat)
             {
+                BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
                 Application.Exit();
             }
         }
 
+        [Obsolete]
         private void FormMainApp_Load(object sender, EventArgs e)
         {
             CustomizeDesing();
@@ -58,7 +57,6 @@ namespace GUI
         private void CustomizeDesing()
         {
             //Admin
-
             btnDashboard.Visible = false;
             btnOrders.Visible = false;
             panOrdersManage.Visible = false;
@@ -72,9 +70,9 @@ namespace GUI
             btnSTmanageProducts.Visible = false;
             btnbtnAdmissionSlip.Visible = false;
             btnSTmanageProducts.Visible = false;
-            btnStockReport.Visible = false;
-        }
+            btnStockSupplierManagement.Visible = false;
 
+        }
 
         private void CheckPower()
         {
@@ -93,6 +91,7 @@ namespace GUI
                     //Cashier
                     btnSale.Visible = true;
                     btnCashierReport.Visible = true;
+
                     break;
 
                 case "Stoker":
@@ -100,35 +99,11 @@ namespace GUI
                     btnSTmanageProducts.Visible = true;
                     btnbtnAdmissionSlip.Visible = true;
                     btnSTmanageProducts.Visible = true;
-                    btnStockReport.Visible = true;
+                    btnStockSupplierManagement.Visible = true;
                     break;
                 default:
                     break;
             }
-            //string user = B_TaiKhoan.Instance.chucvu;
-            //if (user == "Admin")
-            //{
-            //    //Admin
-            //    btnDashboard.Visible = true;
-            //    btnOrders.Visible = true;
-            //    btnProducts.Visible = true;
-            //    btnAccounts.Visible = true;
-            //}
-            //else if (user == "Cashier")
-            //{
-            //    //Cashier
-            //    btnSale.Visible = true;
-            //    btnCashierReport.Visible = true;
-            //}
-            //else if (user == "Stoker")
-            //{
-            //    //Stoker
-            //    btnSTmanageProducts.Visible = true;
-            //    btnbtnAdmissionSlip.Visible = true;
-            //    btnSTmanageProducts.Visible = true;
-            //    btnStockReport.Visible = true;
-            //}
-
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -149,12 +124,6 @@ namespace GUI
             SupportUI_UX.Instance.HideSubmenu();
         }
 
-        //private void btnAccounts_Click(object sender, EventArgs e)
-        //{
-        //    SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color3);
-        //    SupportUI_UX.Instance.HideSubmenu();
-        //}
-
         private void btnSale_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color2);
@@ -169,6 +138,8 @@ namespace GUI
         private void btnSTmanageProducts_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color2);
+            FormQuanLySanPham formQuanLySanPham = new FormQuanLySanPham();
+            SupportUI_UX.Instance.showChildForm(formQuanLySanPham, panChildForm);
         }
 
         private void btnbtnAdmissionSlip_Click(object sender, EventArgs e)
@@ -196,6 +167,20 @@ namespace GUI
             SupportUI_UX.Instance.HideSubmenu();
             FormQuanLyNhanVien formQuanLyNhanVien = new FormQuanLyNhanVien();
             SupportUI_UX.Instance.showChildForm(formQuanLyNhanVien, panChildForm);
+        }
+
+        [Obsolete]
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            BUS.B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
+            Application.Exit();
+        }
+
+        private void btnStockSupplierManagement_Click(object sender, EventArgs e)
+        {
+            SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color5);
+            FormQuanLyNhaCungCap formQuanLyNhaCungCap = new FormQuanLyNhaCungCap();
+            SupportUI_UX.Instance.showChildForm(formQuanLyNhaCungCap, panChildForm);
         }
     }
 }
