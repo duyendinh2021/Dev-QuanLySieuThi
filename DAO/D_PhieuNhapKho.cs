@@ -49,5 +49,27 @@ namespace DAO
             }
             return id;
         }
+
+
+        [Obsolete]
+        public List<PhieuNhapKho> GetAllPhieuNhapKhoNoDeleted()
+        {
+            List<PhieuNhapKho> phieuNhapKhos = new List<PhieuNhapKho>();
+            string query = "EXEC SelectAllPhieuNhapKhoNoDeleted";
+            using(DataTable data = connectionData.Instance.excuteQuery(query))
+            {
+                foreach (DataRow item in data.Rows)
+                {
+                    PhieuNhapKho phieuNhapKho = new PhieuNhapKho();
+                    phieuNhapKho.Idphieunhapkho = int.Parse(item["ID_PhieuNhapKho"].ToString());
+                    phieuNhapKho.Idnhanvien = int.Parse(item["ID_NhanVien"].ToString());
+                    phieuNhapKho.Ngaylap = DateTime.Parse(item["NgayLap"].ToString());
+                    phieuNhapKho.Tongtien = decimal.Parse(item["TongTien"].ToString());
+                    phieuNhapKho.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    phieuNhapKhos.Add(phieuNhapKho);
+                }
+            }
+            return phieuNhapKhos;
+        }
     }
 }

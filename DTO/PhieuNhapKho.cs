@@ -25,6 +25,12 @@ namespace DTO
             _trangthai = trangthai;
         }
 
+        public PhieuNhapKho()
+        {
+
+        }
+
+
         public int Idphieunhapkho { get => _idphieunhapkho; set => _idphieunhapkho = value; }
         public int Idnhanvien { get => _idnhanvien; set => _idnhanvien = value; }
         public int Idnhacungcap { get => _idnhacungcap; set => _idnhacungcap = value; }

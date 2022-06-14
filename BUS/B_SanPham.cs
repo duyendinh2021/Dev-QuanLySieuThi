@@ -33,14 +33,21 @@ namespace BUS
         public void getSanPhamByLoai_array(List<int> ids, ref DataGridView data)
         {
             List<SanPham> list = new List<SanPham>();
-            for (int i = 0; i < ids.Count; i++)
+            if (ids.Count > 0)
             {
-                List<SanPham> temp = D_SanPham.Instance.getSanPhamByLoai(ids[i]);
-                foreach (SanPham item in temp)
+                for (int i = 0; i < ids.Count; i++)
                 {
-                    list.Add(item);
+                    List<SanPham> temp = D_SanPham.Instance.getSanPhamByLoai(ids[i]);
+                    foreach (SanPham item in temp)
+                    {
+                        list.Add(item);
+                    }
                 }
             }
+            else
+            {
+                list = D_SanPham.Instance.selectAllSanPhamDanghoatDong();
+            }           
             data.DataSource = list;
         }
 
@@ -73,7 +80,7 @@ namespace BUS
         [Obsolete]
         public void getAllSanPhamHoatDong(ref DataGridView data)
         {
-            List<SanPham> sanPhams = DAO.D_SanPham.Instance.selectAllSanPhamDanghoatDong();
+            List<SanPham> sanPhams = D_SanPham.Instance.selectAllSanPhamDanghoatDong();
             data.DataSource = sanPhams;
         }
 

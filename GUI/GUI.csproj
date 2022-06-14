@@ -59,6 +59,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -82,10 +83,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\Tag.Designer.cs" />
-    <Compile Include="Components\Wiget.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\Wiget.Designer.cs" />
     <Compile Include="Conntrols\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +117,12 @@
     </Compile>
     <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.Designer.cs">
+      <DependentUpon>FormQuanLyPhieuNhapKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SanPham\FormCapNhatSanPham.cs">
       <SubType>Form</SubType>
@@ -187,7 +190,6 @@
     <Compile Include="ClassSupport\SupportUI_UX.cs" />
     <EmbeddedResource Include="Components\ButtonCategory.resx" />
     <EmbeddedResource Include="Components\Tag.resx" />
-    <EmbeddedResource Include="Components\Wiget.resx" />
     <EmbeddedResource Include="Conntrols\RJTextBox.resx" />
     <EmbeddedResource Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.resx">
       <DependentUpon>FormCapNhatNhaCungCap.cs</DependentUpon>
@@ -203,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.resx">
+      <DependentUpon>FormQuanLyPhieuNhapKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SanPham\FormCapNhatSanPham.resx">
       <DependentUpon>FormCapNhatSanPham.cs</DependentUpon>
@@ -275,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\file.png" />
     <None Include="Resources\resume.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\writing.png" />
@@ -292,5 +298,6 @@
     <None Include="Resources\add.png" />
     <None Include="Resources\add_Hang.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

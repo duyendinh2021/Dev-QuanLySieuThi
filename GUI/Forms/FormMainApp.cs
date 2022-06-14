@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BUS;
 using GUI.Forms;
 using GUI.Forms.NhaCungCap;
+using GUI.Forms.PhieuNhapkho;
 
 namespace GUI
 {
@@ -142,9 +143,12 @@ namespace GUI
             SupportUI_UX.Instance.showChildForm(formQuanLySanPham, panChildForm);
         }
 
+        
         private void btnbtnAdmissionSlip_Click(object sender, EventArgs e)
         {
-            SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color3);
+            SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.Color7);
+            FormQuanLyPhieuNhapKho formQuanLyPhieuNhapKho = new FormQuanLyPhieuNhapKho();
+            SupportUI_UX.Instance.showChildForm(formQuanLyPhieuNhapKho, panChildForm);
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
@@ -178,7 +182,7 @@ namespace GUI
 
         private void btnStockSupplierManagement_Click(object sender, EventArgs e)
         {
-            SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color5);
+            SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color8);
             FormQuanLyNhaCungCap formQuanLyNhaCungCap = new FormQuanLyNhaCungCap();
             SupportUI_UX.Instance.showChildForm(formQuanLyNhaCungCap, panChildForm);
         }

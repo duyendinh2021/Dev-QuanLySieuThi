@@ -60,7 +60,7 @@ namespace GUI.Forms
                 checkBox.Tag = id.ToString();
                 checkBox.Text = name;
 
-
+                checkBox.AutoSize = true; 
                 checkBox.Margin = new Padding(25,25,0,0);
                 FontFamily fontFamily = new FontFamily("Consolas");
                 checkBox.Font = new Font(fontFamily, 10.2f, FontStyle.Bold);
