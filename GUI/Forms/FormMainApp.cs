@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using GUI.Forms;
+using GUI.Forms.NhaCungCap;
 
 namespace GUI
 {
@@ -69,7 +70,8 @@ namespace GUI
             btnSTmanageProducts.Visible = false;
             btnbtnAdmissionSlip.Visible = false;
             btnSTmanageProducts.Visible = false;
-            btnStockReport.Visible = false;
+            btnStockSupplierManagement.Visible = false;
+
         }
 
         private void CheckPower()
@@ -89,6 +91,7 @@ namespace GUI
                     //Cashier
                     btnSale.Visible = true;
                     btnCashierReport.Visible = true;
+
                     break;
 
                 case "Stoker":
@@ -96,7 +99,7 @@ namespace GUI
                     btnSTmanageProducts.Visible = true;
                     btnbtnAdmissionSlip.Visible = true;
                     btnSTmanageProducts.Visible = true;
-                    btnStockReport.Visible = true;
+                    btnStockSupplierManagement.Visible = true;
                     break;
                 default:
                     break;
@@ -169,8 +172,15 @@ namespace GUI
         [Obsolete]
         private void btnExit_Click(object sender, EventArgs e)
         {
-            BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+            BUS.B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
             Application.Exit();
+        }
+
+        private void btnStockSupplierManagement_Click(object sender, EventArgs e)
+        {
+            SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color5);
+            FormQuanLyNhaCungCap formQuanLyNhaCungCap = new FormQuanLyNhaCungCap();
+            SupportUI_UX.Instance.showChildForm(formQuanLyNhaCungCap, panChildForm);
         }
     }
 }

@@ -463,19 +463,6 @@ namespace DAO
         }
 
 
-
-
-        [Obsolete]
-        // Stoker add thêm nhà cung cấp mới
-        public void stokerAddNhaCungCap(object[] parameter)
-        {
-            string query = "EXEC InsertNhaCungCap @tencongty , @diachi , @sdt , @soTKnganHang , @TenNganHang";
-            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
-        }
-
-
-
-
         [Obsolete]
         public void stokerAddLoaiSanPham(object[] parameter)
         {

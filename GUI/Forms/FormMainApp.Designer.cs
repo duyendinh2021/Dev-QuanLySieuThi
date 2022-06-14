@@ -37,7 +37,7 @@
             this.btnManageOrders = new System.Windows.Forms.Button();
             this.btnSetting = new FontAwesome.Sharp.IconButton();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
-            this.btnStockReport = new FontAwesome.Sharp.IconButton();
+            this.btnStockSupplierManagement = new FontAwesome.Sharp.IconButton();
             this.btnbtnAdmissionSlip = new FontAwesome.Sharp.IconButton();
             this.btnSTmanageProducts = new FontAwesome.Sharp.IconButton();
             this.btnCashierReport = new FontAwesome.Sharp.IconButton();
@@ -188,28 +188,29 @@
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
-            // btnStockReport
+            // btnStockSupplierManagement
             // 
-            this.btnStockReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStockReport.FlatAppearance.BorderSize = 0;
-            this.btnStockReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockReport.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnStockReport.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
-            this.btnStockReport.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnStockReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnStockReport.IconSize = 32;
-            this.btnStockReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockReport.Location = new System.Drawing.Point(0, 832);
-            this.btnStockReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStockReport.Name = "btnStockReport";
-            this.btnStockReport.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnStockReport.Size = new System.Drawing.Size(223, 74);
-            this.btnStockReport.TabIndex = 11;
-            this.btnStockReport.Text = "Create Report";
-            this.btnStockReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStockReport.UseVisualStyleBackColor = true;
+            this.btnStockSupplierManagement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStockSupplierManagement.FlatAppearance.BorderSize = 0;
+            this.btnStockSupplierManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockSupplierManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockSupplierManagement.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnStockSupplierManagement.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnStockSupplierManagement.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnStockSupplierManagement.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnStockSupplierManagement.IconSize = 32;
+            this.btnStockSupplierManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockSupplierManagement.Location = new System.Drawing.Point(0, 832);
+            this.btnStockSupplierManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStockSupplierManagement.Name = "btnStockSupplierManagement";
+            this.btnStockSupplierManagement.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnStockSupplierManagement.Size = new System.Drawing.Size(223, 74);
+            this.btnStockSupplierManagement.TabIndex = 11;
+            this.btnStockSupplierManagement.Text = "Supplier management";
+            this.btnStockSupplierManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockSupplierManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStockSupplierManagement.UseVisualStyleBackColor = true;
+            this.btnStockSupplierManagement.Click += new System.EventHandler(this.btnStockSupplierManagement_Click);
             // 
             // btnbtnAdmissionSlip
             // 
@@ -431,7 +432,7 @@
             this.panSideMenu.Controls.Add(this.panelSettingsManage);
             this.panSideMenu.Controls.Add(this.btnSetting);
             this.panSideMenu.Controls.Add(this.btnHelp);
-            this.panSideMenu.Controls.Add(this.btnStockReport);
+            this.panSideMenu.Controls.Add(this.btnStockSupplierManagement);
             this.panSideMenu.Controls.Add(this.btnbtnAdmissionSlip);
             this.panSideMenu.Controls.Add(this.btnSTmanageProducts);
             this.panSideMenu.Controls.Add(this.btnCashierReport);
@@ -517,7 +518,7 @@
         private System.Windows.Forms.Button btnManageOrders;
         private FontAwesome.Sharp.IconButton btnSetting;
         private FontAwesome.Sharp.IconButton btnHelp;
-        private FontAwesome.Sharp.IconButton btnStockReport;
+        private FontAwesome.Sharp.IconButton btnStockSupplierManagement;
         private FontAwesome.Sharp.IconButton btnbtnAdmissionSlip;
         private FontAwesome.Sharp.IconButton btnSTmanageProducts;
         private FontAwesome.Sharp.IconButton btnCashierReport;

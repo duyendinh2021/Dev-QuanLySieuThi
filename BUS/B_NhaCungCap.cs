@@ -60,7 +60,7 @@ namespace BUS
         {
             List<NhaCungCap> nhaCungCaps = DAO.D_NhaCungCap.Instance.loadComboBoxNhaCungCap();
             //DataTable dataTable = ToDataTable<NhaCungCap>(nhaCungCaps);
-            
+
             comboBox.DisplayMember = "Tencongty";
             comboBox.ValueMember = "Idnhacungcap";
             comboBox.DataSource = nhaCungCaps;
@@ -68,11 +68,97 @@ namespace BUS
 
 
         [Obsolete]
-        public void LoadNhaCungCapByID(int id, ref ComboBox comboBox){
+        public void LoadNhaCungCapByID(int id, ref ComboBox comboBox)
+        {
             List<NhaCungCap> nhaCungCap = D_NhaCungCap.Instance.loadNhaCungCapByID(id);
             comboBox.DisplayMember = "Tencongty";
             comboBox.ValueMember = "Idnhacungcap";
             comboBox.DataSource = nhaCungCap;
+        }
+
+
+        [Obsolete]
+        public void GetAllNhaCungCapHoatDong(ref DataGridView data)
+        {
+            List<NhaCungCap> nhaCungCaps = D_NhaCungCap.Instance.GetAllNhaCungCapHoatDong();
+            data.DataSource = nhaCungCaps;
+        }
+
+
+
+        [Obsolete]
+        public bool StokerDeleteNhaCungCap(int id)
+        {
+            try
+            {
+                D_NhaCungCap.Instance.StokerDeleteNhanCungCap(id);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+
+
+        [Obsolete]
+        public bool stokerAddNhaCungCap(object[] parameter)
+        {
+            try
+            {
+                DAO.D_NhaCungCap.Instance.stokerAddNhaCungCap(parameter);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+        [Obsolete]
+        public void LoadComBoBoxNhaCungCapByID(int id, ref ComboBox comboBox)
+        {
+            List<NhaCungCap> nhaCungCaps = D_NhaCungCap.Instance.loadNhaCungCapByID(id);
+            comboBox.DataSource = nhaCungCaps;
+            comboBox.DisplayMember = "Trangthai";
+            comboBox.ValueMember = "Trangthai";
+        }
+
+
+
+        [Obsolete]
+        public bool StokerUpdateNhaCungCap(object[] parameter)
+        {
+            try
+            {
+                D_NhaCungCap.Instance.StokerUpdateNhaCungCap(parameter);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+
+        [Obsolete]
+        public void GetNhaCungCapByTrangThai(int trangthai, ref DataGridView data)
+        {
+            List<NhaCungCap> nhaCungCaps = D_NhaCungCap.Instance.GetNhaCungCapByTrangThai(trangthai);
+            data.DataSource = nhaCungCaps;
+        }
+
+
+
+        [Obsolete]
+        public void SearchNhaCungCapMutiColumnTheoTrangThai(string Search, int trangThai, ref DataGridView data)
+        {
+            List<NhaCungCap> nhaCungCaps = D_NhaCungCap.Instance.SearchNhaCungCapMutiColumnTheoTrangThai(Search, trangThai);
+            data.DataSource = nhaCungCaps;
         }
     }
 }

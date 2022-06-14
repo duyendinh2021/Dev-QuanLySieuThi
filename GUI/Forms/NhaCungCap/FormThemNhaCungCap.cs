@@ -134,7 +134,7 @@ namespace GUI.Forms
                 string sdt = txtSDT.Text;
 
                 object[] objects = new object[] {tenCongTy, diaChi, sdt, soNganHang, tenNganHang};
-                if (BUS.B_NhanVien.Instance.stokerAddNhaCungCap(objects))
+                if (BUS.B_NhaCungCap.Instance.stokerAddNhaCungCap(objects))
                 {
                     MessageBox.Show("Thêm Nhà Cung Cấp Thành Công", "Thật Tuyệt Vời");
                 }

@@ -189,29 +189,12 @@ namespace BUS
         }
 
 
-
-
-        [Obsolete]
-        public bool stokerAddNhaCungCap(object[] parameter)
-        {
-            try
-            {
-                DAO.D_NhanVien.Instance.stokerAddNhaCungCap(parameter);
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            return true;
-        }
-
-
         [Obsolete]
         public bool stokerAddLoaiSanPham(object[] parameter)
         {
             try
             {
-                DAO.D_NhanVien.Instance.stokerAddLoaiSanPham(parameter);
+                D_NhanVien.Instance.stokerAddLoaiSanPham(parameter);
             }
             catch (Exception)
             {
