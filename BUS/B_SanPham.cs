@@ -70,9 +70,9 @@ namespace BUS
         {
             List<SanPham> sanPhams = new List<SanPham>();
             sanPhams.Add(D_SanPham.Instance.LoadSanPhamTheoid(id));
-            combox.DataSource = sanPhams;
             combox.DisplayMember = "Dvt";
             combox.ValueMember = "Dvt";
+            combox.DataSource = sanPhams;
         }
 
 
@@ -146,6 +146,7 @@ namespace BUS
             hinh = sanPham.Hinh;
             trangthai = sanPham.Trangthai;
         }
+        
 
 
 

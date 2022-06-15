@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.Forms.NhaCungCap;
+using GUI.Forms.SanPham;
 using BUS;
 
 namespace GUI.Forms.PhieuNhapkho
@@ -57,14 +58,31 @@ namespace GUI.Forms.PhieuNhapkho
 
         private void btnViewSanPham_Click(object sender, EventArgs e)
         {
-
+            if (txtIDSanPham.Text == "")
+            {
+                MessageBox.Show("Bạn Chứ Chọn Đơn Nào");
+            }
+            else
+            {
+                int id_sp = int.Parse(txtIDSanPham.Text);
+                FormViewSanPham formViewSanPham = new FormViewSanPham(id_sp);
+                formViewSanPham.ShowDialog();
+            }
+     
         }
 
         private void btnViewNhaCungCap_Click(object sender, EventArgs e)
         {
-            int id_ncc = int.Parse(txtIDNcc.Text);
-            FormViewNhaCungCap formViewNhaCungCap = new FormViewNhaCungCap(id_ncc);
-            formViewNhaCungCap.ShowDialog();
+            if (txtIDNcc.Text == "")
+            {
+                MessageBox.Show("Bạn Chứ Chọn Đơn Nào");
+            }
+            else
+            {
+                int id_ncc = int.Parse(txtIDNcc.Text);
+                FormViewNhaCungCap formViewNhaCungCap = new FormViewNhaCungCap(id_ncc);
+                formViewNhaCungCap.ShowDialog();
+            }
         }
     }
 }

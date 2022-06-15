@@ -115,16 +115,12 @@ namespace GUI.Forms
                             }
                             B_SanPham.Instance.getAllSanPhamHoatDong(ref dtDanhSachSP);
                             row = dtDanhSachSP.Rows[e.RowIndex];
-                            // ptbXemSanPham.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+
 
                         }
                     }
                 }
-                else
-                {
-                    ptbXemSanPham.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
-                }
-
+                ptbXemSanPham.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
             }
         }
 

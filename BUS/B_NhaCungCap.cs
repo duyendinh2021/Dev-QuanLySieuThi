@@ -71,9 +71,9 @@ namespace BUS
         public void LoadNhaCungCapByID(int id, ref ComboBox comboBox)
         {
             List<NhaCungCap> nhaCungCap = D_NhaCungCap.Instance.loadNhaCungCapByID(id);
+            comboBox.DataSource = nhaCungCap;
             comboBox.DisplayMember = "Tencongty";
             comboBox.ValueMember = "Idnhacungcap";
-            comboBox.DataSource = nhaCungCap;
         }
 
 

@@ -64,7 +64,6 @@ namespace GUI.Forms.SanPham
                 }
             }
         }
-
         private void dtgDSHangHoa_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dtgDSHangHoa.Rows[e.RowIndex];

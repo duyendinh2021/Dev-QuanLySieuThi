@@ -30,9 +30,9 @@ namespace BUS
         public void loadDataSourcecmbLoaiSp(ref ComboBox comboBox)
         {
             List<LoaiSanPham> loaiSanPhams = DAO.D_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp();
+            comboBox.DataSource = loaiSanPhams;
             comboBox.DisplayMember = "Tensanpham";
             comboBox.ValueMember = "Idloaisanpham";
-            comboBox.DataSource = loaiSanPhams;
         }
 
         [Obsolete]
@@ -40,9 +40,9 @@ namespace BUS
         {
             List<LoaiSanPham> loaiSanPham = D_LoaiSanPham.Instance.loadloaiSanPhamByID(id);
 
+            comboBox.DataSource = loaiSanPham;
             comboBox.DisplayMember = "Tensanpham";
             comboBox.ValueMember = "Idloaisanpham";
-            comboBox.DataSource = loaiSanPham;
 
         }
 
