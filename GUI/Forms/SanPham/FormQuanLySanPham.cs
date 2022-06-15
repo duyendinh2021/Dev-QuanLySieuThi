@@ -154,7 +154,6 @@ namespace GUI.Forms
                     }
                 }
             }
-
             B_SanPham.Instance.getSanPhamByLoai_array(ids, ref dtDanhSachSP);
         }
     }

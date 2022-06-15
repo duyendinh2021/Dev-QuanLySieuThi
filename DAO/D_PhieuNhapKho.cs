@@ -71,5 +71,14 @@ namespace DAO
             }
             return phieuNhapKhos;
         }
+
+
+
+        [Obsolete]
+        public void StokerDeletePhieuNhapKhoByID(int id)
+        {
+            string query = "EXEC DeletePhieuNhapKhoByID @id_phieuNhap";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query,new object[] {id});
+        }
     }
 }

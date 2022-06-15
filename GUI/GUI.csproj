@@ -100,6 +100,12 @@
     <Compile Include="Forms\NhaCungCap\FormQuanLyNhaCungCap.Designer.cs">
       <DependentUpon>FormQuanLyNhaCungCap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NhaCungCap\FormViewNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhaCungCap\FormViewNhaCungCap.Designer.cs">
+      <DependentUpon>FormViewNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NhanVien\FormCapNhatNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,12 @@
     </Compile>
     <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.Designer.cs">
+      <DependentUpon>FormChiTietPhieuNhapKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.cs">
       <SubType>Form</SubType>
@@ -197,6 +209,9 @@
     <EmbeddedResource Include="Forms\NhaCungCap\FormQuanLyNhaCungCap.resx">
       <DependentUpon>FormQuanLyNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhaCungCap\FormViewNhaCungCap.resx">
+      <DependentUpon>FormViewNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien\FormCapNhatNhanVien.resx">
       <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.resx">
+      <DependentUpon>FormChiTietPhieuNhapKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.resx">
       <DependentUpon>FormQuanLyPhieuNhapKho.cs</DependentUpon>
@@ -280,6 +298,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\loupe.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\resume.png" />
     <None Include="Resources\search.png" />

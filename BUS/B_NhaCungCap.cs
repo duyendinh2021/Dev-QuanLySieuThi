@@ -78,6 +78,18 @@ namespace BUS
 
 
         [Obsolete]
+        public void LoadNhaCungCapByID(int id,ref string ten_ct,ref string sdt,ref string songanhang,ref string dc, ref string tennganhang)
+        {
+            NhaCungCap nhaCungCap = D_NhaCungCap.Instance.loadOneNhaCungCapByID(id);
+            ten_ct = nhaCungCap.Tencongty;
+            sdt = nhaCungCap.Sdt;
+            songanhang = nhaCungCap.Sotaikhoan;
+            dc = nhaCungCap.Diachi;
+            tennganhang = nhaCungCap.Tennganhang;
+        }
+
+
+        [Obsolete]
         public void GetAllNhaCungCapHoatDong(ref DataGridView data)
         {
             List<NhaCungCap> nhaCungCaps = D_NhaCungCap.Instance.GetAllNhaCungCapHoatDong();

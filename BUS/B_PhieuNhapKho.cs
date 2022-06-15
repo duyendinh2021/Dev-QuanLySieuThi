@@ -54,5 +54,22 @@ namespace BUS
             List<PhieuNhapKho> phieuNhapKhos = D_PhieuNhapKho.Instance.GetAllPhieuNhapKhoNoDeleted();
             data.DataSource = phieuNhapKhos;
         }
+
+
+        [Obsolete]
+        public bool StokerDeletePhieuNhapKhoByID(int id)
+        {
+            try
+            {
+                D_PhieuNhapKho.Instance.StokerDeletePhieuNhapKhoByID(id);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
     }
 }
