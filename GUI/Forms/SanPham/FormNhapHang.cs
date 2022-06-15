@@ -70,6 +70,7 @@ namespace GUI.Forms.SanPham
             DataGridViewRow row = dtgDSHangHoa.Rows[e.RowIndex];
             if (e.RowIndex != -1)
             {
+                // btn nhap san pham
                 if (e.ColumnIndex == 0)
                 {
                     if (txtSl.Text == "")
@@ -109,6 +110,9 @@ namespace GUI.Forms.SanPham
                 }
             }
         }
+
+
+
 
         private void tinhTongGia()
         {

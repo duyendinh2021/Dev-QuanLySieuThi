@@ -48,7 +48,7 @@ namespace GUI.Forms
         [Obsolete]
         private void Load_Category()
         {
-            
+
             dataGridView.AllowUserToAddRows = false;
             B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref dataGridView);
             foreach (DataGridViewRow item in dataGridView.Rows)
@@ -60,8 +60,8 @@ namespace GUI.Forms
                 checkBox.Tag = id.ToString();
                 checkBox.Text = name;
 
-                checkBox.AutoSize = true; 
-                checkBox.Margin = new Padding(25,25,0,0);
+                checkBox.AutoSize = true;
+                checkBox.Margin = new Padding(25, 25, 0, 0);
                 FontFamily fontFamily = new FontFamily("Consolas");
                 checkBox.Font = new Font(fontFamily, 10.2f, FontStyle.Bold);
 
@@ -87,14 +87,18 @@ namespace GUI.Forms
                     string dvt = row.Cells["dvt"].Value.ToString();
                     decimal dongia = decimal.Parse(row.Cells["donGia"].Value.ToString());
 
-                    FormCapNhatSanPham formCapNhatSanPham = new FormCapNhatSanPham(id, id_ncc,id_loai,ten_sp,dvt,dongia);
+                    FormCapNhatSanPham formCapNhatSanPham = new FormCapNhatSanPham(id, id_ncc, id_loai, ten_sp, dvt, dongia);
                     formCapNhatSanPham.ShowDialog();
                     B_SanPham.Instance.getAllSanPhamHoatDong(ref dtDanhSachSP);
+                    row = dtDanhSachSP.Rows[e.RowIndex];
+
+                    ptbXemSanPham.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+
                 }
 
                 if (e.ColumnIndex == 2)
                 {
-                    DialogResult result = MessageBox.Show("Vui Lòng Xác Nhận Dể Tiến Hành Xóa","Thông Báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                    DialogResult result = MessageBox.Show("Vui Lòng Xác Nhận Dể Tiến Hành Xóa", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
                         result = MessageBox.Show("Vui Lòng Xác Nhận Lại Dể Tiến Hành Xóa", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -107,14 +111,20 @@ namespace GUI.Forms
                             }
                             else
                             {
-                                MessageBox.Show("Ô Nô !!!","Có Gì Đó Không Ổn");
+                                MessageBox.Show("Ô Nô !!!", "Có Gì Đó Không Ổn");
                             }
                             B_SanPham.Instance.getAllSanPhamHoatDong(ref dtDanhSachSP);
+                            row = dtDanhSachSP.Rows[e.RowIndex];
+                            // ptbXemSanPham.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+
                         }
                     }
                 }
+                else
+                {
+                    ptbXemSanPham.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+                }
 
-                ptbXemSanPham.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
             }
         }
 
