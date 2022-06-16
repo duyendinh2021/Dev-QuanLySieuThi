@@ -48,6 +48,7 @@ namespace BUS
         }
 
 
+
         [Obsolete]
         public void GetAllPhieuNhapKhoNoDeleted(ref DataGridView data)
         {

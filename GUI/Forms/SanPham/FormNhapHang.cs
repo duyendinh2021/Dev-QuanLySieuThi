@@ -146,30 +146,36 @@ namespace GUI.Forms.SanPham
             if (result == DialogResult.Yes)
             {
                 //string ngaylap = DateTime.Now.ToShortDateString();
-                decimal tonggia = decimal.Parse(txtTongGia.Text);
-                object[] phieunhatkho = new object[] {B_TaiKhoan.Instance.id, tonggia };
-                if (B_PhieuNhapKho.Instance.stokerCreatePhieuNhapKho(phieunhatkho))
+                if (dgvHoaDonNhap.Rows.Count <= 0 || txtTongGia.Text == "")
                 {
-                    int id_phieuNhap = B_PhieuNhapKho.Instance.stokerGetNewReceipt();
-
-                    foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
-                    {
-                        object[] chitietPhieuNhap = new object[] { id_phieuNhap, int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["id_ncc_PhieuNhap"].Value.ToString()), decimal.Parse(item.Cells["COST"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
-                        B_ChiTietPhieuNhapKho.Instance.stokerCreateDetailsReceipt(chitietPhieuNhap);
-
-                        object[] UpdateSLSanPham = new object[] { int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
-
-                        B_SanPham.Instance.StokerUpdateSLSanPham(UpdateSLSanPham);
-                    }
-                    MessageBox.Show("Tạo Phiếu Nhập kho Thành Công", "Tuyệt vời");
+                    MessageBox.Show("Data err !!!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("That Bai");
-                }
+                    decimal tonggia = decimal.Parse(txtTongGia.Text);
+                    object[] phieunhatkho = new object[] { B_TaiKhoan.Instance.id, tonggia };
+                    if (B_PhieuNhapKho.Instance.stokerCreatePhieuNhapKho(phieunhatkho))
+                    {
+                        int id_phieuNhap = B_PhieuNhapKho.Instance.stokerGetNewReceipt();
 
+                        foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
+                        {
+                            object[] chitietPhieuNhap = new object[] { id_phieuNhap, int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["id_ncc_PhieuNhap"].Value.ToString()), decimal.Parse(item.Cells["COST"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
+                            B_ChiTietPhieuNhapKho.Instance.stokerCreateDetailsReceipt(chitietPhieuNhap);
+
+                            object[] UpdateSLSanPham = new object[] { int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
+
+                            B_SanPham.Instance.StokerUpdateSLSanPham(UpdateSLSanPham);
+                        }
+                        MessageBox.Show("Tạo Phiếu Nhập kho Thành Công", "Tuyệt vời");
+                    }
+                    else
+                    {
+                        MessageBox.Show("That Bai");
+                    }
+                }
             }
-            BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
+            B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
         }
 
         private void dgvHoaDonNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

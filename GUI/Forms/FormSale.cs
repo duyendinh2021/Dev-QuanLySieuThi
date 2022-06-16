@@ -17,11 +17,24 @@ namespace GUI
     public partial class FormSale : Form
     {
         private double loiNhuan = 0.25;
+        decimal sumCost = 0;
         public FormSale()
         {
             InitializeComponent();
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
+        }
+
+        [Obsolete]
+        private void frmSale_Load(object sender, EventArgs e)
+        {
+            loadProduct();
+            IconButton btn = new IconButton();
+            btn.Text = "Tất cả";
+            btn.IconChar = IconChar.Qrcode;
+            Addbtn(btn, 0);
+            LoadButtonProduct();
+
         }
 
         public void AddItem(string name, string cost, Image image, int id, int id_loai)
@@ -76,30 +89,41 @@ namespace GUI
         [Obsolete]
         private void LoadButtonProduct()
         {
-            dataGridView1.DataSource = B_LoaiSanPham.Instance.cashierLoadLoaiSP();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            //dataGridView1.DataSource = B_LoaiSanPham.Instance.cashierLoadLoaiSP();
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    string name = row.Cells["TenLoaiSanPham"].Value.ToString();
+            //    int id_LSP = int.Parse(row.Cells["ID_LoaiSanPham"].Value.ToString());
+            //    IconButton btn = new IconButton();
+            //    btn.Text = name;
+            //    btn.IconChar = IconChar.None;
+            //    Addbtn(btn, id_LSP);
+            //}
+
+            DataTable dt = B_LoaiSanPham.Instance.cashierLoadLoaiSP();
+            foreach (DataRow item in dt.Rows)
             {
-                string name = row.Cells["TenLoaiSanPham"].Value.ToString();
-                int id_LSP = int.Parse(row.Cells["ID_LoaiSanPham"].Value.ToString());
+                string name = item["TenLoaiSanPham"].ToString();
+                int id_LSP = int.Parse(item["ID_LoaiSanPham"].ToString());
                 IconButton btn = new IconButton();
                 btn.Text = name;
                 btn.IconChar = IconChar.None;
                 Addbtn(btn, id_LSP);
             }
-        }
-        decimal sumCost = 0;
 
+            //B_LoaiSanPham.Instance.CashierGetProductTypes(ref dataGridView1);
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    string name = row.Cells["Tensanpham"].Value.ToString();
+            //    int id_LSP = int.Parse(row.Cells["Idloaisanpham"].Value.ToString());
 
-        [Obsolete]
-        private void frmSale_Load(object sender, EventArgs e)
-        {
-            loadProduct();
-            IconButton btn = new IconButton();
-            btn.Text = "Tất cả";
-            btn.IconChar = IconChar.Qrcode;
-            Addbtn(btn, 0);
-            LoadButtonProduct();
+            //    IconButton btn = new IconButton();
+            //    btn.Text = name;
+            //    btn.IconChar = IconChar.None;
+            //    Addbtn(btn, id_LSP);
+            //}
         }
+
         private void categoryLoad(int id)
         {
             foreach (Control control in panSanPham.Controls)

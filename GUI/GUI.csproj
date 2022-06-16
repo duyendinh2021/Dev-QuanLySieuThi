@@ -338,6 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\unnamed.jpg" />
+    <None Include="Resources\log-in 64px.png" />
+    <None Include="Resources\log-in.png" />
     <None Include="Resources\remove-from-cart.png" />
     <None Include="Resources\loupe.png" />
     <None Include="Resources\file.png" />

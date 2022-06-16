@@ -418,6 +418,7 @@
             this.dtgDSHangHoa.GridColor = System.Drawing.Color.Gainsboro;
             this.dtgDSHangHoa.Location = new System.Drawing.Point(3, 18);
             this.dtgDSHangHoa.Name = "dtgDSHangHoa";
+            this.dtgDSHangHoa.ReadOnly = true;
             this.dtgDSHangHoa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtgDSHangHoa.RowHeadersVisible = false;
             this.dtgDSHangHoa.RowHeadersWidth = 51;
@@ -433,6 +434,7 @@
             this.Add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Add.MinimumWidth = 6;
             this.Add.Name = "Add";
+            this.Add.ReadOnly = true;
             // 
             // ID_SP
             // 
@@ -440,6 +442,7 @@
             this.ID_SP.HeaderText = "ID Sản Phẩm";
             this.ID_SP.MinimumWidth = 6;
             this.ID_SP.Name = "ID_SP";
+            this.ID_SP.ReadOnly = true;
             // 
             // Ten
             // 
@@ -447,6 +450,7 @@
             this.Ten.HeaderText = "Tên Sản Phẩm";
             this.Ten.MinimumWidth = 6;
             this.Ten.Name = "Ten";
+            this.Ten.ReadOnly = true;
             // 
             // id_ncc
             // 
@@ -454,6 +458,7 @@
             this.id_ncc.HeaderText = "ID Nhà Cung Cấp";
             this.id_ncc.MinimumWidth = 6;
             this.id_ncc.Name = "id_ncc";
+            this.id_ncc.ReadOnly = true;
             // 
             // id_loaisp
             // 
@@ -461,6 +466,7 @@
             this.id_loaisp.HeaderText = "ID Loại Sản Phẩm";
             this.id_loaisp.MinimumWidth = 6;
             this.id_loaisp.Name = "id_loaisp";
+            this.id_loaisp.ReadOnly = true;
             // 
             // sl
             // 
@@ -468,6 +474,7 @@
             this.sl.HeaderText = "Số Lượng Còn";
             this.sl.MinimumWidth = 6;
             this.sl.Name = "sl";
+            this.sl.ReadOnly = true;
             // 
             // dvt
             // 
@@ -475,6 +482,7 @@
             this.dvt.HeaderText = "Đơn Vị Tính";
             this.dvt.MinimumWidth = 6;
             this.dvt.Name = "dvt";
+            this.dvt.ReadOnly = true;
             // 
             // dongia
             // 
@@ -482,6 +490,7 @@
             this.dongia.HeaderText = "Đơn Giá";
             this.dongia.MinimumWidth = 6;
             this.dongia.Name = "dongia";
+            this.dongia.ReadOnly = true;
             // 
             // panel1
             // 
