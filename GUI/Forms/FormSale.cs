@@ -144,6 +144,7 @@ namespace GUI
         [Obsolete]
         private void loadProduct(int id = 0)
         {
+            panSanPham.Controls.Clear();
             dataGridView2.DataSource = B_SanPham.Instance.cashierGetAllProduct(id);
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
@@ -187,12 +188,15 @@ namespace GUI
 
                         try
                         {
+                            string name = "";
+                            int slKho = 0;
                             bool isCheckNumber = true;
                             foreach (DataGridViewRow item in dgvHoaDon.Rows)
                             {
+                                name = item.Cells["Item"].Value.ToString();
                                 int slSanPham = int.Parse(item.Cells["QTY"].Value.ToString());
                                 int id_SP = int.Parse(item.Cells["ID"].Value?.ToString());
-                                int slKho = B_SanPham.Instance.getNumberSanPhamByID(id_SP);
+                                slKho = B_SanPham.Instance.getNumberSanPhamByID(id_SP);
                                 if (slKho - slSanPham < 0)
                                 {
                                     isCheckNumber = false;
@@ -206,7 +210,7 @@ namespace GUI
                             }
                             else
                             {
-                                MessageBox.Show("Sản phẩm không đủ!", "Thông báo!");
+                                MessageBox.Show("Sản phẩm không đủ, Tồn kho còn " + name + " " + slKho.ToString() + " hàng !", "Thông báo!");
                             }
                         }
                         catch (Exception)
@@ -214,7 +218,7 @@ namespace GUI
 
                             MessageBox.Show("Data err !!!");
                         }
-                    
+
                     }
                     else
                     {
@@ -274,6 +278,8 @@ namespace GUI
                                     //Cập nhật lại database
                                     B_SanPham.Instance.updateNumberSanPham(id_SP, qty);
                                 }
+                                loadProduct();
+                                btnReset_Click(sender, e);
                             }
                             else
                             {
@@ -317,8 +323,8 @@ namespace GUI
                 }
             }
         }
-        decimal baseQTY= 1;
-        decimal CostAtItem= 1;
+        decimal baseQTY = 1;
+        decimal CostAtItem = 1;
         private void dgvHoaDon_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -334,7 +340,7 @@ namespace GUI
             {
                 if (e.RowIndex != -1)
                 {
-                    if (e.ColumnIndex == 1)
+                    if (e.ColumnIndex == 1 && dgvHoaDon[1, e.RowIndex].Value != null)
                     {
                         decimal baseCost = CostAtItem / baseQTY;
                         dgvHoaDon[2, e.RowIndex].Value = string.Format("{0:####}", decimal.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString()) * baseCost);
@@ -346,8 +352,8 @@ namespace GUI
             {
                 dgvHoaDon[1, e.RowIndex].Value = baseQTY;
             }
-        
+
         }
-        
+
     }
 }
