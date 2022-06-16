@@ -62,7 +62,7 @@
             this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panSanPham.SuspendLayout();
@@ -235,7 +235,7 @@
             this.panInfor.Controls.Add(this.lblTongTien);
             this.panInfor.Location = new System.Drawing.Point(5, 452);
             this.panInfor.Name = "panInfor";
-            this.panInfor.Size = new System.Drawing.Size(550, 314);
+            this.panInfor.Size = new System.Drawing.Size(550, 298);
             this.panInfor.TabIndex = 33;
             // 
             // txtTienThua
@@ -244,11 +244,10 @@
             this.txtTienThua.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTienThua.Enabled = false;
             this.txtTienThua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienThua.Location = new System.Drawing.Point(208, 245);
-            this.txtTienThua.Multiline = true;
+            this.txtTienThua.Location = new System.Drawing.Point(208, 237);
             this.txtTienThua.Name = "txtTienThua";
             this.txtTienThua.ReadOnly = true;
-            this.txtTienThua.Size = new System.Drawing.Size(339, 47);
+            this.txtTienThua.Size = new System.Drawing.Size(339, 21);
             this.txtTienThua.TabIndex = 1;
             // 
             // txtKhachDua
@@ -256,7 +255,7 @@
             this.txtKhachDua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(139)))));
             this.txtKhachDua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKhachDua.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhachDua.Location = new System.Drawing.Point(208, 155);
+            this.txtKhachDua.Location = new System.Drawing.Point(208, 126);
             this.txtKhachDua.Name = "txtKhachDua";
             this.txtKhachDua.Size = new System.Drawing.Size(339, 31);
             this.txtKhachDua.TabIndex = 1;
@@ -267,18 +266,17 @@
             this.txtTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTongTien.Enabled = false;
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(208, 6);
-            this.txtTongTien.Multiline = true;
+            this.txtTongTien.Location = new System.Drawing.Point(208, 19);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(339, 47);
+            this.txtTongTien.Size = new System.Drawing.Size(339, 21);
             this.txtTongTien.TabIndex = 1;
             // 
             // lblTienThua
             // 
             this.lblTienThua.AutoSize = true;
             this.lblTienThua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.lblTienThua.Location = new System.Drawing.Point(4, 267);
+            this.lblTienThua.Location = new System.Drawing.Point(4, 233);
             this.lblTienThua.Name = "lblTienThua";
             this.lblTienThua.Size = new System.Drawing.Size(111, 25);
             this.lblTienThua.TabIndex = 0;
@@ -288,7 +286,7 @@
             // 
             this.lblKhachDua.AutoSize = true;
             this.lblKhachDua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.lblKhachDua.Location = new System.Drawing.Point(4, 161);
+            this.lblKhachDua.Location = new System.Drawing.Point(4, 132);
             this.lblKhachDua.Name = "lblKhachDua";
             this.lblKhachDua.Size = new System.Drawing.Size(119, 25);
             this.lblKhachDua.TabIndex = 0;
@@ -298,7 +296,7 @@
             // 
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.lblTongTien.Location = new System.Drawing.Point(4, 28);
+            this.lblTongTien.Location = new System.Drawing.Point(4, 15);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(111, 25);
             this.lblTongTien.TabIndex = 0;
@@ -353,10 +351,13 @@
             this.dgvHoaDon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvHoaDon.RowHeadersVisible = false;
             this.dgvHoaDon.RowHeadersWidth = 51;
-            this.dgvHoaDon.RowTemplate.Height = 40;
+            this.dgvHoaDon.RowTemplate.Height = 50;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvHoaDon.Size = new System.Drawing.Size(556, 430);
             this.dgvHoaDon.TabIndex = 28;
+            this.dgvHoaDon.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHoaDon_CellMouseClick);
+            this.dgvHoaDon.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHoaDon_CellMouseDoubleClick);
+            this.dgvHoaDon.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellValueChanged);
             // 
             // dataGridViewImageColumn1
             // 
@@ -465,8 +466,6 @@
             // 
             this.Delete.DataPropertyName = "Delete";
             this.Delete.HeaderText = "XÓA";
-            this.Delete.Image = global::GUI.Properties.Resources.remove_from_cart;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -529,6 +528,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
         private System.Windows.Forms.DataGridViewTextBoxColumn COST;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

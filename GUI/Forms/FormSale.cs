@@ -157,12 +157,6 @@ namespace GUI
                 AddItem(name, value, image, id_SP, id_Loai);
             }
         }
-
-        private void dgvHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
         private void calSumCost()
         {
             decimal cost = 0;
@@ -244,7 +238,7 @@ namespace GUI
                     decimal payCost = decimal.Parse(txtKhachDua.Text);
                     if (payCost - sumCost1 >= 0)
                     {
-                        if(txtTienThua.Text !="")
+                        if (txtTienThua.Text != "")
                         {
                             //lấy tổng giá
                             object[] objects = new object[] { B_TaiKhoan.Instance.id, sumCost1 };
@@ -298,5 +292,41 @@ namespace GUI
         {
             searchLoad();
         }
+
+        private void dgvHoaDon_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (e.ColumnIndex == 4)
+                {
+                    dgvHoaDon.Rows.RemoveAt(e.RowIndex);
+                    calSumCost();
+                }
+            }
+        }
+        decimal baseQTY= 1;
+        decimal CostAtItem= 1;
+        private void dgvHoaDon_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                baseQTY = (decimal)dgvHoaDon[1, e.RowIndex].Value;
+                CostAtItem = (decimal)dgvHoaDon[2, e.RowIndex].Value;
+            }
+        }
+
+        private void dgvHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if(e.ColumnIndex == 1)
+                {
+                    decimal baseCost = CostAtItem / baseQTY;
+                    dgvHoaDon[2, e.RowIndex].Value = string.Format("{0:####}", decimal.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString()) * baseCost);
+                    calSumCost();
+                }
+            }
+        }
+        
     }
 }
