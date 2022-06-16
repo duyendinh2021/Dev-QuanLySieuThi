@@ -181,27 +181,40 @@ namespace GUI
                     if (payCost - sumCost1 >= 0)
                     {
                         //kiểm tra số lượng sản phẩm tồn trong database
-                        bool isCheckNumber = true;
-                        foreach (DataGridViewRow item in dgvHoaDon.Rows)
+
+
+                        // try catch 
+
+                        try
                         {
-                            int slSanPham = int.Parse(item.Cells["QTY"].Value.ToString());
-                            int id_SP = int.Parse(item.Cells["ID"].Value?.ToString());
-                            int slKho = B_SanPham.Instance.getNumberSanPhamByID(id_SP);
-                            if (slKho - slSanPham < 0)
+                            bool isCheckNumber = true;
+                            foreach (DataGridViewRow item in dgvHoaDon.Rows)
                             {
-                                isCheckNumber = false;
-                                break;
+                                int slSanPham = int.Parse(item.Cells["QTY"].Value.ToString());
+                                int id_SP = int.Parse(item.Cells["ID"].Value?.ToString());
+                                int slKho = B_SanPham.Instance.getNumberSanPhamByID(id_SP);
+                                if (slKho - slSanPham < 0)
+                                {
+                                    isCheckNumber = false;
+                                    break;
+                                }
+                            }
+                            if (isCheckNumber)
+                            {
+                                decimal tienThua = payCost - sumCost1;
+                                txtTienThua.Text = tienThua.ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sản phẩm không đủ!", "Thông báo!");
                             }
                         }
-                        if (isCheckNumber)
+                        catch (Exception)
                         {
-                            decimal tienThua = payCost - sumCost1;
-                            txtTienThua.Text = tienThua.ToString();
+
+                            MessageBox.Show("Data err !!!");
                         }
-                        else
-                        {
-                            MessageBox.Show("Sản phẩm không đủ!", "Thông báo!");
-                        }
+                    
                     }
                     else
                     {
@@ -310,22 +323,30 @@ namespace GUI
         {
             if (e.RowIndex != -1)
             {
-                baseQTY = (decimal)dgvHoaDon[1, e.RowIndex].Value;
-                CostAtItem = (decimal)dgvHoaDon[2, e.RowIndex].Value;
+                baseQTY = decimal.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString());
+                CostAtItem = decimal.Parse(dgvHoaDon[2, e.RowIndex].Value.ToString());
             }
         }
 
         private void dgvHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            try
             {
-                if(e.ColumnIndex == 1)
+                if (e.RowIndex != -1)
                 {
-                    decimal baseCost = CostAtItem / baseQTY;
-                    dgvHoaDon[2, e.RowIndex].Value = string.Format("{0:####}", decimal.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString()) * baseCost);
-                    calSumCost();
+                    if (e.ColumnIndex == 1)
+                    {
+                        decimal baseCost = CostAtItem / baseQTY;
+                        dgvHoaDon[2, e.RowIndex].Value = string.Format("{0:####}", decimal.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString()) * baseCost);
+                        calSumCost();
+                    }
                 }
             }
+            catch (Exception)
+            {
+                dgvHoaDon[1, e.RowIndex].Value = baseQTY;
+            }
+        
         }
         
     }
