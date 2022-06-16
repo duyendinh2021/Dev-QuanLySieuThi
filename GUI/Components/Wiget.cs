@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI.Components
+namespace GUI.Components
 {
     public partial class Wiget : UserControl
     {
@@ -25,10 +25,10 @@ namespace UI.Components
         {
             OnSelect?.Invoke(this, e);
         }
-        public string Title { get => label1.Text; set => label1.Text = value; }
-        public string Cost { get => label2.Text; set => label2.Text = value; }
+        public string Title { get => lblName.Text; set => lblName.Text = value; }
+        public string Cost { get => lblCost.Text; set => lblCost.Text = value; }
 
-        public Image Image { get => pictureBox1.Image; set => pictureBox1.Image = value; }
+        public Image Image { get => ptbImage.Image; set => ptbImage.Image = value; }
         public int Id { get => id; set => id = value; }
         public int Id_loai { get => id_loai; set => id_loai = value; }
     }

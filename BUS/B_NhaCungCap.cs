@@ -71,11 +71,30 @@ namespace BUS
         public void LoadNhaCungCapByID(int id, ref ComboBox comboBox)
         {
             List<NhaCungCap> nhaCungCap = D_NhaCungCap.Instance.loadNhaCungCapByID(id);
+            comboBox.DataSource = nhaCungCap;
             comboBox.DisplayMember = "Tencongty";
             comboBox.ValueMember = "Idnhacungcap";
-            comboBox.DataSource = nhaCungCap;
         }
 
+
+        [Obsolete]
+        public void GetNhaCungCapByID(int id,ref string ten_ct,ref string sdt,ref string songanhang,ref string dc, ref string tennganhang)
+        {
+            NhaCungCap nhaCungCap = D_NhaCungCap.Instance.loadOneNhaCungCapByID(id);
+            ten_ct = nhaCungCap.Tencongty;
+            sdt = nhaCungCap.Sdt;
+            songanhang = nhaCungCap.Sotaikhoan;
+            dc = nhaCungCap.Diachi;
+            tennganhang = nhaCungCap.Tennganhang;
+        }
+
+
+        [Obsolete]
+        public string GetNhaCungCapByID(int id)
+        {
+            NhaCungCap nhaCungCap = D_NhaCungCap.Instance.loadOneNhaCungCapByID(id);
+            return nhaCungCap.Tencongty;
+        }
 
         [Obsolete]
         public void GetAllNhaCungCapHoatDong(ref DataGridView data)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using DTO;
 
 namespace DAO
@@ -31,6 +32,30 @@ namespace DAO
         {
             string query = "EXEC InsertChiTietPhieuNhapKho @id_phieuNhap , @id_sp , @id_ncc , @dongia , @sl";
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
+
+
+
+        [Obsolete]
+        public List<ChiTietPhieuNhapKho> GetChiTietPhieuNhapKhoByIDPhieuNhap(int id)
+        {
+            List<ChiTietPhieuNhapKho> chiTietPhieuNhapKhos = new List<ChiTietPhieuNhapKho>();
+            string query = "EXEC SelectChiTietPhieuNhapKhoByIDPhieuNhap @id_PhieuNhap";
+            using(DataTable data = connectionData.Instance.excuteQuery(query,new object[] { id }))
+            {
+                foreach (DataRow item in data.Rows)
+                {
+                    ChiTietPhieuNhapKho chiTietPhieuNhap = new ChiTietPhieuNhapKho();
+                    chiTietPhieuNhap.Idphieunhapkho = int.Parse(item["ID_PhieuNhapKho"].ToString());
+                    chiTietPhieuNhap.Idsp = int.Parse(item["ID_SanPham"].ToString());
+                    chiTietPhieuNhap.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    chiTietPhieuNhap.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    chiTietPhieuNhap.Sl = int.Parse(item["SoLuong"].ToString());
+                    chiTietPhieuNhap.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    chiTietPhieuNhapKhos.Add(chiTietPhieuNhap);
+                }
+            }
+            return chiTietPhieuNhapKhos;
         }
     }
 }

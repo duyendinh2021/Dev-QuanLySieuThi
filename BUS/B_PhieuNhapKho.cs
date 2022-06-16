@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DAO;
 using DTO;
 
@@ -45,5 +46,30 @@ namespace BUS
         public int stokerGetNewReceipt() { 
             return D_PhieuNhapKho.Instance.stokerGetNewReceipt();
         }
+
+
+        [Obsolete]
+        public void GetAllPhieuNhapKhoNoDeleted(ref DataGridView data)
+        {
+            List<PhieuNhapKho> phieuNhapKhos = D_PhieuNhapKho.Instance.GetAllPhieuNhapKhoNoDeleted();
+            data.DataSource = phieuNhapKhos;
+        }
+
+
+        [Obsolete]
+        public bool StokerDeletePhieuNhapKhoByID(int id)
+        {
+            try
+            {
+                D_PhieuNhapKho.Instance.StokerDeletePhieuNhapKhoByID(id);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
     }
 }

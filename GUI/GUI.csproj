@@ -59,7 +59,10 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -77,20 +80,32 @@
     <Compile Include="Components\ButtonCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\ButtonCategory.Designer.cs" />
+    <Compile Include="Components\ButtonCategory.Designer.cs">
+      <DependentUpon>ButtonCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Tag.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Tag.Designer.cs" />
+    <Compile Include="Components\Tag.Designer.cs">
+      <DependentUpon>Tag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Wiget.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Wiget.Designer.cs" />
+    <Compile Include="Components\Wiget.Designer.cs">
+      <DependentUpon>Wiget.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conntrols\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Conntrols\RJTextBox.Designer.cs" />
     <Compile Include="Conntrols\RJTextBox1.Designer.cs" />
+    <Compile Include="Forms\FormDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDashBoard.Designer.cs">
+      <DependentUpon>FormDashBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +117,12 @@
     </Compile>
     <Compile Include="Forms\NhaCungCap\FormQuanLyNhaCungCap.Designer.cs">
       <DependentUpon>FormQuanLyNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhaCungCap\FormViewNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhaCungCap\FormViewNhaCungCap.Designer.cs">
+      <DependentUpon>FormViewNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NhanVien\FormCapNhatNhanVien.cs">
       <SubType>Form</SubType>
@@ -120,6 +141,18 @@
     </Compile>
     <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.Designer.cs">
+      <DependentUpon>FormChiTietPhieuNhapKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.Designer.cs">
+      <DependentUpon>FormQuanLyPhieuNhapKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SanPham\FormCapNhatSanPham.cs">
       <SubType>Form</SubType>
@@ -181,19 +214,40 @@
     <Compile Include="Forms\NhanVien\FormViewAccout.Designer.cs">
       <DependentUpon>FormViewAccout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SanPham\FormViewSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SanPham\FormViewSanPham.Designer.cs">
+      <DependentUpon>FormViewSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClassSupport\Rule_Regex.cs" />
     <Compile Include="ClassSupport\SupportUI_UX.cs" />
-    <EmbeddedResource Include="Components\ButtonCategory.resx" />
-    <EmbeddedResource Include="Components\Tag.resx" />
-    <EmbeddedResource Include="Components\Wiget.resx" />
+    <EmbeddedResource Include="Components\ButtonCategory.resx">
+      <DependentUpon>ButtonCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Tag.resx">
+      <DependentUpon>Tag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Wiget.resx">
+      <DependentUpon>Wiget.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Conntrols\RJTextBox.resx" />
+    <EmbeddedResource Include="Forms\FormDashBoard.resx">
+      <DependentUpon>FormDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSale.resx">
+      <DependentUpon>FormSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.resx">
       <DependentUpon>FormCapNhatNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhaCungCap\FormQuanLyNhaCungCap.resx">
       <DependentUpon>FormQuanLyNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhaCungCap\FormViewNhaCungCap.resx">
+      <DependentUpon>FormViewNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien\FormCapNhatNhanVien.resx">
       <DependentUpon>FormCapNhatNhanVien.cs</DependentUpon>
@@ -203,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.resx">
+      <DependentUpon>FormChiTietPhieuNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.resx">
+      <DependentUpon>FormQuanLyPhieuNhapKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SanPham\FormCapNhatSanPham.resx">
       <DependentUpon>FormCapNhatSanPham.cs</DependentUpon>
@@ -230,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien\FormViewAccout.resx">
       <DependentUpon>FormViewAccout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SanPham\FormViewSanPham.resx">
+      <DependentUpon>FormViewSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -275,6 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\remove-from-cart.png" />
+    <None Include="Resources\loupe.png" />
+    <None Include="Resources\file.png" />
     <None Include="Resources\resume.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\writing.png" />
@@ -292,5 +358,6 @@
     <None Include="Resources\add.png" />
     <None Include="Resources\add_Hang.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

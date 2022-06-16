@@ -29,7 +29,7 @@ namespace DAO
         [Obsolete]
         public void stokerCreatePhieuNhapKho(object[] parameter)
         {
-            string query = "EXEC InsertPhieuNhapKho @id_nv , @ngaylap , @tongTien";
+            string query = "EXEC InsertPhieuNhapKho @id_nv , @tongTien";
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
 
@@ -48,6 +48,37 @@ namespace DAO
                 }
             }
             return id;
+        }
+
+
+        [Obsolete]
+        public List<PhieuNhapKho> GetAllPhieuNhapKhoNoDeleted()
+        {
+            List<PhieuNhapKho> phieuNhapKhos = new List<PhieuNhapKho>();
+            string query = "EXEC SelectAllPhieuNhapKhoNoDeleted";
+            using(DataTable data = connectionData.Instance.excuteQuery(query))
+            {
+                foreach (DataRow item in data.Rows)
+                {
+                    PhieuNhapKho phieuNhapKho = new PhieuNhapKho();
+                    phieuNhapKho.Idphieunhapkho = int.Parse(item["ID_PhieuNhapKho"].ToString());
+                    phieuNhapKho.Idnhanvien = int.Parse(item["ID_NhanVien"].ToString());
+                    phieuNhapKho.Ngaylap = DateTime.Parse(item["NgayLap"].ToString());
+                    phieuNhapKho.Tongtien = decimal.Parse(item["TongTien"].ToString());
+                    phieuNhapKho.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    phieuNhapKhos.Add(phieuNhapKho);
+                }
+            }
+            return phieuNhapKhos;
+        }
+
+
+
+        [Obsolete]
+        public void StokerDeletePhieuNhapKhoByID(int id)
+        {
+            string query = "EXEC DeletePhieuNhapKhoByID @id_phieuNhap";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query,new object[] {id});
         }
     }
 }

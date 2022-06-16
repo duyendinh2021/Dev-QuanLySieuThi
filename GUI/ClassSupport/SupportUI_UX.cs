@@ -33,6 +33,9 @@ namespace GUI
         public Color color4 = Color.FromArgb(95, 77, 221);
         public Color color5 = Color.FromArgb(249, 88, 155);
         public Color color6 = Color.FromArgb(24, 161, 251);
+        public Color Color7 = Color.FromArgb(86, 191, 188);
+        public Color color8 = Color.FromArgb(181, 191, 86);
+
         public void ActivateButton(Object senderBtn, Color color)
         {
             if (senderBtn != null)

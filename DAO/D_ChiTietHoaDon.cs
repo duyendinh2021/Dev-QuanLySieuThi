@@ -23,5 +23,11 @@ namespace DAO
                 return instance;
             }
         }
+        [Obsolete]
+        public void cashierAddCTHoaDon(object[] parameter)
+        {
+            string query = "EXEC InsertChiTietHoaDon @id_HD , @id_SanPham , @dongia , @soluong , @chietkhau";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
     }
 }

@@ -55,5 +55,15 @@ namespace GUI.ClassSupport
                 return Image.FromStream(ms);
             }
         }
+        public void byteArrayToImage(byte[] byteArrayIn, ref Image returnImage)
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream(byteArrayIn, 0, byteArrayIn.Length);
+                ms.Write(byteArrayIn, 0, byteArrayIn.Length);
+                returnImage = Image.FromStream(ms, true);//Exception occurs here
+            }
+            catch { }
+        }
     }
 }

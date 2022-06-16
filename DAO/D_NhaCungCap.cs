@@ -81,6 +81,29 @@ namespace DAO
 
 
         [Obsolete]
+        public NhaCungCap loadOneNhaCungCapByID(int id)
+        {
+            string query = "EXEC SelectNhaCungCapByID @id";
+            NhaCungCap nhaCungCap = new NhaCungCap();
+
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { id }))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    nhaCungCap.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    nhaCungCap.Tencongty = item["TenCongTy"].ToString();
+                    nhaCungCap.Diachi = item["DiaChi"].ToString();
+                    nhaCungCap.Sdt = item["SDT"].ToString();
+                    nhaCungCap.Sotaikhoan = item["SoTKNganHang"].ToString();
+                    nhaCungCap.Tennganhang = item["TenNganHang"].ToString();
+                    nhaCungCap.Trangthai = int.Parse(item["TrangThai"].ToString());    
+                }
+            }
+            return nhaCungCap;
+        }
+
+
+        [Obsolete]
         public List<NhaCungCap> GetAllNhaCungCapHoatDong()
         {
             string query = "EXEC SelectAllNhaCungcapDangHoatDong";

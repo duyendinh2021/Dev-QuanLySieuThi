@@ -211,5 +211,15 @@ namespace BUS
             SanPham sanPham = D_SanPham.Instance.stokerGetNewProduct();
             dataTable.Rows.Add(sanPham);
         }
+        [Obsolete]
+        public DataTable LoadDataSumProductEveryDayOfMonth(DateTime date)
+        {
+            int month = date.Month;
+            int year = date.Year;
+            //Gọi function trả về Data
+            DataTable dt = new DataTable();
+            dt = D_NhanVien.Instance.LoadDataSumProductEveryDayOfMonth(month, year);
+            return dt;
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace BUS
                 }
                 quyen = taiKhoan.Chuvu;
                 id = taiKhoan.Idnhanvien;
-                updateStatusLogin(id);
+                //updateStatusLogin(id);
             }
             return result;
         }
@@ -81,6 +81,13 @@ namespace BUS
                return false;
             }
             return true;
+        }
+        [Obsolete]
+        public DataTable adminGetTableLoginStatus()
+        {
+            DataTable dt = new DataTable();
+            dt = D_TaiKhoan.Instance.adminGetTableLoginStatus();
+            return dt;
         }
     }
 }

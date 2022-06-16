@@ -23,6 +23,19 @@ namespace BUS
                 return instance;
             }
         }
+        [Obsolete]
+        public bool cashierAddCTHoaDon(object[] parameter)
+        {
+            try
+            {
+                D_ChiTietHoaDon.Instance.cashierAddCTHoaDon(parameter);
+            }
+            catch (Exception)
+            {
+                return false;
 
+            }
+            return true;
+        }
     }
 }

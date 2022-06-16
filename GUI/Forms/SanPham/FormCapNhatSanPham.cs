@@ -46,13 +46,13 @@ namespace GUI.Forms.SanPham
         [Obsolete]
         private void FormCapNhatSanPham_Load(object sender, EventArgs e)
         {
-            B_SanPham.Instance.LoadSamPhamtheoid(id, ref ten_sp, ref id_loai, ref id_ncc, ref sl, ref dongia, ref hinh, ref trangthai);
+            B_SanPham.Instance.GetProductByID(id, ref ten_sp, ref id_loai, ref id_ncc, ref sl, ref dongia, ref hinh, ref trangthai);
 
             txtTenSP.Text = ten_sp;
 
             B_NhaCungCap.Instance.LoadNhaCungCapByID(id_ncc, ref cmbNCC);
-            B_LoaiSanPham.Instance.loadLoaiSanPhamByID(id_loai, ref cmbID_Loaisp);
-            B_SanPham.Instance.LoadDataSourceByID(id, ref cmbDVT);
+            B_LoaiSanPham.Instance.GetLoaiSanPhamByID(id_loai, ref cmbID_Loaisp);
+            B_SanPham.Instance.LoadDataSourceUnitByID(id, ref cmbDVT);
 
 
 
@@ -102,7 +102,7 @@ namespace GUI.Forms.SanPham
                 }
 
                 object[] sanpham = new object[] { id_sp, ten_sp2, id_ncc2, id_loai2, dvt, dongia2, imgInsert, 1 };
-                if (B_SanPham.Instance.stokerUpdateSanPham(sanpham))
+                if (B_SanPham.Instance.StokerUpdateProduct(sanpham))
                 {
                     MessageBox.Show("Cập Nhật Thành Công");
                 }
@@ -142,7 +142,7 @@ namespace GUI.Forms.SanPham
         [Obsolete]
         private void btnEditDVT_Click(object sender, EventArgs e)
         {
-            B_SanPham.Instance.loadDataSourceDVT(ref cmbDVT);
+            B_SanPham.Instance.loadDataSourceUnits(ref cmbDVT);
             cmbDVT.DropDownStyle = ComboBoxStyle.DropDown;
         }
     }

@@ -470,7 +470,14 @@ namespace DAO
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
 
-
+        [Obsolete]
+        public DataTable LoadDataSumProductEveryDayOfMonth(int month, int year)
+        {
+            //Gọi function trả về Data
+            DataTable dt = new DataTable();
+            dt = connectionData.Instance.excuteQuery("EXEC calSumSPEveryDayOrMonth @thang , @nam", new object[] { month, year });
+            return dt;
+        }
 
 
     }
