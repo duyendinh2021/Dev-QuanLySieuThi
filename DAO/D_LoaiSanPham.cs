@@ -71,5 +71,31 @@ namespace DAO
             }
             return loaiSanPhams;
         }
+
+        [Obsolete]
+        public LoaiSanPham GetOneProductTypeByID(int id)
+        {
+            string query = "EXEC SelectLoaiSanPhamByID @id";
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { id }))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    loaiSanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    loaiSanPham.Tensanpham = item["TenLoaiSanPham"].ToString();
+                    loaiSanPham.Mota = item["MoTa"].ToString();
+                    loaiSanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                }
+            }
+            return loaiSanPham;
+        }
+        [Obsolete]
+        public DataTable cashierLoadLoaiSP()
+        {
+            DataTable dt = new DataTable();
+            string query = "exec cashierLoadLoaiSP";
+            dt = connectionData.Instance.excuteQuery(query, new object[] { });
+            return dt;
+        }
     }
 }

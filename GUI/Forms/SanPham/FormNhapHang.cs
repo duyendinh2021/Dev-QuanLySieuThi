@@ -29,8 +29,11 @@ namespace GUI.Forms.SanPham
         private void FormNhapHang_Load(object sender, EventArgs e)
         {
             BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSP);
-            BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
+
+            BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
+
             B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNCC);
+
             cmbLoaiSP.SelectedIndex = -1;
             cmbNCC.SelectedIndex = -1;
 
@@ -47,20 +50,20 @@ namespace GUI.Forms.SanPham
             if (cmbLoaiSP.SelectedIndex == -1)
             {
                 id_loai = 0;
-                BUS.B_SanPham.Instance.loadSanPhamByLoaiSp(ref dtgDSHangHoa, id_loai);
+                B_SanPham.Instance.GetProducByProducType(ref dtgDSHangHoa, id_loai);
             }
             else
             {
                 if (cmbNCC.SelectedIndex == -1)
                 {
                     id_loai = int.Parse(cmbLoaiSP.SelectedValue.ToString());
-                    BUS.B_SanPham.Instance.loadSanPhamByLoaiSp(ref dtgDSHangHoa, id_loai);
+                    B_SanPham.Instance.GetProducByProducType(ref dtgDSHangHoa, id_loai);
                 }
                 else
                 {
                     id_loai = int.Parse(cmbLoaiSP.SelectedValue.ToString());
                     id_ncc = int.Parse(cmbNCC.SelectedValue.ToString());
-                    B_SanPham.Instance.SelectSanPhamByLoaiAndNCC(id_loai,id_ncc,ref dtgDSHangHoa);
+                    B_SanPham.Instance.GetProductByProductTypeAndSupplier(id_loai, id_ncc, ref dtgDSHangHoa);
                 }
             }
         }
@@ -130,7 +133,7 @@ namespace GUI.Forms.SanPham
         {
             FormNhapSanPham formNhapSanPham = new FormNhapSanPham();
             formNhapSanPham.ShowDialog();
-            BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
+            BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
 
         }
 
@@ -142,10 +145,10 @@ namespace GUI.Forms.SanPham
             DialogResult result = MessageBox.Show("Xác nhận nhập các mặt hàng trên chứ", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                string ngaylap = DateTime.Now.ToShortDateString();
+                //string ngaylap = DateTime.Now.ToShortDateString();
                 decimal tonggia = decimal.Parse(txtTongGia.Text);
-                object[] phieunhatkho = new object[] { BUS.B_TaiKhoan.Instance.id, ngaylap, tonggia };
-                if (BUS.B_PhieuNhapKho.Instance.stokerCreatePhieuNhapKho(phieunhatkho))
+                object[] phieunhatkho = new object[] {B_TaiKhoan.Instance.id, tonggia };
+                if (B_PhieuNhapKho.Instance.stokerCreatePhieuNhapKho(phieunhatkho))
                 {
                     int id_phieuNhap = B_PhieuNhapKho.Instance.stokerGetNewReceipt();
 
@@ -156,23 +159,27 @@ namespace GUI.Forms.SanPham
 
                         object[] UpdateSLSanPham = new object[] { int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
 
-                        B_SanPham.Instance.UpdateSLSanPham(UpdateSLSanPham);
+                        B_SanPham.Instance.StokerUpdateSLSanPham(UpdateSLSanPham);
                     }
                     MessageBox.Show("Tạo Phiếu Nhập kho Thành Công", "Tuyệt vời");
                 }
+                else
+                {
+                    MessageBox.Show("That Bai");
+                }
 
             }
-            BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
+            BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
         }
 
         private void dgvHoaDonNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                DataGridViewRow row = dgvHoaDonNhap.Rows[e.RowIndex];
                 if (e.ColumnIndex == 5)
                 {
                     dgvHoaDonNhap.Rows.RemoveAt(e.RowIndex);
+                    tinhTongGia();
                 }
             }
         }
@@ -182,7 +189,8 @@ namespace GUI.Forms.SanPham
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             cmbLoaiSP.SelectedIndex = -1;
-            BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
+            cmbNCC.SelectedIndex = -1;
+            BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
         }
 
 
@@ -192,20 +200,29 @@ namespace GUI.Forms.SanPham
         {
             if (cmbNCC.SelectedIndex == -1)
             {
-                BUS.B_SanPham.Instance.getAllSanPhamHoatDong(ref dtgDSHangHoa);
+                BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
             }
             else
             {
                 if (cmbLoaiSP.SelectedIndex == -1)
                 {
 
-                B_SanPham.Instance.getSanPhamByNCC(int.Parse(cmbNCC.SelectedValue.ToString()), ref dtgDSHangHoa);
+                    B_SanPham.Instance.GetProductBySupplier(int.Parse(cmbNCC.SelectedValue.ToString()), ref dtgDSHangHoa);
                 }
                 else
                 {
-                    B_SanPham.Instance.SelectSanPhamByLoaiAndNCC(int.Parse(cmbLoaiSP.SelectedValue.ToString()), int.Parse(cmbNCC.SelectedValue.ToString()),ref dtgDSHangHoa);
+                    B_SanPham.Instance.GetProductByProductTypeAndSupplier(int.Parse(cmbLoaiSP.SelectedValue.ToString()), int.Parse(cmbNCC.SelectedValue.ToString()), ref dtgDSHangHoa);
                 }
             }
+        }
+
+        private void btnClearDS_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
+            {
+                dgvHoaDonNhap.Rows.Clear();
+            }
+            tinhTongGia();
         }
     }
 }

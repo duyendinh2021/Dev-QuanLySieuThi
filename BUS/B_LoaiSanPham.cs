@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DTO;
 using DAO;
 using System.Windows.Forms;
+using System.Data;
 
 namespace BUS
 {
@@ -30,20 +31,27 @@ namespace BUS
         public void loadDataSourcecmbLoaiSp(ref ComboBox comboBox)
         {
             List<LoaiSanPham> loaiSanPhams = DAO.D_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp();
-            comboBox.DataSource = loaiSanPhams;
             comboBox.DisplayMember = "Tensanpham";
             comboBox.ValueMember = "Idloaisanpham";
+            comboBox.DataSource = loaiSanPhams;
         }
 
         [Obsolete]
-        public void loadLoaiSanPhamByID(int id,ref ComboBox comboBox)
+        public void GetLoaiSanPhamByID(int id,ref ComboBox comboBox)
         {
             List<LoaiSanPham> loaiSanPham = D_LoaiSanPham.Instance.loadloaiSanPhamByID(id);
 
-            comboBox.DataSource = loaiSanPham;
             comboBox.DisplayMember = "Tensanpham";
             comboBox.ValueMember = "Idloaisanpham";
+            comboBox.DataSource = loaiSanPham;
 
+        }
+
+        [Obsolete]
+        public string GetNameProductTypeByID(int id)
+        {
+            LoaiSanPham loaiSanPham = D_LoaiSanPham.Instance.GetOneProductTypeByID(id);
+            return loaiSanPham.Tensanpham;
         }
 
         [Obsolete]
@@ -51,6 +59,13 @@ namespace BUS
         {
             List<LoaiSanPham> loaiSanPhams = DAO.D_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp();
             dataGridView.DataSource = loaiSanPhams;
+        }
+        [Obsolete]
+        public DataTable cashierLoadLoaiSP()
+        {
+            DataTable dt = new DataTable();
+            dt = D_LoaiSanPham.Instance.cashierLoadLoaiSP();
+            return dt;
         }
     }
 }

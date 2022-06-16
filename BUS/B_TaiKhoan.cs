@@ -82,5 +82,12 @@ namespace BUS
             }
             return true;
         }
+        [Obsolete]
+        public DataTable adminGetTableLoginStatus()
+        {
+            DataTable dt = new DataTable();
+            dt = D_TaiKhoan.Instance.adminGetTableLoginStatus();
+            return dt;
+        }
     }
 }

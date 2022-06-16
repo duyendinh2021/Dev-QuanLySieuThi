@@ -67,9 +67,9 @@ namespace GUI.Forms
         [Obsolete]
         private void FormNhapSanPham_Load(object sender, EventArgs e)
         {
-            BUS.B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNcc);
-            BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSp);
-            BUS.B_SanPham.Instance.loadDataSourceDVT(ref cmbDVT);
+            B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNcc);
+            B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSp);
+            B_SanPham.Instance.loadDataSourceUnits(ref cmbDVT);
             cmbDVT.SelectedIndex = -1;
             cmbNcc.SelectedIndex = -1;
             cmbLoaiSp.SelectedIndex = -1;
@@ -115,9 +115,9 @@ namespace GUI.Forms
                 // object chứa thông tinh san phẩm dc nhập
                 object[] objects = new object[] { tensp, id_ncc, id_loai, 0, dvt, dongai, hinh };
 
-                if (B_SanPham.Instance.stokerAddSanPham(objects))
+                if (B_SanPham.Instance.StokerAddProduc(objects))
                 {
-                    B_SanPham.Instance.stokerGetNewProduct(ref sanpham);
+                    B_SanPham.Instance.StokerGetNewProduct(ref sanpham);
                 }      
             }
 

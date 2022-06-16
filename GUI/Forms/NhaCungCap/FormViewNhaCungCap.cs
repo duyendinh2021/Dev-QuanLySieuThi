@@ -36,7 +36,7 @@ namespace GUI.Forms.NhaCungCap
         [Obsolete]
         private void FormViewNhaCungCap_Load(object sender, EventArgs e)
         {
-            B_NhaCungCap.Instance.LoadNhaCungCapByID(id_ncc,ref ten_ct,ref sdt,ref songanHang,ref dc,ref tenNganhang);
+            B_NhaCungCap.Instance.GetNhaCungCapByID(id_ncc,ref ten_ct,ref sdt,ref songanHang,ref dc,ref tenNganhang);
             txtTenCongTy.Text = ten_ct;
             txtDiaChi.Text = dc;
             txtSDT.Text = sdt;

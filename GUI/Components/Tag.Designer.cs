@@ -1,4 +1,4 @@
-﻿namespace UI.Components
+﻿namespace GUI.Components
 {
     partial class Tag
     {
@@ -46,7 +46,7 @@
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(309, 114);
-            this.panel3.TabIndex = 10;
+            this.panel3.TabIndex = 11;
             // 
             // label2
             // 

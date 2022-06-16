@@ -29,7 +29,7 @@ namespace DAO
         [Obsolete]
         public void stokerCreatePhieuNhapKho(object[] parameter)
         {
-            string query = "EXEC InsertPhieuNhapKho @id_nv , @ngaylap , @tongTien";
+            string query = "EXEC InsertPhieuNhapKho @id_nv , @tongTien";
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
 

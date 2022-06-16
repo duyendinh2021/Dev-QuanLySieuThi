@@ -48,9 +48,12 @@
             this.txtTongGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnClearDS = new System.Windows.Forms.Button();
             this.btnHangMoi = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbNCC = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cmbLoaiSP = new System.Windows.Forms.ComboBox();
             this.grbDSHangHoa = new System.Windows.Forms.GroupBox();
@@ -69,9 +72,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cmbNCC = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -281,7 +281,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.btnClearDS);
             this.panel2.Controls.Add(this.btnHangMoi);
             this.panel2.Controls.Add(this.btnConfirm);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -290,16 +290,17 @@
             this.panel2.Size = new System.Drawing.Size(651, 117);
             this.panel2.TabIndex = 0;
             // 
-            // button3
+            // btnClearDS
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.button3.Image = global::GUI.Properties.Resources.clear;
-            this.button3.Location = new System.Drawing.Point(470, 24);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 58);
-            this.button3.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.button3, "Nhấn Xóa Danh Sách Hàng Nhập");
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnClearDS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnClearDS.Image = global::GUI.Properties.Resources.clear;
+            this.btnClearDS.Location = new System.Drawing.Point(470, 24);
+            this.btnClearDS.Name = "btnClearDS";
+            this.btnClearDS.Size = new System.Drawing.Size(147, 58);
+            this.btnClearDS.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnClearDS, "Nhấn Xóa Danh Sách Hàng Nhập");
+            this.btnClearDS.UseVisualStyleBackColor = false;
+            this.btnClearDS.Click += new System.EventHandler(this.btnClearDS_Click);
             // 
             // btnHangMoi
             // 
@@ -324,6 +325,35 @@
             this.toolTip1.SetToolTip(this.btnConfirm, "Nhấn Tạo Phiếu Nhập Kho");
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(496, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 23);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Nhà Cung Cấp";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 23);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Loại Sản Phẩm";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // cmbNCC
+            // 
+            this.cmbNCC.FormattingEnabled = true;
+            this.cmbNCC.Location = new System.Drawing.Point(658, 68);
+            this.cmbNCC.Name = "cmbNCC";
+            this.cmbNCC.Size = new System.Drawing.Size(205, 24);
+            this.cmbNCC.TabIndex = 4;
+            this.cmbNCC.SelectedIndexChanged += new System.EventHandler(this.cmbNCC_SelectedIndexChanged);
             // 
             // btnRefresh
             // 
@@ -499,35 +529,6 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 146;
             // 
-            // cmbNCC
-            // 
-            this.cmbNCC.FormattingEnabled = true;
-            this.cmbNCC.Location = new System.Drawing.Point(658, 68);
-            this.cmbNCC.Name = "cmbNCC";
-            this.cmbNCC.Size = new System.Drawing.Size(205, 24);
-            this.cmbNCC.TabIndex = 4;
-            this.cmbNCC.SelectedIndexChanged += new System.EventHandler(this.cmbNCC_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 23);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Loại Sản Phẩm";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(496, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 23);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Nhà Cung Cấp";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
             // FormNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -565,7 +566,7 @@
         private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClearDS;
         private System.Windows.Forms.Button btnHangMoi;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.ComboBox cmbLoaiSP;

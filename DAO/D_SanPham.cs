@@ -351,5 +351,60 @@ namespace DAO
             }
             return sanPhams;
         }
+        [Obsolete]
+        public DataTable adminGetProductSole(int month)
+        {
+            DataTable sole = new DataTable();
+            string query = "exec sumProductSoleInMonth @month";
+            sole = connectionData.Instance.excuteQuery(query, new object[] { month });
+            return sole;
+        }
+        [Obsolete]
+        public DataTable top5ProductSole(int month)
+        {
+            DataTable sole = new DataTable();
+            string query = "exec top5ProductSole @month";
+            sole = connectionData.Instance.excuteQuery(query, new object[] { month });
+            return sole;
+        }
+        [Obsolete]
+        public DataTable adminGetProductCurrent()
+        {
+            DataTable dt = new DataTable();
+            string query = "exec sumNumberOfProduct";
+            dt = connectionData.Instance.excuteQuery(query, new object[] { });
+            return dt;
+        }
+        [Obsolete]
+        public DataTable getSanPhamByID(int id)
+        {
+            DataTable dt = new DataTable();
+            string query = "exec getSanPhamByID @id";
+            dt = connectionData.Instance.excuteQuery(query, new object[] { id });
+            return dt;
+        }
+
+        [Obsolete]
+        public void updateNumberSanPham(int id, decimal number)
+        {
+            string query = "exec updateNumberSanPham @id , @number";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, new object[] { id, number });
+        }
+        [Obsolete]
+        public DataTable cashierGetAllProduct(int id = 0)
+        {
+            DataTable dt = new DataTable();
+            if (id == 0)
+            {
+                string query = "exec cashierGetAllProduct @loai";
+                dt = connectionData.Instance.excuteQuery(query, new object[] { 0 });
+            }
+            else
+            {
+                string query = "exec cashierGetAllProduct @loai";
+                dt = connectionData.Instance.excuteQuery(query, new object[] { id });
+            }
+            return dt;
+        }
     }
 }

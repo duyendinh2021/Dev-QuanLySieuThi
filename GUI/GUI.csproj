@@ -60,7 +60,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -78,16 +80,32 @@
     <Compile Include="Components\ButtonCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\ButtonCategory.Designer.cs" />
+    <Compile Include="Components\ButtonCategory.Designer.cs">
+      <DependentUpon>ButtonCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Tag.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Tag.Designer.cs" />
+    <Compile Include="Components\Tag.Designer.cs">
+      <DependentUpon>Tag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Wiget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Wiget.Designer.cs">
+      <DependentUpon>Wiget.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conntrols\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Conntrols\RJTextBox.Designer.cs" />
     <Compile Include="Conntrols\RJTextBox1.Designer.cs" />
+    <Compile Include="Forms\FormDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDashBoard.Designer.cs">
+      <DependentUpon>FormDashBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +224,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClassSupport\Rule_Regex.cs" />
     <Compile Include="ClassSupport\SupportUI_UX.cs" />
-    <EmbeddedResource Include="Components\ButtonCategory.resx" />
-    <EmbeddedResource Include="Components\Tag.resx" />
+    <EmbeddedResource Include="Components\ButtonCategory.resx">
+      <DependentUpon>ButtonCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Tag.resx">
+      <DependentUpon>Tag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Wiget.resx">
+      <DependentUpon>Wiget.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Conntrols\RJTextBox.resx" />
+    <EmbeddedResource Include="Forms\FormDashBoard.resx">
+      <DependentUpon>FormDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSale.resx">
+      <DependentUpon>FormSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.resx">
       <DependentUpon>FormCapNhatNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,6 +338,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\remove-from-cart.png" />
     <None Include="Resources\loupe.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\resume.png" />

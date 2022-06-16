@@ -11,6 +11,7 @@ using BUS;
 using GUI.Forms;
 using GUI.Forms.NhaCungCap;
 using GUI.Forms.PhieuNhapkho;
+using GUI.Forms.SanPham;
 
 namespace GUI
 {
@@ -111,6 +112,7 @@ namespace GUI
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color4);
             SupportUI_UX.Instance.HideSubmenu();
+            SupportUI_UX.Instance.showChildForm(new FormDashBoard(), panChildForm);
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
@@ -122,7 +124,12 @@ namespace GUI
         private void btnProducts_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color2);
-            SupportUI_UX.Instance.HideSubmenu();
+
+            // admin View Product
+
+            FormQuanLySanPham formQuanLySanPham = new FormQuanLySanPham();
+            SupportUI_UX.Instance.showChildForm(formQuanLySanPham, panChildForm);
+
         }
 
         private void btnSale_Click(object sender, EventArgs e)

@@ -61,5 +61,13 @@ namespace DAO
             string query = "EXEC UpdateTaiKhoan @id , @tentk , @mk , @chucVu , @trangthai";
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
+        [Obsolete]
+        public DataTable adminGetTableLoginStatus()
+        {
+            DataTable dt = new DataTable();
+            string query = "EXEC sumAccountCurrent";
+            dt = connectionData.Instance.excuteQuery(query, new object[] { });
+            return dt;
+        }
     }
 }

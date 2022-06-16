@@ -14,6 +14,10 @@ namespace DTO
         private Decimal _tonggia;
         private int _trangthai;
 
+        public HoaDon()
+        {
+        }
+
         public HoaDon(int idhd, int idnhanvien, DateTime ngaytao, decimal tonggia, int trangthai)
         {
             _idhd = idhd;

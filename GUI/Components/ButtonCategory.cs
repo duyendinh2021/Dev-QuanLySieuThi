@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI.Components
+namespace GUI.Components
 {
     public partial class ButtonCategory : UserControl
     {

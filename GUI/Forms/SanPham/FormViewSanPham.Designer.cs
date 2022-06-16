@@ -35,15 +35,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenSp = new System.Windows.Forms.TextBox();
-            this.cmbDVT = new System.Windows.Forms.ComboBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.ptbShowImage = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.cmbLoaiSp = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cmbNcc = new System.Windows.Forms.ComboBox();
+            this.txtNcc = new System.Windows.Forms.TextBox();
+            this.txtLoaiSP = new System.Windows.Forms.TextBox();
+            this.txtDVT = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -105,14 +102,6 @@
             this.txtTenSp.Size = new System.Drawing.Size(241, 22);
             this.txtTenSp.TabIndex = 56;
             // 
-            // cmbDVT
-            // 
-            this.cmbDVT.FormattingEnabled = true;
-            this.cmbDVT.Location = new System.Drawing.Point(384, 320);
-            this.cmbDVT.Name = "cmbDVT";
-            this.cmbDVT.Size = new System.Drawing.Size(241, 24);
-            this.cmbDVT.TabIndex = 60;
-            // 
             // txtDonGia
             // 
             this.txtDonGia.Location = new System.Drawing.Point(384, 405);
@@ -132,14 +121,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtDVT);
+            this.groupBox1.Controls.Add(this.txtLoaiSP);
+            this.groupBox1.Controls.Add(this.txtNcc);
             this.groupBox1.Controls.Add(this.ptbShowImage);
             this.groupBox1.Controls.Add(this.txtDonGia);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.cmbDVT);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.cmbLoaiSp);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.cmbNcc);
             this.groupBox1.Controls.Add(this.txtTenSp);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -154,50 +140,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
             // 
-            // comboBox3
+            // txtNcc
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(384, 320);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(241, 24);
-            this.comboBox3.TabIndex = 60;
+            this.txtNcc.Location = new System.Drawing.Point(384, 143);
+            this.txtNcc.Name = "txtNcc";
+            this.txtNcc.ReadOnly = true;
+            this.txtNcc.Size = new System.Drawing.Size(241, 22);
+            this.txtNcc.TabIndex = 64;
             // 
-            // comboBox2
+            // txtLoaiSP
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(384, 222);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(241, 24);
-            this.comboBox2.TabIndex = 59;
+            this.txtLoaiSP.Location = new System.Drawing.Point(384, 222);
+            this.txtLoaiSP.Name = "txtLoaiSP";
+            this.txtLoaiSP.ReadOnly = true;
+            this.txtLoaiSP.Size = new System.Drawing.Size(241, 22);
+            this.txtLoaiSP.TabIndex = 64;
             // 
-            // cmbLoaiSp
+            // txtDVT
             // 
-            this.cmbLoaiSp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLoaiSp.FormattingEnabled = true;
-            this.cmbLoaiSp.Location = new System.Drawing.Point(384, 222);
-            this.cmbLoaiSp.Name = "cmbLoaiSp";
-            this.cmbLoaiSp.Size = new System.Drawing.Size(241, 24);
-            this.cmbLoaiSp.TabIndex = 59;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(384, 145);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(241, 24);
-            this.comboBox1.TabIndex = 58;
-            // 
-            // cmbNcc
-            // 
-            this.cmbNcc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNcc.FormattingEnabled = true;
-            this.cmbNcc.Location = new System.Drawing.Point(384, 145);
-            this.cmbNcc.Name = "cmbNcc";
-            this.cmbNcc.Size = new System.Drawing.Size(241, 24);
-            this.cmbNcc.TabIndex = 58;
+            this.txtDVT.Location = new System.Drawing.Point(384, 324);
+            this.txtDVT.Name = "txtDVT";
+            this.txtDVT.ReadOnly = true;
+            this.txtDVT.Size = new System.Drawing.Size(241, 22);
+            this.txtDVT.TabIndex = 64;
             // 
             // FormViewSanPham
             // 
@@ -224,14 +189,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTenSp;
-        private System.Windows.Forms.ComboBox cmbDVT;
         private System.Windows.Forms.TextBox txtDonGia;
         public System.Windows.Forms.PictureBox ptbShowImage;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbLoaiSp;
-        private System.Windows.Forms.ComboBox cmbNcc;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtDVT;
+        private System.Windows.Forms.TextBox txtLoaiSP;
+        private System.Windows.Forms.TextBox txtNcc;
     }
 }

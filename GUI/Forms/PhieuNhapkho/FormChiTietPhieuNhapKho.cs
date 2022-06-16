@@ -52,10 +52,11 @@ namespace GUI.Forms.PhieuNhapkho
                 txtIDNcc.Text = id_ncc;
                 txtSL.Text = sl;
                 txtDonGia.Text = dongia;
-              
+
             }
         }
 
+        [Obsolete]
         private void btnViewSanPham_Click(object sender, EventArgs e)
         {
             if (txtIDSanPham.Text == "")
@@ -65,10 +66,21 @@ namespace GUI.Forms.PhieuNhapkho
             else
             {
                 int id_sp = int.Parse(txtIDSanPham.Text);
-                FormViewSanPham formViewSanPham = new FormViewSanPham(id_sp);
+                int id_ncc = 0;
+                int id_loai = 0;
+                string ten_sp = "";
+                string dvt = "";
+                decimal dongia = 0;
+                int sl = 0;
+                byte[] hinh = null;
+                int trangthai = 0;
+
+                B_SanPham.Instance.GetProductByID(id, ref ten_sp, ref id_loai, ref id_ncc, ref sl, ref dongia, ref hinh, ref trangthai);
+
+                FormViewSanPham formViewSanPham = new FormViewSanPham(id_sp,id_ncc,id_loai,ten_sp,dongia,hinh,trangthai);
                 formViewSanPham.ShowDialog();
             }
-     
+
         }
 
         private void btnViewNhaCungCap_Click(object sender, EventArgs e)

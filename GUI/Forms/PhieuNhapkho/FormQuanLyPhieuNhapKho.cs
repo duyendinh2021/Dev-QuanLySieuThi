@@ -56,6 +56,7 @@ namespace GUI.Forms.PhieuNhapkho
                             if (B_PhieuNhapKho.Instance.StokerDeletePhieuNhapKhoByID(id_phieuNhap))
                             {
                                 MessageBox.Show("Xóa Phiếu Nhập Kho Thành Công", "Thông Báo");
+                                B_PhieuNhapKho.Instance.GetAllPhieuNhapKhoNoDeleted(ref dgvDanhSachPhieuNhap);
                             }
                             else
                             {

@@ -26,11 +26,17 @@ namespace BUS
                 return instance;
             }
         }
-
-
-
+        //select sản phẩm theo id loại sản phẩm
         [Obsolete]
-        public void getSanPhamByLoai_array(List<int> ids, ref DataGridView data)
+        public void GetProducByProducType(ref DataGridView data, int id)
+        {
+            List<SanPham> sanPhams = D_SanPham.Instance.loadSanPhamByLoaiSP(id);
+            data.DataSource = sanPhams;
+        }
+
+        // select sản phẩm theo danh sách id loại sản phẩm
+        [Obsolete]
+        public void GetProducByProducTypes(List<int> ids, ref DataGridView data)
         {
             List<SanPham> list = new List<SanPham>();
             if (ids.Count > 0)
@@ -51,22 +57,9 @@ namespace BUS
             data.DataSource = list;
         }
 
-
-
+        // load data source đơn vị tính theo id sản phẩm
         [Obsolete]
-        public void loadDataSourceDVT(ref ComboBox comboBox)
-        {
-
-            List<SanPham> sanPhams = D_SanPham.Instance.loadComboBoxDVT();
-            
-            comboBox.DisplayMember = "Dvt";
-            comboBox.ValueMember = "Dvt";
-            comboBox.DataSource = sanPhams;
-        }
-
-
-        [Obsolete]
-        public void LoadDataSourceByID(int id, ref ComboBox combox)
+        public void LoadDataSourceUnitByID(int id, ref ComboBox combox)
         {
             List<SanPham> sanPhams = new List<SanPham>();
             sanPhams.Add(D_SanPham.Instance.LoadSanPhamTheoid(id));
@@ -75,26 +68,29 @@ namespace BUS
             combox.DataSource = sanPhams;
         }
 
-
-         
+        // Load data source đơn vị tính all (Tất cả đơn vị tính hiện có trong database)
         [Obsolete]
-        public void getAllSanPhamHoatDong(ref DataGridView data)
+        public void loadDataSourceUnits(ref ComboBox comboBox)
+        {
+
+            List<SanPham> sanPhams = D_SanPham.Instance.loadComboBoxDVT();
+
+            comboBox.DisplayMember = "Dvt";
+            comboBox.ValueMember = "Dvt";
+            comboBox.DataSource = sanPhams;
+        }
+
+        // Select tất cả sản phẩm trạng thái đang hoạt động
+        [Obsolete]
+        public void GetAllSanPhamNoDeleted(ref DataGridView data)
         {
             List<SanPham> sanPhams = D_SanPham.Instance.selectAllSanPhamDanghoatDong();
             data.DataSource = sanPhams;
         }
 
-
+        // stoker thêm sản phẩm mới (trả về true | false)
         [Obsolete]
-        public void loadSanPhamByLoaiSp(ref DataGridView data,int id)
-        {
-            List<SanPham> sanPhams = DAO.D_SanPham.Instance.loadSanPhamByLoaiSP(id);
-            data.DataSource = sanPhams;
-        }
-
-
-        [Obsolete]
-        public bool stokerAddSanPham(object[] parameter)
+        public bool StokerAddProduc(object[] parameter)
         {
             try
             {
@@ -108,8 +104,9 @@ namespace BUS
             return true;
         }
 
+        // stoker Get sản Phẩm mới được thêm vào
         [Obsolete]
-        public void stokerGetNewProduct(ref DataTable dataTable)
+        public void StokerGetNewProduct(ref DataTable dataTable)
         {
             SanPham sanPham = D_SanPham.Instance.stokerGetNewProduct();
 
@@ -122,19 +119,19 @@ namespace BUS
             dataTable.Columns.Add("dongia");
             dataTable.Columns.Add("hinh");
             dataTable.Columns.Add("trangthai");
-
             dataTable.Rows.Add(sanPham);
         }
 
+        // stoker update số lượng sản phẩm sau khi nhập hàng
         [Obsolete]
-        public void UpdateSLSanPham(object[] parameter)
+        public void StokerUpdateSLSanPham(object[] parameter)
         {
             D_SanPham.Instance.UpdateSLSanPham(parameter);
         }
 
-
+        // select sản phẩm theo id ( gán các cái properties cho form)
         [Obsolete]
-        public void LoadSamPhamtheoid(int id,ref string ten_sp, ref int id_loai, ref int id_ncc, ref int sl, ref decimal dongia, ref byte[] hinh, ref int trangthai)
+        public void GetProductByID(int id,ref string ten_sp, ref int id_loai, ref int id_ncc, ref int sl, ref decimal dongia, ref byte[] hinh, ref int trangthai)
         {
            SanPham sanPham =  D_SanPham.Instance.LoadSanPhamTheoid(id);
             //int id_sp = sanPham.Idsanpham;
@@ -146,21 +143,18 @@ namespace BUS
             hinh = sanPham.Hinh;
             trangthai = sanPham.Trangthai;
         }
-        
 
-
-
+        // Get sản phẩm theo id nhà cung cấp
         [Obsolete]
-        public void getSanPhamByNCC(int id, ref DataGridView data)
+        public void GetProductBySupplier(int id, ref DataGridView data)
         {
             List<SanPham> sanPhams = D_SanPham.Instance.getSanPhamByNCC(id);
             data.DataSource = sanPhams;
         }
 
-
-
+        // stoker Update thông tin sản phẩm
         [Obsolete]
-        public bool stokerUpdateSanPham(object[] parameter)
+        public bool StokerUpdateProduct(object[] parameter)
         {
             try
             {
@@ -168,17 +162,14 @@ namespace BUS
             }
             catch (Exception)
             {
-
                 return false;
             }
             return true;
         }
 
-
-
-
+        // stoker delete sản phâm
         [Obsolete]
-        public bool stokerDeleteSanPham(int id)
+        public bool StokerDeleteProduct(int id)
         {
             try
             {
@@ -192,29 +183,75 @@ namespace BUS
             return true;
         }
 
-
+        // Get sản phẩm theo loại và nhà cung cấp
         [Obsolete]
-        public void SelectSanPhamByLoaiAndNCC(int id_loai, int id_ncc,ref DataGridView data)
+        public void GetProductByProductTypeAndSupplier(int id_loai, int id_ncc,ref DataGridView data)
         {
             List<SanPham> sanPhams = D_SanPham.Instance.SelectSanPhamByLoaiAndNCC(id_loai, id_ncc);
-
             data.DataSource = sanPhams;
         }
 
-
+        // Get Sản phẩm số lượng bé hơn 50
         [Obsolete]
-        public void getSanPamHetHang(ref DataGridView data)
+        public void GetProductIsOut(ref DataGridView data)
         {
             List<SanPham> sanPhams = D_SanPham.Instance.getSanPamHetHang();
             data.DataSource = sanPhams;
         }
 
 
+        // Get sản phẩm số lượng lơn hơn 50
         [Obsolete]
-        public void getSanPamConHang(ref DataGridView data)
+        public void GetProductIsStillInStock(ref DataGridView data)
         {
             List<SanPham> sanPhams = D_SanPham.Instance.getSanPamConHang();
             data.DataSource = sanPhams;
+        }
+        [Obsolete]
+        public DataTable adminGetTableOneMonth(DateTime date)
+        {
+            int month = date.Month;
+            DataTable dt = new DataTable();
+            dt = D_SanPham.Instance.adminGetProductSole(month);
+            return dt;
+        }
+        [Obsolete]
+        public DataTable top5ProductSole(DateTime date)
+        {
+            int month = date.Month;
+            DataTable dt = new DataTable();
+            dt = D_SanPham.Instance.top5ProductSole(month);
+            return dt;
+        }
+        [Obsolete]
+        public DataTable adminGetProductCurrent()
+        {
+            DataTable dt = new DataTable();
+            dt = D_SanPham.Instance.adminGetProductCurrent();
+            return dt;
+        }
+        [Obsolete]
+        public DataTable cashierGetAllProduct(int id = 0)
+        {
+            DataTable dt = new DataTable();
+            dt = D_SanPham.Instance.cashierGetAllProduct(id);
+            return dt;
+        }
+
+        [Obsolete]
+        public int getNumberSanPhamByID(int id)
+        {
+            int number = 0;
+            DataTable dt = new DataTable();
+            dt = D_SanPham.Instance.getSanPhamByID(id);
+            DataRow[] row = dt.Select();
+            number = int.Parse(row[0]["SoLuong"].ToString());
+            return number;
+        }
+        [Obsolete]
+        public void updateNumberSanPham(int id, decimal number)
+        {
+            D_SanPham.Instance.updateNumberSanPham(id, number);
         }
     }
 }

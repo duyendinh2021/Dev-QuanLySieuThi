@@ -1,4 +1,4 @@
-﻿namespace UI.Components
+﻿namespace GUI.Components
 {
     partial class ButtonCategory
     {
@@ -47,7 +47,7 @@
             this.btnAll.Name = "btnAll";
             this.btnAll.Padding = new System.Windows.Forms.Padding(10, 20, 0, 0);
             this.btnAll.Size = new System.Drawing.Size(278, 68);
-            this.btnAll.TabIndex = 7;
+            this.btnAll.TabIndex = 8;
             this.btnAll.Text = "Tất cả";
             this.btnAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAll.UseVisualStyleBackColor = true;
