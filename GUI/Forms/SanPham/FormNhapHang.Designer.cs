@@ -39,12 +39,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.grbDSNhapHang = new System.Windows.Forms.GroupBox();
             this.dgvHoaDonNhap = new System.Windows.Forms.DataGridView();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_ncc_PhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtTongGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,6 +66,12 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_ncc_PhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -208,59 +208,7 @@
             this.dgvHoaDonNhap.Size = new System.Drawing.Size(645, 397);
             this.dgvHoaDonNhap.TabIndex = 12;
             this.dgvHoaDonNhap.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHoaDonNhap_CellMouseClick);
-            // 
-            // Item
-            // 
-            this.Item.DataPropertyName = "Item";
-            this.Item.FillWeight = 96.9697F;
-            this.Item.HeaderText = "SẢN PHẨM";
-            this.Item.MinimumWidth = 6;
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // QTY
-            // 
-            this.QTY.DataPropertyName = "QTY";
-            this.QTY.FillWeight = 96.9697F;
-            this.QTY.HeaderText = "SỐ LƯỢNG";
-            this.QTY.MinimumWidth = 6;
-            this.QTY.Name = "QTY";
-            this.QTY.ReadOnly = true;
-            // 
-            // COST
-            // 
-            this.COST.DataPropertyName = "COST";
-            this.COST.FillWeight = 96.9697F;
-            this.COST.HeaderText = "GIÁ";
-            this.COST.MinimumWidth = 6;
-            this.COST.Name = "COST";
-            this.COST.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // id_ncc_PhieuNhap
-            // 
-            this.id_ncc_PhieuNhap.HeaderText = "";
-            this.id_ncc_PhieuNhap.MinimumWidth = 6;
-            this.id_ncc_PhieuNhap.Name = "id_ncc_PhieuNhap";
-            this.id_ncc_PhieuNhap.ReadOnly = true;
-            this.id_ncc_PhieuNhap.Visible = false;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::GUI.Properties.Resources.delete;
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHoaDonNhap.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellValueChanged);
             // 
             // txtTongGia
             // 
@@ -538,6 +486,58 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 146;
             // 
+            // Item
+            // 
+            this.Item.DataPropertyName = "Item";
+            this.Item.FillWeight = 96.9697F;
+            this.Item.HeaderText = "SẢN PHẨM";
+            this.Item.MinimumWidth = 6;
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
+            // 
+            // QTY
+            // 
+            this.QTY.DataPropertyName = "QTY";
+            this.QTY.FillWeight = 96.9697F;
+            this.QTY.HeaderText = "SỐ LƯỢNG";
+            this.QTY.MinimumWidth = 6;
+            this.QTY.Name = "QTY";
+            // 
+            // COST
+            // 
+            this.COST.DataPropertyName = "COST";
+            this.COST.FillWeight = 96.9697F;
+            this.COST.HeaderText = "GIÁ";
+            this.COST.MinimumWidth = 6;
+            this.COST.Name = "COST";
+            this.COST.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // id_ncc_PhieuNhap
+            // 
+            this.id_ncc_PhieuNhap.HeaderText = "";
+            this.id_ncc_PhieuNhap.MinimumWidth = 6;
+            this.id_ncc_PhieuNhap.Name = "id_ncc_PhieuNhap";
+            this.id_ncc_PhieuNhap.ReadOnly = true;
+            this.id_ncc_PhieuNhap.Visible = false;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::GUI.Properties.Resources.delete;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // FormNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -598,17 +598,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sl;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COST;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_ncc_PhieuNhap;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.ComboBox cmbNCC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_ncc_PhieuNhap;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

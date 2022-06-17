@@ -230,5 +230,13 @@ namespace GUI.Forms.SanPham
             }
             tinhTongGia();
         }
+
+        private void dgvHoaDonNhap_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+
+            }
+        }
     }
 }

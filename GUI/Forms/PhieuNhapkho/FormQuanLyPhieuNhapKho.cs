@@ -27,6 +27,13 @@ namespace GUI.Forms.PhieuNhapkho
             txtID.ReadOnly = true;
             txtTongTien.ReadOnly = true;
             dtpNgayLap.Enabled = false;
+            dtpSearchNgayEnd.MaxDate = DateTime.Now;
+            dtpSearchNgayEnd.MinDate = DateTime.Parse("1/1/2000");
+
+
+            dtpSearchNgayStar.MinDate = DateTime.Parse("1/1/2000");
+            dtpSearchNgayStar.MaxDate = DateTime.Now;
+
         }
 
         [Obsolete]
@@ -66,7 +73,19 @@ namespace GUI.Forms.PhieuNhapkho
                     }
                 }
 
+                txtID.Text = row.Cells["ID_NhanVien"].Value.ToString();
+                dtpNgayLap.Value = DateTime.Parse(row.Cells["NgayLap"].Value.ToString());
+                txtTongTien.Text = row.Cells["TongTien"].Value.ToString();
             }
+        }
+
+
+        [Obsolete]
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DateTime StarDate = dtpSearchNgayStar.Value;
+            DateTime EndDate = dtpSearchNgayEnd.Value;
+            B_PhieuNhapKho.Instance.GetReceiptInStarDateToEndDate(StarDate, EndDate,ref dgvDanhSachPhieuNhap);
         }
     }
 }
