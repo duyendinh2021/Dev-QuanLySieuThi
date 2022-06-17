@@ -73,7 +73,7 @@ namespace BUS
         {
             try
             {
-                DAO.D_TaiKhoan.Instance.updateTaiKhoan(parameter);
+                D_TaiKhoan.Instance.updateTaiKhoan(parameter);
             }
             catch (Exception)
             {

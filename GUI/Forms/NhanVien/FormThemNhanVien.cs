@@ -116,7 +116,7 @@ namespace GUI.Forms
 
                 object[] objects = new object[] { hoten, chucvu, gioiTinh, ngaySinh, ngayVaoLam, diachi, sdt, tenNganHang, soNganHang, luong, email, hinh };
 
-                if (BUS.B_NhanVien.Instance.adminAddNhanVien(objects))
+                if (B_NhanVien.Instance.adminAddNhanVien(objects))
                 {
                     MessageBox.Show("Thêm Nhân viên Thành Công", "Thật Tuyệt Vời");
                 }

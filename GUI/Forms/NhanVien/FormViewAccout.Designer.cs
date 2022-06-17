@@ -116,6 +116,7 @@
             // 
             // cmbTrangThai
             // 
+            this.cmbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTrangThai.FormattingEnabled = true;
             this.cmbTrangThai.Items.AddRange(new object[] {
             "hoạt động",
@@ -134,6 +135,7 @@
             this.btnCapNhat.Size = new System.Drawing.Size(187, 66);
             this.btnCapNhat.TabIndex = 11;
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnSua
             // 
