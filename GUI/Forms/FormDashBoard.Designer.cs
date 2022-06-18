@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panTag = new System.Windows.Forms.FlowLayoutPanel();
             this.panFunction = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cmbLuaChon = new System.Windows.Forms.ComboBox();
             this.panFunction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartTopSP)).BeginInit();
@@ -68,6 +69,7 @@
             // 
             // panFunction
             // 
+            this.panFunction.Controls.Add(this.cmbLuaChon);
             this.panFunction.Controls.Add(this.label2);
             this.panFunction.Controls.Add(this.label1);
             this.panFunction.Controls.Add(this.dateTimePicker1);
@@ -76,7 +78,7 @@
             this.panFunction.Controls.Add(this.dateTimePicker2);
             this.panFunction.Location = new System.Drawing.Point(12, 138);
             this.panFunction.Name = "panFunction";
-            this.panFunction.Size = new System.Drawing.Size(372, 259);
+            this.panFunction.Size = new System.Drawing.Size(675, 482);
             this.panFunction.TabIndex = 22;
             // 
             // label2
@@ -115,7 +117,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(22, 49);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(213, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(275, 22);
             this.dateTimePicker1.TabIndex = 18;
             // 
             // btnThongKe
@@ -140,7 +142,7 @@
             this.btnSoSanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSoSanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSoSanh.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSoSanh.Location = new System.Drawing.Point(22, 199);
+            this.btnSoSanh.Location = new System.Drawing.Point(22, 233);
             this.btnSoSanh.Name = "btnSoSanh";
             this.btnSoSanh.Size = new System.Drawing.Size(175, 51);
             this.btnSoSanh.TabIndex = 23;
@@ -163,100 +165,100 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(213, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(275, 22);
             this.dateTimePicker2.TabIndex = 19;
             // 
             // Chart
             // 
             this.Chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(85)))));
             this.Chart.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea7.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea7.AxisX.IsMarginVisible = false;
-            chartArea7.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Gainsboro;
-            chartArea7.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea7.AxisX.LineWidth = 0;
-            chartArea7.AxisX.MajorGrid.Enabled = false;
-            chartArea7.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea7.AxisX.MajorTickMark.Size = 2F;
-            chartArea7.AxisX.MinorGrid.Interval = double.NaN;
-            chartArea7.AxisX.MinorGrid.IntervalOffset = double.NaN;
-            chartArea7.AxisX.MinorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea7.AxisX.MinorGrid.LineWidth = 0;
-            chartArea7.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea7.AxisX.MinorTickMark.Size = 3F;
-            chartArea7.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Gainsboro;
-            chartArea7.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea7.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(111)))));
-            chartArea7.AxisY.MajorTickMark.Size = 2F;
-            chartArea7.AxisY.MinorGrid.LineColor = System.Drawing.Color.DarkGray;
-            chartArea7.AxisY.MinorTickMark.LineWidth = 0;
-            chartArea7.AxisY.TitleForeColor = System.Drawing.Color.White;
-            chartArea7.AxisY2.LineColor = System.Drawing.Color.Transparent;
-            chartArea7.AxisY2.LineWidth = 0;
-            chartArea7.AxisY2.TitleForeColor = System.Drawing.Color.Transparent;
-            chartArea7.BackColor = System.Drawing.Color.Transparent;
-            chartArea7.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea7.BorderColor = System.Drawing.Color.Transparent;
-            chartArea7.Name = "ChartArea1";
-            this.Chart.ChartAreas.Add(chartArea7);
+            chartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea3.AxisX.IsMarginVisible = false;
+            chartArea3.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Gainsboro;
+            chartArea3.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea3.AxisX.LineWidth = 0;
+            chartArea3.AxisX.MajorGrid.Enabled = false;
+            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea3.AxisX.MajorTickMark.Size = 2F;
+            chartArea3.AxisX.MinorGrid.Interval = double.NaN;
+            chartArea3.AxisX.MinorGrid.IntervalOffset = double.NaN;
+            chartArea3.AxisX.MinorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea3.AxisX.MinorGrid.LineWidth = 0;
+            chartArea3.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea3.AxisX.MinorTickMark.Size = 3F;
+            chartArea3.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Gainsboro;
+            chartArea3.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(111)))));
+            chartArea3.AxisY.MajorTickMark.Size = 2F;
+            chartArea3.AxisY.MinorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea3.AxisY.MinorTickMark.LineWidth = 0;
+            chartArea3.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea3.AxisY2.LineColor = System.Drawing.Color.Transparent;
+            chartArea3.AxisY2.LineWidth = 0;
+            chartArea3.AxisY2.TitleForeColor = System.Drawing.Color.Transparent;
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea3.BorderColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.Chart.ChartAreas.Add(chartArea3);
             this.Chart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend7.BackColor = System.Drawing.Color.Transparent;
-            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend7.ForeColor = System.Drawing.Color.Gainsboro;
-            legend7.IsTextAutoFit = false;
-            legend7.Name = "Legend1";
-            this.Chart.Legends.Add(legend7);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend3.ForeColor = System.Drawing.Color.Gainsboro;
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            this.Chart.Legends.Add(legend3);
             this.Chart.Location = new System.Drawing.Point(0, 626);
             this.Chart.Name = "Chart";
-            series10.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series10.BackImageTransparentColor = System.Drawing.Color.Blue;
-            series10.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series10.Color = System.Drawing.Color.RoyalBlue;
-            series10.Legend = "Legend1";
-            series10.Name = "SanPhamSoSanh";
-            series11.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series11.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            series11.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series11.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            series11.BorderColor = System.Drawing.Color.White;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series11.Color = System.Drawing.Color.RoyalBlue;
-            series11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series11.LabelForeColor = System.Drawing.Color.DodgerBlue;
-            series11.Legend = "Legend1";
-            series11.MarkerBorderColor = System.Drawing.Color.MediumSlateBlue;
-            series11.MarkerColor = System.Drawing.Color.MediumSlateBlue;
-            series11.MarkerSize = 10;
-            series11.Name = "SanPham";
-            series11.ShadowColor = System.Drawing.Color.Blue;
-            series11.ShadowOffset = 1;
-            this.Chart.Series.Add(series10);
-            this.Chart.Series.Add(series11);
+            series4.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series4.BackImageTransparentColor = System.Drawing.Color.Blue;
+            series4.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series4.Color = System.Drawing.Color.RoyalBlue;
+            series4.Legend = "Legend1";
+            series4.Name = "SanPhamSoSanh";
+            series5.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series5.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            series5.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series5.BorderColor = System.Drawing.Color.White;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.RoyalBlue;
+            series5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series5.LabelForeColor = System.Drawing.Color.DodgerBlue;
+            series5.Legend = "Legend1";
+            series5.MarkerBorderColor = System.Drawing.Color.MediumSlateBlue;
+            series5.MarkerColor = System.Drawing.Color.MediumSlateBlue;
+            series5.MarkerSize = 10;
+            series5.Name = "SanPham";
+            series5.ShadowColor = System.Drawing.Color.Blue;
+            series5.ShadowOffset = 1;
+            this.Chart.Series.Add(series4);
+            this.Chart.Series.Add(series5);
             this.Chart.Size = new System.Drawing.Size(1400, 429);
             this.Chart.TabIndex = 23;
             this.Chart.Text = "chart1";
-            title7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title7.ForeColor = System.Drawing.Color.Gainsboro;
-            title7.Name = "Title1";
-            title7.Text = "Biểu Đồ Thống Kê Sản Phẩm Bán Ra Mỗi Ngày";
-            this.Chart.Titles.Add(title7);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.ForeColor = System.Drawing.Color.Gainsboro;
+            title3.Name = "Title1";
+            title3.Text = "Biểu Đồ Thống Kê";
+            this.Chart.Titles.Add(title3);
             // 
             // ChartTopSP
             // 
             this.ChartTopSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(85)))));
-            chartArea8.BackColor = System.Drawing.Color.Transparent;
-            chartArea8.Name = "ChartArea1";
-            this.ChartTopSP.ChartAreas.Add(chartArea8);
-            legend8.BackColor = System.Drawing.Color.Transparent;
-            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend8.ForeColor = System.Drawing.Color.Gainsboro;
-            legend8.Name = "Legend1";
-            this.ChartTopSP.Legends.Add(legend8);
-            this.ChartTopSP.Location = new System.Drawing.Point(478, 3);
+            chartArea4.BackColor = System.Drawing.Color.Transparent;
+            chartArea4.Name = "ChartArea1";
+            this.ChartTopSP.ChartAreas.Add(chartArea4);
+            legend4.BackColor = System.Drawing.Color.Transparent;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.ForeColor = System.Drawing.Color.Gainsboro;
+            legend4.Name = "Legend1";
+            this.ChartTopSP.Legends.Add(legend4);
+            this.ChartTopSP.Location = new System.Drawing.Point(66, 3);
             this.ChartTopSP.Name = "ChartTopSP";
             this.ChartTopSP.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.ChartTopSP.PaletteCustomColors = new System.Drawing.Color[] {
@@ -266,27 +268,27 @@
         System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(108)))), ((int)(((byte)(240))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(199)))), ((int)(((byte)(177))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(167)))), ((int)(((byte)(104)))))};
-            series12.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
-            series12.BackSecondaryColor = System.Drawing.Color.Violet;
-            series12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(85)))));
-            series12.BorderWidth = 2;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series12.Color = System.Drawing.Color.MediumSlateBlue;
-            series12.IsValueShownAsLabel = true;
-            series12.LabelForeColor = System.Drawing.Color.Gainsboro;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.ChartTopSP.Series.Add(series12);
-            this.ChartTopSP.Size = new System.Drawing.Size(529, 421);
+            series6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+            series6.BackSecondaryColor = System.Drawing.Color.Violet;
+            series6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(85)))));
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.Color = System.Drawing.Color.MediumSlateBlue;
+            series6.IsValueShownAsLabel = true;
+            series6.LabelForeColor = System.Drawing.Color.Gainsboro;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.ChartTopSP.Series.Add(series6);
+            this.ChartTopSP.Size = new System.Drawing.Size(638, 421);
             this.ChartTopSP.TabIndex = 24;
             this.ChartTopSP.Text = "chart1";
-            title8.Alignment = System.Drawing.ContentAlignment.TopRight;
-            title8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title8.ForeColor = System.Drawing.Color.Gainsboro;
-            title8.Name = "Title1";
-            title8.Text = "Top 5 Sản Phẩm";
-            this.ChartTopSP.Titles.Add(title8);
+            title4.Alignment = System.Drawing.ContentAlignment.TopRight;
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.ForeColor = System.Drawing.Color.Gainsboro;
+            title4.Name = "Title1";
+            title4.Text = "Top 5 Sản Phẩm";
+            this.ChartTopSP.Titles.Add(title4);
             // 
             // dataGridView1
             // 
@@ -304,9 +306,9 @@
             this.flowLayoutPanel1.Controls.Add(this.ChartTopSP);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(390, 132);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(693, 132);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1010, 494);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(707, 494);
             this.flowLayoutPanel1.TabIndex = 26;
             // 
             // dataGridView2
@@ -320,6 +322,20 @@
             this.dataGridView2.Size = new System.Drawing.Size(24, 19);
             this.dataGridView2.TabIndex = 25;
             this.dataGridView2.Visible = false;
+            // 
+            // cmbLuaChon
+            // 
+            this.cmbLuaChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLuaChon.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLuaChon.FormattingEnabled = true;
+            this.cmbLuaChon.Items.AddRange(new object[] {
+            "Số Lượng Sản Phẩm Bán Hằng Ngày",
+            "Số Lượng Sản Phẩm Nhập Hằng Ngày",
+            "Doanh Thu Hằng Ngày"});
+            this.cmbLuaChon.Location = new System.Drawing.Point(22, 200);
+            this.cmbLuaChon.Name = "cmbLuaChon";
+            this.cmbLuaChon.Size = new System.Drawing.Size(275, 23);
+            this.cmbLuaChon.TabIndex = 24;
             // 
             // FormDashBoard
             // 
@@ -362,5 +378,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox cmbLuaChon;
     }
 }

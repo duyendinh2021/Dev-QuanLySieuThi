@@ -90,19 +90,28 @@ namespace GUI
             string accUesrLogIn = txtTaiKhoan.Text;
             string passUesrLogIn = txtMatKhau.Text;
             string message = "";
-            if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn,ref message))
+            if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
             {
-                FormMainApp formMainApp = new FormMainApp();
-                formMainApp.Show();
-                B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
-                this.Hide();
-                formMainApp.LogOut += FormMainApp_LogOut;
+                MessageBox.Show("Chưa Nhập :((", "Err");
+                txtTaiKhoan.Focus();
             }
             else
             {
-                MessageBox.Show(message);
+                if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn, ref message))
+                {
+                    FormMainApp formMainApp = new FormMainApp();
+                    formMainApp.Show();
+                    B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
+                    this.Hide();
+                    formMainApp.LogOut += FormMainApp_LogOut;
+                }
+                else
+                {
+                    MessageBox.Show(message);
 
+                }
             }
+
         }
 
         private void FormMainApp_LogOut(object sender, EventArgs e)
@@ -118,13 +127,9 @@ namespace GUI
             DialogResult result = MessageBox.Show("Bạn có chắt muốn thoát chứ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
             {
-                e.Cancel = true;               
+                e.Cancel = true;
             }
             BUS.B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
-        }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

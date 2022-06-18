@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DTO;
 using DAO;
 
@@ -36,6 +37,14 @@ namespace BUS
 
             }
             return true;
+        }
+
+
+        [Obsolete]
+        public void GetChiTietHoaDonByID(int id,ref DataGridView data)
+        {
+            List<ChiTietHoaDon> chiTietHoaDons = D_ChiTietHoaDon.Instance.GetChiTietHoaDonByID(id);
+            data.DataSource = chiTietHoaDons;
         }
     }
 }

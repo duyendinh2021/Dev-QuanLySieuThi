@@ -67,5 +67,13 @@ namespace BUS
             dt = D_LoaiSanPham.Instance.cashierLoadLoaiSP();
             return dt;
         }
+
+        [Obsolete]
+        public void CashierGetProductTypes(ref DataGridView data)
+        {
+            List<LoaiSanPham> loaiSanPhams = D_LoaiSanPham.Instance.CashierGetProductTypes();
+
+            data.DataSource = loaiSanPhams;
+        }
     }
 }

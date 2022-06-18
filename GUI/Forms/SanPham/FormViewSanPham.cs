@@ -14,7 +14,7 @@ namespace GUI.Forms.SanPham
 {
     public partial class FormViewSanPham : Form
     {
-        
+
         public FormViewSanPham()
         {
             InitializeComponent();
@@ -33,34 +33,26 @@ namespace GUI.Forms.SanPham
 
 
         [Obsolete]
-        public FormViewSanPham(int id,int id_ncc,int id_loai,string ten_sp, decimal dongia, byte[] hinh,int trangthai)
+        public FormViewSanPham(int id)
         {
             InitializeComponent();
-            this.id_sp = id;
-            this.ten_sp = ten_sp;
-            this.dongia = dongia;
-            this.hinh = hinh;
-            this.id_ncc = id_ncc;
-            this.id_loai = id_loai;
-
-            this.trangthai = trangthai;
-
+            id_sp = id;
+            B_SanPham.Instance.GetProductByID(id_sp, ref ten_sp, ref id_loai, ref id_ncc, ref sl, ref dongia, ref hinh, ref trangthai);
+            txtTenSp.Text = ten_sp;
+            B_NhaCungCap.Instance.LoadNhaCungCapByID(id_ncc, ref cmbNcc);
+            B_SanPham.Instance.LoadDataSourceUnitByID(id_sp, ref cmbDvt);
+            B_LoaiSanPham.Instance.GetLoaiSanPhamByID(id_loai, ref cmbLoaiSp);
+            txtDonGia.Text = dongia.ToString();
+            if (hinh != null)
+            {
+                ptbShowImage.Image = SupportLogic.Instance.ConvertBinaryToImage(hinh);
+            }
         }
 
         [Obsolete]
         private void FormViewSanPham_Load(object sender, EventArgs e)
         {
-            txtTenSp.Text = ten_sp;
-            txtDonGia.Text = dongia.ToString();
-            // bug 
-            txtDVT.Text = dvt;
 
-
-
-            txtNcc.Text = B_NhaCungCap.Instance.GetNhaCungCapByID(id_ncc);
-            txtLoaiSP.Text = B_LoaiSanPham.Instance.GetNameProductTypeByID(id_loai);
-
-            ptbShowImage.Image = SupportLogic.Instance.ConvertBinaryToImage(hinh);
         }
     }
 }

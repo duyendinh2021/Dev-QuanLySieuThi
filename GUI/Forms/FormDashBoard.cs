@@ -37,24 +37,75 @@ namespace GUI.Forms
         {
             ArrayList NameProduct = new ArrayList();
             ArrayList NumberOfProduct = new ArrayList();
-            DataTable dt = B_NhanVien.Instance.LoadDataSumProductEveryDayOfMonth(DateTime.Parse(pk.Value.ToShortDateString()));
-            dataGridView1.DataSource = dt;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            switch (cmbLuaChon.Text)
             {
-                NameProduct.Add(row.Cells["Ngay"].Value.ToString());
-                NumberOfProduct.Add(row.Cells["TongSo"].Value.ToString());
+                case "Số Lượng Sản Phẩm Bán Hằng Ngày":
+                    {
+                        DataTable dt = B_NhanVien.Instance.LoadDataSumProductEveryDayOfMonth(DateTime.Parse(pk.Value.ToShortDateString()));
+                        dataGridView1.DataSource = dt;
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            NameProduct.Add(row.Cells["Ngay"].Value.ToString());
+                            NumberOfProduct.Add(row.Cells["TongSo"].Value.ToString());
+                        }
+                        ob.Series[1].Points.DataBindXY(NameProduct, NumberOfProduct);
+                        dt = B_NhanVien.Instance.LoadDataSumProductEveryDayOfMonth(DateTime.Parse(pk1.Value.ToShortDateString()));
+                        dataGridView2.DataSource = dt;
+                        ArrayList NameProduct1 = new ArrayList();
+                        ArrayList NumberOfProduct1 = new ArrayList();
+                        foreach (DataGridViewRow row in dataGridView2.Rows)
+                        {
+                            NameProduct1.Add(row.Cells["Ngay"].Value.ToString());
+                            NumberOfProduct1.Add(row.Cells["TongSo"].Value.ToString());
+                        }
+                        ob.Series[0].Points.DataBindXY(NameProduct1, NumberOfProduct1);
+                    }
+                    break;
+                case "Số Lượng Sản Phẩm Nhập Hằng Ngày":
+                    {
+                        DataTable dt = B_NhanVien.Instance.LoadDataSumProductImportEveryDayOfMonth(DateTime.Parse(pk.Value.ToShortDateString()));
+                        dataGridView1.DataSource = dt;
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            NameProduct.Add(row.Cells["Ngay"].Value.ToString());
+                            NumberOfProduct.Add(row.Cells["TongSo"].Value.ToString());
+                        }
+                        ob.Series[1].Points.DataBindXY(NameProduct, NumberOfProduct);
+                        dt = B_NhanVien.Instance.LoadDataSumProductImportEveryDayOfMonth(DateTime.Parse(pk1.Value.ToShortDateString()));
+                        dataGridView2.DataSource = dt;
+                        ArrayList NameProduct1 = new ArrayList();
+                        ArrayList NumberOfProduct1 = new ArrayList();
+                        foreach (DataGridViewRow row in dataGridView2.Rows)
+                        {
+                            NameProduct1.Add(row.Cells["Ngay"].Value.ToString());
+                            NumberOfProduct1.Add(row.Cells["TongSo"].Value.ToString());
+                        }
+                        ob.Series[0].Points.DataBindXY(NameProduct1, NumberOfProduct1);
+                    }
+                    break;
+                case "Doanh Thu Hằng Ngày":
+                    {
+                        DataTable dt = B_HoaDon.Instance.LoadDataSumIncomeEveryDayOfMonth(DateTime.Parse(pk.Value.ToShortDateString()));
+                        dataGridView1.DataSource = dt;
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            NameProduct.Add(row.Cells["Ngay"].Value.ToString());
+                            NumberOfProduct.Add(row.Cells["TongSo"].Value.ToString());
+                        }
+                        ob.Series[1].Points.DataBindXY(NameProduct, NumberOfProduct);
+                        dt = B_HoaDon.Instance.LoadDataSumIncomeEveryDayOfMonth(DateTime.Parse(pk1.Value.ToShortDateString()));
+                        dataGridView2.DataSource = dt;
+                        ArrayList NameProduct1 = new ArrayList();
+                        ArrayList NumberOfProduct1 = new ArrayList();
+                        foreach (DataGridViewRow row in dataGridView2.Rows)
+                        {
+                            NameProduct1.Add(row.Cells["Ngay"].Value.ToString());
+                            NumberOfProduct1.Add(row.Cells["TongSo"].Value.ToString());
+                        }
+                        ob.Series[0].Points.DataBindXY(NameProduct1, NumberOfProduct1);
+                    }
+                    break;
             }
-            ob.Series[1].Points.DataBindXY(NameProduct, NumberOfProduct);
-            dt = B_NhanVien.Instance.LoadDataSumProductEveryDayOfMonth(DateTime.Parse(pk1.Value.ToShortDateString()));
-            dataGridView2.DataSource = dt;
-            ArrayList NameProduct1 = new ArrayList();
-            ArrayList NumberOfProduct1 = new ArrayList();
-            foreach (DataGridViewRow row in dataGridView2.Rows)
-            {
-                NameProduct1.Add(row.Cells["Ngay"].Value.ToString());
-                NumberOfProduct1.Add(row.Cells["TongSo"].Value.ToString());
-            }
-            ob.Series[0].Points.DataBindXY(NameProduct1, NumberOfProduct1);
         }
 
         [Obsolete]
@@ -70,18 +121,6 @@ namespace GUI.Forms
                 NumberOfProduct.Add(row.Cells["Value"].Value.ToString());
             }
             obcirlce.Series[0].Points.DataBindXY(NameProduct, NumberOfProduct);
-
-            //ArrayList NameProduct2 = new ArrayList();
-            //ArrayList NumberOfProduct2 = new ArrayList();
-            //dt = B_NhanVien.Instance.top5NhanVienXuatSac(DateTime.Parse(pk.Value.ToShortDateString()));
-            //dataGridView1.DataSource = dt;
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    NameProduct2.Add(row.Cells["Name"].Value.ToString());
-            //    string value = string.Format("{0:0.####}", row.Cells["Value"].Value);
-            //    NumberOfProduct2.Add(value);
-            //}
-            //obcirlce1.Series[0].Points.DataBindXY(NameProduct2, NumberOfProduct2);
         }
 
         [Obsolete]

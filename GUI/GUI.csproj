@@ -106,6 +106,18 @@
     <Compile Include="Forms\FormDashBoard.Designer.cs">
       <DependentUpon>FormDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HoaDon\FormChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormChiTietHoaDon.Designer.cs">
+      <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormQuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormQuanLyHoaDon.Designer.cs">
+      <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +153,12 @@
     </Compile>
     <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormChangePassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormChangePassWord.Designer.cs">
+      <DependentUpon>FormChangePassWord.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.cs">
       <SubType>Form</SubType>
@@ -240,6 +258,12 @@
     <EmbeddedResource Include="Forms\FormSale.resx">
       <DependentUpon>FormSale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoaDon\FormChiTietHoaDon.resx">
+      <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoaDon\FormQuanLyHoaDon.resx">
+      <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.resx">
       <DependentUpon>FormCapNhatNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhanVien\FormChangePassWord.resx">
+      <DependentUpon>FormChangePassWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.resx">
       <DependentUpon>FormChiTietPhieuNhapKho.cs</DependentUpon>
@@ -338,6 +365,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\unnamed.jpg" />
+    <None Include="Resources\log-in 64px.png" />
+    <None Include="Resources\log-in.png" />
     <None Include="Resources\remove-from-cart.png" />
     <None Include="Resources\loupe.png" />
     <None Include="Resources\file.png" />

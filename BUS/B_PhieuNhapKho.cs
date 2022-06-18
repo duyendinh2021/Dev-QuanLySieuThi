@@ -48,6 +48,7 @@ namespace BUS
         }
 
 
+
         [Obsolete]
         public void GetAllPhieuNhapKhoNoDeleted(ref DataGridView data)
         {
@@ -71,5 +72,12 @@ namespace BUS
             return true;
         }
 
+
+        [Obsolete]
+        public void GetReceiptInStarDateToEndDate(DateTime StarDate,DateTime EndDate,ref DataGridView data)
+        {
+            List<PhieuNhapKho> phieuNhapKhos = D_PhieuNhapKho.Instance.GetReceiptInStarDateToEndDate(StarDate,EndDate);
+            data.DataSource = phieuNhapKhos;
+        }
     }
 }

@@ -455,7 +455,7 @@ namespace GUI
                 DataGridViewRow row = dtGVDanhSachNV.Rows[e.RowIndex];
                 Image image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
                 picBoxImg.Image = image;
-                if (e.ColumnIndex == 1)
+                if (e.ColumnIndex == 0)
                 {
                     int id = int.Parse(row.Cells["colManv"].Value.ToString());
                     string hoten = row.Cells["colTennv"].Value.ToString();
@@ -479,13 +479,13 @@ namespace GUI
                     BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
                 }
                 // Click vào btn xóa nhân viên
-                if (e.ColumnIndex == 2)
+                if (e.ColumnIndex == 1)
                 {
                     DialogResult dialog = MessageBox.Show("Bạn Có Chất Muốn Xóa", "Thông báo đặt biệt", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                     if (dialog == DialogResult.Yes)
                     {
                         int id = int.Parse(row.Cells["colManv"].Value.ToString());
-                        if (BUS.B_NhanVien.Instance.adminDeleteNhanVien(id))
+                        if (B_NhanVien.Instance.adminDeleteNhanVien(id))
                         {
                             MessageBox.Show("Xóa Nhân Viên Thành Công", "Thật Tuyệt Vời");
                         }
@@ -498,7 +498,7 @@ namespace GUI
                     BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
                 }
                 // Click vào btn xem tài khoản
-                if (e.ColumnIndex == 3)
+                if (e.ColumnIndex == 2)
                 {
                     int id = int.Parse(row.Cells["colManv"].Value.ToString());
                     string usernam = "";

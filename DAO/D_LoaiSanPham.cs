@@ -92,10 +92,34 @@ namespace DAO
         [Obsolete]
         public DataTable cashierLoadLoaiSP()
         {
-            DataTable dt = new DataTable();
             string query = "exec cashierLoadLoaiSP";
+            DataTable dt = new DataTable();
             dt = connectionData.Instance.excuteQuery(query, new object[] { });
             return dt;
+        }
+
+
+        [Obsolete]
+        public List<LoaiSanPham> CashierGetProductTypes()
+        {
+            string query = "exec SelectAllLoaiDangHoatDong";
+            List<LoaiSanPham> loaiSanPhams = new List<LoaiSanPham>();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+                    loaiSanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    loaiSanPham.Tensanpham = item["TenLoaiSanPham"].ToString();
+                    loaiSanPham.Mota = item["MoTa"].ToString();
+                    loaiSanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    loaiSanPham.Hinh = (byte[])item["Hinh"];
+                    loaiSanPhams.Add(loaiSanPham);
+                }
+            }
+            return loaiSanPhams;
+
         }
     }
 }

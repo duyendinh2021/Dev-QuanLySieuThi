@@ -16,6 +16,7 @@ namespace GUI.Forms
         public FormViewAccout()
         {
             InitializeComponent();
+
         }
 
         int trangthai;
@@ -39,7 +40,7 @@ namespace GUI.Forms
         private void setBtn(Boolean status)
         {
             txtMk.ReadOnly = !status;
-            txtTaiKhoan.ReadOnly = !status;
+
 
             cmbTrangThai.Enabled = status;
         }
@@ -55,6 +56,7 @@ namespace GUI.Forms
             {
                 cmbTrangThai.SelectedIndex = 1;
             }
+            txtTaiKhoan.ReadOnly = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

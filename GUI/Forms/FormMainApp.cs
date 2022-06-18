@@ -12,6 +12,8 @@ using GUI.Forms;
 using GUI.Forms.NhaCungCap;
 using GUI.Forms.PhieuNhapkho;
 using GUI.Forms.SanPham;
+using GUI.Forms.NhanVien;
+using GUI.Forms.HoaDon;
 
 namespace GUI
 {
@@ -118,7 +120,7 @@ namespace GUI
         private void btnOrders_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color1);
-            SupportUI_UX.Instance.ShowSubmenu(panOrdersManage);
+            SupportUI_UX.Instance.showChildForm(new FormQuanLyHoaDon(), panChildForm);
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -192,6 +194,13 @@ namespace GUI
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color8);
             FormQuanLyNhaCungCap formQuanLyNhaCungCap = new FormQuanLyNhaCungCap();
             SupportUI_UX.Instance.showChildForm(formQuanLyNhaCungCap, panChildForm);
+        }
+
+        private void btnChangePassWord_Click(object sender, EventArgs e)
+        {
+           // SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.Color7);
+            FormChangePassWord formChangePassWord = new FormChangePassWord(B_TaiKhoan.Instance.id);
+            formChangePassWord.ShowDialog();
         }
     }
 }

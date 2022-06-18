@@ -221,5 +221,15 @@ namespace BUS
             dt = D_NhanVien.Instance.LoadDataSumProductEveryDayOfMonth(month, year);
             return dt;
         }
+        [Obsolete]
+        public DataTable LoadDataSumProductImportEveryDayOfMonth(DateTime date)
+        {
+            int month = date.Month;
+            int year = date.Year;
+            //Gọi function trả về Data
+            DataTable dt = new DataTable();
+            dt = D_NhanVien.Instance.LoadDataSumProductImportEveryDayOfMonth(month, year);
+            return dt;
+        }
     }
 }
