@@ -252,7 +252,7 @@
             this.btnViewSanPham.Location = new System.Drawing.Point(528, 43);
             this.btnViewSanPham.Name = "btnViewSanPham";
             this.btnViewSanPham.Size = new System.Drawing.Size(83, 40);
-            this.btnViewSanPham.TabIndex = 3;
+            this.btnViewSanPham.TabIndex = 0;
             this.toolTip1.SetToolTip(this.btnViewSanPham, "Nhấn Dể Xem Chi Tiết Sản Phẩm");
             this.btnViewSanPham.UseVisualStyleBackColor = true;
             this.btnViewSanPham.Click += new System.EventHandler(this.btnViewSanPham_Click);
@@ -263,7 +263,7 @@
             this.btnViewNhaCungCap.Location = new System.Drawing.Point(528, 126);
             this.btnViewNhaCungCap.Name = "btnViewNhaCungCap";
             this.btnViewNhaCungCap.Size = new System.Drawing.Size(83, 40);
-            this.btnViewNhaCungCap.TabIndex = 3;
+            this.btnViewNhaCungCap.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnViewNhaCungCap, "Nhấn Dể Xem Chi Tiết Nhà Cung Cấp");
             this.btnViewNhaCungCap.UseVisualStyleBackColor = true;
             this.btnViewNhaCungCap.Click += new System.EventHandler(this.btnViewNhaCungCap_Click);

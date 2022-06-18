@@ -78,22 +78,31 @@ namespace GUI.Forms.NhanVien
             {
                 if (txtCaptcha.Text == Captcha.ToString())
                 {
-                    if (txtPassNew.Text == txtPassNew2.Text)
+                    if (txtPassNew.Text == "" || txtPassNew2.Text == "")
                     {
-                        object[] Accout = new object[] { id_nv, txtPassNew2.Text };
-                        if (B_TaiKhoan.Instance.userChangePassWord(Accout))
-                        {
-                            MessageBox.Show("Cập Nhật Mật khẩu Thành Công", "Thông Báo");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cập Nhật Mật khẩu Thất Bại", "Thông Báo");
-                        }                    
+                        MessageBox.Show("PassWord Không Thể Dể Trống !!!", "Thông Báo");
+                        LoadCaptcha();
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu không trùng khớp !!!!!", "Thông Báo");
-                        LoadCaptcha();
+                        if (txtPassNew.Text == txtPassNew2.Text)
+                        {
+
+                            object[] Accout = new object[] { id_nv, txtPassNew2.Text };
+                            if (B_TaiKhoan.Instance.userChangePassWord(Accout))
+                            {
+                                MessageBox.Show("Cập Nhật Mật khẩu Thành Công", "Thông Báo");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cập Nhật Mật khẩu Thất Bại", "Thông Báo");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mật khẩu không trùng khớp !!!!!", "Thông Báo");
+                            LoadCaptcha();
+                        }
                     }
                 }
                 else

@@ -83,8 +83,7 @@ namespace GUI.Forms
         [Obsolete]
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string tenLoaiSP = txtTenSP.Text;
-            string mota = txtMoTa.Text;
+
             Byte[] img = System.IO.File.ReadAllBytes(sPathImg);
 
             if (txtTenSP.Text == "" || txtMoTa.Text == "" || sPathImg == "")
@@ -93,6 +92,8 @@ namespace GUI.Forms
             }
             else
             {
+                string tenLoaiSP = txtTenSP.Text;
+                string mota = txtMoTa.Text;
                 object[] objects = new object[] {tenLoaiSP, mota, img};
                 if (BUS.B_NhanVien.Instance.stokerAddLoaiSanPham(objects))
                 {

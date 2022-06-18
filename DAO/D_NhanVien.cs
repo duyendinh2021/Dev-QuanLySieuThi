@@ -484,7 +484,7 @@ namespace DAO
         {
             //Gọi function trả về Data
             DataTable dt = new DataTable();
-            dt = connectionData.Instance.excuteQuery("EXEC calSumSPEveryDayOrMonth @thang , @nam", new object[] { month, year });
+            dt = connectionData.Instance.excuteQuery("EXEC calSumSPImportEveryDayOrMonth @thang , @nam", new object[] { month, year });
             return dt;
         }
     }

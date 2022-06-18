@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GUI.Forms
 {
-    public partial class FormViewAccout : Form
+    public partial class FormCapNhapAccout : Form
     {
-        public FormViewAccout()
+        public FormCapNhapAccout()
         {
             InitializeComponent();
 
@@ -24,7 +24,7 @@ namespace GUI.Forms
         string uesrname;
         string chucvu;
         string pass;
-        public FormViewAccout(int id, string tk, string mk, int trangthai, string chucvu)
+        public FormCapNhapAccout(int id, string tk, string mk, int trangthai, string chucvu)
         {
             InitializeComponent();
             txtTaiKhoan.Text = tk;
@@ -57,6 +57,10 @@ namespace GUI.Forms
                 cmbTrangThai.SelectedIndex = 1;
             }
             txtTaiKhoan.ReadOnly = true;
+            if (chucvu == "Admin")
+            {
+                txtMk.UseSystemPasswordChar = true;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -68,7 +72,14 @@ namespace GUI.Forms
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            setBtn(true);
+            if (chucvu == "Admin")
+            {
+                MessageBox.Show("Không Thể Chỉnh Sửa Tài Khoản Admin");
+            }
+            else
+            {
+                setBtn(true);
+            }
         }
 
 
@@ -100,7 +111,7 @@ namespace GUI.Forms
                         default:
                             break;
                     }
-                    object[] objects = new object[] {id, tkupdate, passupdate, chucvu, trangthaiupdate};
+                    object[] objects = new object[] { id, tkupdate, passupdate, chucvu, trangthaiupdate };
                     if (BUS.B_TaiKhoan.Instance.updateTaikhoan(objects))
                     {
                         MessageBox.Show("Cập nhật thành công", "Thật tuyệt vời");
@@ -108,7 +119,7 @@ namespace GUI.Forms
                     else
                     {
                         MessageBox.Show("Ô Nô !!!", "Có gì đó sai sai");
-                    }                   
+                    }
                 }
             }
 

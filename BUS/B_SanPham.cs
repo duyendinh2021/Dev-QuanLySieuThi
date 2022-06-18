@@ -253,5 +253,14 @@ namespace BUS
         {
             D_SanPham.Instance.updateNumberSanPham(id, number);
         }
+
+
+
+        [Obsolete]
+        public void GetSanPhamDeleted(ref DataGridView datat)
+        {
+            List<SanPham> sanPhams = D_SanPham.Instance.GetSanPhamDeleted();
+            datat.DataSource = sanPhams;
+        }
     }
 }

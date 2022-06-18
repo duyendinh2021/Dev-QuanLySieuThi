@@ -101,7 +101,7 @@
             this.btnImage.Name = "btnImage";
             this.btnImage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnImage.Size = new System.Drawing.Size(108, 39);
-            this.btnImage.TabIndex = 37;
+            this.btnImage.TabIndex = 11;
             this.btnImage.Text = "...";
             this.btnImage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnImage.UseVisualStyleBackColor = false;
@@ -154,7 +154,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(230, 91);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(207, 15);
-            this.txtHoTen.TabIndex = 14;
+            this.txtHoTen.TabIndex = 0;
             this.txtHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             // 
             // panDash2
@@ -185,7 +185,7 @@
             this.cmbGioiTinh.Location = new System.Drawing.Point(728, 325);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
             this.cmbGioiTinh.Size = new System.Drawing.Size(155, 24);
-            this.cmbGioiTinh.TabIndex = 35;
+            this.cmbGioiTinh.TabIndex = 10;
             // 
             // cmbChucvu
             // 
@@ -200,7 +200,7 @@
             this.cmbChucvu.Location = new System.Drawing.Point(728, 263);
             this.cmbChucvu.Name = "cmbChucvu";
             this.cmbChucvu.Size = new System.Drawing.Size(155, 24);
-            this.cmbChucvu.TabIndex = 34;
+            this.cmbChucvu.TabIndex = 9;
             // 
             // dtpNgayVaoLam
             // 
@@ -210,7 +210,7 @@
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
             this.dtpNgayVaoLam.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpNgayVaoLam.Size = new System.Drawing.Size(207, 22);
-            this.dtpNgayVaoLam.TabIndex = 27;
+            this.dtpNgayVaoLam.TabIndex = 5;
             // 
             // dtpNgaySinh
             // 
@@ -220,7 +220,7 @@
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpNgaySinh.Size = new System.Drawing.Size(207, 22);
-            this.dtpNgaySinh.TabIndex = 28;
+            this.dtpNgaySinh.TabIndex = 4;
             // 
             // txtLuong
             // 
@@ -229,7 +229,7 @@
             this.txtLuong.Location = new System.Drawing.Point(230, 263);
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.Size = new System.Drawing.Size(207, 15);
-            this.txtLuong.TabIndex = 30;
+            this.txtLuong.TabIndex = 3;
             this.txtLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuong_KeyPress);
             // 
             // txtSDT
@@ -239,7 +239,7 @@
             this.txtSDT.Location = new System.Drawing.Point(230, 210);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(207, 15);
-            this.txtSDT.TabIndex = 29;
+            this.txtSDT.TabIndex = 2;
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtEmail
@@ -249,7 +249,7 @@
             this.txtEmail.Location = new System.Drawing.Point(230, 148);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(207, 15);
-            this.txtEmail.TabIndex = 25;
+            this.txtEmail.TabIndex = 1;
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // txtTenNganHang
@@ -259,7 +259,7 @@
             this.txtTenNganHang.Location = new System.Drawing.Point(728, 144);
             this.txtTenNganHang.Name = "txtTenNganHang";
             this.txtTenNganHang.Size = new System.Drawing.Size(207, 15);
-            this.txtTenNganHang.TabIndex = 32;
+            this.txtTenNganHang.TabIndex = 7;
             this.txtTenNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNganHang_KeyPress);
             // 
             // txtDiachi
@@ -269,7 +269,7 @@
             this.txtDiachi.Location = new System.Drawing.Point(728, 210);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(207, 15);
-            this.txtDiachi.TabIndex = 33;
+            this.txtDiachi.TabIndex = 8;
             this.txtDiachi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiachi_KeyPress);
             // 
             // txtSoNganHang
@@ -279,7 +279,7 @@
             this.txtSoNganHang.Location = new System.Drawing.Point(728, 89);
             this.txtSoNganHang.Name = "txtSoNganHang";
             this.txtSoNganHang.Size = new System.Drawing.Size(207, 15);
-            this.txtSoNganHang.TabIndex = 31;
+            this.txtSoNganHang.TabIndex = 6;
             this.txtSoNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoNganHang_KeyPress);
             // 
             // lblGioiTinh
@@ -406,7 +406,7 @@
             this.btnClear.Location = new System.Drawing.Point(319, 612);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(137, 53);
-            this.btnClear.TabIndex = 9;
+            this.btnClear.TabIndex = 14;
             this.btnClear.Text = "Xóa tất cả";
             this.btnClear.UseVisualStyleBackColor = false;
             // 
@@ -424,7 +424,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(49, 612);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(152, 53);
-            this.btnConfirm.TabIndex = 10;
+            this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -478,7 +478,7 @@
             this.grBThongtin.Location = new System.Drawing.Point(0, 0);
             this.grBThongtin.Name = "grBThongtin";
             this.grBThongtin.Size = new System.Drawing.Size(1485, 512);
-            this.grBThongtin.TabIndex = 0;
+            this.grBThongtin.TabIndex = 1;
             this.grBThongtin.TabStop = false;
             this.grBThongtin.Text = "Thông tin nhân viên";
             // 
@@ -504,7 +504,7 @@
             this.btnExit.Location = new System.Drawing.Point(1410, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 55);
-            this.btnExit.TabIndex = 0;
+            this.btnExit.TabIndex = 15;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -516,7 +516,7 @@
             this.panHeader.Location = new System.Drawing.Point(0, 0);
             this.panHeader.Name = "panHeader";
             this.panHeader.Size = new System.Drawing.Size(1485, 55);
-            this.panHeader.TabIndex = 8;
+            this.panHeader.TabIndex = 10;
             // 
             // FormCapNhatNhanVien
             // 

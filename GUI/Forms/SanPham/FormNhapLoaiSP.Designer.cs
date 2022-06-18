@@ -52,7 +52,7 @@
             this.panHeader.Location = new System.Drawing.Point(0, 0);
             this.panHeader.Name = "panHeader";
             this.panHeader.Size = new System.Drawing.Size(1067, 53);
-            this.panHeader.TabIndex = 0;
+            this.panHeader.TabIndex = 2;
             // 
             // btnExit
             // 

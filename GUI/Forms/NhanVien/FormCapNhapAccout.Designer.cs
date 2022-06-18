@@ -1,6 +1,6 @@
 ﻿namespace GUI.Forms
 {
-    partial class FormViewAccout
+    partial class FormCapNhapAccout
     {
         /// <summary>
         /// Required designer variable.
@@ -111,7 +111,7 @@
             this.txtMk.Location = new System.Drawing.Point(275, 298);
             this.txtMk.Name = "txtMk";
             this.txtMk.Size = new System.Drawing.Size(221, 22);
-            this.txtMk.TabIndex = 9;
+            this.txtMk.TabIndex = 1;
             this.txtMk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMk_KeyPress);
             // 
             // cmbTrangThai
@@ -124,7 +124,7 @@
             this.cmbTrangThai.Location = new System.Drawing.Point(721, 179);
             this.cmbTrangThai.Name = "cmbTrangThai";
             this.cmbTrangThai.Size = new System.Drawing.Size(175, 24);
-            this.cmbTrangThai.TabIndex = 10;
+            this.cmbTrangThai.TabIndex = 2;
             // 
             // btnCapNhat
             // 
@@ -133,7 +133,7 @@
             this.btnCapNhat.Location = new System.Drawing.Point(547, 419);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(187, 66);
-            this.btnCapNhat.TabIndex = 11;
+            this.btnCapNhat.TabIndex = 3;
             this.btnCapNhat.UseVisualStyleBackColor = true;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -144,7 +144,7 @@
             this.btnSua.Location = new System.Drawing.Point(224, 419);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(187, 66);
-            this.btnSua.TabIndex = 11;
+            this.btnSua.TabIndex = 0;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 

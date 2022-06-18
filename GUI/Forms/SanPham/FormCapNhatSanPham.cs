@@ -85,30 +85,37 @@ namespace GUI.Forms.SanPham
             DialogResult result = MessageBox.Show("Vui lòng xác nhận dể tiến hành cập nhật", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                int id_sp = id;
-                int id_ncc2 = int.Parse(cmbNCC.SelectedValue.ToString());
-                int id_loai2 = int.Parse(cmbID_Loaisp.SelectedValue.ToString());
-                decimal dongia2 = decimal.Parse(txtDonGia.Text);
-                string dvt = cmbDVT.Text;
-                string ten_sp2 = txtTenSP.Text;
-                byte[] imgInsert;
-                if (sPathImg == "")
+                if (txtTenSP.Text == "" || txtDonGia.Text == "" || cmbDVT.SelectedIndex == -1 || cmbID_Loaisp.SelectedIndex == -1 || cmbNCC.SelectedIndex == -1)
                 {
-                    imgInsert = hinh;
+                    MessageBox.Show("Chưa Dủ Thông Tin, vui Lòng kiểm tra lại", "Thông Báo");
                 }
                 else
                 {
-                    imgInsert = System.IO.File.ReadAllBytes(sPathImg);
-                }
+                    int id_sp = id;
+                    int id_ncc2 = int.Parse(cmbNCC.SelectedValue.ToString());
+                    int id_loai2 = int.Parse(cmbID_Loaisp.SelectedValue.ToString());
+                    decimal dongia2 = decimal.Parse(txtDonGia.Text);
+                    string dvt = cmbDVT.Text;
+                    string ten_sp2 = txtTenSP.Text;
+                    byte[] imgInsert;
+                    if (sPathImg == "")
+                    {
+                        imgInsert = hinh;
+                    }
+                    else
+                    {
+                        imgInsert = System.IO.File.ReadAllBytes(sPathImg);
+                    }
 
-                object[] sanpham = new object[] { id_sp, ten_sp2, id_ncc2, id_loai2, dvt, dongia2, imgInsert, 1 };
-                if (B_SanPham.Instance.StokerUpdateProduct(sanpham))
-                {
-                    MessageBox.Show("Cập Nhật Thành Công");
-                }
-                else
-                {
-                    MessageBox.Show("Ô Nô !!!", "Cập Nhật Thất Bại");
+                    object[] sanpham = new object[] { id_sp, ten_sp2, id_ncc2, id_loai2, dvt, dongia2, imgInsert, 1 };
+                    if (B_SanPham.Instance.StokerUpdateProduct(sanpham))
+                    {
+                        MessageBox.Show("Cập Nhật Thành Công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ô Nô !!!", "Cập Nhật Thất Bại");
+                    }
                 }
             }
         }
@@ -144,6 +151,24 @@ namespace GUI.Forms.SanPham
         {
             B_SanPham.Instance.loadDataSourceUnits(ref cmbDVT);
             cmbDVT.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+
+        private void txtDonGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Chỉ được nhập Số", "Thông Báo");
+                e.Handled = true;
+            }
+        }
+
+        private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Rule_Regex.Instance.Name_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Không Thể Nhập ký tự này", "Thông Báo");
+                e.Handled = true;
+            }
         }
     }
 }

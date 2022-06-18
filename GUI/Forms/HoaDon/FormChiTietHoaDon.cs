@@ -32,7 +32,7 @@ namespace GUI.Forms.HoaDon
 
         private void dgvDanhSachDetailsPhieuNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex != 1)
+            if (e.RowIndex != -1)
             {
                 DataGridViewRow row = dgvDanhSachDetailsPhieuNhap.Rows[e.RowIndex];
                 txtIDSanPham.Text = row.Cells["ID_SanPham"].Value.ToString();

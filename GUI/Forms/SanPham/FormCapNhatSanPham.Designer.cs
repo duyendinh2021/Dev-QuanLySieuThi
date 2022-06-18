@@ -83,7 +83,8 @@
             this.txtTenSP.Location = new System.Drawing.Point(327, 97);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(225, 22);
-            this.txtTenSP.TabIndex = 1;
+            this.txtTenSP.TabIndex = 0;
+            this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
             // 
             // label5
             // 
@@ -99,7 +100,8 @@
             this.txtDonGia.Location = new System.Drawing.Point(327, 537);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(225, 22);
-            this.txtDonGia.TabIndex = 1;
+            this.txtDonGia.TabIndex = 7;
+            this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // btnEditNCC
             // 
@@ -108,7 +110,7 @@
             this.btnEditNCC.Location = new System.Drawing.Point(595, 178);
             this.btnEditNCC.Name = "btnEditNCC";
             this.btnEditNCC.Size = new System.Drawing.Size(84, 33);
-            this.btnEditNCC.TabIndex = 6;
+            this.btnEditNCC.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnEditNCC, "Click dể Sửa Nhà Cung Cấp");
             this.btnEditNCC.UseVisualStyleBackColor = true;
             this.btnEditNCC.Click += new System.EventHandler(this.btnEditNCC_Click);
@@ -120,7 +122,7 @@
             this.btnRowImg.Location = new System.Drawing.Point(794, 95);
             this.btnRowImg.Name = "btnRowImg";
             this.btnRowImg.Size = new System.Drawing.Size(128, 66);
-            this.btnRowImg.TabIndex = 4;
+            this.btnRowImg.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnRowImg, "Click dể tiến hành thay đổi hình ảnh sản phẩm");
             this.btnRowImg.UseVisualStyleBackColor = true;
             this.btnRowImg.Click += new System.EventHandler(this.btnRowImg_Click);
@@ -132,7 +134,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(327, 630);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(151, 74);
-            this.btnConfirm.TabIndex = 3;
+            this.btnConfirm.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btnConfirm, "Click dể tiến hành cập nhật sản phẩm");
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -144,7 +146,7 @@
             this.btnEditID.Location = new System.Drawing.Point(595, 297);
             this.btnEditID.Name = "btnEditID";
             this.btnEditID.Size = new System.Drawing.Size(84, 33);
-            this.btnEditID.TabIndex = 6;
+            this.btnEditID.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btnEditID, "Click dể sửa loại sản phẩm");
             this.btnEditID.UseVisualStyleBackColor = true;
             this.btnEditID.Click += new System.EventHandler(this.btnEditID_Click);
@@ -177,7 +179,7 @@
             this.cmbNCC.Location = new System.Drawing.Point(327, 183);
             this.cmbNCC.Name = "cmbNCC";
             this.cmbNCC.Size = new System.Drawing.Size(225, 24);
-            this.cmbNCC.TabIndex = 5;
+            this.cmbNCC.TabIndex = 1;
             // 
             // cmbID_Loaisp
             // 
@@ -186,7 +188,7 @@
             this.cmbID_Loaisp.Location = new System.Drawing.Point(327, 302);
             this.cmbID_Loaisp.Name = "cmbID_Loaisp";
             this.cmbID_Loaisp.Size = new System.Drawing.Size(225, 24);
-            this.cmbID_Loaisp.TabIndex = 5;
+            this.cmbID_Loaisp.TabIndex = 3;
             // 
             // cmbDVT
             // 
@@ -204,7 +206,7 @@
             this.btnClear.Location = new System.Drawing.Point(615, 630);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(151, 74);
-            this.btnClear.TabIndex = 3;
+            this.btnClear.TabIndex = 10;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 

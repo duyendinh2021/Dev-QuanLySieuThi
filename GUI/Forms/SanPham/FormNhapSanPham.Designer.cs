@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapSanPham));
             this.panHeader = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -99,7 +100,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1500, 564);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
             // 
@@ -110,7 +111,7 @@
             this.btnBrowsImg.Location = new System.Drawing.Point(1017, 100);
             this.btnBrowsImg.Name = "btnBrowsImg";
             this.btnBrowsImg.Size = new System.Drawing.Size(123, 55);
-            this.btnBrowsImg.TabIndex = 68;
+            this.btnBrowsImg.TabIndex = 7;
             this.btnBrowsImg.UseVisualStyleBackColor = false;
             this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
             // 
@@ -121,7 +122,7 @@
             this.btnThemLoaiSp.Location = new System.Drawing.Point(654, 220);
             this.btnThemLoaiSp.Name = "btnThemLoaiSp";
             this.btnThemLoaiSp.Size = new System.Drawing.Size(85, 28);
-            this.btnThemLoaiSp.TabIndex = 67;
+            this.btnThemLoaiSp.TabIndex = 4;
             this.btnThemLoaiSp.UseVisualStyleBackColor = false;
             this.btnThemLoaiSp.Click += new System.EventHandler(this.btnThemLoaiSp_Click);
             // 
@@ -132,7 +133,7 @@
             this.btnThemNCC.Location = new System.Drawing.Point(654, 145);
             this.btnThemNCC.Name = "btnThemNCC";
             this.btnThemNCC.Size = new System.Drawing.Size(85, 28);
-            this.btnThemNCC.TabIndex = 66;
+            this.btnThemNCC.TabIndex = 2;
             this.btnThemNCC.UseVisualStyleBackColor = false;
             this.btnThemNCC.Click += new System.EventHandler(this.btnThemNCC_Click);
             // 
@@ -150,7 +151,7 @@
             this.txtDonGia.Location = new System.Drawing.Point(384, 405);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(241, 22);
-            this.txtDonGia.TabIndex = 61;
+            this.txtDonGia.TabIndex = 6;
             // 
             // cmbDVT
             // 
@@ -158,7 +159,7 @@
             this.cmbDVT.Location = new System.Drawing.Point(384, 320);
             this.cmbDVT.Name = "cmbDVT";
             this.cmbDVT.Size = new System.Drawing.Size(241, 24);
-            this.cmbDVT.TabIndex = 60;
+            this.cmbDVT.TabIndex = 5;
             // 
             // cmbLoaiSp
             // 
@@ -167,7 +168,7 @@
             this.cmbLoaiSp.Location = new System.Drawing.Point(384, 222);
             this.cmbLoaiSp.Name = "cmbLoaiSp";
             this.cmbLoaiSp.Size = new System.Drawing.Size(241, 24);
-            this.cmbLoaiSp.TabIndex = 59;
+            this.cmbLoaiSp.TabIndex = 3;
             // 
             // cmbNcc
             // 
@@ -176,14 +177,14 @@
             this.cmbNcc.Location = new System.Drawing.Point(384, 145);
             this.cmbNcc.Name = "cmbNcc";
             this.cmbNcc.Size = new System.Drawing.Size(241, 24);
-            this.cmbNcc.TabIndex = 58;
+            this.cmbNcc.TabIndex = 1;
             // 
             // txtTenSp
             // 
             this.txtTenSp.Location = new System.Drawing.Point(384, 61);
             this.txtTenSp.Name = "txtTenSp";
             this.txtTenSp.Size = new System.Drawing.Size(241, 22);
-            this.txtTenSp.TabIndex = 56;
+            this.txtTenSp.TabIndex = 0;
             // 
             // label6
             // 
@@ -241,7 +242,7 @@
             this.btnClear.Location = new System.Drawing.Point(654, 653);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(157, 62);
-            this.btnClear.TabIndex = 65;
+            this.btnClear.TabIndex = 2;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -253,7 +254,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(384, 653);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(157, 62);
-            this.btnConfirm.TabIndex = 65;
+            this.btnConfirm.TabIndex = 1;
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -267,6 +268,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNhapSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNhapSanPham";

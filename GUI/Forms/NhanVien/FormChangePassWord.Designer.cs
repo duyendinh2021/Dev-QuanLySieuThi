@@ -108,7 +108,7 @@
             this.txtPassold.Location = new System.Drawing.Point(399, 159);
             this.txtPassold.Name = "txtPassold";
             this.txtPassold.Size = new System.Drawing.Size(244, 22);
-            this.txtPassold.TabIndex = 1;
+            this.txtPassold.TabIndex = 0;
             this.txtPassold.UseSystemPasswordChar = true;
             this.txtPassold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassold_KeyPress);
             // 
@@ -126,7 +126,7 @@
             this.txtPassNew2.Location = new System.Drawing.Point(399, 333);
             this.txtPassNew2.Name = "txtPassNew2";
             this.txtPassNew2.Size = new System.Drawing.Size(244, 22);
-            this.txtPassNew2.TabIndex = 1;
+            this.txtPassNew2.TabIndex = 2;
             this.txtPassNew2.UseSystemPasswordChar = true;
             this.txtPassNew2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassNew2_KeyPress);
             // 
@@ -135,7 +135,7 @@
             this.txtCaptcha.Location = new System.Drawing.Point(399, 420);
             this.txtCaptcha.Name = "txtCaptcha";
             this.txtCaptcha.Size = new System.Drawing.Size(244, 22);
-            this.txtCaptcha.TabIndex = 1;
+            this.txtCaptcha.TabIndex = 3;
             // 
             // ptcCaptcha
             // 
@@ -152,7 +152,7 @@
             this.btnRefreshCaptcha.Location = new System.Drawing.Point(834, 186);
             this.btnRefreshCaptcha.Name = "btnRefreshCaptcha";
             this.btnRefreshCaptcha.Size = new System.Drawing.Size(116, 44);
-            this.btnRefreshCaptcha.TabIndex = 3;
+            this.btnRefreshCaptcha.TabIndex = 4;
             this.btnRefreshCaptcha.UseVisualStyleBackColor = true;
             this.btnRefreshCaptcha.Click += new System.EventHandler(this.btnRefreshCaptcha_Click);
             // 
@@ -162,7 +162,7 @@
             this.btnConfrim.Location = new System.Drawing.Point(399, 494);
             this.btnConfrim.Name = "btnConfrim";
             this.btnConfrim.Size = new System.Drawing.Size(204, 61);
-            this.btnConfrim.TabIndex = 3;
+            this.btnConfrim.TabIndex = 5;
             this.btnConfrim.UseVisualStyleBackColor = true;
             this.btnConfrim.Click += new System.EventHandler(this.btnConfrim_Click);
             // 

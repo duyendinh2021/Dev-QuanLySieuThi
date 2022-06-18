@@ -179,5 +179,12 @@ namespace GUI.Forms
             }
             B_SanPham.Instance.GetProducByProducTypes(ids, ref dtDanhSachSP);
         }
+
+
+        [Obsolete]
+        private void radSPKhongHoat_CheckedChanged(object sender, EventArgs e)
+        {
+            B_SanPham.Instance.GetSanPhamDeleted(ref dtDanhSachSP);
+        }
     }
 }

@@ -81,7 +81,7 @@ namespace GUI
 
         private void lblLinkQuanMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Chưa làm chức năng này");
+            MessageBox.Show("Vui liên hệ quản trị viên dể biết giải quyết SDT:XXXXXXXXXXXXX","Thông Báo");
         }
 
         [Obsolete]

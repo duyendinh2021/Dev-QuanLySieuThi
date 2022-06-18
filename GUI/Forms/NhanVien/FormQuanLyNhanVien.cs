@@ -276,7 +276,7 @@ namespace GUI
                 }
                 // select all loại nhân viên đang hoạt động
                 else if (cmbChucvu.SelectedIndex == 3)
-                {                 
+                {
                     BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
                 }
             }
@@ -471,7 +471,7 @@ namespace GUI
                     string chucvu = row.Cells["colChucVu"].Value.ToString();
 
                     Image tempImg = SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
-        
+
                     byte[] dataImg = (byte[])row.Cells["Hinh"].Value;
                     FormCapNhatNhanVien formCapNhatNhanVien = new FormCapNhatNhanVien(id, hoten, email, sdt, ngaySinh, luong, tenNganHang, soNganHang, ngayVaoLam, diachi, tempImg, chucvu, gioiTinh, dataImg);
 
@@ -484,16 +484,30 @@ namespace GUI
                     DialogResult dialog = MessageBox.Show("Bạn Có Chất Muốn Xóa", "Thông báo đặt biệt", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                     if (dialog == DialogResult.Yes)
                     {
-                        int id = int.Parse(row.Cells["colManv"].Value.ToString());
-                        if (B_NhanVien.Instance.adminDeleteNhanVien(id))
+                        dialog = MessageBox.Show("Bạn Có Chất Muốn Xóa ????", "Thông báo đặt biệt", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Stop);
+                        if (dialog == DialogResult.Yes)
                         {
-                            MessageBox.Show("Xóa Nhân Viên Thành Công", "Thật Tuyệt Vời");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Ô Nô !!!", "Có Vẽ Sai Sai");
+
+                            if (row.Cells["colChucVu"].ToString() == "Admin")
+                            {
+                                MessageBox.Show("Không Thể Xóa Tài Khoản Admin", "Thông Báo");
+                            }
+                            else
+                            {
+                                int id = int.Parse(row.Cells["colManv"].Value.ToString());
+                                if (B_NhanVien.Instance.adminDeleteNhanVien(id))
+                                {
+                                    MessageBox.Show("Xóa Nhân Viên Thành Công", "Thật Tuyệt Vời");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Ô Nô !!!", "Có Vẽ Sai Sai");
+
+                                }
+                            }
 
                         }
+
                     }
                     BUS.B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
                 }
@@ -506,8 +520,8 @@ namespace GUI
                     string chucvu = "";
 
                     int trangthai = -1;
-                    BUS.B_NhanVien.Instance.GetTaiKhoanByID(id,ref usernam,ref pass,ref chucvu, ref trangthai);
-                    FormViewAccout formViewAccout = new FormViewAccout(id,usernam,pass,trangthai,chucvu);
+                    BUS.B_NhanVien.Instance.GetTaiKhoanByID(id, ref usernam, ref pass, ref chucvu, ref trangthai);
+                    FormCapNhapAccout formViewAccout = new FormCapNhapAccout(id, usernam, pass, trangthai, chucvu);
                     formViewAccout.ShowDialog();
 
                 }
