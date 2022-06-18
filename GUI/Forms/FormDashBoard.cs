@@ -139,7 +139,7 @@ namespace GUI.Forms
             setTagFunctionOneMonth("Tài Khoản Login", DateTime.Parse(dateTimePicker1.Value.ToShortDateString()));
             setTagFunctionOneMonth("Số Sản Phẩm Tồn", DateTime.Parse(dateTimePicker1.Value.ToShortDateString()));
             LoadChart(Chart, dateTimePicker1, dateTimePicker2);
-            LoadCirCleChart(ChartTopSP,dateTimePicker1);
+            LoadCirCleChart(ChartTopSP, dateTimePicker1);
         }
         [Obsolete]
         private void setTagFunctionOneMonth(string query, DateTime date)
@@ -152,7 +152,7 @@ namespace GUI.Forms
                         IconPictureBox icon = new IconPictureBox();
                         dataGridView1.DataSource = B_HoaDon.Instance.adminGetTableOneMonth(date);
                         icon.IconChar = IconChar.UserTag;
-                        if (dataGridView1.RowCount <=0) return;
+                        if (dataGridView1.RowCount <= 0) return;
                         DataGridViewRow row = dataGridView1.Rows[0];
                         string value = string.Format("{0:0.####}", row.Cells["Value"].Value);
                         AddItemTag(query, value + " VNĐ", icon);
@@ -206,7 +206,15 @@ namespace GUI.Forms
         [Obsolete]
         private void btnSoSanh_Click(object sender, EventArgs e)
         {
-            LoadChart(Chart, dateTimePicker1, dateTimePicker2);
+            if (cmbLuaChon.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn chứ năng", "Thông Báo");
+                cmbLuaChon.Focus();
+            }
+            else
+            {
+                LoadChart(Chart, dateTimePicker1, dateTimePicker2);
+            }
         }
 
         [Obsolete]

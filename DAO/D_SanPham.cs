@@ -406,5 +406,31 @@ namespace DAO
             }
             return dt;
         }
+
+
+        [Obsolete]
+        public List<SanPham> GetSanPhamDeleted()
+        {
+            string query = "EXEC SelectSanPhamDeleted";
+            List<SanPham> sanPhams = new List<SanPham>();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.Idsanpham = int.Parse(item["ID_SanPham"].ToString());
+                    sanPham.Tensanpham = item["TenSanPham"].ToString();
+                    sanPham.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    sanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    sanPham.Sl = int.Parse(item["SoLuong"].ToString());
+                    sanPham.Dvt = item["DVT"].ToString();
+                    sanPham.Dongia = decimal.Parse(item["DonGia"].ToString());
+                    sanPham.Hinh = (Byte[])item["Hinh"];
+                    sanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    sanPhams.Add(sanPham);
+                }
+            }
+            return sanPhams;
+        }
     }
 }

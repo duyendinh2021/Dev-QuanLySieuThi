@@ -30,8 +30,13 @@
         private void InitializeComponent()
         {
             this.panHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.grBThongtin = new System.Windows.Forms.GroupBox();
+            this.btnImage = new System.Windows.Forms.Button();
+            this.ptbShowImage = new System.Windows.Forms.PictureBox();
             this.panDash6 = new System.Windows.Forms.Panel();
             this.panDash7 = new System.Windows.Forms.Panel();
             this.panDash5 = new System.Windows.Forms.Panel();
@@ -61,11 +66,6 @@
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblNgayVaoLam = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.ptbShowImage = new System.Windows.Forms.PictureBox();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnImage = new System.Windows.Forms.Button();
             this.panHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grBThongtin.SuspendLayout();
@@ -80,7 +80,24 @@
             this.panHeader.Location = new System.Drawing.Point(0, 0);
             this.panHeader.Name = "panHeader";
             this.panHeader.Size = new System.Drawing.Size(1285, 55);
-            this.panHeader.TabIndex = 6;
+            this.panHeader.TabIndex = 10;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 50;
+            this.btnExit.Location = new System.Drawing.Point(1210, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 55);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel1
             // 
@@ -92,6 +109,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1285, 636);
             this.panel1.TabIndex = 7;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnClear.Image = global::GUI.Properties.Resources.clear;
+            this.btnClear.Location = new System.Drawing.Point(412, 538);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(153, 64);
+            this.btnClear.TabIndex = 2;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
+            this.btnConfirm.Location = new System.Drawing.Point(79, 538);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(153, 64);
+            this.btnConfirm.TabIndex = 1;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // grBThongtin
             // 
@@ -134,6 +173,26 @@
             this.grBThongtin.TabStop = false;
             this.grBThongtin.Text = "Thông tin nhân viên";
             this.grBThongtin.Enter += new System.EventHandler(this.grBThongtin_Enter);
+            // 
+            // btnImage
+            // 
+            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnImage.Image = global::GUI.Properties.Resources.photo;
+            this.btnImage.Location = new System.Drawing.Point(1045, 109);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(146, 45);
+            this.btnImage.TabIndex = 11;
+            this.btnImage.UseVisualStyleBackColor = false;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
+            // 
+            // ptbShowImage
+            // 
+            this.ptbShowImage.Location = new System.Drawing.Point(1045, 179);
+            this.ptbShowImage.Name = "ptbShowImage";
+            this.ptbShowImage.Size = new System.Drawing.Size(216, 216);
+            this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbShowImage.TabIndex = 44;
+            this.ptbShowImage.TabStop = false;
             // 
             // panDash6
             // 
@@ -182,7 +241,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(233, 90);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(207, 15);
-            this.txtHoTen.TabIndex = 14;
+            this.txtHoTen.TabIndex = 0;
             this.txtHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             // 
             // panDash2
@@ -213,7 +272,7 @@
             this.cmbGioiTinh.Location = new System.Drawing.Point(728, 308);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
             this.cmbGioiTinh.Size = new System.Drawing.Size(121, 24);
-            this.cmbGioiTinh.TabIndex = 35;
+            this.cmbGioiTinh.TabIndex = 10;
             // 
             // cmbChucvu
             // 
@@ -228,7 +287,7 @@
             this.cmbChucvu.Location = new System.Drawing.Point(728, 253);
             this.cmbChucvu.Name = "cmbChucvu";
             this.cmbChucvu.Size = new System.Drawing.Size(121, 24);
-            this.cmbChucvu.TabIndex = 34;
+            this.cmbChucvu.TabIndex = 9;
             // 
             // dtpNgayVaoLam
             // 
@@ -238,7 +297,7 @@
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
             this.dtpNgayVaoLam.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpNgayVaoLam.Size = new System.Drawing.Size(207, 22);
-            this.dtpNgayVaoLam.TabIndex = 27;
+            this.dtpNgayVaoLam.TabIndex = 5;
             // 
             // dtpNgaySinh
             // 
@@ -248,7 +307,7 @@
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpNgaySinh.Size = new System.Drawing.Size(207, 22);
-            this.dtpNgaySinh.TabIndex = 28;
+            this.dtpNgaySinh.TabIndex = 4;
             // 
             // txtLuong
             // 
@@ -257,7 +316,7 @@
             this.txtLuong.Location = new System.Drawing.Point(234, 235);
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.Size = new System.Drawing.Size(207, 15);
-            this.txtLuong.TabIndex = 30;
+            this.txtLuong.TabIndex = 3;
             this.txtLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuong_KeyPress);
             // 
             // txtSDT
@@ -267,7 +326,7 @@
             this.txtSDT.Location = new System.Drawing.Point(235, 185);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(207, 15);
-            this.txtSDT.TabIndex = 29;
+            this.txtSDT.TabIndex = 2;
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtEmail
@@ -277,7 +336,7 @@
             this.txtEmail.Location = new System.Drawing.Point(234, 136);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(207, 15);
-            this.txtEmail.TabIndex = 25;
+            this.txtEmail.TabIndex = 1;
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // txtTenNganHang
@@ -287,7 +346,7 @@
             this.txtTenNganHang.Location = new System.Drawing.Point(731, 144);
             this.txtTenNganHang.Name = "txtTenNganHang";
             this.txtTenNganHang.Size = new System.Drawing.Size(207, 15);
-            this.txtTenNganHang.TabIndex = 32;
+            this.txtTenNganHang.TabIndex = 7;
             // 
             // txtDiachi
             // 
@@ -296,7 +355,7 @@
             this.txtDiachi.Location = new System.Drawing.Point(730, 192);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(207, 15);
-            this.txtDiachi.TabIndex = 33;
+            this.txtDiachi.TabIndex = 8;
             this.txtDiachi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiachi_KeyPress);
             // 
             // txtSoNganHang
@@ -306,7 +365,7 @@
             this.txtSoNganHang.Location = new System.Drawing.Point(731, 93);
             this.txtSoNganHang.Name = "txtSoNganHang";
             this.txtSoNganHang.Size = new System.Drawing.Size(207, 15);
-            this.txtSoNganHang.TabIndex = 31;
+            this.txtSoNganHang.TabIndex = 6;
             this.txtSoNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoNganHang_KeyPress);
             // 
             // lblGioiTinh
@@ -418,65 +477,6 @@
             this.lblNgaySinh.TabIndex = 15;
             this.lblNgaySinh.Text = "Ngày sinh";
             this.lblNgaySinh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // ptbShowImage
-            // 
-            this.ptbShowImage.Location = new System.Drawing.Point(1045, 179);
-            this.ptbShowImage.Name = "ptbShowImage";
-            this.ptbShowImage.Size = new System.Drawing.Size(216, 216);
-            this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbShowImage.TabIndex = 44;
-            this.ptbShowImage.TabStop = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 50;
-            this.btnExit.Location = new System.Drawing.Point(1210, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 55);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
-            this.btnConfirm.Location = new System.Drawing.Point(79, 538);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(153, 64);
-            this.btnConfirm.TabIndex = 10;
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnClear.Image = global::GUI.Properties.Resources.clear;
-            this.btnClear.Location = new System.Drawing.Point(412, 538);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(153, 64);
-            this.btnClear.TabIndex = 10;
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnImage
-            // 
-            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnImage.Image = global::GUI.Properties.Resources.photo;
-            this.btnImage.Location = new System.Drawing.Point(1045, 109);
-            this.btnImage.Name = "btnImage";
-            this.btnImage.Size = new System.Drawing.Size(146, 45);
-            this.btnImage.TabIndex = 10;
-            this.btnImage.UseVisualStyleBackColor = false;
-            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // FormThemNhanVien
             // 

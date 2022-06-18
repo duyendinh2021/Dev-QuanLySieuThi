@@ -48,6 +48,12 @@
             this.cmbDVT = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.ptcShowImg = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbTrangThai = new System.Windows.Forms.ComboBox();
+            this.btneditTrangThai = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptcShowImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +68,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(81, 191);
+            this.label2.Location = new System.Drawing.Point(81, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 16);
             this.label2.TabIndex = 0;
@@ -71,7 +77,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(81, 432);
+            this.label4.Location = new System.Drawing.Point(81, 402);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(225, 16);
             this.label4.TabIndex = 0;
@@ -83,11 +89,12 @@
             this.txtTenSP.Location = new System.Drawing.Point(327, 97);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(225, 22);
-            this.txtTenSP.TabIndex = 1;
+            this.txtTenSP.TabIndex = 0;
+            this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(81, 539);
+            this.label5.Location = new System.Drawing.Point(81, 501);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(225, 16);
             this.label5.TabIndex = 0;
@@ -96,10 +103,11 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(327, 537);
+            this.txtDonGia.Location = new System.Drawing.Point(327, 499);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(225, 22);
-            this.txtDonGia.TabIndex = 1;
+            this.txtDonGia.TabIndex = 7;
+            this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // btnEditNCC
             // 
@@ -108,7 +116,7 @@
             this.btnEditNCC.Location = new System.Drawing.Point(595, 178);
             this.btnEditNCC.Name = "btnEditNCC";
             this.btnEditNCC.Size = new System.Drawing.Size(84, 33);
-            this.btnEditNCC.TabIndex = 6;
+            this.btnEditNCC.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnEditNCC, "Click dể Sửa Nhà Cung Cấp");
             this.btnEditNCC.UseVisualStyleBackColor = true;
             this.btnEditNCC.Click += new System.EventHandler(this.btnEditNCC_Click);
@@ -120,7 +128,7 @@
             this.btnRowImg.Location = new System.Drawing.Point(794, 95);
             this.btnRowImg.Name = "btnRowImg";
             this.btnRowImg.Size = new System.Drawing.Size(128, 66);
-            this.btnRowImg.TabIndex = 4;
+            this.btnRowImg.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnRowImg, "Click dể tiến hành thay đổi hình ảnh sản phẩm");
             this.btnRowImg.UseVisualStyleBackColor = true;
             this.btnRowImg.Click += new System.EventHandler(this.btnRowImg_Click);
@@ -132,7 +140,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(327, 630);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(151, 74);
-            this.btnConfirm.TabIndex = 3;
+            this.btnConfirm.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btnConfirm, "Click dể tiến hành cập nhật sản phẩm");
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -144,7 +152,7 @@
             this.btnEditID.Location = new System.Drawing.Point(595, 297);
             this.btnEditID.Name = "btnEditID";
             this.btnEditID.Size = new System.Drawing.Size(84, 33);
-            this.btnEditID.TabIndex = 6;
+            this.btnEditID.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btnEditID, "Click dể sửa loại sản phẩm");
             this.btnEditID.UseVisualStyleBackColor = true;
             this.btnEditID.Click += new System.EventHandler(this.btnEditID_Click);
@@ -153,7 +161,7 @@
             // 
             this.btnEditDVT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditDVT.Image = global::GUI.Properties.Resources.writing;
-            this.btnEditDVT.Location = new System.Drawing.Point(595, 423);
+            this.btnEditDVT.Location = new System.Drawing.Point(595, 395);
             this.btnEditDVT.Name = "btnEditDVT";
             this.btnEditDVT.Size = new System.Drawing.Size(84, 33);
             this.btnEditDVT.TabIndex = 6;
@@ -163,7 +171,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(81, 306);
+            this.label3.Location = new System.Drawing.Point(81, 303);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(225, 16);
             this.label3.TabIndex = 0;
@@ -174,25 +182,25 @@
             // 
             this.cmbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNCC.FormattingEnabled = true;
-            this.cmbNCC.Location = new System.Drawing.Point(327, 183);
+            this.cmbNCC.Location = new System.Drawing.Point(327, 196);
             this.cmbNCC.Name = "cmbNCC";
             this.cmbNCC.Size = new System.Drawing.Size(225, 24);
-            this.cmbNCC.TabIndex = 5;
+            this.cmbNCC.TabIndex = 1;
             // 
             // cmbID_Loaisp
             // 
             this.cmbID_Loaisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbID_Loaisp.FormattingEnabled = true;
-            this.cmbID_Loaisp.Location = new System.Drawing.Point(327, 302);
+            this.cmbID_Loaisp.Location = new System.Drawing.Point(327, 297);
             this.cmbID_Loaisp.Name = "cmbID_Loaisp";
             this.cmbID_Loaisp.Size = new System.Drawing.Size(225, 24);
-            this.cmbID_Loaisp.TabIndex = 5;
+            this.cmbID_Loaisp.TabIndex = 3;
             // 
             // cmbDVT
             // 
             this.cmbDVT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDVT.FormattingEnabled = true;
-            this.cmbDVT.Location = new System.Drawing.Point(327, 428);
+            this.cmbDVT.Location = new System.Drawing.Point(327, 398);
             this.cmbDVT.Name = "cmbDVT";
             this.cmbDVT.Size = new System.Drawing.Size(225, 24);
             this.cmbDVT.TabIndex = 5;
@@ -204,7 +212,7 @@
             this.btnClear.Location = new System.Drawing.Point(615, 630);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(151, 74);
-            this.btnClear.TabIndex = 3;
+            this.btnClear.TabIndex = 10;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -217,11 +225,72 @@
             this.ptcShowImg.TabIndex = 2;
             this.ptcShowImg.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(81, 579);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(225, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Trạng Thái";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // cmbTrangThai
+            // 
+            this.cmbTrangThai.FormattingEnabled = true;
+            this.cmbTrangThai.Location = new System.Drawing.Point(327, 575);
+            this.cmbTrangThai.Name = "cmbTrangThai";
+            this.cmbTrangThai.Size = new System.Drawing.Size(225, 24);
+            this.cmbTrangThai.TabIndex = 11;
+            // 
+            // btneditTrangThai
+            // 
+            this.btneditTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneditTrangThai.Image = global::GUI.Properties.Resources.writing;
+            this.btneditTrangThai.Location = new System.Drawing.Point(595, 570);
+            this.btneditTrangThai.Name = "btneditTrangThai";
+            this.btneditTrangThai.Size = new System.Drawing.Size(84, 33);
+            this.btneditTrangThai.TabIndex = 6;
+            this.btneditTrangThai.UseVisualStyleBackColor = true;
+            this.btneditTrangThai.Click += new System.EventHandler(this.btneditTrangThai_Click);
+            // 
+            // label9
+            // 
+            this.label9.ForeColor = System.Drawing.Color.Blue;
+            this.label9.Location = new System.Drawing.Point(1072, 630);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(147, 16);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "1 : Hoạt Động";
+            // 
+            // label8
+            // 
+            this.label8.ForeColor = System.Drawing.Color.Blue;
+            this.label8.Location = new System.Drawing.Point(1072, 604);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(147, 23);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "0 : Ngừng Hoạt Động";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Blue;
+            this.label7.Location = new System.Drawing.Point(919, 604);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Chú Thích";
+            // 
             // FormCapNhatSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 744);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbTrangThai);
+            this.Controls.Add(this.btneditTrangThai);
             this.Controls.Add(this.btnEditDVT);
             this.Controls.Add(this.btnEditID);
             this.Controls.Add(this.btnEditNCC);
@@ -234,6 +303,7 @@
             this.Controls.Add(this.ptcShowImg);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.txtTenSP);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -269,5 +339,11 @@
         private System.Windows.Forms.Button btnEditNCC;
         private System.Windows.Forms.Button btnEditID;
         private System.Windows.Forms.Button btnEditDVT;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbTrangThai;
+        private System.Windows.Forms.Button btneditTrangThai;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

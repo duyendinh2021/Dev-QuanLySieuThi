@@ -226,11 +226,11 @@
     <Compile Include="Forms\NhanVien\FormThemNhanVien.Designer.cs">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NhanVien\FormViewAccout.cs">
+    <Compile Include="Forms\NhanVien\FormCapNhapAccout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NhanVien\FormViewAccout.Designer.cs">
-      <DependentUpon>FormViewAccout.cs</DependentUpon>
+    <Compile Include="Forms\NhanVien\FormCapNhapAccout.Designer.cs">
+      <DependentUpon>FormCapNhapAccout.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SanPham\FormViewSanPham.cs">
       <SubType>Form</SubType>
@@ -315,8 +315,8 @@
     <EmbeddedResource Include="Forms\NhanVien\FormThemNhanVien.resx">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NhanVien\FormViewAccout.resx">
-      <DependentUpon>FormViewAccout.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NhanVien\FormCapNhapAccout.resx">
+      <DependentUpon>FormCapNhapAccout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SanPham\FormViewSanPham.resx">
       <DependentUpon>FormViewSanPham.cs</DependentUpon>

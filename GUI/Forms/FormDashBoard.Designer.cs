@@ -39,6 +39,7 @@
             System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panTag = new System.Windows.Forms.FlowLayoutPanel();
             this.panFunction = new System.Windows.Forms.Panel();
+            this.cmbLuaChon = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -50,7 +51,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.cmbLuaChon = new System.Windows.Forms.ComboBox();
             this.panFunction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartTopSP)).BeginInit();
@@ -70,6 +70,8 @@
             // panFunction
             // 
             this.panFunction.Controls.Add(this.cmbLuaChon);
+            this.panFunction.Controls.Add(this.dataGridView1);
+            this.panFunction.Controls.Add(this.dataGridView2);
             this.panFunction.Controls.Add(this.label2);
             this.panFunction.Controls.Add(this.label1);
             this.panFunction.Controls.Add(this.dateTimePicker1);
@@ -79,7 +81,21 @@
             this.panFunction.Location = new System.Drawing.Point(12, 138);
             this.panFunction.Name = "panFunction";
             this.panFunction.Size = new System.Drawing.Size(675, 482);
-            this.panFunction.TabIndex = 22;
+            this.panFunction.TabIndex = 0;
+            // 
+            // cmbLuaChon
+            // 
+            this.cmbLuaChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLuaChon.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLuaChon.FormattingEnabled = true;
+            this.cmbLuaChon.Items.AddRange(new object[] {
+            "Số Lượng Sản Phẩm Bán Hằng Ngày",
+            "Số Lượng Sản Phẩm Nhập Hằng Ngày",
+            "Doanh Thu Hằng Ngày"});
+            this.cmbLuaChon.Location = new System.Drawing.Point(22, 200);
+            this.cmbLuaChon.Name = "cmbLuaChon";
+            this.cmbLuaChon.Size = new System.Drawing.Size(275, 23);
+            this.cmbLuaChon.TabIndex = 3;
             // 
             // label2
             // 
@@ -118,7 +134,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(275, 22);
-            this.dateTimePicker1.TabIndex = 18;
+            this.dateTimePicker1.TabIndex = 0;
             // 
             // btnThongKe
             // 
@@ -130,7 +146,7 @@
             this.btnThongKe.Location = new System.Drawing.Point(22, 77);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(175, 51);
-            this.btnThongKe.TabIndex = 22;
+            this.btnThongKe.TabIndex = 1;
             this.btnThongKe.Text = "Thống Kê";
             this.btnThongKe.UseVisualStyleBackColor = false;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
@@ -145,7 +161,7 @@
             this.btnSoSanh.Location = new System.Drawing.Point(22, 233);
             this.btnSoSanh.Name = "btnSoSanh";
             this.btnSoSanh.Size = new System.Drawing.Size(175, 51);
-            this.btnSoSanh.TabIndex = 23;
+            this.btnSoSanh.TabIndex = 4;
             this.btnSoSanh.Text = "So Sánh";
             this.btnSoSanh.UseVisualStyleBackColor = false;
             this.btnSoSanh.Click += new System.EventHandler(this.btnSoSanh_Click);
@@ -166,7 +182,7 @@
             this.dateTimePicker2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(275, 22);
-            this.dateTimePicker2.TabIndex = 19;
+            this.dateTimePicker2.TabIndex = 2;
             // 
             // Chart
             // 
@@ -294,12 +310,12 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 138);
+            this.dataGridView1.Location = new System.Drawing.Point(448, 380);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(24, 19);
-            this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -315,27 +331,13 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 403);
+            this.dataGridView2.Location = new System.Drawing.Point(532, 380);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(24, 19);
             this.dataGridView2.TabIndex = 25;
             this.dataGridView2.Visible = false;
-            // 
-            // cmbLuaChon
-            // 
-            this.cmbLuaChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLuaChon.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLuaChon.FormattingEnabled = true;
-            this.cmbLuaChon.Items.AddRange(new object[] {
-            "Số Lượng Sản Phẩm Bán Hằng Ngày",
-            "Số Lượng Sản Phẩm Nhập Hằng Ngày",
-            "Doanh Thu Hằng Ngày"});
-            this.cmbLuaChon.Location = new System.Drawing.Point(22, 200);
-            this.cmbLuaChon.Name = "cmbLuaChon";
-            this.cmbLuaChon.Size = new System.Drawing.Size(275, 23);
-            this.cmbLuaChon.TabIndex = 24;
             // 
             // FormDashBoard
             // 
@@ -344,8 +346,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(1400, 1055);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Chart);
             this.Controls.Add(this.panFunction);
             this.Controls.Add(this.panTag);
