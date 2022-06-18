@@ -50,7 +50,7 @@
             this.label1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(98, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 30);
+            this.label1.Size = new System.Drawing.Size(257, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Tài Khoản";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;

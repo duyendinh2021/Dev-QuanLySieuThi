@@ -106,6 +106,18 @@
     <Compile Include="Forms\FormDashBoard.Designer.cs">
       <DependentUpon>FormDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HoaDon\FormChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormChiTietHoaDon.Designer.cs">
+      <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormQuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormQuanLyHoaDon.Designer.cs">
+      <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSale.resx">
       <DependentUpon>FormSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoaDon\FormChiTietHoaDon.resx">
+      <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoaDon\FormQuanLyHoaDon.resx">
+      <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.resx">
       <DependentUpon>FormCapNhatNhaCungCap.cs</DependentUpon>

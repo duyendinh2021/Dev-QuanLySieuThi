@@ -25,6 +25,12 @@ namespace DTO
             _trangthai = trangthai;
         }
 
+        public ChiTietHoaDon()
+        {
+
+        }
+
+
         public int Idhd { get => _idhd; set => _idhd = value; }
         public int Idsp { get => _idsp; set => _idsp = value; }
         public decimal Dongia { get => _dongia; set => _dongia = value; }

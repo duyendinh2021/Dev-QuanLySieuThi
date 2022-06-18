@@ -13,6 +13,7 @@ using GUI.Forms.NhaCungCap;
 using GUI.Forms.PhieuNhapkho;
 using GUI.Forms.SanPham;
 using GUI.Forms.NhanVien;
+using GUI.Forms.HoaDon;
 
 namespace GUI
 {
@@ -119,7 +120,7 @@ namespace GUI
         private void btnOrders_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color1);
-            SupportUI_UX.Instance.ShowSubmenu(panOrdersManage);
+            SupportUI_UX.Instance.showChildForm(new FormQuanLyHoaDon(), panChildForm);
         }
 
         private void btnProducts_Click(object sender, EventArgs e)

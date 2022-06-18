@@ -379,5 +379,13 @@ namespace GUI
 
         }
 
+        private void txtKhachDua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Bạn không nhập các kí tự này được !!!");
+                e.Handled = true;
+            }
+        }
     }
 }
