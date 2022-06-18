@@ -142,6 +142,12 @@
     <Compile Include="Forms\FormMainApp.Designer.cs">
       <DependentUpon>FormMainApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NhanVien\FormChangePassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormChangePassWord.Designer.cs">
+      <DependentUpon>FormChangePassWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMainApp.resx">
       <DependentUpon>FormMainApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhanVien\FormChangePassWord.resx">
+      <DependentUpon>FormChangePassWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.resx">
       <DependentUpon>FormChiTietPhieuNhapKho.cs</DependentUpon>

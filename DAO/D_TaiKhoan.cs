@@ -28,11 +28,33 @@ namespace DAO
 
 
         [Obsolete]
-        public TaiKhoan userLogIn(string accUesrLogIn, string passUesrLogIn)
+        public TaiKhoan GetOneAccout(string accUesrLogIn, string passUesrLogIn)
         {
             TaiKhoan taiKhoan = new TaiKhoan();
 
             using (DataTable dt = connectionData.Instance.excuteQuery("EXEC SelectAllTaiKhoan @acc , @pass", new object[] { accUesrLogIn, passUesrLogIn }))
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    taiKhoan.Idnhanvien = Convert.ToInt32(item["ID_NhanVien"].ToString());
+                    taiKhoan.Uesrname = item["TenTK"].ToString();
+                    taiKhoan.Pass = item["MK"].ToString();
+                    taiKhoan.Chuvu = item["ChucVu"].ToString();
+                    taiKhoan.Trangthai = Convert.ToInt32(item["TrangThai"].ToString());
+                    taiKhoan.Statuslogin = Convert.ToInt32(item["StatusLogIn"].ToString());
+                }
+            }
+            return taiKhoan;
+        }
+
+
+
+        [Obsolete]
+        public TaiKhoan GetOneAccoutById(int id)
+        {
+            TaiKhoan taiKhoan = new TaiKhoan();
+
+            using (DataTable dt = connectionData.Instance.excuteQuery("EXEC SearchTaiKhoanByID @id", new object[] { id }))
             {
                 foreach (DataRow item in dt.Rows)
                 {
@@ -71,6 +93,14 @@ namespace DAO
             string query = "EXEC sumAccountCurrent";
             dt = connectionData.Instance.excuteQuery(query, new object[] { });
             return dt;
+        }
+
+
+        [Obsolete]
+        public void userChangePassWord(object[] parameter)
+        {
+            string query = "EXEC userChangePassWord @id , @Pass";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
     }
 }

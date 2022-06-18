@@ -34,7 +34,7 @@ namespace BUS
         public bool UserLogIn(string accUesrLogIn, string passUesrLogIn,ref string message)
         {
             bool result = false;
-            TaiKhoan taiKhoan = DAO.D_TaiKhoan.Instance.userLogIn(accUesrLogIn, passUesrLogIn);
+            TaiKhoan taiKhoan = D_TaiKhoan.Instance.GetOneAccout(accUesrLogIn, passUesrLogIn);
             result = taiKhoan.Idnhanvien != 0 ? true : false;
             if (!result)
             {
@@ -62,7 +62,7 @@ namespace BUS
         [Obsolete]
         public void updateStatusLogin(int id)
         {
-            DAO.D_TaiKhoan.Instance.updateStatusLogin(id);
+            D_TaiKhoan.Instance.updateStatusLogin(id);
         }
 
 
@@ -82,12 +82,46 @@ namespace BUS
             }
             return true;
         }
+
+
         [Obsolete]
         public DataTable adminGetTableLoginStatus()
         {
             DataTable dt = new DataTable();
             dt = D_TaiKhoan.Instance.adminGetTableLoginStatus();
             return dt;
+        }
+
+
+        [Obsolete]
+        public bool CheckAccoutUser(string Acc, string Pass)
+        {
+            bool result = false;
+            TaiKhoan taiKhoan = D_TaiKhoan.Instance.GetOneAccout(Acc, Pass);
+            result = taiKhoan.Idnhanvien != 0 ? true : false;
+            return result;
+        }
+
+        [Obsolete]
+        public bool userChangePassWord(object[] parameter)
+        {
+            try
+            {
+                D_TaiKhoan.Instance.userChangePassWord(parameter);
+            }
+            catch (Exception)
+            {
+                return false;             
+            }
+            return true;
+        }
+
+
+        [Obsolete]
+        public string GetNameAccoutById(int id)
+        {
+            TaiKhoan taiKhoan = D_TaiKhoan.Instance.GetOneAccoutById(id);
+            return taiKhoan.Uesrname;
         }
     }
 }
