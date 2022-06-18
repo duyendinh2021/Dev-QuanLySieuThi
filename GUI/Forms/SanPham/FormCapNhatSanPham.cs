@@ -54,8 +54,9 @@ namespace GUI.Forms.SanPham
             B_LoaiSanPham.Instance.GetLoaiSanPhamByID(id_loai, ref cmbID_Loaisp);
             B_SanPham.Instance.LoadDataSourceUnitByID(id, ref cmbDVT);
 
+            B_SanPham.Instance.LoadDataSoureCmbTrangThaiSP(id, ref cmbTrangThai);
 
-
+            cmbTrangThai.SelectedIndex = 0;
             cmbDVT.SelectedIndex = 0;
             cmbID_Loaisp.SelectedIndex = 0;
             cmbNCC.SelectedIndex = 0;
@@ -98,6 +99,7 @@ namespace GUI.Forms.SanPham
                     string dvt = cmbDVT.Text;
                     string ten_sp2 = txtTenSP.Text;
                     byte[] imgInsert;
+                    int trangthai = int.Parse(cmbTrangThai.SelectedValue.ToString());
                     if (sPathImg == "")
                     {
                         imgInsert = hinh;
@@ -107,7 +109,7 @@ namespace GUI.Forms.SanPham
                         imgInsert = System.IO.File.ReadAllBytes(sPathImg);
                     }
 
-                    object[] sanpham = new object[] { id_sp, ten_sp2, id_ncc2, id_loai2, dvt, dongia2, imgInsert, 1 };
+                    object[] sanpham = new object[] { id_sp, ten_sp2, id_ncc2, id_loai2, dvt, dongia2, imgInsert, trangthai };
                     if (B_SanPham.Instance.StokerUpdateProduct(sanpham))
                     {
                         MessageBox.Show("Cập Nhật Thành Công");
@@ -169,6 +171,14 @@ namespace GUI.Forms.SanPham
                 MessageBox.Show("Không Thể Nhập ký tự này", "Thông Báo");
                 e.Handled = true;
             }
+        }
+
+        private void btneditTrangThai_Click(object sender, EventArgs e)
+        {
+            List<int> list = new List<int>();
+            list.Add(1);
+            list.Add(0);
+            cmbTrangThai.DataSource = list;
         }
     }
 }

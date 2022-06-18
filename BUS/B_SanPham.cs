@@ -262,5 +262,17 @@ namespace BUS
             List<SanPham> sanPhams = D_SanPham.Instance.GetSanPhamDeleted();
             datat.DataSource = sanPhams;
         }
+
+
+        [Obsolete]
+        public void LoadDataSoureCmbTrangThaiSP(int id,ref ComboBox comboBox)
+        {
+            List<SanPham> sanPhams = new List<SanPham>();
+            sanPhams.Add(D_SanPham.Instance.LoadSanPhamTheoid(id));
+            comboBox.DisplayMember = "TrangThai";
+            comboBox.ValueMember = "TrangThai";
+            comboBox.DataSource = sanPhams;
+
+        }
     }
 }
