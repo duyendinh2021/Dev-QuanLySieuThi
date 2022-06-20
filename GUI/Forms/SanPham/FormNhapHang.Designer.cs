@@ -209,6 +209,7 @@
             this.dgvHoaDonNhap.TabIndex = 12;
             this.dgvHoaDonNhap.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHoaDonNhap_CellMouseClick);
             this.dgvHoaDonNhap.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellValueChanged);
+            this.dgvHoaDonNhap.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvHoaDonNhap_EditingControlShowing);
             // 
             // Item
             // 

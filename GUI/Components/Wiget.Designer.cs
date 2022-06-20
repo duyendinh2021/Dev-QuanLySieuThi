@@ -30,8 +30,8 @@
         {
             this.panItem = new System.Windows.Forms.Panel();
             this.panContent = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
             this.lblCost = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.ptbImage = new System.Windows.Forms.PictureBox();
             this.panItem.SuspendLayout();
             this.panContent.SuspendLayout();
@@ -58,6 +58,17 @@
             this.panContent.Size = new System.Drawing.Size(177, 150);
             this.panContent.TabIndex = 1;
             // 
+            // lblCost
+            // 
+            this.lblCost.AutoSize = true;
+            this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblCost.Location = new System.Drawing.Point(-5, 50);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(83, 29);
+            this.lblCost.TabIndex = 0;
+            this.lblCost.Text = "10000";
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -67,17 +78,6 @@
             this.lblName.Size = new System.Drawing.Size(40, 18);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "milo";
-            // 
-            // lblCost
-            // 
-            this.lblCost.AutoSize = true;
-            this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblCost.Location = new System.Drawing.Point(-5, 96);
-            this.lblCost.Name = "lblCost";
-            this.lblCost.Size = new System.Drawing.Size(83, 29);
-            this.lblCost.TabIndex = 0;
-            this.lblCost.Text = "10000";
             // 
             // ptbImage
             // 
