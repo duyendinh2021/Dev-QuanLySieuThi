@@ -54,7 +54,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptcShowImg)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -228,9 +230,10 @@
             // 
             // ptcShowImg
             // 
-            this.ptcShowImg.Location = new System.Drawing.Point(794, 188);
+            this.ptcShowImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptcShowImg.Location = new System.Drawing.Point(3, 18);
             this.ptcShowImg.Name = "ptcShowImg";
-            this.ptcShowImg.Size = new System.Drawing.Size(425, 369);
+            this.ptcShowImg.Size = new System.Drawing.Size(403, 375);
             this.ptcShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptcShowImg.TabIndex = 2;
             this.ptcShowImg.TabStop = false;
@@ -293,11 +296,22 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Chú Thích";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ptcShowImg);
+            this.groupBox1.Location = new System.Drawing.Point(794, 185);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(409, 396);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ảnh Sản Phẩm";
+            // 
             // FormCapNhatSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 744);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -312,7 +326,6 @@
             this.Controls.Add(this.btnRowImg);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.ptcShowImg);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.txtTenSP);
             this.Controls.Add(this.label6);
@@ -326,6 +339,7 @@
             this.Name = "FormCapNhatSanPham";
             this.Load += new System.EventHandler(this.FormCapNhatSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptcShowImg)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +371,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

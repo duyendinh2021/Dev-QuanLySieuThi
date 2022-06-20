@@ -65,9 +65,11 @@
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.picBoxImg = new System.Windows.Forms.PictureBox();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelTimkiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGVDanhSachNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -417,12 +419,10 @@
             // 
             // picBoxImg
             // 
-            this.picBoxImg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxImg.Location = new System.Drawing.Point(1014, 71);
+            this.picBoxImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBoxImg.Location = new System.Drawing.Point(3, 18);
             this.picBoxImg.Name = "picBoxImg";
-            this.picBoxImg.Size = new System.Drawing.Size(195, 222);
+            this.picBoxImg.Size = new System.Drawing.Size(209, 201);
             this.picBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxImg.TabIndex = 30;
             this.picBoxImg.TabStop = false;
@@ -445,12 +445,22 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.picBoxImg);
+            this.groupBox1.Location = new System.Drawing.Point(1041, 68);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(215, 222);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ảnh Nhân Viên";
+            // 
             // FormQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1448, 790);
-            this.Controls.Add(this.picBoxImg);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtGVDanhSachNV);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panelTimkiem);
@@ -461,6 +471,7 @@
             this.panelTimkiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGVDanhSachNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuong;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

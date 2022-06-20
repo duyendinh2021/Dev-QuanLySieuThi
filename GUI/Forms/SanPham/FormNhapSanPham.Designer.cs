@@ -48,9 +48,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panHeader
@@ -82,10 +84,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnBrowsImg);
             this.groupBox1.Controls.Add(this.btnThemLoaiSp);
             this.groupBox1.Controls.Add(this.btnThemNCC);
-            this.groupBox1.Controls.Add(this.ptbShowImage);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.cmbDVT);
             this.groupBox1.Controls.Add(this.cmbLoaiSp);
@@ -139,9 +141,10 @@
             // 
             // ptbShowImage
             // 
-            this.ptbShowImage.Location = new System.Drawing.Point(1017, 193);
+            this.ptbShowImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbShowImage.Location = new System.Drawing.Point(3, 18);
             this.ptbShowImage.Name = "ptbShowImage";
-            this.ptbShowImage.Size = new System.Drawing.Size(255, 266);
+            this.ptbShowImage.Size = new System.Drawing.Size(275, 286);
             this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbShowImage.TabIndex = 63;
             this.ptbShowImage.TabStop = false;
@@ -269,6 +272,16 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ptbShowImage);
+            this.groupBox2.Location = new System.Drawing.Point(1017, 202);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(281, 307);
+            this.groupBox2.TabIndex = 64;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ảnh Sản Phẩm";
+            // 
             // FormNhapSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -288,6 +301,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -313,5 +327,6 @@
         private System.Windows.Forms.Button btnBrowsImg;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

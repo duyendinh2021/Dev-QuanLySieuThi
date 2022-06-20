@@ -38,11 +38,13 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.ptbShowImage = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbNcc = new System.Windows.Forms.ComboBox();
-            this.cmbLoaiSp = new System.Windows.Forms.ComboBox();
             this.cmbDvt = new System.Windows.Forms.ComboBox();
+            this.cmbLoaiSp = new System.Windows.Forms.ComboBox();
+            this.cmbNcc = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -112,19 +114,20 @@
             // 
             // ptbShowImage
             // 
-            this.ptbShowImage.Location = new System.Drawing.Point(883, 58);
+            this.ptbShowImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbShowImage.Location = new System.Drawing.Point(3, 18);
             this.ptbShowImage.Name = "ptbShowImage";
-            this.ptbShowImage.Size = new System.Drawing.Size(342, 369);
+            this.ptbShowImage.Size = new System.Drawing.Size(351, 400);
             this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbShowImage.TabIndex = 63;
             this.ptbShowImage.TabStop = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.cmbDvt);
             this.groupBox1.Controls.Add(this.cmbLoaiSp);
             this.groupBox1.Controls.Add(this.cmbNcc);
-            this.groupBox1.Controls.Add(this.ptbShowImage);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.txtTenSp);
             this.groupBox1.Controls.Add(this.label6);
@@ -140,14 +143,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
             // 
-            // cmbNcc
+            // cmbDvt
             // 
-            this.cmbNcc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNcc.FormattingEnabled = true;
-            this.cmbNcc.Location = new System.Drawing.Point(384, 141);
-            this.cmbNcc.Name = "cmbNcc";
-            this.cmbNcc.Size = new System.Drawing.Size(241, 24);
-            this.cmbNcc.TabIndex = 65;
+            this.cmbDvt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDvt.FormattingEnabled = true;
+            this.cmbDvt.Location = new System.Drawing.Point(384, 324);
+            this.cmbDvt.Name = "cmbDvt";
+            this.cmbDvt.Size = new System.Drawing.Size(241, 24);
+            this.cmbDvt.TabIndex = 65;
             // 
             // cmbLoaiSp
             // 
@@ -158,14 +161,24 @@
             this.cmbLoaiSp.Size = new System.Drawing.Size(241, 24);
             this.cmbLoaiSp.TabIndex = 65;
             // 
-            // cmbDvt
+            // cmbNcc
             // 
-            this.cmbDvt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDvt.FormattingEnabled = true;
-            this.cmbDvt.Location = new System.Drawing.Point(384, 324);
-            this.cmbDvt.Name = "cmbDvt";
-            this.cmbDvt.Size = new System.Drawing.Size(241, 24);
-            this.cmbDvt.TabIndex = 65;
+            this.cmbNcc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNcc.FormattingEnabled = true;
+            this.cmbNcc.Location = new System.Drawing.Point(384, 141);
+            this.cmbNcc.Name = "cmbNcc";
+            this.cmbNcc.Size = new System.Drawing.Size(241, 24);
+            this.cmbNcc.TabIndex = 65;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ptbShowImage);
+            this.groupBox2.Location = new System.Drawing.Point(891, 58);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(357, 421);
+            this.groupBox2.TabIndex = 66;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Hình Ảnh Sản Phẩm";
             // 
             // FormViewSanPham
             // 
@@ -180,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -198,5 +212,6 @@
         private System.Windows.Forms.ComboBox cmbNcc;
         private System.Windows.Forms.ComboBox cmbDvt;
         private System.Windows.Forms.ComboBox cmbLoaiSp;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

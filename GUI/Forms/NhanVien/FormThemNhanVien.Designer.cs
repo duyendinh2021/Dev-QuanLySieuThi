@@ -59,10 +59,12 @@
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblNgayVaoLam = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grBThongtin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panHeader
@@ -127,8 +129,8 @@
             // 
             // grBThongtin
             // 
+            this.grBThongtin.Controls.Add(this.groupBox1);
             this.grBThongtin.Controls.Add(this.btnImage);
-            this.grBThongtin.Controls.Add(this.ptbShowImage);
             this.grBThongtin.Controls.Add(this.txtHoTen);
             this.grBThongtin.Controls.Add(this.cmbGioiTinh);
             this.grBThongtin.Controls.Add(this.cmbChucvu);
@@ -174,9 +176,10 @@
             // 
             // ptbShowImage
             // 
-            this.ptbShowImage.Location = new System.Drawing.Point(1083, 184);
+            this.ptbShowImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbShowImage.Location = new System.Drawing.Point(3, 25);
             this.ptbShowImage.Name = "ptbShowImage";
-            this.ptbShowImage.Size = new System.Drawing.Size(215, 250);
+            this.ptbShowImage.Size = new System.Drawing.Size(239, 273);
             this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbShowImage.TabIndex = 44;
             this.ptbShowImage.TabStop = false;
@@ -435,6 +438,16 @@
             this.lblNgaySinh.Text = "Ngày sinh";
             this.lblNgaySinh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ptbShowImage);
+            this.groupBox1.Location = new System.Drawing.Point(1083, 182);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(245, 301);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ảnh Nhân Viên";
+            // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -450,6 +463,7 @@
             this.grBThongtin.ResumeLayout(false);
             this.grBThongtin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -486,5 +500,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnImage;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

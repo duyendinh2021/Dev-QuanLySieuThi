@@ -59,16 +59,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenNganHang = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.grBThongtin.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ptbShowImage
             // 
-            this.ptbShowImage.Location = new System.Drawing.Point(1259, 148);
+            this.ptbShowImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbShowImage.Location = new System.Drawing.Point(3, 18);
             this.ptbShowImage.Name = "ptbShowImage";
-            this.ptbShowImage.Size = new System.Drawing.Size(236, 264);
+            this.ptbShowImage.Size = new System.Drawing.Size(257, 289);
             this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbShowImage.TabIndex = 44;
             this.ptbShowImage.TabStop = false;
@@ -376,8 +379,8 @@
             // 
             // grBThongtin
             // 
+            this.grBThongtin.Controls.Add(this.groupBox1);
             this.grBThongtin.Controls.Add(this.label1);
-            this.grBThongtin.Controls.Add(this.ptbShowImage);
             this.grBThongtin.Controls.Add(this.btnImage);
             this.grBThongtin.Controls.Add(this.txtHoTen);
             this.grBThongtin.Controls.Add(this.cmbGioiTinh);
@@ -444,6 +447,16 @@
             this.txtDiachi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDiachi_KeyDown);
             this.txtDiachi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiachi_KeyPress);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ptbShowImage);
+            this.groupBox1.Location = new System.Drawing.Point(1259, 155);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(263, 310);
+            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ảnh Nhân Viên";
+            // 
             // FormCapNhatNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -460,6 +473,7 @@
             this.panel1.ResumeLayout(false);
             this.grBThongtin.ResumeLayout(false);
             this.grBThongtin.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -495,5 +509,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtTenNganHang;
         public System.Windows.Forms.TextBox txtDiachi;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

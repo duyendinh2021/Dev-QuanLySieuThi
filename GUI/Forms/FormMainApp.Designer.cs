@@ -222,6 +222,7 @@
             // 
             // btnbtnAdmissionSlip
             // 
+            this.btnbtnAdmissionSlip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbtnAdmissionSlip.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnbtnAdmissionSlip.FlatAppearance.BorderSize = 0;
             this.btnbtnAdmissionSlip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -246,6 +247,7 @@
             // 
             // btnSTmanageProducts
             // 
+            this.btnSTmanageProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSTmanageProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSTmanageProducts.FlatAppearance.BorderSize = 0;
             this.btnSTmanageProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -270,6 +272,7 @@
             // 
             // btnProductsType
             // 
+            this.btnProductsType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductsType.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProductsType.FlatAppearance.BorderSize = 0;
             this.btnProductsType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -294,6 +297,7 @@
             // 
             // btnSale
             // 
+            this.btnSale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSale.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSale.FlatAppearance.BorderSize = 0;
             this.btnSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -318,6 +322,7 @@
             // 
             // btnStaffs
             // 
+            this.btnStaffs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaffs.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStaffs.FlatAppearance.BorderSize = 0;
             this.btnStaffs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -342,6 +347,7 @@
             // 
             // btnProducts
             // 
+            this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -366,6 +372,7 @@
             // 
             // btnOrders
             // 
+            this.btnOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOrders.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrders.FlatAppearance.BorderSize = 0;
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -390,6 +397,7 @@
             // 
             // btnDashboard
             // 
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -455,6 +463,7 @@
             this.ClientSize = new System.Drawing.Size(1870, 1051);
             this.Controls.Add(this.panChildForm);
             this.Controls.Add(this.panSideMenu);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMainApp";
