@@ -29,6 +29,7 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -66,6 +67,7 @@
             this.picBoxImg = new System.Windows.Forms.PictureBox();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelTimkiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGVDanhSachNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).BeginInit();
@@ -117,6 +119,7 @@
             this.cmbTrangThai.Name = "cmbTrangThai";
             this.cmbTrangThai.Size = new System.Drawing.Size(220, 24);
             this.cmbTrangThai.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.cmbTrangThai, "Click Dể Tiến Hành Lọc");
             this.cmbTrangThai.SelectedIndexChanged += new System.EventHandler(this.cmbTrangThai_SelectedIndexChanged);
             // 
             // cmbChucvu
@@ -137,6 +140,7 @@
             this.cmbChucvu.Name = "cmbChucvu";
             this.cmbChucvu.Size = new System.Drawing.Size(170, 24);
             this.cmbChucvu.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.cmbChucvu, "Click Dể Tiến Hành Lọc");
             this.cmbChucvu.SelectedIndexChanged += new System.EventHandler(this.cmbChucvu_SelectedIndexChanged);
             // 
             // panelTimkiem
@@ -161,6 +165,7 @@
             this.txtSeacrch.Name = "txtSeacrch";
             this.txtSeacrch.Size = new System.Drawing.Size(286, 22);
             this.txtSeacrch.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txtSeacrch, "Nhập Dể Tiến Hành Tiền Kiếm");
             this.txtSeacrch.TextChanged += new System.EventHandler(this.txtSeacrch__TextChanged);
             // 
             // label1
@@ -442,6 +447,7 @@
             this.btnAdd.Size = new System.Drawing.Size(188, 60);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Thêm";
+            this.toolTip1.SetToolTip(this.btnAdd, "Click Muốn Thêm Nhân Viên Mới");
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -504,5 +510,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuong;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

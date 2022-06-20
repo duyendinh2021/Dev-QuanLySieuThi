@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panHeader = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.grbLoaiSP = new System.Windows.Forms.GroupBox();
-            this.btnBrowsImg = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ptcbShowImg = new System.Windows.Forms.PictureBox();
+            this.btnBrowsImg = new System.Windows.Forms.Button();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panHeader.SuspendLayout();
             this.grbLoaiSP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptcbShowImg)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcbShowImg)).BeginInit();
             this.SuspendLayout();
             // 
             // panHeader
@@ -90,17 +92,15 @@
             this.grbLoaiSP.TabStop = false;
             this.grbLoaiSP.Text = "Thông Tin Loại Sản Phẩm";
             // 
-            // btnBrowsImg
+            // groupBox1
             // 
-            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
-            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
-            this.btnBrowsImg.Location = new System.Drawing.Point(714, 61);
-            this.btnBrowsImg.Name = "btnBrowsImg";
-            this.btnBrowsImg.Size = new System.Drawing.Size(123, 37);
-            this.btnBrowsImg.TabIndex = 2;
-            this.btnBrowsImg.UseVisualStyleBackColor = false;
-            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
-            this.btnBrowsImg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnBrowsImg_KeyDown);
+            this.groupBox1.Controls.Add(this.ptcbShowImg);
+            this.groupBox1.Location = new System.Drawing.Point(714, 122);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(204, 211);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ảnh Loại Sản Phẩm";
             // 
             // ptcbShowImg
             // 
@@ -111,6 +111,19 @@
             this.ptcbShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptcbShowImg.TabIndex = 21;
             this.ptcbShowImg.TabStop = false;
+            // 
+            // btnBrowsImg
+            // 
+            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
+            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
+            this.btnBrowsImg.Location = new System.Drawing.Point(714, 61);
+            this.btnBrowsImg.Name = "btnBrowsImg";
+            this.btnBrowsImg.Size = new System.Drawing.Size(123, 37);
+            this.btnBrowsImg.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnBrowsImg, "Click Dể Tiến Hành Chọn Hình");
+            this.btnBrowsImg.UseVisualStyleBackColor = false;
+            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
+            this.btnBrowsImg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnBrowsImg_KeyDown);
             // 
             // txtMoTa
             // 
@@ -162,6 +175,7 @@
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(157, 71);
             this.btnClearAll.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnClearAll, "Click Nếu Muốn Xóa Tất Cả");
             this.btnClearAll.UseVisualStyleBackColor = false;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
@@ -174,18 +188,9 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(157, 71);
             this.btnConfirm.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnConfirm, "Click Dể Xác Nhận Và Tiến Hành Thêm Loại Sản Phẩm Mới");
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ptcbShowImg);
-            this.groupBox1.Location = new System.Drawing.Point(714, 122);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(204, 211);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ảnh Loại Sản Phẩm";
             // 
             // FormNhapLoaiSP
             // 
@@ -202,8 +207,8 @@
             this.panHeader.ResumeLayout(false);
             this.grbLoaiSP.ResumeLayout(false);
             this.grbLoaiSP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptcbShowImg)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptcbShowImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,5 +227,6 @@
         private System.Windows.Forms.Button btnClearAll;
         private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

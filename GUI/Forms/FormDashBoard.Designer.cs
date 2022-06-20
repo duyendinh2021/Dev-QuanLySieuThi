@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -40,6 +41,8 @@
             this.panTag = new System.Windows.Forms.FlowLayoutPanel();
             this.panFunction = new System.Windows.Forms.Panel();
             this.cmbLuaChon = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -48,15 +51,14 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ChartTopSP = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panFunction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartTopSP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panTag
@@ -86,7 +88,8 @@
             // cmbLuaChon
             // 
             this.cmbLuaChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLuaChon.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLuaChon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbLuaChon.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLuaChon.FormattingEnabled = true;
             this.cmbLuaChon.Items.AddRange(new object[] {
             "Số Lượng Sản Phẩm Bán Hằng Ngày",
@@ -94,8 +97,31 @@
             "Doanh Thu Hằng Ngày"});
             this.cmbLuaChon.Location = new System.Drawing.Point(22, 200);
             this.cmbLuaChon.Name = "cmbLuaChon";
-            this.cmbLuaChon.Size = new System.Drawing.Size(275, 23);
+            this.cmbLuaChon.Size = new System.Drawing.Size(275, 28);
             this.cmbLuaChon.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(448, 380);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(24, 19);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(532, 380);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(24, 19);
+            this.dataGridView2.TabIndex = 25;
+            this.dataGridView2.Visible = false;
             // 
             // label2
             // 
@@ -163,6 +189,7 @@
             this.btnSoSanh.Size = new System.Drawing.Size(175, 51);
             this.btnSoSanh.TabIndex = 4;
             this.btnSoSanh.Text = "So Sánh";
+            this.toolTip1.SetToolTip(this.btnSoSanh, "Click Dể Tiến Hành So Sánh");
             this.btnSoSanh.UseVisualStyleBackColor = false;
             this.btnSoSanh.Click += new System.EventHandler(this.btnSoSanh_Click);
             // 
@@ -306,17 +333,6 @@
             title4.Text = "Top 5 Sản Phẩm";
             this.ChartTopSP.Titles.Add(title4);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(448, 380);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(24, 19);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.ChartTopSP);
@@ -326,18 +342,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(707, 494);
             this.flowLayoutPanel1.TabIndex = 26;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(532, 380);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(24, 19);
-            this.dataGridView2.TabIndex = 25;
-            this.dataGridView2.Visible = false;
             // 
             // FormDashBoard
             // 
@@ -354,11 +358,11 @@
             this.Load += new System.EventHandler(this.frmThongKe_Load);
             this.panFunction.ResumeLayout(false);
             this.panFunction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartTopSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,5 +383,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ComboBox cmbLuaChon;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

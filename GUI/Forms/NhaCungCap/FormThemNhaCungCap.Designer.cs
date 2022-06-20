@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panHeader = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.grbThongTinNCC = new System.Windows.Forms.GroupBox();
@@ -43,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnConfirm = new FontAwesome.Sharp.IconButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panHeader.SuspendLayout();
             this.grbThongTinNCC.SuspendLayout();
             this.SuspendLayout();
@@ -210,6 +212,7 @@
             this.btnClear.Size = new System.Drawing.Size(137, 53);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Xóa tất cả";
+            this.toolTip1.SetToolTip(this.btnClear, "Click Dể Xóa Tất Cả Form");
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -229,6 +232,7 @@
             this.btnConfirm.Size = new System.Drawing.Size(152, 53);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Xác nhận";
+            this.toolTip1.SetToolTip(this.btnConfirm, "Click Dể Tiến Hành Thêm Nhà Cung Cấp Mới");
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -268,5 +272,6 @@
         private System.Windows.Forms.Label label1;
         public FontAwesome.Sharp.IconButton btnClear;
         public FontAwesome.Sharp.IconButton btnConfirm;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

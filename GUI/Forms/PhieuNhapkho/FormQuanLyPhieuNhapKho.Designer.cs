@@ -34,13 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachPhieuNhap = new System.Windows.Forms.DataGridView();
-            this.btnViewDetails = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ID_PhieuNhapKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -59,6 +52,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dtpSearchNgayEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpSearchNgayStar = new System.Windows.Forms.DateTimePicker();
+            this.btnViewDetails = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ID_PhieuNhapKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -136,77 +136,6 @@
             this.dgvDanhSachPhieuNhap.Size = new System.Drawing.Size(1284, 411);
             this.dgvDanhSachPhieuNhap.TabIndex = 0;
             this.dgvDanhSachPhieuNhap.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachPhieuNhap_CellMouseClick);
-            // 
-            // btnViewDetails
-            // 
-            this.btnViewDetails.FillWeight = 137.7106F;
-            this.btnViewDetails.HeaderText = "";
-            this.btnViewDetails.Image = global::GUI.Properties.Resources.file;
-            this.btnViewDetails.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.btnViewDetails.MinimumWidth = 6;
-            this.btnViewDetails.Name = "btnViewDetails";
-            this.btnViewDetails.Width = 55;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.FillWeight = 160.4278F;
-            this.btnDelete.HeaderText = "";
-            this.btnDelete.Image = global::GUI.Properties.Resources.delete;
-            this.btnDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.btnDelete.MinimumWidth = 6;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Width = 55;
-            // 
-            // ID_PhieuNhapKho
-            // 
-            this.ID_PhieuNhapKho.DataPropertyName = "Idphieunhapkho";
-            this.ID_PhieuNhapKho.FillWeight = 75.4654F;
-            this.ID_PhieuNhapKho.HeaderText = "ID Phiếu Nhập Kho";
-            this.ID_PhieuNhapKho.MinimumWidth = 6;
-            this.ID_PhieuNhapKho.Name = "ID_PhieuNhapKho";
-            this.ID_PhieuNhapKho.ReadOnly = true;
-            this.ID_PhieuNhapKho.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ID_PhieuNhapKho.Width = 255;
-            // 
-            // ID_NhanVien
-            // 
-            this.ID_NhanVien.DataPropertyName = "Idnhanvien";
-            this.ID_NhanVien.FillWeight = 75.4654F;
-            this.ID_NhanVien.HeaderText = "ID Nhân Viên Lập";
-            this.ID_NhanVien.MinimumWidth = 6;
-            this.ID_NhanVien.Name = "ID_NhanVien";
-            this.ID_NhanVien.ReadOnly = true;
-            this.ID_NhanVien.Width = 255;
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.DataPropertyName = "Ngaylap";
-            this.NgayLap.FillWeight = 75.4654F;
-            this.NgayLap.HeaderText = "Ngày Lập";
-            this.NgayLap.MinimumWidth = 6;
-            this.NgayLap.Name = "NgayLap";
-            this.NgayLap.ReadOnly = true;
-            this.NgayLap.Width = 330;
-            // 
-            // TongTien
-            // 
-            this.TongTien.DataPropertyName = "Tongtien";
-            this.TongTien.FillWeight = 75.4654F;
-            this.TongTien.HeaderText = "Tổng Tiền";
-            this.TongTien.MinimumWidth = 6;
-            this.TongTien.Name = "TongTien";
-            this.TongTien.ReadOnly = true;
-            this.TongTien.Width = 330;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "Trangthai";
-            this.TrangThai.HeaderText = "Trang Thái";
-            this.TrangThai.MinimumWidth = 6;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Visible = false;
-            this.TrangThai.Width = 260;
             // 
             // dataGridViewImageColumn1
             // 
@@ -383,6 +312,79 @@
             this.dtpSearchNgayStar.Size = new System.Drawing.Size(211, 22);
             this.dtpSearchNgayStar.TabIndex = 8;
             // 
+            // btnViewDetails
+            // 
+            this.btnViewDetails.FillWeight = 137.7106F;
+            this.btnViewDetails.HeaderText = "";
+            this.btnViewDetails.Image = global::GUI.Properties.Resources.file;
+            this.btnViewDetails.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.btnViewDetails.MinimumWidth = 6;
+            this.btnViewDetails.Name = "btnViewDetails";
+            this.btnViewDetails.ToolTipText = "Click Dể Xem Chi Tiết Phiếu Nhập Kho";
+            this.btnViewDetails.Width = 55;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FillWeight = 160.4278F;
+            this.btnDelete.HeaderText = "";
+            this.btnDelete.Image = global::GUI.Properties.Resources.delete;
+            this.btnDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.btnDelete.MinimumWidth = 6;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ToolTipText = "Click Nếu Muốn Xóa Phiếu Nhập Kho Này";
+            this.btnDelete.Width = 55;
+            // 
+            // ID_PhieuNhapKho
+            // 
+            this.ID_PhieuNhapKho.DataPropertyName = "Idphieunhapkho";
+            this.ID_PhieuNhapKho.FillWeight = 75.4654F;
+            this.ID_PhieuNhapKho.HeaderText = "ID Phiếu Nhập Kho";
+            this.ID_PhieuNhapKho.MinimumWidth = 6;
+            this.ID_PhieuNhapKho.Name = "ID_PhieuNhapKho";
+            this.ID_PhieuNhapKho.ReadOnly = true;
+            this.ID_PhieuNhapKho.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ID_PhieuNhapKho.Width = 255;
+            // 
+            // ID_NhanVien
+            // 
+            this.ID_NhanVien.DataPropertyName = "Idnhanvien";
+            this.ID_NhanVien.FillWeight = 75.4654F;
+            this.ID_NhanVien.HeaderText = "ID Nhân Viên Lập";
+            this.ID_NhanVien.MinimumWidth = 6;
+            this.ID_NhanVien.Name = "ID_NhanVien";
+            this.ID_NhanVien.ReadOnly = true;
+            this.ID_NhanVien.Width = 255;
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.DataPropertyName = "Ngaylap";
+            this.NgayLap.FillWeight = 75.4654F;
+            this.NgayLap.HeaderText = "Ngày Lập";
+            this.NgayLap.MinimumWidth = 6;
+            this.NgayLap.Name = "NgayLap";
+            this.NgayLap.ReadOnly = true;
+            this.NgayLap.Width = 330;
+            // 
+            // TongTien
+            // 
+            this.TongTien.DataPropertyName = "Tongtien";
+            this.TongTien.FillWeight = 75.4654F;
+            this.TongTien.HeaderText = "Tổng Tiền";
+            this.TongTien.MinimumWidth = 6;
+            this.TongTien.Name = "TongTien";
+            this.TongTien.ReadOnly = true;
+            this.TongTien.Width = 330;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "Trangthai";
+            this.TrangThai.HeaderText = "Trang Thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
+            this.TrangThai.Width = 260;
+            // 
             // FormQuanLyPhieuNhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,13 +423,6 @@
         private System.Windows.Forms.DateTimePicker dtpSearchNgayEnd;
         private System.Windows.Forms.DateTimePicker dtpSearchNgayStar;
         private System.Windows.Forms.DataGridView dgvDanhSachPhieuNhap;
-        private System.Windows.Forms.DataGridViewImageColumn btnViewDetails;
-        private System.Windows.Forms.DataGridViewImageColumn btnDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PhieuNhapKho;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_NhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.Panel panelDatails;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
@@ -436,5 +431,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewImageColumn btnViewDetails;
+        private System.Windows.Forms.DataGridViewImageColumn btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PhieuNhapKho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_NhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

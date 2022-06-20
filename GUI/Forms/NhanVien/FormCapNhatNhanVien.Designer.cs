@@ -29,6 +29,7 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhatNhanVien));
             this.ptbShowImage = new System.Windows.Forms.PictureBox();
             this.btnImage = new FontAwesome.Sharp.IconButton();
@@ -56,10 +57,11 @@
             this.btnConfirm = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grBThongtin = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenNganHang = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.grBThongtin.SuspendLayout();
@@ -345,6 +347,7 @@
             this.btnClear.Size = new System.Drawing.Size(137, 53);
             this.btnClear.TabIndex = 14;
             this.btnClear.Text = "Xóa tất cả";
+            this.toolTip1.SetToolTip(this.btnClear, "Click nếu muốn xóa tất cả");
             this.btnClear.UseVisualStyleBackColor = false;
             // 
             // btnConfirm
@@ -363,6 +366,7 @@
             this.btnConfirm.Size = new System.Drawing.Size(152, 53);
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Xác nhận";
+            this.toolTip1.SetToolTip(this.btnConfirm, "Click Dể Xác Nhân Và Tiến Hành Cập Nhật");
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -412,6 +416,16 @@
             this.grBThongtin.TabStop = false;
             this.grBThongtin.Text = "Thông tin nhân viên";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ptbShowImage);
+            this.groupBox1.Location = new System.Drawing.Point(1259, 155);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(263, 310);
+            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ảnh Nhân Viên";
+            // 
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.Red;
@@ -446,16 +460,6 @@
             this.txtDiachi.TabIndex = 8;
             this.txtDiachi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDiachi_KeyDown);
             this.txtDiachi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiachi_KeyPress);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ptbShowImage);
-            this.groupBox1.Location = new System.Drawing.Point(1259, 155);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(263, 310);
-            this.groupBox1.TabIndex = 46;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ảnh Nhân Viên";
             // 
             // FormCapNhatNhanVien
             // 
@@ -510,5 +514,6 @@
         public System.Windows.Forms.TextBox txtTenNganHang;
         public System.Windows.Forms.TextBox txtDiachi;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

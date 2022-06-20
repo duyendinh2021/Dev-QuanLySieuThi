@@ -29,6 +29,7 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhatNhaCungCap));
             this.grbThongTinNCC = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.grbThongTinNCC.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +116,7 @@
             this.btnEditTRangThaiNCC.Name = "btnEditTRangThaiNCC";
             this.btnEditTRangThaiNCC.Size = new System.Drawing.Size(84, 33);
             this.btnEditTRangThaiNCC.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnEditTRangThaiNCC, "Click dể tiến có thể sửa trạng thái");
             this.btnEditTRangThaiNCC.UseVisualStyleBackColor = true;
             this.btnEditTRangThaiNCC.Click += new System.EventHandler(this.btnEditTRangThaiNCC_Click);
             // 
@@ -245,6 +248,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(186, 85);
             this.btnConfirm.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnConfirm, "Click Tiến Hành Cập Nhật Thông Tin");
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -256,6 +260,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(186, 85);
             this.btnClear.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnClear, "Click Xóa Tất Cả ");
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -299,5 +304,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

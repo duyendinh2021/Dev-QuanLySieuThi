@@ -348,11 +348,13 @@
             // 
             // cmbNCC
             // 
+            this.cmbNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbNCC.FormattingEnabled = true;
             this.cmbNCC.Location = new System.Drawing.Point(658, 68);
             this.cmbNCC.Name = "cmbNCC";
             this.cmbNCC.Size = new System.Drawing.Size(205, 24);
             this.cmbNCC.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.cmbNCC, "Click Nếu Muốn Lọc Theo Nhà Cung Cấp");
             this.cmbNCC.SelectedIndexChanged += new System.EventHandler(this.cmbNCC_SelectedIndexChanged);
             // 
             // btnRefresh
@@ -362,16 +364,19 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(93, 49);
             this.btnRefresh.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Click Dể Refresh");
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // cmbLoaiSP
             // 
+            this.cmbLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbLoaiSP.FormattingEnabled = true;
             this.cmbLoaiSP.Location = new System.Drawing.Point(187, 65);
             this.cmbLoaiSP.Name = "cmbLoaiSP";
             this.cmbLoaiSP.Size = new System.Drawing.Size(256, 24);
             this.cmbLoaiSP.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.cmbLoaiSP, "Click Nếu Muốn Lọc Thể Loại Sản Phẩm");
             this.cmbLoaiSP.SelectedIndexChanged += new System.EventHandler(this.cmbLoaiSP_SelectedIndexChanged);
             // 
             // grbDSHangHoa
