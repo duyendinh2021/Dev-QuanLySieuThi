@@ -238,5 +238,23 @@ namespace GUI.Forms.SanPham
 
             }
         }
+
+        private void txtSl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void txtSl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Bạn Không thể nhập ký tự này", "Thông Báo");
+                e.Handled = true;
+            }
+        }
     }
 }

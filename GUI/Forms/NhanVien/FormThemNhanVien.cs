@@ -76,7 +76,7 @@ namespace GUI.Forms
 
         private void txtTenNganHang_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Rule_Regex.Instance.UserNam_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            if (Rule_Regex.Instance.Name_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
             {
                 MessageBox.Show("Bạn không nhập các kí tự này được !!!");
                 e.Handled = true;
@@ -164,6 +164,150 @@ namespace GUI.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtHoTen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtEmail.Focus();
+                }
+            }
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtSDT.Focus();
+                }
+            }
+        }
+
+        private void txtSDT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtLuong.Focus();
+                }
+            }
+        }
+
+        private void txtLuong_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    dtpNgaySinh.Focus();
+                }
+            }
+        }
+
+        private void dtpNgaySinh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dtpNgayVaoLam.Focus();
+            }
+        }
+
+        private void dtpNgayVaoLam_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSoNganHang.Focus();
+            }
+        }
+
+        private void txtSoNganHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtTenNganHang.Focus();
+                }
+            }
+        }
+
+        private void txtTenNganHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtDiachi.Focus();
+                }
+            }
+        }
+
+        private void txtDiachi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    cmbChucvu.Focus();
+                }
+            }
+        }
+
+        private void cmbChucvu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbGioiTinh.Focus();
+            }
+        }
+
+        private void cmbGioiTinh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnImage.Focus();
+            }
         }
     }
 }

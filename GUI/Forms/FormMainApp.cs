@@ -69,12 +69,13 @@ namespace GUI
             btnStaffs.Visible = false;
             //Cashier
             btnSale.Visible = false;
-            btnCashierReport.Visible = false;
+            btnProductsType.Visible = false;
             //Stoker
             btnSTmanageProducts.Visible = false;
             btnbtnAdmissionSlip.Visible = false;
             btnSTmanageProducts.Visible = false;
             btnStockSupplierManagement.Visible = false;
+            btnProductsType.Visible=false;
 
         }
 
@@ -94,7 +95,7 @@ namespace GUI
                 case "Cashier":
                     //Cashier
                     btnSale.Visible = true;
-                    btnCashierReport.Visible = true;
+                    btnProductsType.Visible = true;
 
                     break;
 
@@ -104,6 +105,7 @@ namespace GUI
                     btnbtnAdmissionSlip.Visible = true;
                     btnSTmanageProducts.Visible = true;
                     btnStockSupplierManagement.Visible = true;
+                    btnProductsType.Visible = true;
                     break;
                 default:
                     break;
@@ -201,6 +203,11 @@ namespace GUI
            // SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.Color7);
             FormChangePassWord formChangePassWord = new FormChangePassWord(B_TaiKhoan.Instance.id);
             formChangePassWord.ShowDialog();
+        }
+
+        private void btnProductsType_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

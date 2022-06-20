@@ -110,6 +110,7 @@
             this.txtPassold.Size = new System.Drawing.Size(244, 22);
             this.txtPassold.TabIndex = 0;
             this.txtPassold.UseSystemPasswordChar = true;
+            this.txtPassold.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassold_KeyDown);
             this.txtPassold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassold_KeyPress);
             // 
             // txtPassNew

@@ -59,7 +59,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(81, 98);
+            this.label1.Location = new System.Drawing.Point(81, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 23);
             this.label1.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(81, 204);
+            this.label2.Location = new System.Drawing.Point(81, 193);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 16);
             this.label2.TabIndex = 0;
@@ -77,7 +77,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(81, 402);
+            this.label4.Location = new System.Drawing.Point(81, 373);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(225, 16);
             this.label4.TabIndex = 0;
@@ -87,14 +87,16 @@
             // txtTenSP
             // 
             this.txtTenSP.Location = new System.Drawing.Point(327, 97);
+            this.txtTenSP.MaxLength = 50;
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(225, 22);
             this.txtTenSP.TabIndex = 0;
+            this.txtTenSP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenSP_KeyDown);
             this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(81, 501);
+            this.label5.Location = new System.Drawing.Point(81, 551);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(225, 16);
             this.label5.TabIndex = 0;
@@ -103,17 +105,19 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(327, 499);
+            this.txtDonGia.Location = new System.Drawing.Point(327, 545);
+            this.txtDonGia.MaxLength = 255;
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(225, 22);
             this.txtDonGia.TabIndex = 7;
+            this.txtDonGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDonGia_KeyDown);
             this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // btnEditNCC
             // 
             this.btnEditNCC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditNCC.Image = global::GUI.Properties.Resources.writing;
-            this.btnEditNCC.Location = new System.Drawing.Point(595, 178);
+            this.btnEditNCC.Location = new System.Drawing.Point(595, 176);
             this.btnEditNCC.Name = "btnEditNCC";
             this.btnEditNCC.Size = new System.Drawing.Size(84, 33);
             this.btnEditNCC.TabIndex = 2;
@@ -149,7 +153,7 @@
             // 
             this.btnEditID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditID.Image = global::GUI.Properties.Resources.writing;
-            this.btnEditID.Location = new System.Drawing.Point(595, 297);
+            this.btnEditID.Location = new System.Drawing.Point(595, 266);
             this.btnEditID.Name = "btnEditID";
             this.btnEditID.Size = new System.Drawing.Size(84, 33);
             this.btnEditID.TabIndex = 4;
@@ -161,7 +165,7 @@
             // 
             this.btnEditDVT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditDVT.Image = global::GUI.Properties.Resources.writing;
-            this.btnEditDVT.Location = new System.Drawing.Point(595, 395);
+            this.btnEditDVT.Location = new System.Drawing.Point(595, 356);
             this.btnEditDVT.Name = "btnEditDVT";
             this.btnEditDVT.Size = new System.Drawing.Size(84, 33);
             this.btnEditDVT.TabIndex = 6;
@@ -171,7 +175,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(81, 303);
+            this.label3.Location = new System.Drawing.Point(81, 283);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(225, 16);
             this.label3.TabIndex = 0;
@@ -181,29 +185,35 @@
             // cmbNCC
             // 
             this.cmbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbNCC.FormattingEnabled = true;
-            this.cmbNCC.Location = new System.Drawing.Point(327, 196);
+            this.cmbNCC.Location = new System.Drawing.Point(327, 185);
             this.cmbNCC.Name = "cmbNCC";
             this.cmbNCC.Size = new System.Drawing.Size(225, 24);
             this.cmbNCC.TabIndex = 1;
+            this.cmbNCC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbNCC_KeyDown);
             // 
             // cmbID_Loaisp
             // 
             this.cmbID_Loaisp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbID_Loaisp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbID_Loaisp.FormattingEnabled = true;
-            this.cmbID_Loaisp.Location = new System.Drawing.Point(327, 297);
+            this.cmbID_Loaisp.Location = new System.Drawing.Point(327, 275);
             this.cmbID_Loaisp.Name = "cmbID_Loaisp";
             this.cmbID_Loaisp.Size = new System.Drawing.Size(225, 24);
             this.cmbID_Loaisp.TabIndex = 3;
+            this.cmbID_Loaisp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbID_Loaisp_KeyDown);
             // 
             // cmbDVT
             // 
             this.cmbDVT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDVT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbDVT.FormattingEnabled = true;
-            this.cmbDVT.Location = new System.Drawing.Point(327, 398);
+            this.cmbDVT.Location = new System.Drawing.Point(327, 365);
             this.cmbDVT.Name = "cmbDVT";
             this.cmbDVT.Size = new System.Drawing.Size(225, 24);
             this.cmbDVT.TabIndex = 5;
+            this.cmbDVT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbDVT_KeyDown);
             // 
             // btnClear
             // 
@@ -227,7 +237,7 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(81, 579);
+            this.label6.Location = new System.Drawing.Point(81, 463);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(225, 16);
             this.label6.TabIndex = 0;
@@ -236,17 +246,19 @@
             // 
             // cmbTrangThai
             // 
+            this.cmbTrangThai.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbTrangThai.FormattingEnabled = true;
-            this.cmbTrangThai.Location = new System.Drawing.Point(327, 575);
+            this.cmbTrangThai.Location = new System.Drawing.Point(327, 455);
             this.cmbTrangThai.Name = "cmbTrangThai";
             this.cmbTrangThai.Size = new System.Drawing.Size(225, 24);
             this.cmbTrangThai.TabIndex = 11;
+            this.cmbTrangThai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTrangThai_KeyDown);
             // 
             // btneditTrangThai
             // 
             this.btneditTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneditTrangThai.Image = global::GUI.Properties.Resources.writing;
-            this.btneditTrangThai.Location = new System.Drawing.Point(595, 570);
+            this.btneditTrangThai.Location = new System.Drawing.Point(595, 446);
             this.btneditTrangThai.Name = "btneditTrangThai";
             this.btneditTrangThai.Size = new System.Drawing.Size(84, 33);
             this.btneditTrangThai.TabIndex = 6;

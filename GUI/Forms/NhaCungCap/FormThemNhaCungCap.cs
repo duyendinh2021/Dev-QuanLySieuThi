@@ -70,41 +70,86 @@ namespace GUI.Forms
 
         private void txtTenCongTy_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyValue == 86)
             {
-                txtDiaChi.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtDiaChi.Focus();
+                }
             }
         }
 
         private void txtDiaChi_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyValue == 86)
             {
-                txtSDT.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtSDT.Focus();
+                }
             }
         }
 
         private void txtSDT_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyValue == 86)
             {
-                txtSoNganHang.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtSoNganHang.Focus();
+                }
             }
         }
 
         private void txtSoNganHang_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyValue == 86)
             {
-                txtTenNganHang.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtTenNganHang.Focus();
+                }
             }
         }
 
         private void txtTenNganHang_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyValue == 86)
             {
-                btnConfirm.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnConfirm.Focus();
+                }
             }
         }
 
@@ -114,7 +159,7 @@ namespace GUI.Forms
             txtDiaChi.Clear();
             txtSDT.Clear();
             txtSoNganHang.Clear();
-            txtTenNganHang.Clear();            
+            txtTenNganHang.Clear();
         }
 
 
@@ -133,7 +178,7 @@ namespace GUI.Forms
                 string tenNganHang = txtTenNganHang.Text;
                 string sdt = txtSDT.Text;
 
-                object[] objects = new object[] {tenCongTy, diaChi, sdt, soNganHang, tenNganHang};
+                object[] objects = new object[] { tenCongTy, diaChi, sdt, soNganHang, tenNganHang };
                 if (BUS.B_NhaCungCap.Instance.stokerAddNhaCungCap(objects))
                 {
                     MessageBox.Show("Thêm Nhà Cung Cấp Thành Công", "Thật Tuyệt Vời");

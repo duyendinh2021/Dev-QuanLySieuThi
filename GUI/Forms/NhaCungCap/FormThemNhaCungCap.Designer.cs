@@ -97,6 +97,7 @@
             // txtTenNganHang
             // 
             this.txtTenNganHang.Location = new System.Drawing.Point(876, 187);
+            this.txtTenNganHang.MaxLength = 50;
             this.txtTenNganHang.Name = "txtTenNganHang";
             this.txtTenNganHang.Size = new System.Drawing.Size(253, 22);
             this.txtTenNganHang.TabIndex = 4;
@@ -106,6 +107,7 @@
             // txtSoNganHang
             // 
             this.txtSoNganHang.Location = new System.Drawing.Point(876, 90);
+            this.txtSoNganHang.MaxLength = 15;
             this.txtSoNganHang.Name = "txtSoNganHang";
             this.txtSoNganHang.Size = new System.Drawing.Size(253, 22);
             this.txtSoNganHang.TabIndex = 3;
@@ -115,6 +117,7 @@
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(267, 264);
+            this.txtSDT.MaxLength = 10;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(321, 22);
             this.txtSDT.TabIndex = 2;
@@ -124,6 +127,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(267, 187);
+            this.txtDiaChi.MaxLength = 255;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(321, 22);
             this.txtDiaChi.TabIndex = 1;
@@ -133,6 +137,7 @@
             // txtTenCongTy
             // 
             this.txtTenCongTy.Location = new System.Drawing.Point(267, 89);
+            this.txtTenCongTy.MaxLength = 50;
             this.txtTenCongTy.Name = "txtTenCongTy";
             this.txtTenCongTy.Size = new System.Drawing.Size(321, 22);
             this.txtTenCongTy.TabIndex = 0;

@@ -148,5 +148,93 @@ namespace GUI.Forms.NhaCungCap
             txtSoNganHang.Clear();
             cmbTrangThai.SelectedIndex = -1;
         }
+
+        private void txtTenCongTy_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtDiaChi.Focus();
+                }
+            }
+        }
+
+        private void txtDiaChi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtSDT.Focus();
+                }
+            }
+        }
+
+        private void txtSDT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtSoNganHang.Focus();
+                }
+            }
+        }
+
+        private void txtSoNganHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtTenNganHang.Focus();
+                }
+            }
+        }
+
+        private void txtTenNganHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    cmbTrangThai.Focus();
+                }
+            }
+        }
+
+        private void cmbTrangThai_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnConfirm.Focus();
+            }
+        }
     }
 }

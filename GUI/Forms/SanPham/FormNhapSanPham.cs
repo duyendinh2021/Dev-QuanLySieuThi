@@ -99,10 +99,11 @@ namespace GUI.Forms
         {
             // tí phải làm phiếu nhập kho chi tiết phiếu nhập kho + với insert sản phẩm
 
-            if (txtTenSp.Text == "" || cmbNcc.SelectedIndex == -1 || cmbLoaiSp.SelectedIndex == -1 || cmbDVT.Text  == "" || txtDonGia.Text == "" || sPathImg == "")
+            if (txtTenSp.Text == "" || cmbNcc.SelectedIndex == -1 || cmbLoaiSp.SelectedIndex == -1 || cmbDVT.Text == "" || txtDonGia.Text == "" || sPathImg == "")
             {
                 MessageBox.Show("Bạn Chưa Nhập Dủ Thông Tin, Vui Lòng Kiểm tra Lại, Tks !!!");
-            }else
+            }
+            else
             {
                 string tensp = txtTenSp.Text;
                 int id_ncc = int.Parse(cmbNcc.SelectedValue.ToString());
@@ -118,14 +119,76 @@ namespace GUI.Forms
                 if (B_SanPham.Instance.StokerAddProduc(objects))
                 {
                     B_SanPham.Instance.StokerGetNewProduct(ref sanpham);
-                }      
+                }
             }
 
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            txtTenSp.Clear();
+            txtDonGia.Focus();
 
+            cmbDVT.SelectedIndex = -1;
+            cmbLoaiSp.SelectedIndex = -1;
+            cmbNcc.SelectedIndex = -1;
+            sPathImg = "";
+        }
+
+        private void txtTenSp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    cmbNcc.Focus();
+                }
+            }
+        }
+
+        private void cmbNcc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbLoaiSp.Focus();
+            }
+        }
+
+        private void cmbLoaiSp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbDVT.Focus();
+            }
+        }
+
+        private void cmbDVT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtDonGia.Focus();
+            }
+        }
+
+        private void txtDonGia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnBrowsImg.Focus();
+                }
+            }
         }
     }
 }

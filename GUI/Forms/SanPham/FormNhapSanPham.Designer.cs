@@ -119,7 +119,7 @@
             // 
             this.btnThemLoaiSp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
             this.btnThemLoaiSp.Image = global::GUI.Properties.Resources.other;
-            this.btnThemLoaiSp.Location = new System.Drawing.Point(654, 220);
+            this.btnThemLoaiSp.Location = new System.Drawing.Point(654, 231);
             this.btnThemLoaiSp.Name = "btnThemLoaiSp";
             this.btnThemLoaiSp.Size = new System.Drawing.Size(85, 28);
             this.btnThemLoaiSp.TabIndex = 4;
@@ -148,36 +148,44 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(384, 405);
+            this.txtDonGia.Location = new System.Drawing.Point(384, 403);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(241, 22);
             this.txtDonGia.TabIndex = 6;
+            this.txtDonGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDonGia_KeyDown);
+            this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // cmbDVT
             // 
+            this.cmbDVT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbDVT.FormattingEnabled = true;
-            this.cmbDVT.Location = new System.Drawing.Point(384, 320);
+            this.cmbDVT.Location = new System.Drawing.Point(384, 317);
             this.cmbDVT.Name = "cmbDVT";
             this.cmbDVT.Size = new System.Drawing.Size(241, 24);
             this.cmbDVT.TabIndex = 5;
+            this.cmbDVT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbDVT_KeyDown);
             // 
             // cmbLoaiSp
             // 
             this.cmbLoaiSp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLoaiSp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbLoaiSp.FormattingEnabled = true;
-            this.cmbLoaiSp.Location = new System.Drawing.Point(384, 222);
+            this.cmbLoaiSp.Location = new System.Drawing.Point(384, 231);
             this.cmbLoaiSp.Name = "cmbLoaiSp";
             this.cmbLoaiSp.Size = new System.Drawing.Size(241, 24);
             this.cmbLoaiSp.TabIndex = 3;
+            this.cmbLoaiSp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbLoaiSp_KeyDown);
             // 
             // cmbNcc
             // 
             this.cmbNcc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbNcc.FormattingEnabled = true;
             this.cmbNcc.Location = new System.Drawing.Point(384, 145);
             this.cmbNcc.Name = "cmbNcc";
             this.cmbNcc.Size = new System.Drawing.Size(241, 24);
             this.cmbNcc.TabIndex = 1;
+            this.cmbNcc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbNcc_KeyDown);
             // 
             // txtTenSp
             // 
@@ -185,22 +193,25 @@
             this.txtTenSp.Name = "txtTenSp";
             this.txtTenSp.Size = new System.Drawing.Size(241, 22);
             this.txtTenSp.TabIndex = 0;
+            this.txtTenSp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenSp_KeyDown);
+            this.txtTenSp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSp_KeyPress);
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(127, 405);
+            this.label6.Location = new System.Drawing.Point(127, 389);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(186, 36);
             this.label6.TabIndex = 54;
             this.label6.Text = "Đơn Giá";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(127, 319);
+            this.label5.Location = new System.Drawing.Point(127, 305);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(257, 26);
+            this.label5.Size = new System.Drawing.Size(186, 36);
             this.label5.TabIndex = 53;
             this.label5.Text = "Dơn Vị Tính";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -208,9 +219,9 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(127, 222);
+            this.label3.Location = new System.Drawing.Point(127, 219);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(257, 26);
+            this.label3.Size = new System.Drawing.Size(186, 36);
             this.label3.TabIndex = 51;
             this.label3.Text = "Loại Sản Phẩm";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -218,9 +229,9 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(127, 140);
+            this.label2.Location = new System.Drawing.Point(127, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 26);
+            this.label2.Size = new System.Drawing.Size(186, 36);
             this.label2.TabIndex = 55;
             this.label2.Text = "Nhà Cung Cấp";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -228,9 +239,9 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(127, 58);
+            this.label1.Location = new System.Drawing.Point(127, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 26);
+            this.label1.Size = new System.Drawing.Size(186, 36);
             this.label1.TabIndex = 50;
             this.label1.Text = "Tên Sản Phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;

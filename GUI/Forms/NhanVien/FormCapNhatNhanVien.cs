@@ -205,5 +205,149 @@ namespace GUI.Forms
         {
             this.Close();
         }
+
+        private void txtHoTen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtEmail.Focus();
+                }
+            }
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtSDT.Focus();
+                }
+            }
+        }
+
+        private void txtSDT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtLuong.Focus();
+                }
+            }
+        }
+
+        private void txtLuong_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    dtpNgaySinh.Focus();
+                }
+            }
+        }
+
+        private void dtpNgaySinh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dtpNgayVaoLam.Focus();
+            }
+        }
+
+        private void dtpNgayVaoLam_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSoNganHang.Focus();
+            }
+        }
+
+        private void txtSoNganHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtTenNganHang.Focus();
+                }
+            }
+        }
+
+        private void txtTenNganHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtDiachi.Focus();
+                }
+            }
+        }
+
+        private void txtDiachi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    cmbChucvu.Focus();
+                }
+            }
+        }
+
+        private void cmbChucvu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbGioiTinh.Focus();
+            }
+        }
+
+        private void cmbGioiTinh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnImage.Focus();
+            }
+        }
     }
 }

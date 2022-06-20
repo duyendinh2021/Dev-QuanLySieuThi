@@ -112,6 +112,7 @@
             // txtMoTa
             // 
             this.txtMoTa.Location = new System.Drawing.Point(322, 159);
+            this.txtMoTa.MaxLength = 1024;
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(246, 85);
@@ -122,6 +123,7 @@
             // txtTenSP
             // 
             this.txtTenSP.Location = new System.Drawing.Point(322, 77);
+            this.txtTenSP.MaxLength = 50;
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(246, 30);
             this.txtTenSP.TabIndex = 0;

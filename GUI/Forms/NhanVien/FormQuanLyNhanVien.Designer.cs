@@ -76,11 +76,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(492, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.Size = new System.Drawing.Size(86, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "Trạng thái";
             // 
@@ -90,11 +90,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(28, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.Size = new System.Drawing.Size(72, 21);
             this.label2.TabIndex = 9;
             this.label2.Text = "Chức vụ";
             // 
@@ -167,11 +167,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1037, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 9;
             this.label1.Text = "Tìm Kiếm";
             // 
@@ -420,9 +420,9 @@
             this.picBoxImg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxImg.Location = new System.Drawing.Point(987, 89);
+            this.picBoxImg.Location = new System.Drawing.Point(1014, 71);
             this.picBoxImg.Name = "picBoxImg";
-            this.picBoxImg.Size = new System.Drawing.Size(232, 183);
+            this.picBoxImg.Size = new System.Drawing.Size(195, 222);
             this.picBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxImg.TabIndex = 30;
             this.picBoxImg.TabStop = false;
@@ -432,7 +432,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAdd.IconColor = System.Drawing.Color.Black;
