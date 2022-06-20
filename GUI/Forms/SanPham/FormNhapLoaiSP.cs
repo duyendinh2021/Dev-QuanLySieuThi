@@ -42,17 +42,36 @@ namespace GUI.Forms
 
         private void txtTenSP_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+
+            if (e.Control && e.KeyValue == 86)
             {
-                txtMoTa.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtMoTa.Focus();
+
+                }
             }
         }
 
         private void txtMoTa_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyValue == 86)
             {
-                btnBrowsImg.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnBrowsImg.Focus();
+
+                }
             }
         }
 

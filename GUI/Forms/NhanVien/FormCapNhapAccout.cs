@@ -142,5 +142,29 @@ namespace GUI.Forms
                 e.Handled = true;
             }
         }
+
+        private void txtMk_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    cmbTrangThai.Focus();
+                }
+            }
+        }
+
+        private void cmbTrangThai_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnCapNhat.Focus();
+            }
+        }
     }
 }

@@ -36,20 +36,20 @@
             this.panOrdersManage = new System.Windows.Forms.Panel();
             this.panLogo = new System.Windows.Forms.Panel();
             this.panSideMenu = new System.Windows.Forms.Panel();
-            this.panChildForm = new System.Windows.Forms.Panel();
-            this.panHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.btnSetting = new FontAwesome.Sharp.IconButton();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
             this.btnStockSupplierManagement = new FontAwesome.Sharp.IconButton();
             this.btnbtnAdmissionSlip = new FontAwesome.Sharp.IconButton();
             this.btnSTmanageProducts = new FontAwesome.Sharp.IconButton();
-            this.btnCashierReport = new FontAwesome.Sharp.IconButton();
+            this.btnProductsType = new FontAwesome.Sharp.IconButton();
             this.btnSale = new FontAwesome.Sharp.IconButton();
             this.btnStaffs = new FontAwesome.Sharp.IconButton();
             this.btnProducts = new FontAwesome.Sharp.IconButton();
             this.btnOrders = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
+            this.panChildForm = new System.Windows.Forms.Panel();
+            this.panHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panelSettingsManage.SuspendLayout();
             this.panSideMenu.SuspendLayout();
             this.panChildForm.SuspendLayout();
@@ -133,7 +133,7 @@
             this.panSideMenu.Controls.Add(this.btnStockSupplierManagement);
             this.panSideMenu.Controls.Add(this.btnbtnAdmissionSlip);
             this.panSideMenu.Controls.Add(this.btnSTmanageProducts);
-            this.panSideMenu.Controls.Add(this.btnCashierReport);
+            this.panSideMenu.Controls.Add(this.btnProductsType);
             this.panSideMenu.Controls.Add(this.btnSale);
             this.panSideMenu.Controls.Add(this.btnStaffs);
             this.panSideMenu.Controls.Add(this.btnProducts);
@@ -147,42 +147,6 @@
             this.panSideMenu.Name = "panSideMenu";
             this.panSideMenu.Size = new System.Drawing.Size(292, 1051);
             this.panSideMenu.TabIndex = 12;
-            // 
-            // panChildForm
-            // 
-            this.panChildForm.Controls.Add(this.panHeader);
-            this.panChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panChildForm.Location = new System.Drawing.Point(292, 0);
-            this.panChildForm.Name = "panChildForm";
-            this.panChildForm.Size = new System.Drawing.Size(1578, 1051);
-            this.panChildForm.TabIndex = 15;
-            // 
-            // panHeader
-            // 
-            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panHeader.Controls.Add(this.btnExit);
-            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHeader.Location = new System.Drawing.Point(0, 0);
-            this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1578, 55);
-            this.panHeader.TabIndex = 7;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 50;
-            this.btnExit.Location = new System.Drawing.Point(1503, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 55);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSetting
             // 
@@ -258,6 +222,7 @@
             // 
             // btnbtnAdmissionSlip
             // 
+            this.btnbtnAdmissionSlip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbtnAdmissionSlip.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnbtnAdmissionSlip.FlatAppearance.BorderSize = 0;
             this.btnbtnAdmissionSlip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -282,6 +247,7 @@
             // 
             // btnSTmanageProducts
             // 
+            this.btnSTmanageProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSTmanageProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSTmanageProducts.FlatAppearance.BorderSize = 0;
             this.btnSTmanageProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -304,32 +270,34 @@
             this.btnSTmanageProducts.UseVisualStyleBackColor = true;
             this.btnSTmanageProducts.Click += new System.EventHandler(this.btnSTmanageProducts_Click);
             // 
-            // btnCashierReport
+            // btnProductsType
             // 
-            this.btnCashierReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCashierReport.FlatAppearance.BorderSize = 0;
-            this.btnCashierReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCashierReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCashierReport.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCashierReport.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
-            this.btnCashierReport.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnCashierReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCashierReport.IconSize = 32;
-            this.btnCashierReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashierReport.Location = new System.Drawing.Point(0, 532);
-            this.btnCashierReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCashierReport.Name = "btnCashierReport";
-            this.btnCashierReport.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnCashierReport.Size = new System.Drawing.Size(271, 74);
-            this.btnCashierReport.TabIndex = 8;
-            this.btnCashierReport.Text = "Create Report";
-            this.btnCashierReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashierReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCashierReport.UseVisualStyleBackColor = true;
-            this.btnCashierReport.Click += new System.EventHandler(this.btnCashierReport_Click);
+            this.btnProductsType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductsType.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductsType.FlatAppearance.BorderSize = 0;
+            this.btnProductsType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductsType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductsType.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnProductsType.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnProductsType.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnProductsType.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProductsType.IconSize = 32;
+            this.btnProductsType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductsType.Location = new System.Drawing.Point(0, 532);
+            this.btnProductsType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProductsType.Name = "btnProductsType";
+            this.btnProductsType.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnProductsType.Size = new System.Drawing.Size(271, 74);
+            this.btnProductsType.TabIndex = 8;
+            this.btnProductsType.Text = "Manage Product Types";
+            this.btnProductsType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductsType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProductsType.UseVisualStyleBackColor = true;
+            this.btnProductsType.Click += new System.EventHandler(this.btnProductsType_Click);
             // 
             // btnSale
             // 
+            this.btnSale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSale.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSale.FlatAppearance.BorderSize = 0;
             this.btnSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -354,6 +322,7 @@
             // 
             // btnStaffs
             // 
+            this.btnStaffs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaffs.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStaffs.FlatAppearance.BorderSize = 0;
             this.btnStaffs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -378,6 +347,7 @@
             // 
             // btnProducts
             // 
+            this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -402,6 +372,7 @@
             // 
             // btnOrders
             // 
+            this.btnOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOrders.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrders.FlatAppearance.BorderSize = 0;
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -426,6 +397,7 @@
             // 
             // btnDashboard
             // 
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -448,6 +420,42 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
+            // panChildForm
+            // 
+            this.panChildForm.Controls.Add(this.panHeader);
+            this.panChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panChildForm.Location = new System.Drawing.Point(292, 0);
+            this.panChildForm.Name = "panChildForm";
+            this.panChildForm.Size = new System.Drawing.Size(1578, 1051);
+            this.panChildForm.TabIndex = 15;
+            // 
+            // panHeader
+            // 
+            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panHeader.Controls.Add(this.btnExit);
+            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panHeader.Location = new System.Drawing.Point(0, 0);
+            this.panHeader.Name = "panHeader";
+            this.panHeader.Size = new System.Drawing.Size(1578, 55);
+            this.panHeader.TabIndex = 7;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 50;
+            this.btnExit.Location = new System.Drawing.Point(1503, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 55);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormMainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -455,6 +463,7 @@
             this.ClientSize = new System.Drawing.Size(1870, 1051);
             this.Controls.Add(this.panChildForm);
             this.Controls.Add(this.panSideMenu);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMainApp";
@@ -491,6 +500,6 @@
         private System.Windows.Forms.Panel panChildForm;
         private System.Windows.Forms.Panel panHeader;
         private FontAwesome.Sharp.IconButton btnExit;
-        private FontAwesome.Sharp.IconButton btnCashierReport;
+        private FontAwesome.Sharp.IconButton btnProductsType;
     }
 }

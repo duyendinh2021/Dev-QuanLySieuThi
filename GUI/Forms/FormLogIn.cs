@@ -21,17 +21,35 @@ namespace GUI
 
         private void txtTaiKhoan_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+
+            if (e.Control && e.KeyValue == 86)
             {
-                txtMatKhau.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtMatKhau.Focus();
+                }
             }
         }
 
         private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyValue == 86)
             {
-                btnDangNhap.Focus();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnDangNhap.Focus();
+                }
             }
         }
 
@@ -43,12 +61,13 @@ namespace GUI
             }
         }
 
+        [Obsolete]
         private void btnDangNhap_KeyDown(object sender, KeyEventArgs e)
         {
             // thực hiện đăng nhập
             if (e.KeyCode == Keys.Enter)
             {
-
+                btnDangNhap_Click(sender, e);
             }
             else if (e.KeyCode == Keys.Tab)
             {
@@ -81,7 +100,7 @@ namespace GUI
 
         private void lblLinkQuanMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Vui liên hệ quản trị viên dể biết giải quyết SDT:XXXXXXXXXXXXX","Thông Báo");
+            MessageBox.Show("Vui liên hệ quản trị viên dể biết giải quyết SDT:XXXXXXXXXXXXX", "Thông Báo");
         }
 
         [Obsolete]
@@ -129,7 +148,7 @@ namespace GUI
             {
                 e.Cancel = true;
             }
-            BUS.B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
+            B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
         }
     }
 }

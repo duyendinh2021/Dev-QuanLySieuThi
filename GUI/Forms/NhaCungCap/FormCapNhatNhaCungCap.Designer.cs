@@ -102,7 +102,7 @@
             this.label7.ForeColor = System.Drawing.Color.Blue;
             this.label7.Location = new System.Drawing.Point(876, 314);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.Size = new System.Drawing.Size(147, 23);
             this.label7.TabIndex = 8;
             this.label7.Text = "Chú Thích";
             // 
@@ -125,45 +125,56 @@
             this.cmbTrangThai.Name = "cmbTrangThai";
             this.cmbTrangThai.Size = new System.Drawing.Size(253, 24);
             this.cmbTrangThai.TabIndex = 5;
+            this.cmbTrangThai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTrangThai_KeyDown);
             // 
             // txtTenNganHang
             // 
             this.txtTenNganHang.Location = new System.Drawing.Point(876, 179);
+            this.txtTenNganHang.MaxLength = 50;
             this.txtTenNganHang.Name = "txtTenNganHang";
             this.txtTenNganHang.Size = new System.Drawing.Size(253, 22);
             this.txtTenNganHang.TabIndex = 4;
+            this.txtTenNganHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenNganHang_KeyDown);
             this.txtTenNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNganHang_KeyPress);
             // 
             // txtSoNganHang
             // 
             this.txtSoNganHang.Location = new System.Drawing.Point(876, 90);
+            this.txtSoNganHang.MaxLength = 15;
             this.txtSoNganHang.Name = "txtSoNganHang";
             this.txtSoNganHang.Size = new System.Drawing.Size(253, 22);
             this.txtSoNganHang.TabIndex = 3;
+            this.txtSoNganHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoNganHang_KeyDown);
             this.txtSoNganHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoNganHang_KeyPress);
             // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(267, 267);
+            this.txtSDT.MaxLength = 10;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(321, 22);
             this.txtSDT.TabIndex = 2;
+            this.txtSDT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSDT_KeyDown);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(267, 179);
+            this.txtDiaChi.MaxLength = 255;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(321, 22);
             this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDiaChi_KeyDown);
             this.txtDiaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiaChi_KeyPress);
             // 
             // txtTenCongTy
             // 
             this.txtTenCongTy.Location = new System.Drawing.Point(267, 90);
+            this.txtTenCongTy.MaxLength = 50;
             this.txtTenCongTy.Name = "txtTenCongTy";
             this.txtTenCongTy.Size = new System.Drawing.Size(321, 22);
             this.txtTenCongTy.TabIndex = 0;
+            this.txtTenCongTy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenCongTy_KeyDown);
             this.txtTenCongTy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenCongTy_KeyPress);
             // 
             // label6

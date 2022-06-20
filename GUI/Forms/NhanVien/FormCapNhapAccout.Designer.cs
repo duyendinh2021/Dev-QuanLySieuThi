@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhapAccout));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -109,9 +110,11 @@
             // txtMk
             // 
             this.txtMk.Location = new System.Drawing.Point(275, 298);
+            this.txtMk.MaxLength = 25;
             this.txtMk.Name = "txtMk";
             this.txtMk.Size = new System.Drawing.Size(221, 22);
             this.txtMk.TabIndex = 1;
+            this.txtMk.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMk_KeyDown);
             this.txtMk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMk_KeyPress);
             // 
             // cmbTrangThai
@@ -125,6 +128,7 @@
             this.cmbTrangThai.Name = "cmbTrangThai";
             this.cmbTrangThai.Size = new System.Drawing.Size(175, 24);
             this.cmbTrangThai.TabIndex = 2;
+            this.cmbTrangThai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTrangThai_KeyDown);
             // 
             // btnCapNhat
             // 
@@ -148,7 +152,7 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // FormViewAccout
+            // FormCapNhapAccout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,8 +167,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormViewAccout";
-            this.Text = "FormViewAccout";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormCapNhapAccout";
             this.Load += new System.EventHandler(this.FormViewAccout_Load);
             this.panHeader.ResumeLayout(false);
             this.ResumeLayout(false);

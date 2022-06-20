@@ -117,5 +117,21 @@ namespace GUI.Forms.NhanVien
                 LoadCaptcha();
             }
         }
+
+        private void txtPassold_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtPassNew.Focus();
+                }
+            }
+        }
     }
 }

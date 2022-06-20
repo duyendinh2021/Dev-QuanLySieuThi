@@ -78,7 +78,7 @@
             this.label4.Size = new System.Drawing.Size(186, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mật khẩu";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label3
             // 
@@ -88,7 +88,7 @@
             this.label3.Size = new System.Drawing.Size(186, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Tên Tài Khoản";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // txtTaiKhoan
             // 

@@ -27,10 +27,15 @@ namespace GUI.Forms
             formNhapSanPham.ShowDialog();
         }
 
+
+        [Obsolete]
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
             FormNhapHang formNhapHang = new FormNhapHang();
             formNhapHang.ShowDialog();
+            B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtDanhSachSP);
+            Load_Category();
+
         }
 
 

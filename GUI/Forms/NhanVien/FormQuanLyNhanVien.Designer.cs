@@ -65,9 +65,11 @@
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.picBoxImg = new System.Windows.Forms.PictureBox();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelTimkiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGVDanhSachNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -76,11 +78,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(492, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.Size = new System.Drawing.Size(86, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "Trạng thái";
             // 
@@ -90,11 +92,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(28, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.Size = new System.Drawing.Size(72, 21);
             this.label2.TabIndex = 9;
             this.label2.Text = "Chức vụ";
             // 
@@ -167,11 +169,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1037, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 9;
             this.label1.Text = "Tìm Kiếm";
             // 
@@ -417,12 +419,10 @@
             // 
             // picBoxImg
             // 
-            this.picBoxImg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxImg.Location = new System.Drawing.Point(987, 89);
+            this.picBoxImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBoxImg.Location = new System.Drawing.Point(3, 18);
             this.picBoxImg.Name = "picBoxImg";
-            this.picBoxImg.Size = new System.Drawing.Size(232, 183);
+            this.picBoxImg.Size = new System.Drawing.Size(209, 201);
             this.picBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxImg.TabIndex = 30;
             this.picBoxImg.TabStop = false;
@@ -432,7 +432,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAdd.IconColor = System.Drawing.Color.Black;
@@ -445,12 +445,22 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.picBoxImg);
+            this.groupBox1.Location = new System.Drawing.Point(1041, 68);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(215, 222);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ảnh Nhân Viên";
+            // 
             // FormQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1448, 790);
-            this.Controls.Add(this.picBoxImg);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtGVDanhSachNV);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panelTimkiem);
@@ -461,6 +471,7 @@
             this.panelTimkiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGVDanhSachNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuong;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
