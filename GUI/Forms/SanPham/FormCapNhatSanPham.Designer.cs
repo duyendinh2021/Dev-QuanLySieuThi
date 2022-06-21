@@ -225,6 +225,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(151, 74);
             this.btnClear.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnClear, "Click Nếu Muốn Xóa Tất Cả");
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 

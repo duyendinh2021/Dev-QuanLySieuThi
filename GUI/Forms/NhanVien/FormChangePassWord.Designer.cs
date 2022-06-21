@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChangePassWord));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.ptcCaptcha = new System.Windows.Forms.PictureBox();
             this.btnRefreshCaptcha = new System.Windows.Forms.Button();
             this.btnConfrim = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ptcCaptcha)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,6 +156,7 @@
             this.btnRefreshCaptcha.Name = "btnRefreshCaptcha";
             this.btnRefreshCaptcha.Size = new System.Drawing.Size(116, 44);
             this.btnRefreshCaptcha.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnRefreshCaptcha, "Click Dể Dủ Mã Xác Minh");
             this.btnRefreshCaptcha.UseVisualStyleBackColor = true;
             this.btnRefreshCaptcha.Click += new System.EventHandler(this.btnRefreshCaptcha_Click);
             // 
@@ -164,6 +167,7 @@
             this.btnConfrim.Name = "btnConfrim";
             this.btnConfrim.Size = new System.Drawing.Size(204, 61);
             this.btnConfrim.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.btnConfrim, "Click dể xác nhận và tiến hành cập nhật");
             this.btnConfrim.UseVisualStyleBackColor = true;
             this.btnConfrim.Click += new System.EventHandler(this.btnConfrim_Click);
             // 
@@ -210,5 +214,6 @@
         private System.Windows.Forms.PictureBox ptcCaptcha;
         private System.Windows.Forms.Button btnRefreshCaptcha;
         private System.Windows.Forms.Button btnConfrim;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

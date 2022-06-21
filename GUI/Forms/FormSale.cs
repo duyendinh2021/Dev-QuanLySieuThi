@@ -387,5 +387,14 @@ namespace GUI
                 e.Handled = true;
             }
         }
+
+        private void txtKhachDua_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyValue == 86)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }

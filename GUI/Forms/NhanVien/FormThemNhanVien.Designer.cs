@@ -29,14 +29,16 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panHeader = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.grBThongtin = new System.Windows.Forms.GroupBox();
-            this.btnImage = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ptbShowImage = new System.Windows.Forms.PictureBox();
+            this.btnImage = new System.Windows.Forms.Button();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.cmbGioiTinh = new System.Windows.Forms.ComboBox();
             this.cmbChucvu = new System.Windows.Forms.ComboBox();
@@ -59,12 +61,12 @@
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblNgayVaoLam = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grBThongtin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panHeader
@@ -91,6 +93,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 55);
             this.btnExit.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnExit, "Click Dể Đống");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -113,6 +116,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(153, 64);
             this.btnClear.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnClear, "Click Nếu Muốn Xóa Tất Cả");
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -124,6 +128,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(153, 64);
             this.btnConfirm.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnConfirm, "Click Dể Xác Nhận Và Tiến Hành Thêm Nhân Viên");
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -163,16 +168,15 @@
             this.grBThongtin.Text = "Thông tin nhân viên";
             this.grBThongtin.Enter += new System.EventHandler(this.grBThongtin_Enter);
             // 
-            // btnImage
+            // groupBox1
             // 
-            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnImage.Image = global::GUI.Properties.Resources.photo;
-            this.btnImage.Location = new System.Drawing.Point(1083, 114);
-            this.btnImage.Name = "btnImage";
-            this.btnImage.Size = new System.Drawing.Size(146, 45);
-            this.btnImage.TabIndex = 11;
-            this.btnImage.UseVisualStyleBackColor = false;
-            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
+            this.groupBox1.Controls.Add(this.ptbShowImage);
+            this.groupBox1.Location = new System.Drawing.Point(1086, 138);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(245, 301);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ảnh Nhân Viên";
             // 
             // ptbShowImage
             // 
@@ -183,6 +187,18 @@
             this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbShowImage.TabIndex = 44;
             this.ptbShowImage.TabStop = false;
+            // 
+            // btnImage
+            // 
+            this.btnImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnImage.Image = global::GUI.Properties.Resources.photo;
+            this.btnImage.Location = new System.Drawing.Point(1086, 69);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(146, 45);
+            this.btnImage.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.btnImage, "Click Dể Bất Đầu Chọn Hình");
+            this.btnImage.UseVisualStyleBackColor = false;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // txtHoTen
             // 
@@ -438,16 +454,6 @@
             this.lblNgaySinh.Text = "Ngày sinh";
             this.lblNgaySinh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ptbShowImage);
-            this.groupBox1.Location = new System.Drawing.Point(1083, 182);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 301);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ảnh Nhân Viên";
-            // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -462,8 +468,8 @@
             this.panel1.ResumeLayout(false);
             this.grBThongtin.ResumeLayout(false);
             this.grBThongtin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,5 +507,6 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnImage;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

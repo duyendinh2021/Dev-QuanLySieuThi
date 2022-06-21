@@ -231,10 +231,43 @@ namespace GUI.Forms.SanPham
             tinhTongGia();
         }
 
+        decimal GetBaseGia(int id_sp)
+        {
+            decimal baseGia = 0;
+
+            foreach (DataGridViewRow item in dtgDSHangHoa.Rows)
+            {
+                if (id_sp == int.Parse(item.Cells["ID_SP"].Value.ToString()))
+                {
+                    baseGia = decimal.Parse(item.Cells["dongia"].Value.ToString());
+                    break;
+                }
+            }
+
+            return baseGia;
+        }
+
+        // click sua so sl san pham
         private void dgvHoaDonNhap_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
+                //try
+                //{
+
+                //}
+                //catch (Exception)
+                //{
+
+                //    throw;
+                //}
+                DataGridViewRow row = dgvHoaDonNhap.Rows[e.RowIndex];
+                if (e.ColumnIndex == 1 && dgvHoaDonNhap[1, e.RowIndex].Value != null)
+                {
+                    decimal baseCost = GetBaseGia(int.Parse(row.Cells["ID"].Value.ToString()));
+                    dgvHoaDonNhap[2, e.RowIndex].Value = baseCost * decimal.Parse(dgvHoaDonNhap[1, e.RowIndex].Value.ToString());
+                    tinhTongGia();
+                }
 
             }
         }
@@ -253,6 +286,22 @@ namespace GUI.Forms.SanPham
             if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
             {
                 MessageBox.Show("Bạn Không thể nhập ký tự này", "Thông Báo");
+                e.Handled = true;
+            }
+        }
+
+        private void dgvHoaDonNhap_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            DataGridViewTextBoxEditingControl tb = (DataGridViewTextBoxEditingControl)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
+            e.Control.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
+        }
+
+        private void DataGridViewCellEventArgs(object sender, KeyPressEventArgs e)
+        {
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Ban Khong The Nhap Ky tu nay", "Thong Bao");
                 e.Handled = true;
             }
         }

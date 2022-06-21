@@ -29,6 +29,7 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDangNhap = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.chkBoxHienMK = new System.Windows.Forms.CheckBox();
             this.lblLinkQuanMK = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +68,7 @@
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(186, 62);
             this.btnDangNhap.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnDangNhap, "Click Dể Tiến Hành Login");
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             this.btnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangNhap_KeyDown);
@@ -141,6 +144,7 @@
             this.lblLinkQuanMK.TabIndex = 4;
             this.lblLinkQuanMK.TabStop = true;
             this.lblLinkQuanMK.Text = "Quên mật khẩu ?";
+            this.toolTip1.SetToolTip(this.lblLinkQuanMK, "Click Nếu Bạn Quên Mật Khẩu");
             this.lblLinkQuanMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLinkQuanMK_LinkClicked);
             // 
             // panel1
@@ -183,6 +187,7 @@
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

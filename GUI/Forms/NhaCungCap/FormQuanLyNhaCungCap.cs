@@ -41,7 +41,7 @@ namespace GUI.Forms.NhaCungCap
                 DataGridViewRow row = dtGVDanhSachNCC.Rows[e.RowIndex];
 
                 // btn edit Nha Cung Cap
-                if (e.ColumnIndex == 1)
+                if (e.ColumnIndex == 0)
                 {
                     int id_ncc = int.Parse(row.Cells["ID_NCC"].Value.ToString());
                     string ten_tc = row.Cells["Ten_CT"].Value.ToString();
@@ -55,7 +55,7 @@ namespace GUI.Forms.NhaCungCap
                 }
 
                 //btn delete Nha Cung Cap
-                if (e.ColumnIndex == 2)
+                if (e.ColumnIndex == 1)
                 {
                     DialogResult result = MessageBox.Show("Xác Nhận Dể Tiến Hành Xóa Nhà Cung Cấp", "Thông Báo Quan Trọng", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                     if (result == DialogResult.Yes)
@@ -91,7 +91,6 @@ namespace GUI.Forms.NhaCungCap
         private void cmbTrangThaiNCC_SelectedIndexChanged(object sender, EventArgs e)
         {
             int trangthai = int.Parse(cmbTrangThaiNCC.SelectedValue.ToString());
-
             B_NhaCungCap.Instance.GetNhaCungCapByTrangThai(trangthai, ref dtGVDanhSachNCC);
         }
 
@@ -101,7 +100,6 @@ namespace GUI.Forms.NhaCungCap
         {
             string search = txtSearchNCC.Text;
             int trangthai = int.Parse(cmbTrangThaiNCC.SelectedValue.ToString());
-
             B_NhaCungCap.Instance.SearchNhaCungCapMutiColumnTheoTrangThai(search, trangthai, ref dtGVDanhSachNCC);
         }
     }

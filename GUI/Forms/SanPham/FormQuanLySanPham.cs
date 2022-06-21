@@ -65,7 +65,7 @@ namespace GUI.Forms
         [Obsolete]
         private void Load_Category()
         {
-
+            flpCategory.Controls.Clear();
             dataGridView.AllowUserToAddRows = false;
             B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref dataGridView);
             foreach (DataGridViewRow item in dataGridView.Rows)

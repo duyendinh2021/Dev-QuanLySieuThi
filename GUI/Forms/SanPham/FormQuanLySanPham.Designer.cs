@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,8 +39,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panMain = new System.Windows.Forms.Panel();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ptbXemSanPham = new System.Windows.Forms.PictureBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.dtDanhSachSP = new System.Windows.Forms.DataGridView();
             this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
             this.colbtnXoa = new System.Windows.Forms.DataGridViewImageColumn();
@@ -68,14 +70,14 @@
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDanhSachSP)).BeginInit();
             this.panTonKho.SuspendLayout();
             this.panSideMenu.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panMain
@@ -91,16 +93,15 @@
             this.panMain.Size = new System.Drawing.Size(981, 790);
             this.panMain.TabIndex = 17;
             // 
-            // dataGridView
+            // groupBox1
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(426, 64);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(10, 10);
-            this.dataGridView.TabIndex = 30;
-            this.dataGridView.Visible = false;
+            this.groupBox1.Controls.Add(this.ptbXemSanPham);
+            this.groupBox1.Location = new System.Drawing.Point(671, 38);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(215, 245);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hình Ảnh Sản Phẩm";
             // 
             // ptbXemSanPham
             // 
@@ -111,6 +112,17 @@
             this.ptbXemSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbXemSanPham.TabIndex = 28;
             this.ptbXemSanPham.TabStop = false;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(426, 64);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(10, 10);
+            this.dataGridView.TabIndex = 30;
+            this.dataGridView.Visible = false;
             // 
             // dtDanhSachSP
             // 
@@ -402,6 +414,7 @@
             this.btnBrowField.Name = "btnBrowField";
             this.btnBrowField.Size = new System.Drawing.Size(257, 67);
             this.btnBrowField.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.btnBrowField, "Click Dể Tìm Theo Loại Sản Phẩm");
             this.btnBrowField.UseVisualStyleBackColor = true;
             this.btnBrowField.Click += new System.EventHandler(this.btnBrowField_Click);
             // 
@@ -510,16 +523,6 @@
             this.dataGridViewImageColumn2.ToolTipText = "Nhấn Dể Xóa";
             this.dataGridViewImageColumn2.Width = 45;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ptbXemSanPham);
-            this.groupBox1.Location = new System.Drawing.Point(671, 38);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(215, 245);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Hình Ảnh Sản Phẩm";
-            // 
             // FormQuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -534,14 +537,14 @@
             this.Load += new System.EventHandler(this.FormQuanLySanPham_Load);
             this.panMain.ResumeLayout(false);
             this.panMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbXemSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDanhSachSP)).EndInit();
             this.panTonKho.ResumeLayout(false);
             this.panTonKho.PerformLayout();
             this.panSideMenu.ResumeLayout(false);
             this.panSideMenu.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -579,5 +582,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
         private System.Windows.Forms.RadioButton radSPKhongHoat;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

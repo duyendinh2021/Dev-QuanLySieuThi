@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhapAccout));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.cmbTrangThai = new System.Windows.Forms.ComboBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,6 +140,7 @@
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(187, 66);
             this.btnCapNhat.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnCapNhat, "Click Dể Xác Nhận Chỉnh Sửa Hoàng Tất");
             this.btnCapNhat.UseVisualStyleBackColor = true;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -149,6 +152,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(187, 66);
             this.btnSua.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnSua, "Click Dể Tiến Hành Chỉnh Sửa");
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -188,5 +192,6 @@
         private System.Windows.Forms.ComboBox cmbTrangThai;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
