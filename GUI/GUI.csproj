@@ -118,6 +118,12 @@
     <Compile Include="Forms\HoaDon\FormQuanLyHoaDon.Designer.cs">
       <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LoaiSanPham\FormQuanLyLoaiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoaiSanPham\FormQuanLyLoaiSanPham.Designer.cs">
+      <DependentUpon>FormQuanLyLoaiSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HoaDon\FormQuanLyHoaDon.resx">
       <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoaiSanPham\FormQuanLyLoaiSanPham.resx">
+      <DependentUpon>FormQuanLyLoaiSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhaCungCap\FormCapNhatNhaCungCap.resx">
       <DependentUpon>FormCapNhatNhaCungCap.cs</DependentUpon>

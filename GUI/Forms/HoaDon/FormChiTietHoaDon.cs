@@ -16,6 +16,7 @@ namespace GUI.Forms.HoaDon
 {
     public partial class FormChiTietHoaDon : Form
     {
+        [Obsolete]
         public FormChiTietHoaDon()
         {
             InitializeComponent();

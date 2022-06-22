@@ -75,5 +75,28 @@ namespace BUS
 
             data.DataSource = loaiSanPhams;
         }
+
+
+        [Obsolete]
+        public void GetAllProductTypesNoDeleted(ref DataGridView dataGridView)
+        {
+            List<LoaiSanPham> loaiSanPhams = D_LoaiSanPham.Instance.GetAllProductTypesNoDeleted();
+            dataGridView.DataSource = loaiSanPhams;
+        }
+
+
+        [Obsolete]
+        public void SearchProductTypes(int trangthai, string search , ref DataGridView data)
+        {
+            List<LoaiSanPham> loaiSanPhams = D_LoaiSanPham.Instance.SearchProductTypes(trangthai, search);
+            data.DataSource = loaiSanPhams;
+        }
+
+        [Obsolete]
+        public void GetProductTypesByTrangthai(int trangthai,ref DataGridView data)
+        {
+            List<LoaiSanPham> loaiSanPhams = D_LoaiSanPham.Instance.GetProductTypesByTrangthai(trangthai);
+            data.DataSource = loaiSanPhams;
+        }
     }
 }
