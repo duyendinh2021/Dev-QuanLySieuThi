@@ -198,6 +198,7 @@ namespace GUI
             SupportUI_UX.Instance.showChildForm(formQuanLyNhaCungCap, panChildForm);
         }
 
+        [Obsolete]
         private void btnChangePassWord_Click(object sender, EventArgs e)
         {
            // SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.Color7);
