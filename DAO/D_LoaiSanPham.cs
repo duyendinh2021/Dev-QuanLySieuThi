@@ -121,5 +121,79 @@ namespace DAO
             return loaiSanPhams;
 
         }
+
+
+
+
+        [Obsolete]
+        public List<LoaiSanPham> GetAllProductTypesNoDeleted()
+        {
+            string query = "exec SelectAllLoaiDangHoatDong";
+            List<LoaiSanPham> loaiSanPhams = new List<LoaiSanPham>();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+                    loaiSanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    loaiSanPham.Tensanpham = item["TenLoaiSanPham"].ToString();
+                    loaiSanPham.Mota = item["MoTa"].ToString();
+                    loaiSanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    loaiSanPham.Hinh = (byte[])item["Hinh"];
+                    loaiSanPhams.Add(loaiSanPham);
+                }
+            }
+            return loaiSanPhams;
+
+        }
+
+
+        [Obsolete]
+        public List<LoaiSanPham> SearchProductTypes(int trangthai, string search)
+        {
+            string query = "EXEC SearchProductType @trang_thai , @value";
+            List<LoaiSanPham> loaiSanPhams = new List<LoaiSanPham>();
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query,new object[] {trangthai,search}))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+                    loaiSanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    loaiSanPham.Tensanpham = item["TenLoaiSanPham"].ToString();
+                    loaiSanPham.Mota = item["MoTa"].ToString();
+                    loaiSanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    loaiSanPham.Hinh = (byte[])item["Hinh"];
+                    loaiSanPhams.Add(loaiSanPham);
+                }
+            }
+            return loaiSanPhams;
+        }
+
+        [Obsolete]
+        public List<LoaiSanPham> GetProductTypesByTrangthai(int trangthai)
+        {
+            List<LoaiSanPham> loaiSanPhams = new List<LoaiSanPham>();
+            string query = "EXEC SelectProductTypesByTrangthai @trang_thai";
+
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query, new object[] { trangthai }))
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+                    loaiSanPham.Idloaisanpham = int.Parse(item["ID_LoaiSanPham"].ToString());
+                    loaiSanPham.Tensanpham = item["TenLoaiSanPham"].ToString();
+                    loaiSanPham.Mota = item["MoTa"].ToString();
+                    loaiSanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    loaiSanPham.Hinh = (byte[])item["Hinh"];
+                    loaiSanPhams.Add(loaiSanPham);
+                }
+            }
+
+            return loaiSanPhams;
+        }
+        
     }
 }

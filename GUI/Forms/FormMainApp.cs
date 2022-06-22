@@ -14,6 +14,8 @@ using GUI.Forms.PhieuNhapkho;
 using GUI.Forms.SanPham;
 using GUI.Forms.NhanVien;
 using GUI.Forms.HoaDon;
+using GUI.Forms.LoaiSanPham;
+
 
 namespace GUI
 {
@@ -35,8 +37,8 @@ namespace GUI
         [Obsolete]
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
-            BUS.B_TaiKhoan.Instance.id = -1;
+            B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
+            B_TaiKhoan.Instance.id = -1;
             LogOut(this, new EventArgs());
         }
 
@@ -46,7 +48,7 @@ namespace GUI
         {
             if (isThoat)
             {
-                BUS.B_TaiKhoan.Instance.updateStatusLogin(BUS.B_TaiKhoan.Instance.id);
+                B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
                 Application.Exit();
             }
         }
@@ -198,6 +200,7 @@ namespace GUI
             SupportUI_UX.Instance.showChildForm(formQuanLyNhaCungCap, panChildForm);
         }
 
+        [Obsolete]
         private void btnChangePassWord_Click(object sender, EventArgs e)
         {
            // SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.Color7);
@@ -207,7 +210,8 @@ namespace GUI
 
         private void btnProductsType_Click(object sender, EventArgs e)
         {
-
+            SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color8);
+            SupportUI_UX.Instance.showChildForm(new FormQuanLyLoaiSanPham(), panChildForm);
         }
     }
 }
