@@ -15,6 +15,7 @@ namespace GUI.Forms.SanPham
 {
     public partial class FormCapNhatSanPham : Form
     {
+        [Obsolete]
         public FormCapNhatSanPham()
         {
             InitializeComponent();
@@ -31,6 +32,8 @@ namespace GUI.Forms.SanPham
         Image image;
         int trangthai;
         string sPathImg = "";
+
+        [Obsolete]
         public FormCapNhatSanPham(int id, int id_ncc, int id_loai, string ten_sp, string dvt, decimal dongia)
         {
             InitializeComponent();

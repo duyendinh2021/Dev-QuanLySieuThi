@@ -156,37 +156,51 @@ namespace GUI.Forms
             }
             else
             {
-                string hoten = txtHoTen.Text;
-                string email = txtEmail.Text;
-                string sdt = txtSDT.Text;
-                decimal luong = decimal.Parse(txtLuong.Text);
-                string tenNganHang = txtTenNganHang.Text;
-                string soNganHang = txtSoNganHang.Text;
-                string diachi = txtDiachi.Text;
-                string gioiTinh = cmbGioiTinh.Text;
-                string chucvu = cmbChucvu.Text;
-                DateTime ngaySinh = dtpNgaySinh.Value;
-                DateTime ngayVaoLam = dtpNgayVaoLam.Value;
-                byte[] hinh;
-                if (sPathImg == "")
+                if (Rule_Regex.Instance.IsPhoneNbr(txtSDT.Text))
                 {
-                    hinh = dataImg;
+                    if (Rule_Regex.Instance.IsValidEmail(txtEmail.Text))
+                    {
+                        string hoten = txtHoTen.Text;
+                        string email = txtEmail.Text;
+                        string sdt = txtSDT.Text;
+                        decimal luong = decimal.Parse(txtLuong.Text);
+                        string tenNganHang = txtTenNganHang.Text;
+                        string soNganHang = txtSoNganHang.Text;
+                        string diachi = txtDiachi.Text;
+                        string gioiTinh = cmbGioiTinh.Text;
+                        string chucvu = cmbChucvu.Text;
+                        DateTime ngaySinh = dtpNgaySinh.Value;
+                        DateTime ngayVaoLam = dtpNgayVaoLam.Value;
+                        byte[] hinh;
+                        if (sPathImg == "")
+                        {
+                            hinh = dataImg;
+                        }
+                        else
+                        {
+                            hinh = System.IO.File.ReadAllBytes(sPathImg);
+                        }
+                        object[] objects = new object[] { idNhanVien, hoten, chucvu, gioiTinh, ngaySinh, ngayVaoLam, diachi, sdt, tenNganHang, soNganHang, luong, email, hinh };
+
+                        if (BUS.B_NhanVien.Instance.adminUpdateNhanVien(objects))
+                        {
+                            MessageBox.Show("Cập Nhật Thành Công", "Thật Tuyệt Vời");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ô nô !!!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email Không Đúng Định Đạng !!!", "Thông Báo");
+                        txtEmail.Focus();
+                    }                  
                 }
                 else
                 {
-                    hinh = System.IO.File.ReadAllBytes(sPathImg);
-                }
-
-
-                object[] objects = new object[] { idNhanVien, hoten, chucvu, gioiTinh, ngaySinh, ngayVaoLam, diachi, sdt, tenNganHang, soNganHang, luong, email, hinh };
-
-                if (BUS.B_NhanVien.Instance.adminUpdateNhanVien(objects))
-                {
-                    MessageBox.Show("Cập Nhật Thành Công", "Thật Tuyệt Vời");
-                }
-                else
-                {
-                    MessageBox.Show("Ô nô !!!");
+                    MessageBox.Show("Không phải sô điện thoại, vui lòng nhập lại", "Thông Báo");
+                    txtSDT.Focus();
                 }
             }
         }

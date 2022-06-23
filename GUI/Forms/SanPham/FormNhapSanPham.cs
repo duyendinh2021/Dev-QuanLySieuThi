@@ -30,7 +30,7 @@ namespace GUI.Forms
 
         private void txtTenSp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Rule_Regex.Instance.Name_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            if (Rule_Regex.Instance.Name_Product_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
             {
                 MessageBox.Show("Bạn Không được nhập ký tự này !!!", "Thông Báo");
                 e.Handled = true;

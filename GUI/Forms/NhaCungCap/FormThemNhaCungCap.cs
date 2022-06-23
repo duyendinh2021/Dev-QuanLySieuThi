@@ -43,7 +43,7 @@ namespace GUI.Forms
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Rule_Regex.Instance.MobileNumber_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
             {
                 MessageBox.Show("Bạn Không Thể Nhập Ký Tự Này !!!", "Thông Báo");
                 e.Handled = true;
@@ -172,21 +172,30 @@ namespace GUI.Forms
             }
             else
             {
-                string tenCongTy = txtTenCongTy.Text;
-                string diaChi = txtDiaChi.Text;
-                string soNganHang = txtSoNganHang.Text;
-                string tenNganHang = txtTenNganHang.Text;
-                string sdt = txtSDT.Text;
-
-                object[] objects = new object[] { tenCongTy, diaChi, sdt, soNganHang, tenNganHang };
-                if (BUS.B_NhaCungCap.Instance.stokerAddNhaCungCap(objects))
+                if (Rule_Regex.Instance.IsPhoneNbr(txtSDT.Text))
                 {
-                    MessageBox.Show("Thêm Nhà Cung Cấp Thành Công", "Thật Tuyệt Vời");
+                    string tenCongTy = txtTenCongTy.Text;
+                    string diaChi = txtDiaChi.Text;
+                    string soNganHang = txtSoNganHang.Text;
+                    string tenNganHang = txtTenNganHang.Text;
+                    string sdt = txtSDT.Text;
+
+                    object[] objects = new object[] { tenCongTy, diaChi, sdt, soNganHang, tenNganHang };
+                    if (BUS.B_NhaCungCap.Instance.stokerAddNhaCungCap(objects))
+                    {
+                        MessageBox.Show("Thêm Nhà Cung Cấp Thành Công", "Thật Tuyệt Vời");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ô Nô !!!", "Có Gì Đó lỗi Ở Đây");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ô Nô !!!", "Có Gì Đó lỗi Ở Đây");
+                    MessageBox.Show("Không phải sô điện thoại, vui lòng nhập lại", "Thông Báo");
+                    txtSDT.Focus();
                 }
+  
             }
         }
     }

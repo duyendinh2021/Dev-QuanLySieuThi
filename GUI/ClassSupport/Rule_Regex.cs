@@ -29,6 +29,8 @@ namespace GUI
 
         public Regex Name_Regex = new Regex(@"([^\w\s])|([0-9])");
 
+        public Regex Name_Product_Regex = new Regex(@"([^\w\s0-9])");
+
         public Regex Address_Regex = new Regex(@"[^\w\s0-9\{/.()}]");
 
         public Regex MobileNumber_Regex = new Regex(@"/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/");
@@ -38,5 +40,33 @@ namespace GUI
         public Regex Number_Regex = new Regex(@"([^0-9])");
 
         public Regex Describe_Regex = new Regex(@"([^\w\s^0-9{,. }])");
+
+        public  string MobileNumer_String = @"^([0])?[1-9][0-9]{8}$";
+
+        public string Email_String = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
+
+        public bool IsPhoneNbr(string number)
+        {
+            if (number != null) return Regex.IsMatch(number, MobileNumer_String);
+            else return false;
+        }
+
+        public bool IsEmail(string email)
+        {
+            return Regex.IsMatch(email, Email_String, RegexOptions.IgnoreCase);
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            try
+            {
+                var mail = new System.Net.Mail.MailAddress(email);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
