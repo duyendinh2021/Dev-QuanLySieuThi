@@ -16,6 +16,7 @@ namespace GUI.Forms
 {
     public partial class FormQuanLySanPham : Form
     {
+        [Obsolete]
         public FormQuanLySanPham()
         {
             InitializeComponent();

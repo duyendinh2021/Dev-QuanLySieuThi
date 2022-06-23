@@ -1,6 +1,6 @@
-﻿namespace GUI.Forms
+﻿namespace GUI.Forms.LoaiSanPham
 {
-    partial class FormNhapLoaiSP
+    partial class FormCapNhatLoaiSp
     {
         /// <summary>
         /// Required designer variable.
@@ -26,55 +26,25 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        [System.Obsolete]
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhatLoaiSp));
             this.grbLoaiSP = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ptcbShowImg = new System.Windows.Forms.PictureBox();
-            this.btnBrowsImg = new System.Windows.Forms.Button();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ptcbShowImg = new System.Windows.Forms.PictureBox();
+            this.btnBrowsImg = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panHeader.SuspendLayout();
             this.grbLoaiSP.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptcbShowImg)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panHeader
-            // 
-            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.panHeader.Controls.Add(this.btnExit);
-            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHeader.Location = new System.Drawing.Point(0, 0);
-            this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1067, 53);
-            this.panHeader.TabIndex = 2;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 42;
-            this.btnExit.Location = new System.Drawing.Point(983, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(84, 53);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // grbLoaiSP
             // 
@@ -86,10 +56,10 @@
             this.grbLoaiSP.Controls.Add(this.label1);
             this.grbLoaiSP.Dock = System.Windows.Forms.DockStyle.Top;
             this.grbLoaiSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbLoaiSP.Location = new System.Drawing.Point(0, 53);
+            this.grbLoaiSP.Location = new System.Drawing.Point(0, 0);
             this.grbLoaiSP.Name = "grbLoaiSP";
-            this.grbLoaiSP.Size = new System.Drawing.Size(1067, 363);
-            this.grbLoaiSP.TabIndex = 0;
+            this.grbLoaiSP.Size = new System.Drawing.Size(1009, 363);
+            this.grbLoaiSP.TabIndex = 3;
             this.grbLoaiSP.TabStop = false;
             this.grbLoaiSP.Text = "Thông Tin Loại Sản Phẩm";
             // 
@@ -103,29 +73,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ảnh Loại Sản Phẩm";
             // 
-            // ptcbShowImg
-            // 
-            this.ptcbShowImg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptcbShowImg.Location = new System.Drawing.Point(3, 26);
-            this.ptcbShowImg.Name = "ptcbShowImg";
-            this.ptcbShowImg.Size = new System.Drawing.Size(198, 182);
-            this.ptcbShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptcbShowImg.TabIndex = 21;
-            this.ptcbShowImg.TabStop = false;
-            // 
-            // btnBrowsImg
-            // 
-            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
-            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
-            this.btnBrowsImg.Location = new System.Drawing.Point(714, 61);
-            this.btnBrowsImg.Name = "btnBrowsImg";
-            this.btnBrowsImg.Size = new System.Drawing.Size(123, 37);
-            this.btnBrowsImg.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.btnBrowsImg, "Click Dể Tiến Hành Chọn Hình");
-            this.btnBrowsImg.UseVisualStyleBackColor = false;
-            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
-            this.btnBrowsImg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnBrowsImg_KeyDown);
-            // 
             // txtMoTa
             // 
             this.txtMoTa.Location = new System.Drawing.Point(322, 159);
@@ -134,7 +81,6 @@
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(246, 85);
             this.txtMoTa.TabIndex = 1;
-            this.txtMoTa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMoTa_KeyDown);
             this.txtMoTa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMoTa_KeyPress);
             // 
             // txtTenSP
@@ -144,7 +90,6 @@
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(246, 30);
             this.txtTenSP.TabIndex = 0;
-            this.txtTenSP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenSP_KeyDown);
             this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
             // 
             // label3
@@ -167,15 +112,37 @@
             this.label1.Text = "Tên Loại Sản Phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // ptcbShowImg
+            // 
+            this.ptcbShowImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptcbShowImg.Location = new System.Drawing.Point(3, 26);
+            this.ptcbShowImg.Name = "ptcbShowImg";
+            this.ptcbShowImg.Size = new System.Drawing.Size(198, 182);
+            this.ptcbShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcbShowImg.TabIndex = 21;
+            this.ptcbShowImg.TabStop = false;
+            // 
+            // btnBrowsImg
+            // 
+            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
+            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
+            this.btnBrowsImg.Location = new System.Drawing.Point(714, 61);
+            this.btnBrowsImg.Name = "btnBrowsImg";
+            this.btnBrowsImg.Size = new System.Drawing.Size(123, 37);
+            this.btnBrowsImg.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnBrowsImg, "Click Dể Tiến Hành Chọn Hình");
+            this.btnBrowsImg.UseVisualStyleBackColor = false;
+            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
+            // 
             // btnClearAll
             // 
             this.btnClearAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(147)))), ((int)(((byte)(53)))));
             this.btnClearAll.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearAll.Image = global::GUI.Properties.Resources.clear;
-            this.btnClearAll.Location = new System.Drawing.Point(411, 461);
+            this.btnClearAll.Location = new System.Drawing.Point(386, 392);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(157, 71);
-            this.btnClearAll.TabIndex = 2;
+            this.btnClearAll.TabIndex = 6;
             this.toolTip1.SetToolTip(this.btnClearAll, "Click Nếu Muốn Xóa Tất Cả");
             this.btnClearAll.UseVisualStyleBackColor = false;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
@@ -185,27 +152,25 @@
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
             this.btnConfirm.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
-            this.btnConfirm.Location = new System.Drawing.Point(150, 461);
+            this.btnConfirm.Location = new System.Drawing.Point(125, 392);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(157, 71);
-            this.btnConfirm.TabIndex = 1;
+            this.btnConfirm.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btnConfirm, "Click Dể Xác Nhận Và Tiến Hành Thêm Loại Sản Phẩm Mới");
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // FormNhapLoaiSP
+            // FormCapNhatLoaiSp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 586);
+            this.ClientSize = new System.Drawing.Size(1009, 542);
+            this.Controls.Add(this.grbLoaiSP);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.grbLoaiSP);
-            this.Controls.Add(this.panHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormNhapLoaiSP";
-            this.Text = "FormNhapLoaiSP";
-            this.panHeader.ResumeLayout(false);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormCapNhatLoaiSp";
             this.grbLoaiSP.ResumeLayout(false);
             this.grbLoaiSP.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -215,19 +180,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panHeader;
         private System.Windows.Forms.GroupBox grbLoaiSP;
-        private System.Windows.Forms.Button btnBrowsImg;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox ptcbShowImg;
+        private System.Windows.Forms.Button btnBrowsImg;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnClearAll;
-        private FontAwesome.Sharp.IconButton btnExit;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }

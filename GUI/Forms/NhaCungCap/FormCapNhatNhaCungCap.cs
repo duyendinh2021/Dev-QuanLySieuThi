@@ -14,6 +14,7 @@ namespace GUI.Forms.NhaCungCap
 {
     public partial class FormCapNhatNhaCungCap : Form
     {
+        [Obsolete]
         public FormCapNhatNhaCungCap()
         {
             InitializeComponent();
@@ -26,6 +27,8 @@ namespace GUI.Forms.NhaCungCap
         string songanhang;
         string tennganhang;
 
+
+        [Obsolete]
         public FormCapNhatNhaCungCap(int id_ncc, string ten_ct, string diach, string sdt, string soNganhang, string tenNganHang)
         {
             InitializeComponent();
@@ -75,28 +78,37 @@ namespace GUI.Forms.NhaCungCap
                 }
                 else
                 {
-                    this.ten_ct = txtTenCongTy.Text;
-                    this.sdt = txtSDT.Text;
-                    this.tennganhang = txtTenNganHang.Text;
-                    this.songanhang = txtSoNganHang.Text;
-                    this.diachi = txtDiaChi.Text;
-                    int trangthai = int.Parse(cmbTrangThai.SelectedValue.ToString());
-                    object[] NhaCungCap = new object[] { id_ncc, ten_ct, diachi, sdt, songanhang, tennganhang, trangthai };
-                    if (B_NhaCungCap.Instance.StokerUpdateNhaCungCap(NhaCungCap))
+                    if (Rule_Regex.Instance.IsPhoneNbr(txtSDT.Text))
                     {
-                        MessageBox.Show("Cập Nhật Nhà Cung Cấp Thành Công", "Thông Báo");
+                        this.ten_ct = txtTenCongTy.Text;
+                        this.sdt = txtSDT.Text;
+                        this.tennganhang = txtTenNganHang.Text;
+                        this.songanhang = txtSoNganHang.Text;
+                        this.diachi = txtDiaChi.Text;
+                        int trangthai = int.Parse(cmbTrangThai.SelectedValue.ToString());
+                        object[] NhaCungCap = new object[] { id_ncc, ten_ct, diachi, sdt, songanhang, tennganhang, trangthai };
+                        if (B_NhaCungCap.Instance.StokerUpdateNhaCungCap(NhaCungCap))
+                        {
+                            MessageBox.Show("Cập Nhật Nhà Cung Cấp Thành Công", "Thông Báo");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ô NÔ !!!", "Có Gì Đó Không Ổn");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Ô NÔ !!!", "Có Gì Đó Không Ổn");
+                        MessageBox.Show("Không phải sô điện thoại, vui lòng nhập lại", "Thông Báo");
+                        txtSDT.Focus();
                     }
+
                 }
             }
         }
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Rule_Regex.Instance.MobileNumber_Regex.IsMatch(e.KeyChar.ToString()) && !char.IsControl(e.KeyChar))
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !char.IsControl(e.KeyChar))
             {
                 MessageBox.Show("Bạn Không Thể Nhập Ký Tự Này");
                 e.Handled = true;

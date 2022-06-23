@@ -85,6 +85,7 @@ namespace DAO
                     loaiSanPham.Tensanpham = item["TenLoaiSanPham"].ToString();
                     loaiSanPham.Mota = item["MoTa"].ToString();
                     loaiSanPham.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    loaiSanPham.Hinh = (byte[])item["Hinh"];
                 }
             }
             return loaiSanPham;
@@ -194,6 +195,12 @@ namespace DAO
 
             return loaiSanPhams;
         }
-        
+
+        [Obsolete]
+        public void UpdateProductType(object[] parameter)
+        {
+            string query = "EXEC UpdateLoaiSP @id , @ten_loaiSP , @mota , @hinh";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
     }
 }

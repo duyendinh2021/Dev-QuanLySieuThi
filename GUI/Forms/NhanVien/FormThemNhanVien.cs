@@ -15,6 +15,7 @@ namespace GUI.Forms
 {
     public partial class FormThemNhanVien : Form
     {
+        [Obsolete]
         public FormThemNhanVien()
         {
             InitializeComponent();
@@ -101,39 +102,62 @@ namespace GUI.Forms
             }
             else
             {
-                string hoten = txtHoTen.Text;
-                string email = txtEmail.Text;
-                string sdt = txtSDT.Text;
-                decimal luong = decimal.Parse(txtLuong.Text);
-                string tenNganHang = txtTenNganHang.Text;
-                string soNganHang = txtSoNganHang.Text;
-                string diachi = txtDiachi.Text;
-                string gioiTinh = cmbGioiTinh.Text;
-                string chucvu = cmbChucvu.Text;
-                DateTime ngaySinh = dtpNgaySinh.Value;
-                DateTime ngayVaoLam = dtpNgayVaoLam.Value;
-                byte[] hinh = System.IO.File.ReadAllBytes(sPathImg);
 
-                object[] objects = new object[] { hoten, chucvu, gioiTinh, ngaySinh, ngayVaoLam, diachi, sdt, tenNganHang, soNganHang, luong, email, hinh };
-
-                if (B_NhanVien.Instance.adminAddNhanVien(objects))
+                if (Rule_Regex.Instance.IsPhoneNbr(txtSDT.Text))
                 {
-                    MessageBox.Show("Thêm Nhân viên Thành Công", "Thật Tuyệt Vời");
+                    if (Rule_Regex.Instance.IsValidEmail(txtEmail.Text))
+                    {
+                        string hoten = txtHoTen.Text;
+                        string email = txtEmail.Text;
+                        string sdt = txtSDT.Text;
+                        decimal luong = decimal.Parse(txtLuong.Text);
+                        string tenNganHang = txtTenNganHang.Text;
+                        string soNganHang = txtSoNganHang.Text;
+                        string diachi = txtDiachi.Text;
+                        string gioiTinh = cmbGioiTinh.Text;
+                        string chucvu = cmbChucvu.Text;
+                        DateTime ngaySinh = dtpNgaySinh.Value;
+                        DateTime ngayVaoLam = dtpNgayVaoLam.Value;
+                        byte[] hinh = System.IO.File.ReadAllBytes(sPathImg);
+
+                        object[] objects = new object[] { hoten, chucvu, gioiTinh, ngaySinh, ngayVaoLam, diachi, sdt, tenNganHang, soNganHang, luong, email, hinh };
+
+                        if (B_NhanVien.Instance.adminAddNhanVien(objects))
+                        {
+                            MessageBox.Show("Thêm Nhân viên Thành Công", "Thật Tuyệt Vời");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ô Nô !!!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email Không Đúng Định Đạng !!!", "Thông Báo");
+
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ô Nô !!!");
+                    MessageBox.Show("Không phải sô điện thoại, vui lòng nhập lại", "Thông Báo");
+                    txtSDT.Focus();
                 }
+
             }                     
         }
 
         private void btnImage_Click(object sender, EventArgs e)
         {
-
-
-            sPathImg = SupportLogic.Instance.getPathFile();
-            img = Image.FromFile(sPathImg);
-            ptbShowImage.Image = img;
+            try
+            {
+                sPathImg = SupportLogic.Instance.getPathFile();
+                img = Image.FromFile(sPathImg);
+                ptbShowImage.Image = img;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void FormThemNhanVien_Load(object sender, EventArgs e)

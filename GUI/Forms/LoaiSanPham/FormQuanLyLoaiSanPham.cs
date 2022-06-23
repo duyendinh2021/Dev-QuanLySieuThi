@@ -18,7 +18,7 @@ namespace GUI.Forms.LoaiSanPham
         {
             InitializeComponent();
         }
-        
+
         [Obsolete]
         private void FormQuanLyLoaiSanPham_Load(object sender, EventArgs e)
         {
@@ -55,6 +55,25 @@ namespace GUI.Forms.LoaiSanPham
         {
             int trangthai = int.Parse(cmbTrangThai.SelectedValue.ToString());
             B_LoaiSanPham.Instance.GetProductTypesByTrangthai(trangthai, ref dgvDanhSachLoaiSP);
+        }
+
+        [Obsolete]
+        private void dgvDanhSachLoaiSP_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dgvDanhSachLoaiSP.Rows[e.RowIndex];
+                if (e.ColumnIndex == 0)
+                {
+                    FormCapNhatLoaiSp formCapNhatLoaiSp = new FormCapNhatLoaiSp(int.Parse(row.Cells["ID"].Value.ToString()));
+                    formCapNhatLoaiSp.ShowDialog();
+                    B_LoaiSanPham.Instance.GetAllProductTypesNoDeleted(ref dgvDanhSachLoaiSP);
+                    row = dgvDanhSachLoaiSP.Rows[e.RowIndex];
+
+                }
+                ptcBoxImg.Image = ClassSupport.SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+                
+            }
         }
     }
 }

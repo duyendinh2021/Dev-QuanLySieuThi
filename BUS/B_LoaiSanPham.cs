@@ -98,5 +98,30 @@ namespace BUS
             List<LoaiSanPham> loaiSanPhams = D_LoaiSanPham.Instance.GetProductTypesByTrangthai(trangthai);
             data.DataSource = loaiSanPhams;
         }
+
+        [Obsolete]
+        public void GetInforProductTypesByID(int id , ref string name,ref string mota,ref byte[] hinh)
+        {
+            LoaiSanPham loaiSanPham = D_LoaiSanPham.Instance.GetOneProductTypeByID(id);
+            name = loaiSanPham.Tensanpham;
+            mota = loaiSanPham.Mota;
+            hinh = loaiSanPham.Hinh;
+        }
+
+
+        [Obsolete]
+        public bool UpdateProductType(object[] paremeter)
+        {
+            try
+            {
+                D_LoaiSanPham.Instance.UpdateProductType(paremeter);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
     }
 }
