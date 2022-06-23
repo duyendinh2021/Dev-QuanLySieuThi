@@ -62,13 +62,17 @@ namespace GUI.Forms.LoaiSanPham
         {
             if (e.RowIndex != -1)
             {
+                DataGridViewRow row = dgvDanhSachLoaiSP.Rows[e.RowIndex];
                 if (e.ColumnIndex == 0)
                 {
-                DataGridViewRow row = dgvDanhSachLoaiSP.Rows[e.RowIndex];
                     FormCapNhatLoaiSp formCapNhatLoaiSp = new FormCapNhatLoaiSp(int.Parse(row.Cells["ID"].Value.ToString()));
                     formCapNhatLoaiSp.ShowDialog();
                     B_LoaiSanPham.Instance.GetAllProductTypesNoDeleted(ref dgvDanhSachLoaiSP);
+                    row = dgvDanhSachLoaiSP.Rows[e.RowIndex];
+
                 }
+                ptcBoxImg.Image = ClassSupport.SupportLogic.Instance.ConvertBinaryToImage((byte[])row.Cells["Hinh"].Value);
+                
             }
         }
     }

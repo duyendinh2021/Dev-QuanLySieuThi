@@ -33,11 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyLoaiSanPham));
             this.dgvDanhSachLoaiSP = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnThemLoaiSP = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panHeader = new System.Windows.Forms.Panel();
@@ -45,15 +45,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTrangThai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten_loaiSp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnThemLoaiSP = new System.Windows.Forms.Button();
+            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ptcBoxImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiSP)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcBoxImg)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDanhSachLoaiSP
@@ -122,18 +127,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Loại Sản Phẩm";
             // 
-            // btnThemLoaiSP
-            // 
-            this.btnThemLoaiSP.Image = global::GUI.Properties.Resources.add;
-            this.btnThemLoaiSP.Location = new System.Drawing.Point(89, 117);
-            this.btnThemLoaiSP.Name = "btnThemLoaiSP";
-            this.btnThemLoaiSP.Size = new System.Drawing.Size(144, 68);
-            this.btnThemLoaiSP.TabIndex = 30;
-            this.btnThemLoaiSP.UseVisualStyleBackColor = true;
-            this.btnThemLoaiSP.Click += new System.EventHandler(this.btnThemLoaiSP_Click);
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ptcBoxImg);
             this.groupBox2.Location = new System.Drawing.Point(890, 70);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(222, 220);
@@ -195,24 +191,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Trạng Thái";
             // 
-            // colbtnSua
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.colbtnSua.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colbtnSua.FillWeight = 133.6898F;
-            this.colbtnSua.HeaderText = "";
-            this.colbtnSua.Image = global::GUI.Properties.Resources.edit;
-            this.colbtnSua.MinimumWidth = 6;
-            this.colbtnSua.Name = "colbtnSua";
-            this.colbtnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colbtnSua.ToolTipText = "Nhấn Để Tiến Hành Edit";
-            this.colbtnSua.Width = 60;
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "Idloaisanpham";
@@ -263,6 +241,62 @@
             this.Hinh.Visible = false;
             this.Hinh.Width = 125;
             // 
+            // dataGridViewImageColumn1
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewImageColumn1.FillWeight = 133.6898F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::GUI.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.ToolTipText = "Nhấn Để Tiến Hành Edit";
+            this.dataGridViewImageColumn1.Width = 60;
+            // 
+            // btnThemLoaiSP
+            // 
+            this.btnThemLoaiSP.Image = global::GUI.Properties.Resources.add;
+            this.btnThemLoaiSP.Location = new System.Drawing.Point(89, 117);
+            this.btnThemLoaiSP.Name = "btnThemLoaiSP";
+            this.btnThemLoaiSP.Size = new System.Drawing.Size(144, 68);
+            this.btnThemLoaiSP.TabIndex = 30;
+            this.btnThemLoaiSP.UseVisualStyleBackColor = true;
+            this.btnThemLoaiSP.Click += new System.EventHandler(this.btnThemLoaiSP_Click);
+            // 
+            // colbtnSua
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.colbtnSua.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colbtnSua.FillWeight = 133.6898F;
+            this.colbtnSua.HeaderText = "";
+            this.colbtnSua.Image = global::GUI.Properties.Resources.edit;
+            this.colbtnSua.MinimumWidth = 6;
+            this.colbtnSua.Name = "colbtnSua";
+            this.colbtnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colbtnSua.ToolTipText = "Nhấn Để Tiến Hành Edit";
+            this.colbtnSua.Width = 60;
+            // 
+            // ptcBoxImg
+            // 
+            this.ptcBoxImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptcBoxImg.Location = new System.Drawing.Point(3, 18);
+            this.ptcBoxImg.Name = "ptcBoxImg";
+            this.ptcBoxImg.Size = new System.Drawing.Size(216, 199);
+            this.ptcBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcBoxImg.TabIndex = 0;
+            this.ptcBoxImg.TabStop = false;
+            // 
             // FormQuanLyLoaiSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -277,8 +311,10 @@
             this.Load += new System.EventHandler(this.FormQuanLyLoaiSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiSP)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.panHeader.ResumeLayout(false);
             this.panHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcBoxImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +337,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mota;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hinh;
+        private System.Windows.Forms.PictureBox ptcBoxImg;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
