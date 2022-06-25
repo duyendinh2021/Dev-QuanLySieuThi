@@ -123,12 +123,6 @@ namespace GUI
         //    }
         //}
 
-
-        [Obsolete]
-        private void dtGVDanhSachNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //edit(sender, e);
-        }
         [Obsolete]
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -488,7 +482,7 @@ namespace GUI
                         if (dialog == DialogResult.Yes)
                         {
 
-                            if (row.Cells["colChucVu"].ToString() == "Admin")
+                            if (row.Cells["colChucVu"].Value.ToString() == "Admin")
                             {
                                 MessageBox.Show("Không Thể Xóa Tài Khoản Admin", "Thông Báo");
                             }

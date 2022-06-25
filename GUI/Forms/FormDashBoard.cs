@@ -17,6 +17,7 @@ namespace GUI.Forms
 {
     public partial class FormDashBoard : Form
     {
+        [Obsolete]
         public FormDashBoard()
         {
             InitializeComponent();

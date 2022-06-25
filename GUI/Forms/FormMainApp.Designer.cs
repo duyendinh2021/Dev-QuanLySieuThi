@@ -278,7 +278,7 @@
             this.btnProductsType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductsType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductsType.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProductsType.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnProductsType.IconChar = FontAwesome.Sharp.IconChar.PollH;
             this.btnProductsType.IconColor = System.Drawing.Color.Gainsboro;
             this.btnProductsType.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProductsType.IconSize = 32;

@@ -92,15 +92,15 @@ namespace GUI
                     btnOrders.Visible = true;
                     btnProducts.Visible = true;
                     btnStaffs.Visible = true;
+                    btnProductsType.Visible = true;
                     break;
 
                 case "Cashier":
                     //Cashier
                     btnSale.Visible = true;
-                    btnProductsType.Visible = true;
+                    //btnProductsType.Visible = true;
 
                     break;
-
                 case "Stoker":
                     //Stoker
                     btnSTmanageProducts.Visible = true;
@@ -114,6 +114,7 @@ namespace GUI
             }
         }
 
+        [Obsolete]
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color4);
@@ -127,6 +128,7 @@ namespace GUI
             SupportUI_UX.Instance.showChildForm(new FormQuanLyHoaDon(), panChildForm);
         }
 
+        [Obsolete]
         private void btnProducts_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color2);
@@ -149,6 +151,7 @@ namespace GUI
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color3);
         }
 
+        [Obsolete]
         private void btnSTmanageProducts_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color2);

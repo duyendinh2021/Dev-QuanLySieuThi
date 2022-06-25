@@ -30,8 +30,8 @@ namespace DAO
         public List<NhanVien> getAllNhanVienHoatDong()
         {
             List<NhanVien> nhanViens = new List<NhanVien>();
-            string query = "EXEC SelectAllNhanVienByTrangThai 1";
-            using (DataTable dataTable = connectionData.Instance.excuteQuery(query))
+            string query = "EXEC SelectAllNhanVienByTrangThai @trangthai";
+            using (DataTable dataTable = connectionData.Instance.excuteQuery(query,new object[] {1}))
             {
                 foreach (DataRow item in dataTable.Rows)
                 {
