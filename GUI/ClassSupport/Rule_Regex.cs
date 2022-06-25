@@ -41,7 +41,7 @@ namespace GUI
 
         public Regex Describe_Regex = new Regex(@"([^\w\s^0-9{,. }])");
 
-        public  string MobileNumer_String = @"^([0])?[1-9][0-9]{8}$";
+        public  string MobileNumer_String = @"(0[3|5|7|8|9])+([0-9]{8})\b";
 
         public string Email_String = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
 
