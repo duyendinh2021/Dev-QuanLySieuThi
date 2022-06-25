@@ -30,8 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemNhanVien));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -62,40 +61,11 @@
             this.lblNgayVaoLam = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grBThongtin.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panHeader
-            // 
-            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.panHeader.Controls.Add(this.btnExit);
-            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHeader.Location = new System.Drawing.Point(0, 0);
-            this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1367, 55);
-            this.panHeader.TabIndex = 10;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 50;
-            this.btnExit.Location = new System.Drawing.Point(1292, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 55);
-            this.btnExit.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnExit, "Click Dể Đống");
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel1
             // 
@@ -103,9 +73,9 @@
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.grBThongtin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 55);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1367, 636);
+            this.panel1.Size = new System.Drawing.Size(1367, 691);
             this.panel1.TabIndex = 7;
             // 
             // btnClear
@@ -460,11 +430,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1367, 691);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormThemNhanVien";
             this.Load += new System.EventHandler(this.FormThemNhanVien_Load);
-            this.panHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.grBThongtin.ResumeLayout(false);
             this.grBThongtin.PerformLayout();
@@ -475,9 +444,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panHeader;
-        private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grBThongtin;
         private System.Windows.Forms.PictureBox ptbShowImage;
