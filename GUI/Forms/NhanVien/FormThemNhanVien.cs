@@ -154,7 +154,7 @@ namespace GUI.Forms
                 img = Image.FromFile(sPathImg);
                 ptbShowImage.Image = img;
             }
-            catch (Exception exp)
+            catch (Exception)
             {
                 //MessageBox.Show("Vui Lòng Chọn Ảnh !!!");
             }

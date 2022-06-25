@@ -18,6 +18,8 @@ namespace GUI
     {
         private double loiNhuan = 0.25;
         decimal sumCost = 0;
+
+        [Obsolete]
         public FormSale()
         {
             InitializeComponent();
