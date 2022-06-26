@@ -383,6 +383,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="263142.ico" />
+    <None Include="Resources\anhSieuTHi.jpg" />
+    <None Include="Resources\bgkStart.jpg" />
     <None Include="Resources\unnamed.jpg" />
     <None Include="Resources\log-in 64px.png" />
     <None Include="Resources\log-in.png" />

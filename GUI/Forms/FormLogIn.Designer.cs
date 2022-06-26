@@ -32,20 +32,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDangNhap = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.chkBoxHienMK = new System.Windows.Forms.CheckBox();
             this.lblLinkQuanMK = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnDangNhap = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.btnDangNhap);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -54,24 +55,10 @@
             this.panel2.Controls.Add(this.chkBoxHienMK);
             this.panel2.Controls.Add(this.lblLinkQuanMK);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(433, 0);
+            this.panel2.Location = new System.Drawing.Point(444, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(499, 611);
+            this.panel2.Size = new System.Drawing.Size(488, 611);
             this.panel2.TabIndex = 1;
-            // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangNhap.Image = global::GUI.Properties.Resources.log_in_64px;
-            this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDangNhap.Location = new System.Drawing.Point(214, 336);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(186, 62);
-            this.btnDangNhap.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.btnDangNhap, "Click Dể Tiến Hành Login");
-            this.btnDangNhap.UseVisualStyleBackColor = true;
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            this.btnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangNhap_KeyDown);
             // 
             // label4
             // 
@@ -147,15 +134,29 @@
             this.toolTip1.SetToolTip(this.lblLinkQuanMK, "Click Nếu Bạn Quên Mật Khẩu");
             this.lblLinkQuanMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLinkQuanMK_LinkClicked);
             // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangNhap.Image = global::GUI.Properties.Resources.log_in_64px;
+            this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDangNhap.Location = new System.Drawing.Point(214, 336);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(186, 62);
+            this.btnDangNhap.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnDangNhap, "Click Dể Tiến Hành Login");
+            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            this.btnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangNhap_KeyDown);
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(80)))), ((int)(((byte)(214)))));
-            this.panel1.BackgroundImage = global::GUI.Properties.Resources.unnamed;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.BackgroundImage = global::GUI.Properties.Resources.bgkStart;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(433, 611);
+            this.panel1.Size = new System.Drawing.Size(444, 611);
             this.panel1.TabIndex = 0;
             // 
             // FormLogin

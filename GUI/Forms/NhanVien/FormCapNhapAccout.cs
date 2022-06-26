@@ -13,6 +13,7 @@ namespace GUI.Forms
 {
     public partial class FormCapNhapAccout : Form
     {
+        [Obsolete]
         public FormCapNhapAccout()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace GUI.Forms
         string uesrname;
         string chucvu;
         string pass;
+
+        [Obsolete]
         public FormCapNhapAccout(int id, string tk, string mk, int trangthai, string chucvu)
         {
             InitializeComponent();
@@ -60,6 +63,7 @@ namespace GUI.Forms
             if (chucvu == "Admin")
             {
                 txtMk.UseSystemPasswordChar = true;
+                btnCapNhat.Enabled = false;
             }
         }
 
@@ -111,8 +115,8 @@ namespace GUI.Forms
                         default:
                             break;
                     }
-                    object[] objects = new object[] { id, tkupdate, passupdate, chucvu, trangthaiupdate };
-                    if (BUS.B_TaiKhoan.Instance.updateTaikhoan(objects))
+                    object[] Taikhoan = new object[] { id, tkupdate, passupdate, chucvu, trangthaiupdate };
+                    if (BUS.B_TaiKhoan.Instance.updateTaikhoan(Taikhoan))
                     {
                         MessageBox.Show("Cập nhật thành công", "Thật tuyệt vời");
                     }
