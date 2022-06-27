@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using GUI.Forms.NhanVien;
 using BUS;
 
 namespace GUI
@@ -118,6 +120,14 @@ namespace GUI
             {
                 if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn, ref message))
                 {
+
+                    if (B_TaiKhoan.Instance.pass == "123")
+                    {
+                        MessageBox.Show("Vui long doi mat khau", "Thong Bao");
+                        FormChangePassWord formChangePassWord = new FormChangePassWord(B_TaiKhoan.Instance.id);
+                        formChangePassWord.ShowDialog();
+                    }
+
                     FormMainApp formMainApp = new FormMainApp();
                     formMainApp.Show();
                     B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);

@@ -349,6 +349,8 @@ namespace GUI
                 }
             }
         }
+
+
         decimal baseQTY = 1;
         decimal CostAtItem = 1;
         private void dgvHoaDon_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -359,6 +361,8 @@ namespace GUI
                 CostAtItem = decimal.Parse(dgvHoaDon[2, e.RowIndex].Value.ToString());
             }
         }
+
+
 
         private void dgvHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {

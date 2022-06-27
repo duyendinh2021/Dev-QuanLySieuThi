@@ -50,15 +50,15 @@ namespace GUI.Forms
             dtDanhSachSP.Columns["Hinh"].Visible = false;
             dtDanhSachSP.Columns["Trangthai"].Visible = false;
             Load_Category();
-            if (B_TaiKhoan.Instance.quyen == "Admin")
-            {
-                panSideMenu.Visible = false;
-                btnNhapHang.Visible = false;
-                dtDanhSachSP.Columns["colbtnXoa"].Visible = false;
-                dtDanhSachSP.Columns["colbtnSua"].Visible = false;
-                lblHangHoa.Visible = false;
-                dtDanhSachSP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            }
+            //if (B_TaiKhoan.Instance.quyen == "Admin")
+            //{
+            //    panSideMenu.Visible = false;
+            //    btnNhapHang.Visible = false;
+            //    dtDanhSachSP.Columns["colbtnXoa"].Visible = false;
+            //    dtDanhSachSP.Columns["colbtnSua"].Visible = false;
+            //    lblHangHoa.Visible = false;
+            //    dtDanhSachSP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //}
         }
 
 
