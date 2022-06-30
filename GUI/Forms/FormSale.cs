@@ -372,6 +372,11 @@ namespace GUI
                 {
                     if (e.ColumnIndex == 1 && dgvHoaDon[1, e.RowIndex].Value != null)
                     {
+                        if (int.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString()) == 0)
+                        {
+                            dgvHoaDon[1, e.RowIndex].Value = baseQTY;
+                        }
+
                         decimal baseCost = CostAtItem / baseQTY;
                         dgvHoaDon[2, e.RowIndex].Value = string.Format("{0:####}", decimal.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString()) * baseCost);
                         calSumCost();

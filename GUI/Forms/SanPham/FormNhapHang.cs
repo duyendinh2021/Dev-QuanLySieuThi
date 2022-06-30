@@ -14,14 +14,12 @@ namespace GUI.Forms.SanPham
 {
     public partial class FormNhapHang : Form
     {
+        private int baseQTY = 1;
+
+        [Obsolete]
         public FormNhapHang()
         {
             InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
 
@@ -258,7 +256,7 @@ namespace GUI.Forms.SanPham
                     decimal baseCost = GetBaseGia(int.Parse(row.Cells["ID"].Value.ToString()));
                     if (int.Parse(dgvHoaDonNhap[1, e.RowIndex].Value.ToString()) == 0)
                     {
-                        dgvHoaDonNhap[1, e.RowIndex].Value = 1;
+                        dgvHoaDonNhap[1, e.RowIndex].Value = baseQTY;
                     }
                     dgvHoaDonNhap[2, e.RowIndex].Value = baseCost * decimal.Parse(dgvHoaDonNhap[1, e.RowIndex].Value.ToString());
                     tinhTongGia();
@@ -297,6 +295,14 @@ namespace GUI.Forms.SanPham
             {
                 MessageBox.Show("Bạn Không Thể Nhập Kí Tự Này", "Thông Báo");
                 e.Handled = true;
+            }
+        }
+
+        private void dgvHoaDonNhap_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                baseQTY = int.Parse(dgvHoaDonNhap[1, e.RowIndex].Value.ToString());
             }
         }
     }
