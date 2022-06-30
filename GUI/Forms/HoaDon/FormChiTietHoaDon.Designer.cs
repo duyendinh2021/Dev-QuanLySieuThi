@@ -45,14 +45,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDanhSachDetailsPhieuNhap = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ID_HD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_SanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChietKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDetailsPhieuNhap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +155,7 @@
             this.ChietKhau,
             this.SL,
             this.DonGia,
+            this.GhiChu,
             this.TrangThai});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
@@ -184,6 +186,27 @@
             this.dgvDanhSachDetailsPhieuNhap.Size = new System.Drawing.Size(1149, 283);
             this.dgvDanhSachDetailsPhieuNhap.TabIndex = 31;
             this.dgvDanhSachDetailsPhieuNhap.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachDetailsPhieuNhap_CellMouseClick);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(57, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 25);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "ID Sản Phẩm";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvDanhSachDetailsPhieuNhap);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 328);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1155, 304);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh Sách Chi Tiết Phiếu Nhập Kho";
             // 
             // ID_HD
             // 
@@ -226,6 +249,14 @@
             this.DonGia.Name = "DonGia";
             this.DonGia.ReadOnly = true;
             // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "Ghichu";
+            this.GhiChu.HeaderText = "Ghi Chú";
+            this.GhiChu.MinimumWidth = 6;
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
+            // 
             // TrangThai
             // 
             this.TrangThai.DataPropertyName = "Trangthai";
@@ -234,27 +265,6 @@
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
             this.TrangThai.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 25);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "ID Sản Phẩm";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvDanhSachDetailsPhieuNhap);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 328);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1155, 304);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Sách Chi Tiết Phiếu Nhập Kho";
             // 
             // FormChiTietHoaDon
             // 
@@ -300,6 +310,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ChietKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn SL;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

@@ -56,6 +56,7 @@
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnViewDetails = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID_HoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -259,6 +260,7 @@
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnViewDetails,
+            this.btnEdit,
             this.btnDelete,
             this.ID_HoaDon,
             this.ID_NhanVien,
@@ -345,6 +347,15 @@
             this.btnViewDetails.Name = "btnViewDetails";
             this.btnViewDetails.ToolTipText = "Click để xem chi tiết hóa đơn";
             this.btnViewDetails.Width = 55;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.HeaderText = "";
+            this.btnEdit.Image = global::GUI.Properties.Resources.edit;
+            this.btnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.btnEdit.MinimumWidth = 6;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Width = 55;
             // 
             // btnDelete
             // 
@@ -457,6 +468,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewImageColumn btnViewDetails;
+        private System.Windows.Forms.DataGridViewImageColumn btnEdit;
         private System.Windows.Forms.DataGridViewImageColumn btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_HoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_NhanVien;

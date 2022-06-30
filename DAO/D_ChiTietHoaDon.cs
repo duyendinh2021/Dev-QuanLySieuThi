@@ -48,6 +48,7 @@ namespace DAO
                     chiTietHoaDon.Sl = int.Parse(item["SoLuong"].ToString());
                     chiTietHoaDon.Chietkhau = int.Parse(item["ChietKhau"].ToString());
                     chiTietHoaDon.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    chiTietHoaDon.Ghichu = item["GhiChu"].ToString();
                     chiTietHoaDons.Add(chiTietHoaDon);
                 }
             }

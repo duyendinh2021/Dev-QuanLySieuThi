@@ -402,5 +402,21 @@ namespace GUI
                 e.SuppressKeyPress = true;
             }
         }
+
+        private void dgvHoaDon_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            DataGridViewTextBoxEditingControl tb =  (DataGridViewTextBoxEditingControl)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
+            e.Control.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
+        }
+
+        private void DataGridViewCellEventArgs(object sender, KeyPressEventArgs e)
+        {
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Bạn Không Thể Nhập Kí Tự Này", "Thông Báo");
+                e.Handled = true;
+            }
+        }
     }
 }

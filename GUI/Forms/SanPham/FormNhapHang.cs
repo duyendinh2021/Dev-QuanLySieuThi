@@ -252,23 +252,17 @@ namespace GUI.Forms.SanPham
         {
             if (e.RowIndex != -1)
             {
-                //try
-                //{
-
-                //}
-                //catch (Exception)
-                //{
-
-                //    throw;
-                //}
                 DataGridViewRow row = dgvHoaDonNhap.Rows[e.RowIndex];
                 if (e.ColumnIndex == 1 && dgvHoaDonNhap[1, e.RowIndex].Value != null)
                 {
                     decimal baseCost = GetBaseGia(int.Parse(row.Cells["ID"].Value.ToString()));
+                    if (int.Parse(dgvHoaDonNhap[1, e.RowIndex].Value.ToString()) == 0)
+                    {
+                        dgvHoaDonNhap[1, e.RowIndex].Value = 1;
+                    }
                     dgvHoaDonNhap[2, e.RowIndex].Value = baseCost * decimal.Parse(dgvHoaDonNhap[1, e.RowIndex].Value.ToString());
                     tinhTongGia();
                 }
-
             }
         }
 
@@ -294,14 +288,14 @@ namespace GUI.Forms.SanPham
         {
             DataGridViewTextBoxEditingControl tb = (DataGridViewTextBoxEditingControl)e.Control;
             tb.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
-            e.Control.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
+            //e.Control.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
         }
 
         private void DataGridViewCellEventArgs(object sender, KeyPressEventArgs e)
         {
             if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
             {
-                MessageBox.Show("Ban Khong The Nhap Ky tu nay", "Thong Bao");
+                MessageBox.Show("Bạn Không Thể Nhập Kí Tự Này", "Thông Báo");
                 e.Handled = true;
             }
         }

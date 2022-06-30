@@ -34,8 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapHang));
-            this.panHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grbDSNhapHang = new System.Windows.Forms.GroupBox();
@@ -73,7 +71,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,38 +84,10 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panHeader
-            // 
-            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.panHeader.Controls.Add(this.btnExit);
-            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panHeader.Location = new System.Drawing.Point(0, 0);
-            this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1837, 45);
-            this.panHeader.TabIndex = 11;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 40;
-            this.btnExit.Location = new System.Drawing.Point(1762, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 45);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 45);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -135,7 +104,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.cmbLoaiSP);
             this.splitContainer1.Panel2.Controls.Add(this.grbDSHangHoa);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1837, 711);
+            this.splitContainer1.Size = new System.Drawing.Size(1837, 756);
             this.splitContainer1.SplitterDistance = 651;
             this.splitContainer1.TabIndex = 12;
             // 
@@ -145,7 +114,7 @@
             this.panel3.Controls.Add(this.txtTongGia);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 114);
+            this.panel3.Location = new System.Drawing.Point(0, 159);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(651, 480);
             this.panel3.TabIndex = 4;
@@ -287,7 +256,7 @@
             this.panel2.Controls.Add(this.btnHangMoi);
             this.panel2.Controls.Add(this.btnConfirm);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 594);
+            this.panel2.Location = new System.Drawing.Point(0, 639);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(651, 117);
             this.panel2.TabIndex = 0;
@@ -385,7 +354,7 @@
             // 
             this.grbDSHangHoa.Controls.Add(this.dtgDSHangHoa);
             this.grbDSHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grbDSHangHoa.Location = new System.Drawing.Point(0, 114);
+            this.grbDSHangHoa.Location = new System.Drawing.Point(0, 159);
             this.grbDSHangHoa.Name = "grbDSHangHoa";
             this.grbDSHangHoa.Size = new System.Drawing.Size(1182, 502);
             this.grbDSHangHoa.TabIndex = 1;
@@ -504,7 +473,7 @@
             this.panel1.Controls.Add(this.txtSl);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 616);
+            this.panel1.Location = new System.Drawing.Point(0, 661);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 95);
             this.panel1.TabIndex = 0;
@@ -553,14 +522,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1837, 756);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.panHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNhapHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormNhapHang";
+            this.Text = "Form Nhập Hàng";
             this.Load += new System.EventHandler(this.FormNhapHang_Load);
-            this.panHeader.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -579,9 +546,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panHeader;
-        private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnClearDS;

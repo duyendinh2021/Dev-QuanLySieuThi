@@ -47,8 +47,14 @@ namespace GUI.Forms.HoaDon
                     formChiTietHoaDon.ShowDialog();
                 }
 
-                // btn delete
+                // btn edit
                 if (e.ColumnIndex == 1)
+                {
+
+                }
+
+                // btn delete
+                if (e.ColumnIndex == 2)
                 {
                     DialogResult result = MessageBox.Show("Bạn Xác Nhận Xóa Hóa Đơn Này Chứ !!!", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                     if (result == DialogResult.Yes)

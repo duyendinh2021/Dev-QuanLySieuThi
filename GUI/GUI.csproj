@@ -112,6 +112,12 @@
     <Compile Include="Forms\HoaDon\FormChiTietHoaDon.Designer.cs">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HoaDon\FormEditChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormEditChiTietHoaDon.Designer.cs">
+      <DependentUpon>FormEditChiTietHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HoaDon\FormQuanLyHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HoaDon\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoaDon\FormEditChiTietHoaDon.resx">
+      <DependentUpon>FormEditChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HoaDon\FormQuanLyHoaDon.resx">
       <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>

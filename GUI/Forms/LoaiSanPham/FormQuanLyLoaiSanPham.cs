@@ -63,6 +63,7 @@ namespace GUI.Forms.LoaiSanPham
             if (e.RowIndex != -1)
             {
                 DataGridViewRow row = dgvDanhSachLoaiSP.Rows[e.RowIndex];
+                //bnt edit
                 if (e.ColumnIndex == 0)
                 {
                     FormCapNhatLoaiSp formCapNhatLoaiSp = new FormCapNhatLoaiSp(int.Parse(row.Cells["ID"].Value.ToString()));
