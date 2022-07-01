@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>263142.ico</ApplicationIcon>
+    <ApplicationIcon>Main_Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
@@ -391,7 +391,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="263142.ico" />
+    <Content Include="Main_Icon.ico" />
     <None Include="Resources\diskette.png" />
     <None Include="Resources\anhSieuTHi.jpg" />
     <None Include="Resources\bgkStart.jpg" />
