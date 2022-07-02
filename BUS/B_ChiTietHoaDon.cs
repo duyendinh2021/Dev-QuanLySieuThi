@@ -46,5 +46,20 @@ namespace BUS
             List<ChiTietHoaDon> chiTietHoaDons = D_ChiTietHoaDon.Instance.GetChiTietHoaDonByID(id);
             data.DataSource = chiTietHoaDons;
         }
+
+
+        [Obsolete]
+        public bool UpdateCTHoaDon(object[] parameter) {
+            try
+            {
+                D_ChiTietHoaDon.Instance.UpdateCTHoaDon(parameter);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
     }
 }

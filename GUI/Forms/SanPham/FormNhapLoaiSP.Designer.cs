@@ -175,6 +175,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNhapLoaiSP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thêm Loại Sản Phẩm";
             this.grbLoaiSP.ResumeLayout(false);
             this.grbLoaiSP.PerformLayout();
             this.groupBox1.ResumeLayout(false);

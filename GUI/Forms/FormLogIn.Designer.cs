@@ -32,6 +32,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.chkBoxHienMK = new System.Windows.Forms.CheckBox();
             this.lblLinkQuanMK = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnDangNhap = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(488, 611);
             this.panel2.TabIndex = 1;
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangNhap.Image = global::GUI.Properties.Resources.log_in_64px;
+            this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDangNhap.Location = new System.Drawing.Point(214, 336);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(186, 62);
+            this.btnDangNhap.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnDangNhap, "Click Dể Tiến Hành Login");
+            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            this.btnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangNhap_KeyDown);
             // 
             // label4
             // 
@@ -134,20 +148,6 @@
             this.toolTip1.SetToolTip(this.lblLinkQuanMK, "Click Nếu Bạn Quên Mật Khẩu");
             this.lblLinkQuanMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLinkQuanMK_LinkClicked);
             // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangNhap.Image = global::GUI.Properties.Resources.log_in_64px;
-            this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDangNhap.Location = new System.Drawing.Point(214, 336);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(186, 62);
-            this.btnDangNhap.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.btnDangNhap, "Click Dể Tiến Hành Login");
-            this.btnDangNhap.UseVisualStyleBackColor = true;
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            this.btnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangNhap_KeyDown);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -170,6 +170,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng Nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

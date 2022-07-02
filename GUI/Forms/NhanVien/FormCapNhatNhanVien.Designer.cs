@@ -471,6 +471,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCapNhatNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cập Nhật Thông Tin Nhân Viên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCapNhatNhanVien_FormClosing);
             this.Load += new System.EventHandler(this.FormCapNhatNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).EndInit();

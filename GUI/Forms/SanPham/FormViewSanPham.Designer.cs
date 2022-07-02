@@ -38,10 +38,10 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.ptbShowImage = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbDvt = new System.Windows.Forms.ComboBox();
             this.cmbLoaiSp = new System.Windows.Forms.ComboBox();
             this.cmbNcc = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -143,6 +143,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ptbShowImage);
+            this.groupBox2.Location = new System.Drawing.Point(891, 58);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(357, 421);
+            this.groupBox2.TabIndex = 66;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Hình Ảnh Sản Phẩm";
+            // 
             // cmbDvt
             // 
             this.cmbDvt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -170,16 +180,6 @@
             this.cmbNcc.Size = new System.Drawing.Size(241, 24);
             this.cmbNcc.TabIndex = 65;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.ptbShowImage);
-            this.groupBox2.Location = new System.Drawing.Point(891, 58);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(357, 421);
-            this.groupBox2.TabIndex = 66;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Hình Ảnh Sản Phẩm";
-            // 
             // FormViewSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,6 +189,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormViewSanPham";
+            this.Text = "Thông Tin Sản Phẩm";
             this.Load += new System.EventHandler(this.FormViewSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).EndInit();
             this.groupBox1.ResumeLayout(false);

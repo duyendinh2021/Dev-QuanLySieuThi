@@ -13,6 +13,7 @@ namespace GUI.Forms.HoaDon
 {
     public partial class FormQuanLyHoaDon : Form
     {
+        [Obsolete]
         public FormQuanLyHoaDon()
         {
             InitializeComponent();
@@ -50,7 +51,10 @@ namespace GUI.Forms.HoaDon
                 // btn edit
                 if (e.ColumnIndex == 1)
                 {
-
+                    FormEditChiTietHoaDon formEditChiTietHoaDon = new FormEditChiTietHoaDon(id_hd);
+                    formEditChiTietHoaDon.ShowDialog();
+                    B_HoaDon.Instance.GetAllHoaDonNoDeleted(ref dgvHoaDon);
+                    row = dgvHoaDon.Rows[e.RowIndex];
                 }
 
                 // btn delete

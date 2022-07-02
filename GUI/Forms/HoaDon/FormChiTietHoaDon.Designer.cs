@@ -45,8 +45,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDanhSachDetailsPhieuNhap = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ID_HD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_SanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChietKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +52,8 @@
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDetailsPhieuNhap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -187,27 +187,6 @@
             this.dgvDanhSachDetailsPhieuNhap.TabIndex = 31;
             this.dgvDanhSachDetailsPhieuNhap.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachDetailsPhieuNhap_CellMouseClick);
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 25);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "ID Sản Phẩm";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvDanhSachDetailsPhieuNhap);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 328);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1155, 304);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Sách Chi Tiết Phiếu Nhập Kho";
-            // 
             // ID_HD
             // 
             this.ID_HD.DataPropertyName = "Idhd";
@@ -266,6 +245,27 @@
             this.TrangThai.ReadOnly = true;
             this.TrangThai.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(57, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 25);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "ID Sản Phẩm";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvDanhSachDetailsPhieuNhap);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 328);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1155, 304);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh Sách Chi Tiết Phiếu Nhập Kho";
+            // 
             // FormChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,6 +284,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormChiTietHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Chi Tiết Hoá Đơn";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDetailsPhieuNhap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

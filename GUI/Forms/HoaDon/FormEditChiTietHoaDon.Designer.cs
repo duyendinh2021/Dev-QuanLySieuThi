@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditChiTietHoaDon));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvDanhSachDetailsPhieuNhap = new System.Windows.Forms.DataGridView();
+            this.dgvDanhSachChiTietHD = new System.Windows.Forms.DataGridView();
             this.ID_HD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_SanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChietKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,21 +52,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.cmbTrangThai = new System.Windows.Forms.ComboBox();
             this.btnViewSanPham = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.cmbTrangThai = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDetailsPhieuNhap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChiTietHD)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvDanhSachDetailsPhieuNhap);
+            this.groupBox1.Controls.Add(this.dgvDanhSachChiTietHD);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 356);
             this.groupBox1.Name = "groupBox1";
@@ -75,14 +75,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Chi Tiết Hoá Đơn Kho";
             // 
-            // dgvDanhSachDetailsPhieuNhap
+            // dgvDanhSachChiTietHD
             // 
-            this.dgvDanhSachDetailsPhieuNhap.AllowUserToAddRows = false;
-            this.dgvDanhSachDetailsPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDanhSachDetailsPhieuNhap.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.dgvDanhSachDetailsPhieuNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDanhSachDetailsPhieuNhap.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvDanhSachDetailsPhieuNhap.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDanhSachChiTietHD.AllowUserToAddRows = false;
+            this.dgvDanhSachChiTietHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSachChiTietHD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.dgvDanhSachChiTietHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDanhSachChiTietHD.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvDanhSachChiTietHD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,10 +90,10 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachDetailsPhieuNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDanhSachDetailsPhieuNhap.ColumnHeadersHeight = 40;
-            this.dgvDanhSachDetailsPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvDanhSachDetailsPhieuNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDanhSachChiTietHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDanhSachChiTietHD.ColumnHeadersHeight = 40;
+            this.dgvDanhSachChiTietHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDanhSachChiTietHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_HD,
             this.ID_SanPham,
             this.ChietKhau,
@@ -108,12 +108,12 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSachDetailsPhieuNhap.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDanhSachDetailsPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachDetailsPhieuNhap.EnableHeadersVisualStyles = false;
-            this.dgvDanhSachDetailsPhieuNhap.Location = new System.Drawing.Point(3, 18);
-            this.dgvDanhSachDetailsPhieuNhap.Name = "dgvDanhSachDetailsPhieuNhap";
-            this.dgvDanhSachDetailsPhieuNhap.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvDanhSachChiTietHD.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDanhSachChiTietHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDanhSachChiTietHD.EnableHeadersVisualStyles = false;
+            this.dgvDanhSachChiTietHD.Location = new System.Drawing.Point(3, 18);
+            this.dgvDanhSachChiTietHD.Name = "dgvDanhSachChiTietHD";
+            this.dgvDanhSachChiTietHD.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,14 +121,17 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachDetailsPhieuNhap.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDanhSachDetailsPhieuNhap.RowHeadersVisible = false;
-            this.dgvDanhSachDetailsPhieuNhap.RowHeadersWidth = 80;
+            this.dgvDanhSachChiTietHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDanhSachChiTietHD.RowHeadersVisible = false;
+            this.dgvDanhSachChiTietHD.RowHeadersWidth = 80;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDanhSachDetailsPhieuNhap.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDanhSachDetailsPhieuNhap.RowTemplate.Height = 50;
-            this.dgvDanhSachDetailsPhieuNhap.Size = new System.Drawing.Size(1106, 283);
-            this.dgvDanhSachDetailsPhieuNhap.TabIndex = 31;
+            this.dgvDanhSachChiTietHD.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDanhSachChiTietHD.RowTemplate.Height = 50;
+            this.dgvDanhSachChiTietHD.Size = new System.Drawing.Size(1106, 283);
+            this.dgvDanhSachChiTietHD.TabIndex = 31;
+            this.dgvDanhSachChiTietHD.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachChiTietHD_CellMouseClick);
+            this.dgvDanhSachChiTietHD.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachChiTietHD_CellValueChanged);
+            this.dgvDanhSachChiTietHD.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvDanhSachChiTietHD_CurrentCellDirtyStateChanged);
             // 
             // ID_HD
             // 
@@ -259,6 +262,52 @@
             this.label2.Text = "% Chiết Khấu";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // btnViewSanPham
+            // 
+            this.btnViewSanPham.Image = global::GUI.Properties.Resources.eye;
+            this.btnViewSanPham.Location = new System.Drawing.Point(484, 11);
+            this.btnViewSanPham.Name = "btnViewSanPham";
+            this.btnViewSanPham.Size = new System.Drawing.Size(83, 40);
+            this.btnViewSanPham.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.btnViewSanPham, "Nhấn Dể Xem Chi Tiết Sản Phẩm");
+            this.btnViewSanPham.UseVisualStyleBackColor = true;
+            this.btnViewSanPham.Click += new System.EventHandler(this.btnViewSanPham_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::GUI.Properties.Resources.edit;
+            this.btnEdit.Location = new System.Drawing.Point(222, 272);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(150, 78);
+            this.btnEdit.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.btnEdit, "Click dể có thể sửa hóa đơn");
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Image = global::GUI.Properties.Resources.diskette;
+            this.btnSave.Location = new System.Drawing.Point(665, 272);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(150, 78);
+            this.btnSave.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.btnSave, "Click Dể Tiến Hành Lưu Hóa Đơn");
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Enabled = false;
+            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
+            this.btnConfirm.Location = new System.Drawing.Point(453, 272);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(150, 78);
+            this.btnConfirm.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.btnConfirm, "Click Dể Xác Nhận Cập Nhật Hóa Đơn");
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -297,46 +346,8 @@
             this.cmbTrangThai.Name = "cmbTrangThai";
             this.cmbTrangThai.Size = new System.Drawing.Size(181, 24);
             this.cmbTrangThai.TabIndex = 24;
-            // 
-            // btnViewSanPham
-            // 
-            this.btnViewSanPham.Image = global::GUI.Properties.Resources.eye;
-            this.btnViewSanPham.Location = new System.Drawing.Point(484, 11);
-            this.btnViewSanPham.Name = "btnViewSanPham";
-            this.btnViewSanPham.Size = new System.Drawing.Size(83, 40);
-            this.btnViewSanPham.TabIndex = 26;
-            this.toolTip1.SetToolTip(this.btnViewSanPham, "Nhấn Dể Xem Chi Tiết Sản Phẩm");
-            this.btnViewSanPham.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::GUI.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(222, 272);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(150, 78);
-            this.btnEdit.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.btnEdit, "Click dể có thể sửa hóa đơn");
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = global::GUI.Properties.Resources.diskette;
-            this.btnSave.Location = new System.Drawing.Point(665, 272);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 78);
-            this.btnSave.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.btnSave, "Click Dể Tiến Hành Lưu Hóa Đơn");
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Image = global::GUI.Properties.Resources.confirmation;
-            this.btnConfirm.Location = new System.Drawing.Point(453, 272);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(150, 78);
-            this.btnConfirm.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.btnConfirm, "Click Dể Xác Nhận Cập Nhật Hóa Đơn");
-            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.cmbTrangThai, "Ghi Chú 1 = Chưa Xoá\r\n              0 = Đã Xoá\r\n");
+            this.cmbTrangThai.SelectedIndexChanged += new System.EventHandler(this.cmbTrangThai_SelectedIndexChanged);
             // 
             // FormEditChiTietHoaDon
             // 
@@ -363,9 +374,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEditChiTietHoaDon";
-            this.Text = "FormEditChiTietHoaDon";
+            this.Text = "Edit Chi Tiêt Hoá Đơn";
+            this.Load += new System.EventHandler(this.FormEditChiTietHoaDon_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDetailsPhieuNhap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChiTietHD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +386,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvDanhSachDetailsPhieuNhap;
+        private System.Windows.Forms.DataGridView dgvDanhSachChiTietHD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSL;
         private System.Windows.Forms.TextBox txtChietKhau;

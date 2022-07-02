@@ -194,6 +194,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormChangePassWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đổi Mật Khẩu";
             ((System.ComponentModel.ISupportInitialize)(this.ptcCaptcha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

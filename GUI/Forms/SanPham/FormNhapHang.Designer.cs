@@ -43,15 +43,21 @@
             this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ncc_PhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtTongGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClearDS = new System.Windows.Forms.Button();
+            this.btnHangMoi = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbNCC = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.cmbLoaiSP = new System.Windows.Forms.ComboBox();
             this.grbDSHangHoa = new System.Windows.Forms.GroupBox();
             this.dtgDSHangHoa = new System.Windows.Forms.DataGridView();
+            this.Add = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID_SP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_ncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,12 +71,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnClearDS = new System.Windows.Forms.Button();
-            this.btnHangMoi = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.Add = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -225,6 +225,15 @@
             this.id_ncc_PhieuNhap.ReadOnly = true;
             this.id_ncc_PhieuNhap.Visible = false;
             // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::GUI.Properties.Resources.delete;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // txtTongGia
             // 
             this.txtTongGia.Location = new System.Drawing.Point(266, 441);
@@ -252,6 +261,42 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(651, 117);
             this.panel2.TabIndex = 0;
+            // 
+            // btnClearDS
+            // 
+            this.btnClearDS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnClearDS.Image = global::GUI.Properties.Resources.clear;
+            this.btnClearDS.Location = new System.Drawing.Point(470, 24);
+            this.btnClearDS.Name = "btnClearDS";
+            this.btnClearDS.Size = new System.Drawing.Size(147, 58);
+            this.btnClearDS.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnClearDS, "Nhấn Xóa Danh Sách Hàng Nhập");
+            this.btnClearDS.UseVisualStyleBackColor = false;
+            this.btnClearDS.Click += new System.EventHandler(this.btnClearDS_Click);
+            // 
+            // btnHangMoi
+            // 
+            this.btnHangMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnHangMoi.Image = global::GUI.Properties.Resources.add;
+            this.btnHangMoi.Location = new System.Drawing.Point(266, 24);
+            this.btnHangMoi.Name = "btnHangMoi";
+            this.btnHangMoi.Size = new System.Drawing.Size(147, 58);
+            this.btnHangMoi.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnHangMoi, "Nhấn Thêm Sản Phẩm Mới");
+            this.btnHangMoi.UseVisualStyleBackColor = false;
+            this.btnHangMoi.Click += new System.EventHandler(this.btnHangMoi_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.btnConfirm.Image = global::GUI.Properties.Resources.add_Hang;
+            this.btnConfirm.Location = new System.Drawing.Point(52, 24);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(147, 58);
+            this.btnConfirm.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnConfirm, "Nhấn Tạo Phiếu Nhập Kho");
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // label4
             // 
@@ -283,6 +328,17 @@
             this.cmbNCC.TabIndex = 4;
             this.toolTip1.SetToolTip(this.cmbNCC, "Click Nếu Muốn Lọc Theo Nhà Cung Cấp");
             this.cmbNCC.SelectedIndexChanged += new System.EventHandler(this.cmbNCC_SelectedIndexChanged);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::GUI.Properties.Resources.refresh;
+            this.btnRefresh.Location = new System.Drawing.Point(925, 52);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(93, 49);
+            this.btnRefresh.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Click Dể Refresh");
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // cmbLoaiSP
             // 
@@ -347,6 +403,15 @@
             this.dtgDSHangHoa.Size = new System.Drawing.Size(1176, 481);
             this.dtgDSHangHoa.TabIndex = 13;
             this.dtgDSHangHoa.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDSHangHoa_CellMouseClick);
+            // 
+            // Add
+            // 
+            this.Add.HeaderText = "";
+            this.Add.Image = global::GUI.Properties.Resources.left_arrow;
+            this.Add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Add.MinimumWidth = 6;
+            this.Add.Name = "Add";
+            this.Add.ReadOnly = true;
             // 
             // ID_SP
             // 
@@ -452,71 +517,6 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 146;
             // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::GUI.Properties.Resources.delete;
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // btnClearDS
-            // 
-            this.btnClearDS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnClearDS.Image = global::GUI.Properties.Resources.clear;
-            this.btnClearDS.Location = new System.Drawing.Point(470, 24);
-            this.btnClearDS.Name = "btnClearDS";
-            this.btnClearDS.Size = new System.Drawing.Size(147, 58);
-            this.btnClearDS.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnClearDS, "Nhấn Xóa Danh Sách Hàng Nhập");
-            this.btnClearDS.UseVisualStyleBackColor = false;
-            this.btnClearDS.Click += new System.EventHandler(this.btnClearDS_Click);
-            // 
-            // btnHangMoi
-            // 
-            this.btnHangMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnHangMoi.Image = global::GUI.Properties.Resources.add;
-            this.btnHangMoi.Location = new System.Drawing.Point(266, 24);
-            this.btnHangMoi.Name = "btnHangMoi";
-            this.btnHangMoi.Size = new System.Drawing.Size(147, 58);
-            this.btnHangMoi.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnHangMoi, "Nhấn Thêm Sản Phẩm Mới");
-            this.btnHangMoi.UseVisualStyleBackColor = false;
-            this.btnHangMoi.Click += new System.EventHandler(this.btnHangMoi_Click);
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.btnConfirm.Image = global::GUI.Properties.Resources.add_Hang;
-            this.btnConfirm.Location = new System.Drawing.Point(52, 24);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(147, 58);
-            this.btnConfirm.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnConfirm, "Nhấn Tạo Phiếu Nhập Kho");
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = global::GUI.Properties.Resources.refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(925, 52);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(93, 49);
-            this.btnRefresh.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.btnRefresh, "Click Dể Refresh");
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // Add
-            // 
-            this.Add.HeaderText = "";
-            this.Add.Image = global::GUI.Properties.Resources.left_arrow;
-            this.Add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Add.MinimumWidth = 6;
-            this.Add.Name = "Add";
-            this.Add.ReadOnly = true;
-            // 
             // FormNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -527,7 +527,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNhapHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form Nhập Hàng";
+            this.Text = "Nhập Hàng";
             this.Load += new System.EventHandler(this.FormNhapHang_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

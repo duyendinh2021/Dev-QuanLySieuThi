@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhatLoaiSp));
             this.grbLoaiSP = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ptcbShowImg = new System.Windows.Forms.PictureBox();
+            this.btnBrowsImg = new System.Windows.Forms.Button();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ptcbShowImg = new System.Windows.Forms.PictureBox();
-            this.btnBrowsImg = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.grbLoaiSP.SuspendLayout();
@@ -72,6 +72,28 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ảnh Loại Sản Phẩm";
+            // 
+            // ptcbShowImg
+            // 
+            this.ptcbShowImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptcbShowImg.Location = new System.Drawing.Point(3, 26);
+            this.ptcbShowImg.Name = "ptcbShowImg";
+            this.ptcbShowImg.Size = new System.Drawing.Size(198, 182);
+            this.ptcbShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcbShowImg.TabIndex = 21;
+            this.ptcbShowImg.TabStop = false;
+            // 
+            // btnBrowsImg
+            // 
+            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
+            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
+            this.btnBrowsImg.Location = new System.Drawing.Point(714, 61);
+            this.btnBrowsImg.Name = "btnBrowsImg";
+            this.btnBrowsImg.Size = new System.Drawing.Size(123, 37);
+            this.btnBrowsImg.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnBrowsImg, "Click Dể Tiến Hành Chọn Hình");
+            this.btnBrowsImg.UseVisualStyleBackColor = false;
+            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
             // 
             // txtMoTa
             // 
@@ -112,28 +134,6 @@
             this.label1.Text = "Tên Loại Sản Phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // ptcbShowImg
-            // 
-            this.ptcbShowImg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptcbShowImg.Location = new System.Drawing.Point(3, 26);
-            this.ptcbShowImg.Name = "ptcbShowImg";
-            this.ptcbShowImg.Size = new System.Drawing.Size(198, 182);
-            this.ptcbShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptcbShowImg.TabIndex = 21;
-            this.ptcbShowImg.TabStop = false;
-            // 
-            // btnBrowsImg
-            // 
-            this.btnBrowsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(175)))), ((int)(((byte)(88)))));
-            this.btnBrowsImg.Image = global::GUI.Properties.Resources.photo;
-            this.btnBrowsImg.Location = new System.Drawing.Point(714, 61);
-            this.btnBrowsImg.Name = "btnBrowsImg";
-            this.btnBrowsImg.Size = new System.Drawing.Size(123, 37);
-            this.btnBrowsImg.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.btnBrowsImg, "Click Dể Tiến Hành Chọn Hình");
-            this.btnBrowsImg.UseVisualStyleBackColor = false;
-            this.btnBrowsImg.Click += new System.EventHandler(this.btnBrowsImg_Click);
-            // 
             // btnClearAll
             // 
             this.btnClearAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(147)))), ((int)(((byte)(53)))));
@@ -171,6 +171,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCapNhatLoaiSp";
+            this.Text = "Cập Nhật Loại Sản Phẩm";
             this.grbLoaiSP.ResumeLayout(false);
             this.grbLoaiSP.PerformLayout();
             this.groupBox1.ResumeLayout(false);

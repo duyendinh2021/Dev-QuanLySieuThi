@@ -144,6 +144,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCapNhapAccout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Xem Thông Tin Accout Nhân Viên";
             this.Load += new System.EventHandler(this.FormViewAccout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

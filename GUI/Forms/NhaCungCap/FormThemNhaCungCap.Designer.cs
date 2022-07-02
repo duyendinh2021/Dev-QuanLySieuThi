@@ -30,8 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemNhaCungCap));
             this.grbThongTinNCC = new System.Windows.Forms.GroupBox();
             this.txtTenNganHang = new System.Windows.Forms.TextBox();
             this.txtSoNganHang = new System.Windows.Forms.TextBox();
@@ -46,36 +45,8 @@
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnConfirm = new FontAwesome.Sharp.IconButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panHeader.SuspendLayout();
             this.grbThongTinNCC.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panHeader
-            // 
-            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.panHeader.Controls.Add(this.btnExit);
-            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHeader.Location = new System.Drawing.Point(0, 0);
-            this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1213, 46);
-            this.panHeader.TabIndex = 3;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 42;
-            this.btnExit.Location = new System.Drawing.Point(1138, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 46);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // grbThongTinNCC
             // 
@@ -90,9 +61,9 @@
             this.grbThongTinNCC.Controls.Add(this.label1);
             this.grbThongTinNCC.Controls.Add(this.label2);
             this.grbThongTinNCC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grbThongTinNCC.Location = new System.Drawing.Point(0, 46);
+            this.grbThongTinNCC.Location = new System.Drawing.Point(0, 0);
             this.grbThongTinNCC.Name = "grbThongTinNCC";
-            this.grbThongTinNCC.Size = new System.Drawing.Size(1213, 431);
+            this.grbThongTinNCC.Size = new System.Drawing.Size(1213, 381);
             this.grbThongTinNCC.TabIndex = 0;
             this.grbThongTinNCC.TabStop = false;
             this.grbThongTinNCC.Text = "Thông Tin Nhà Cung Cấp";
@@ -208,7 +179,7 @@
             this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnClear.IconColor = System.Drawing.Color.Black;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClear.Location = new System.Drawing.Point(526, 551);
+            this.btnClear.Location = new System.Drawing.Point(659, 439);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(137, 53);
             this.btnClear.TabIndex = 2;
@@ -228,7 +199,7 @@
             this.btnConfirm.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnConfirm.IconColor = System.Drawing.Color.Black;
             this.btnConfirm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnConfirm.Location = new System.Drawing.Point(256, 551);
+            this.btnConfirm.Location = new System.Drawing.Point(333, 439);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(152, 53);
             this.btnConfirm.TabIndex = 1;
@@ -241,15 +212,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 724);
+            this.ClientSize = new System.Drawing.Size(1213, 555);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.grbThongTinNCC);
-            this.Controls.Add(this.panHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormThemNhaCungCap";
-            this.Text = "FormThemNhaCungCap";
-            this.panHeader.ResumeLayout(false);
+            this.Text = "Thêm Nhà Cung Cấp";
             this.grbThongTinNCC.ResumeLayout(false);
             this.grbThongTinNCC.PerformLayout();
             this.ResumeLayout(false);
@@ -257,9 +227,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panHeader;
-        private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.GroupBox grbThongTinNCC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

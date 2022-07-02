@@ -470,8 +470,9 @@
             this.Controls.Add(this.dtGVDanhSachNV);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panelTimkiem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormQuanLyNhanVien";
-            this.Text = "FormQuanLyNhanVien";
+            this.Text = "Quản Lý Nhân Viên";
             this.Load += new System.EventHandler(this.FormQuanLyNhanVien_Load);
             this.panelTimkiem.ResumeLayout(false);
             this.panelTimkiem.PerformLayout();
