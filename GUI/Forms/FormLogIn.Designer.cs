@@ -39,13 +39,14 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.chkBoxHienMK = new System.Windows.Forms.CheckBox();
             this.lblLinkQuanMK = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.btnDangNhap);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -54,9 +55,9 @@
             this.panel2.Controls.Add(this.chkBoxHienMK);
             this.panel2.Controls.Add(this.lblLinkQuanMK);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(433, 0);
+            this.panel2.Location = new System.Drawing.Point(444, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(499, 611);
+            this.panel2.Size = new System.Drawing.Size(488, 611);
             this.panel2.TabIndex = 1;
             // 
             // btnDangNhap
@@ -149,13 +150,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(80)))), ((int)(((byte)(214)))));
-            this.panel1.BackgroundImage = global::GUI.Properties.Resources.unnamed;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.BackgroundImage = global::GUI.Properties.Resources.bgkStart;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(433, 611);
+            this.panel1.Size = new System.Drawing.Size(444, 611);
             this.panel1.TabIndex = 0;
             // 
             // FormLogin
@@ -169,6 +170,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng Nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

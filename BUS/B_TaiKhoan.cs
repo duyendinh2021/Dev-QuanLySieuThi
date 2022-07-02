@@ -28,7 +28,7 @@ namespace BUS
         }
         public string quyen;
         public int id;
-
+        public string pass;
 
         [Obsolete]
         public bool UserLogIn(string accUesrLogIn, string passUesrLogIn,ref string message)
@@ -54,6 +54,7 @@ namespace BUS
                 }
                 quyen = taiKhoan.Chuvu;
                 id = taiKhoan.Idnhanvien;
+                pass = taiKhoan.Pass;
                 //updateStatusLogin(id);
             }
             return result;

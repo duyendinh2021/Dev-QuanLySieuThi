@@ -13,6 +13,7 @@ namespace GUI.Forms.HoaDon
 {
     public partial class FormQuanLyHoaDon : Form
     {
+        [Obsolete]
         public FormQuanLyHoaDon()
         {
             InitializeComponent();
@@ -47,8 +48,17 @@ namespace GUI.Forms.HoaDon
                     formChiTietHoaDon.ShowDialog();
                 }
 
-                // btn delete
+                // btn edit
                 if (e.ColumnIndex == 1)
+                {
+                    FormEditChiTietHoaDon formEditChiTietHoaDon = new FormEditChiTietHoaDon(id_hd);
+                    formEditChiTietHoaDon.ShowDialog();
+                    B_HoaDon.Instance.GetAllHoaDonNoDeleted(ref dgvHoaDon);
+                    row = dgvHoaDon.Rows[e.RowIndex];
+                }
+
+                // btn delete
+                if (e.ColumnIndex == 2)
                 {
                     DialogResult result = MessageBox.Show("Bạn Xác Nhận Xóa Hóa Đơn Này Chứ !!!", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                     if (result == DialogResult.Yes)

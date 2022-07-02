@@ -276,6 +276,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCapNhatNhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cập Nhật Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.FormCapNhatNhaCungCap_Load);
             this.grbThongTinNCC.ResumeLayout(false);
             this.grbThongTinNCC.PerformLayout();

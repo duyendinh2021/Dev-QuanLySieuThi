@@ -33,32 +33,32 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyLoaiSanPham));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDanhSachLoaiSP = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panHeader = new System.Windows.Forms.Panel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbTrangThai = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten_loaiSp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ptcBoxImg = new System.Windows.Forms.PictureBox();
+            this.panHeader = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbTrangThai = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnThemLoaiSP = new System.Windows.Forms.Button();
-            this.colbtnSua = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ptcBoxImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiSP)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptcBoxImg)).BeginInit();
+            this.panHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDanhSachLoaiSP
@@ -116,6 +116,74 @@
             this.dgvDanhSachLoaiSP.TabIndex = 28;
             this.dgvDanhSachLoaiSP.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachLoaiSP_CellMouseClick);
             // 
+            // colbtnSua
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            this.colbtnSua.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colbtnSua.FillWeight = 133.6898F;
+            this.colbtnSua.HeaderText = "";
+            this.colbtnSua.Image = global::GUI.Properties.Resources.edit;
+            this.colbtnSua.MinimumWidth = 6;
+            this.colbtnSua.Name = "colbtnSua";
+            this.colbtnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colbtnSua.ToolTipText = "Nhấn Để Tiến Hành Edit";
+            this.colbtnSua.Width = 60;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Idloaisanpham";
+            this.ID.FillWeight = 79.15629F;
+            this.ID.HeaderText = "ID Loại Sản Phẩm";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 300;
+            // 
+            // Ten_loaiSp
+            // 
+            this.Ten_loaiSp.DataPropertyName = "Tensanpham";
+            this.Ten_loaiSp.FillWeight = 79.15629F;
+            this.Ten_loaiSp.HeaderText = "Tên Loại Sản Phẩm";
+            this.Ten_loaiSp.MinimumWidth = 6;
+            this.Ten_loaiSp.Name = "Ten_loaiSp";
+            this.Ten_loaiSp.ReadOnly = true;
+            this.Ten_loaiSp.Width = 350;
+            // 
+            // mota
+            // 
+            this.mota.DataPropertyName = "Mota";
+            this.mota.FillWeight = 79.15629F;
+            this.mota.HeaderText = "Mô Tả";
+            this.mota.MinimumWidth = 6;
+            this.mota.Name = "mota";
+            this.mota.ReadOnly = true;
+            this.mota.Width = 450;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "Trangthai";
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
+            this.TrangThai.Width = 125;
+            // 
+            // Hinh
+            // 
+            this.Hinh.DataPropertyName = "Hinh";
+            this.Hinh.HeaderText = "Hinh";
+            this.Hinh.MinimumWidth = 6;
+            this.Hinh.Name = "Hinh";
+            this.Hinh.ReadOnly = true;
+            this.Hinh.Visible = false;
+            this.Hinh.Width = 125;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvDanhSachLoaiSP);
@@ -136,6 +204,16 @@
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ảnh Đại Diện Loại Sản Phẩm";
+            // 
+            // ptcBoxImg
+            // 
+            this.ptcBoxImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptcBoxImg.Location = new System.Drawing.Point(3, 18);
+            this.ptcBoxImg.Name = "ptcBoxImg";
+            this.ptcBoxImg.Size = new System.Drawing.Size(216, 199);
+            this.ptcBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcBoxImg.TabIndex = 0;
+            this.ptcBoxImg.TabStop = false;
             // 
             // panHeader
             // 
@@ -191,56 +269,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Trạng Thái";
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Idloaisanpham";
-            this.ID.FillWeight = 79.15629F;
-            this.ID.HeaderText = "ID Loại Sản Phẩm";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 300;
-            // 
-            // Ten_loaiSp
-            // 
-            this.Ten_loaiSp.DataPropertyName = "Tensanpham";
-            this.Ten_loaiSp.FillWeight = 79.15629F;
-            this.Ten_loaiSp.HeaderText = "Tên Loại Sản Phẩm";
-            this.Ten_loaiSp.MinimumWidth = 6;
-            this.Ten_loaiSp.Name = "Ten_loaiSp";
-            this.Ten_loaiSp.ReadOnly = true;
-            this.Ten_loaiSp.Width = 350;
-            // 
-            // mota
-            // 
-            this.mota.DataPropertyName = "Mota";
-            this.mota.FillWeight = 79.15629F;
-            this.mota.HeaderText = "Mô Tả";
-            this.mota.MinimumWidth = 6;
-            this.mota.Name = "mota";
-            this.mota.ReadOnly = true;
-            this.mota.Width = 450;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "Trangthai";
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.MinimumWidth = 6;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Visible = false;
-            this.TrangThai.Width = 125;
-            // 
-            // Hinh
-            // 
-            this.Hinh.DataPropertyName = "Hinh";
-            this.Hinh.HeaderText = "Hinh";
-            this.Hinh.MinimumWidth = 6;
-            this.Hinh.Name = "Hinh";
-            this.Hinh.ReadOnly = true;
-            this.Hinh.Visible = false;
-            this.Hinh.Width = 125;
-            // 
             // dataGridViewImageColumn1
             // 
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -269,34 +297,6 @@
             this.btnThemLoaiSP.UseVisualStyleBackColor = true;
             this.btnThemLoaiSP.Click += new System.EventHandler(this.btnThemLoaiSP_Click);
             // 
-            // colbtnSua
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(182)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.colbtnSua.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colbtnSua.FillWeight = 133.6898F;
-            this.colbtnSua.HeaderText = "";
-            this.colbtnSua.Image = global::GUI.Properties.Resources.edit;
-            this.colbtnSua.MinimumWidth = 6;
-            this.colbtnSua.Name = "colbtnSua";
-            this.colbtnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colbtnSua.ToolTipText = "Nhấn Để Tiến Hành Edit";
-            this.colbtnSua.Width = 60;
-            // 
-            // ptcBoxImg
-            // 
-            this.ptcBoxImg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptcBoxImg.Location = new System.Drawing.Point(3, 18);
-            this.ptcBoxImg.Name = "ptcBoxImg";
-            this.ptcBoxImg.Size = new System.Drawing.Size(216, 199);
-            this.ptcBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptcBoxImg.TabIndex = 0;
-            this.ptcBoxImg.TabStop = false;
-            // 
             // FormQuanLyLoaiSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,13 +308,14 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormQuanLyLoaiSanPham";
+            this.Text = "Quản Lý Loại Sản Phẩm";
             this.Load += new System.EventHandler(this.FormQuanLyLoaiSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiSP)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptcBoxImg)).EndInit();
             this.panHeader.ResumeLayout(false);
             this.panHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptcBoxImg)).EndInit();
             this.ResumeLayout(false);
 
         }

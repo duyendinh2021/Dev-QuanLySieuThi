@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>263142.ico</ApplicationIcon>
+    <ApplicationIcon>Main_Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
@@ -57,6 +57,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
@@ -111,6 +112,12 @@
     </Compile>
     <Compile Include="Forms\HoaDon\FormChiTietHoaDon.Designer.cs">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormEditChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormEditChiTietHoaDon.Designer.cs">
+      <DependentUpon>FormEditChiTietHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HoaDon\FormQuanLyHoaDon.cs">
       <SubType>Form</SubType>
@@ -273,6 +280,9 @@
     <EmbeddedResource Include="Forms\HoaDon\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoaDon\FormEditChiTietHoaDon.resx">
+      <DependentUpon>FormEditChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HoaDon\FormQuanLyHoaDon.resx">
       <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,7 +392,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="263142.ico" />
+    <Content Include="Main_Icon.ico" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\anhSieuTHi.jpg" />
+    <None Include="Resources\bgkStart.jpg" />
     <None Include="Resources\unnamed.jpg" />
     <None Include="Resources\log-in 64px.png" />
     <None Include="Resources\log-in.png" />

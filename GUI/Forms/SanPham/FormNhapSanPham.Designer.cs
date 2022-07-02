@@ -31,8 +31,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapSanPham));
-            this.panHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ptbShowImage = new System.Windows.Forms.PictureBox();
@@ -52,38 +50,10 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panHeader
-            // 
-            this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            this.panHeader.Controls.Add(this.btnExit);
-            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHeader.Location = new System.Drawing.Point(0, 0);
-            this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1500, 45);
-            this.panHeader.TabIndex = 13;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExit.IconSize = 42;
-            this.btnExit.Location = new System.Drawing.Point(1425, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 45);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // groupBox1
             // 
@@ -102,7 +72,8 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 45);
+            this.groupBox1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1500, 564);
             this.groupBox1.TabIndex = 0;
@@ -122,9 +93,9 @@
             // ptbShowImage
             // 
             this.ptbShowImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbShowImage.Location = new System.Drawing.Point(3, 18);
+            this.ptbShowImage.Location = new System.Drawing.Point(3, 23);
             this.ptbShowImage.Name = "ptbShowImage";
-            this.ptbShowImage.Size = new System.Drawing.Size(275, 286);
+            this.ptbShowImage.Size = new System.Drawing.Size(275, 281);
             this.ptbShowImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbShowImage.TabIndex = 63;
             this.ptbShowImage.TabStop = false;
@@ -169,7 +140,7 @@
             // 
             this.txtDonGia.Location = new System.Drawing.Point(384, 403);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(241, 22);
+            this.txtDonGia.Size = new System.Drawing.Size(241, 27);
             this.txtDonGia.TabIndex = 6;
             this.txtDonGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDonGia_KeyDown);
             this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
@@ -180,7 +151,7 @@
             this.cmbDVT.FormattingEnabled = true;
             this.cmbDVT.Location = new System.Drawing.Point(384, 317);
             this.cmbDVT.Name = "cmbDVT";
-            this.cmbDVT.Size = new System.Drawing.Size(241, 24);
+            this.cmbDVT.Size = new System.Drawing.Size(241, 28);
             this.cmbDVT.TabIndex = 5;
             this.cmbDVT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbDVT_KeyDown);
             // 
@@ -191,7 +162,7 @@
             this.cmbLoaiSp.FormattingEnabled = true;
             this.cmbLoaiSp.Location = new System.Drawing.Point(384, 231);
             this.cmbLoaiSp.Name = "cmbLoaiSp";
-            this.cmbLoaiSp.Size = new System.Drawing.Size(241, 24);
+            this.cmbLoaiSp.Size = new System.Drawing.Size(241, 28);
             this.cmbLoaiSp.TabIndex = 3;
             this.cmbLoaiSp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbLoaiSp_KeyDown);
             // 
@@ -202,7 +173,7 @@
             this.cmbNcc.FormattingEnabled = true;
             this.cmbNcc.Location = new System.Drawing.Point(384, 145);
             this.cmbNcc.Name = "cmbNcc";
-            this.cmbNcc.Size = new System.Drawing.Size(241, 24);
+            this.cmbNcc.Size = new System.Drawing.Size(241, 28);
             this.cmbNcc.TabIndex = 1;
             this.cmbNcc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbNcc_KeyDown);
             // 
@@ -210,7 +181,7 @@
             // 
             this.txtTenSp.Location = new System.Drawing.Point(384, 61);
             this.txtTenSp.Name = "txtTenSp";
-            this.txtTenSp.Size = new System.Drawing.Size(241, 22);
+            this.txtTenSp.Size = new System.Drawing.Size(241, 27);
             this.txtTenSp.TabIndex = 0;
             this.txtTenSp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenSp_KeyDown);
             this.txtTenSp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSp_KeyPress);
@@ -298,14 +269,12 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNhapSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormNhapSanPham";
+            this.Text = "Thêm Sản Phẩm";
             this.Load += new System.EventHandler(this.FormNhapSanPham_Load);
-            this.panHeader.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -315,9 +284,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panHeader;
-        private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnThemLoaiSp;
         private System.Windows.Forms.Button btnThemNCC;

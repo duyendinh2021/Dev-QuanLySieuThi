@@ -50,10 +50,12 @@
             this.panChildForm = new System.Windows.Forms.Panel();
             this.panHeader = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.ptcBgk = new System.Windows.Forms.PictureBox();
             this.panelSettingsManage.SuspendLayout();
             this.panSideMenu.SuspendLayout();
             this.panChildForm.SuspendLayout();
             this.panHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcBgk)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSettingsManage
@@ -422,6 +424,7 @@
             // 
             // panChildForm
             // 
+            this.panChildForm.Controls.Add(this.ptcBgk);
             this.panChildForm.Controls.Add(this.panHeader);
             this.panChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panChildForm.Location = new System.Drawing.Point(292, 0);
@@ -456,6 +459,17 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // ptcBgk
+            // 
+            this.ptcBgk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptcBgk.Image = global::GUI.Properties.Resources.anhSieuTHi;
+            this.ptcBgk.Location = new System.Drawing.Point(0, 55);
+            this.ptcBgk.Name = "ptcBgk";
+            this.ptcBgk.Size = new System.Drawing.Size(1578, 996);
+            this.ptcBgk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcBgk.TabIndex = 8;
+            this.ptcBgk.TabStop = false;
+            // 
             // FormMainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -475,6 +489,7 @@
             this.panSideMenu.PerformLayout();
             this.panChildForm.ResumeLayout(false);
             this.panHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptcBgk)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,5 +516,6 @@
         private System.Windows.Forms.Panel panHeader;
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnProductsType;
+        private System.Windows.Forms.PictureBox ptcBgk;
     }
 }

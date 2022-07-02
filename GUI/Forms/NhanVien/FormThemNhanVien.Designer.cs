@@ -433,6 +433,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormThemNhanVien";
+            this.Text = "Thêm Nhân Viên";
             this.Load += new System.EventHandler(this.FormThemNhanVien_Load);
             this.panel1.ResumeLayout(false);
             this.grBThongtin.ResumeLayout(false);

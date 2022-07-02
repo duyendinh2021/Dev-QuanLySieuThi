@@ -209,6 +209,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormViewNhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Xem Thông Tin Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.FormViewNhaCungCap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

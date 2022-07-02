@@ -18,6 +18,8 @@ namespace GUI
     {
         private double loiNhuan = 0.25;
         decimal sumCost = 0;
+
+        [Obsolete]
         public FormSale()
         {
             InitializeComponent();
@@ -347,6 +349,8 @@ namespace GUI
                 }
             }
         }
+
+
         decimal baseQTY = 1;
         decimal CostAtItem = 1;
         private void dgvHoaDon_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -358,6 +362,8 @@ namespace GUI
             }
         }
 
+
+
         private void dgvHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -366,6 +372,11 @@ namespace GUI
                 {
                     if (e.ColumnIndex == 1 && dgvHoaDon[1, e.RowIndex].Value != null)
                     {
+                        if (int.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString()) == 0)
+                        {
+                            dgvHoaDon[1, e.RowIndex].Value = baseQTY;
+                        }
+
                         decimal baseCost = CostAtItem / baseQTY;
                         dgvHoaDon[2, e.RowIndex].Value = string.Format("{0:####}", decimal.Parse(dgvHoaDon[1, e.RowIndex].Value.ToString()) * baseCost);
                         calSumCost();
@@ -394,6 +405,22 @@ namespace GUI
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
+            }
+        }
+
+        private void dgvHoaDon_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            DataGridViewTextBoxEditingControl tb =  (DataGridViewTextBoxEditingControl)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
+            e.Control.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
+        }
+
+        private void DataGridViewCellEventArgs(object sender, KeyPressEventArgs e)
+        {
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Bạn Không Thể Nhập Kí Tự Này", "Thông Báo");
+                e.Handled = true;
             }
         }
     }

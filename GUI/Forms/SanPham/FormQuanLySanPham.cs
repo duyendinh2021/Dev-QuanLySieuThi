@@ -50,9 +50,9 @@ namespace GUI.Forms
             dtDanhSachSP.Columns["Hinh"].Visible = false;
             dtDanhSachSP.Columns["Trangthai"].Visible = false;
             Load_Category();
-            if (B_TaiKhoan.Instance.quyen == "Admin")
+            if (B_TaiKhoan.Instance.quyen == "Cashier")
             {
-                panSideMenu.Visible = false;
+                //panSideMenu.Visible = false;
                 btnNhapHang.Visible = false;
                 dtDanhSachSP.Columns["colbtnXoa"].Visible = false;
                 dtDanhSachSP.Columns["colbtnSua"].Visible = false;
@@ -96,8 +96,9 @@ namespace GUI.Forms
             if (e.RowIndex != -1)
             {
                 DataGridViewRow row = dtDanhSachSP.Rows[e.RowIndex];
-                if (B_TaiKhoan.Instance.quyen == "Stoker")
+                if (B_TaiKhoan.Instance.quyen == "Stoker" || B_TaiKhoan.Instance.quyen == "Admin")
                 {
+                    // btn edit
                     if (e.ColumnIndex == 0)
                     {
                         int id = int.Parse(row.Cells["id_sp"].Value.ToString());
@@ -116,6 +117,7 @@ namespace GUI.Forms
 
                     }
 
+                    // btn xoa
                     if (e.ColumnIndex == 1)
                     {
                         DialogResult result = MessageBox.Show("Vui Lòng Xác Nhận Dể Tiến Hành Xóa", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

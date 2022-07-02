@@ -24,6 +24,9 @@ namespace DAO
                 return instance;
             }
         }
+
+
+
         [Obsolete]
         public void cashierAddCTHoaDon(object[] parameter)
         {
@@ -31,6 +34,12 @@ namespace DAO
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
 
+        [Obsolete]
+        public void UpdateCTHoaDon(object[] parameter)
+        {
+            string query = "EXEC updateChiTietHD @id_HD , @id_sp , @trang_thai , @ghichu";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
+        }
 
         [Obsolete]
         public List<ChiTietHoaDon> GetChiTietHoaDonByID(int id)
@@ -48,6 +57,7 @@ namespace DAO
                     chiTietHoaDon.Sl = int.Parse(item["SoLuong"].ToString());
                     chiTietHoaDon.Chietkhau = int.Parse(item["ChietKhau"].ToString());
                     chiTietHoaDon.Trangthai = int.Parse(item["TrangThai"].ToString());
+                    chiTietHoaDon.Ghichu = item["GhiChu"].ToString();
                     chiTietHoaDons.Add(chiTietHoaDon);
                 }
             }

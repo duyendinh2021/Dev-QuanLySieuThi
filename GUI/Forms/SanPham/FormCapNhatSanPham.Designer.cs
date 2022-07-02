@@ -43,11 +43,11 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnEditID = new System.Windows.Forms.Button();
             this.btnEditDVT = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbNCC = new System.Windows.Forms.ComboBox();
             this.cmbID_Loaisp = new System.Windows.Forms.ComboBox();
             this.cmbDVT = new System.Windows.Forms.ComboBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.ptcShowImg = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTrangThai = new System.Windows.Forms.ComboBox();
@@ -176,6 +176,18 @@
             this.btnEditDVT.UseVisualStyleBackColor = true;
             this.btnEditDVT.Click += new System.EventHandler(this.btnEditDVT_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Image = global::GUI.Properties.Resources.clear;
+            this.btnClear.Location = new System.Drawing.Point(615, 630);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(151, 74);
+            this.btnClear.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnClear, "Click Nếu Muốn Xóa Tất Cả");
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // label3
             // 
             this.label3.Location = new System.Drawing.Point(81, 283);
@@ -217,18 +229,6 @@
             this.cmbDVT.Size = new System.Drawing.Size(225, 24);
             this.cmbDVT.TabIndex = 5;
             this.cmbDVT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbDVT_KeyDown);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Image = global::GUI.Properties.Resources.clear;
-            this.btnClear.Location = new System.Drawing.Point(615, 630);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(151, 74);
-            this.btnClear.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.btnClear, "Click Nếu Muốn Xóa Tất Cả");
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // ptcShowImg
             // 
@@ -339,6 +339,8 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCapNhatSanPham";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cập Nhật Thông Tin Sản Phẩm";
             this.Load += new System.EventHandler(this.FormCapNhatSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptcShowImg)).EndInit();
             this.groupBox1.ResumeLayout(false);
