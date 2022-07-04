@@ -23,8 +23,6 @@ namespace GUI
             InitializeComponent();
         }
 
-
-
         [Obsolete]
         private void FormQuanLyNhanVien_Load(object sender, EventArgs e)
         {
@@ -102,10 +100,17 @@ namespace GUI
                 B_NhanVien.Instance.getAllNhanVienHoatDong(ref dtGVDanhSachNV);
             }
             DataGridViewRow row2 = dtGVDanhSachNV.Rows[e.RowIndex];
-            picBoxImg.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row2.Cells["Hinh"].Value);
+            try
+            {
+                picBoxImg.Image = SupportLogic.Instance.ConvertBinaryToImage((byte[])row2.Cells["Hinh"].Value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Msg ::: Load Img Thất Bại" + ex, "erro");
+            }
         }
 
-            
+
         [Obsolete]
         private void delete(object sender, DataGridViewCellEventArgs e)
         {
@@ -183,7 +188,6 @@ namespace GUI
                 try
                 {
                     trangThai = int.Parse(cmbTrangThai.SelectedValue.ToString());
-                    chucvu = cmbChucvu.SelectedValue.ToString();
                     if (trangThai == -1)
                     {
                         if (chucvu == "")
@@ -192,6 +196,7 @@ namespace GUI
                         }
                         else
                         {
+                            chucvu = cmbChucvu.SelectedValue.ToString();
                             B_NhanVien.Instance.getNhanVienByChucVuAndTrangThai(ref dtGVDanhSachNV, chucvu, trangThai);
                         }
                     }
@@ -211,7 +216,7 @@ namespace GUI
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Msg ::: " + ex,"erro");
+                    MessageBox.Show("Msg ::: " + ex, "erro");
                 }
             }
         }
