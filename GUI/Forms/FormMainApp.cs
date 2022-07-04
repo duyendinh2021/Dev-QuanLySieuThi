@@ -122,6 +122,7 @@ namespace GUI
             SupportUI_UX.Instance.showChildForm(new FormDashBoard(), panChildForm);
         }
 
+        [Obsolete]
         private void btnOrders_Click(object sender, EventArgs e)
         {
             SupportUI_UX.Instance.ActivateButton(sender, SupportUI_UX.Instance.color1);
