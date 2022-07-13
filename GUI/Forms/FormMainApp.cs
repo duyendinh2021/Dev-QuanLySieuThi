@@ -93,13 +93,23 @@ namespace GUI
                     btnProducts.Visible = true;
                     btnStaffs.Visible = true;
                     btnProductsType.Visible = true;
+
+
+                    btnSale.Visible = true;
+
+
+                    btnSTmanageProducts.Visible = true;
+                    btnbtnAdmissionSlip.Visible = true;
+                    btnSTmanageProducts.Visible = true;
+                    btnStockSupplierManagement.Visible = true;
+                    btnProductsType.Visible = true;
                     break;
 
                 case "Cashier":
                     //Cashier
                     btnSale.Visible = true;
+                    btnSTmanageProducts.Visible = true;
                     //btnProductsType.Visible = true;
-
                     break;
                 case "Stoker":
                     //Stoker
@@ -109,6 +119,7 @@ namespace GUI
                     btnStockSupplierManagement.Visible = true;
                     btnProductsType.Visible = true;
                     break;
+
                 default:
                     break;
             }

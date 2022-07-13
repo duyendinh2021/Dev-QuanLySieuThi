@@ -25,8 +25,6 @@ namespace DAO
             }
         }
 
-
-
         [Obsolete]
         public void cashierAddCTHoaDon(object[] parameter)
         {
@@ -58,10 +56,18 @@ namespace DAO
                     chiTietHoaDon.Chietkhau = int.Parse(item["ChietKhau"].ToString());
                     chiTietHoaDon.Trangthai = int.Parse(item["TrangThai"].ToString());
                     chiTietHoaDon.Ghichu = item["GhiChu"].ToString();
+                    chiTietHoaDon.Sl_tra = int.Parse(item["SL_Tra"].ToString());
                     chiTietHoaDons.Add(chiTietHoaDon);
                 }
             }
             return chiTietHoaDons;
+        }
+
+        [Obsolete]
+        public void TraHang(object[] paramater)
+        {
+            string query = "EXEC TraHang @id_HD , @id_sp , @sl_tra";
+            connectionData.Instance.excuteNonQueryStoreProcedure(query, paramater);
         }
     }
 }
