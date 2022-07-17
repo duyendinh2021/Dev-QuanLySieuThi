@@ -130,6 +130,7 @@ namespace GUI
 
                     FormMainApp formMainApp = new FormMainApp();
                     formMainApp.Show();
+                    txtMatKhau.Clear();
                     B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
                     this.Hide();
                     formMainApp.LogOut += FormMainApp_LogOut;
