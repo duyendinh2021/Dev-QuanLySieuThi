@@ -49,6 +49,7 @@
     <Compile Include="D_ChiTietHoaDon.cs" />
     <Compile Include="D_ChiTietPhieuNhapKho.cs" />
     <Compile Include="D_HoaDon.cs" />
+    <Compile Include="D_HoaDon_Tra.cs" />
     <Compile Include="D_LoaiSanPham.cs" />
     <Compile Include="D_NhaCungCap.cs" />
     <Compile Include="D_NhanVien.cs" />

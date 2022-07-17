@@ -1,15 +1,9 @@
-﻿using System;
-using System.Activities.Expressions;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BUS;
+﻿using BUS;
 using GUI.Forms.SanPham;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUI.Forms.HoaDon
 {
@@ -28,7 +22,7 @@ namespace GUI.Forms.HoaDon
         public FormEditChiTietHoaDon(int id_hd)
         {
             InitializeComponent();
-            this.id_hd=id_hd;
+            this.id_hd = id_hd;
             B_ChiTietHoaDon.Instance.GetChiTietHoaDonByID(this.id_hd, ref dgvDanhSachChiTietHD);
             DGVhasChanged  = false;
         }
@@ -37,6 +31,9 @@ namespace GUI.Forms.HoaDon
         private void FormEditChiTietHoaDon_Load(object sender, EventArgs e)
         {
             DGVhasChanged  = false;
+            dgvDanhSachChiTietHD.Columns["idhd"].Visible = false;
+            //btnEdit.Enabled = false;
+            txtSlTra.ReadOnly = true;
         }
 
 
@@ -54,18 +51,19 @@ namespace GUI.Forms.HoaDon
                 txtChietKhau.Text = row.Cells["ChietKhau"].Value.ToString();
                 txtSL.Text = row.Cells["SL"].Value.ToString();
                 txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
+                txtSlTra.Text = row.Cells["SlTra"].Value.ToString();
 
                 // vô hiệu quá .....
                 cmbTrangThai.Enabled = false;
-                txtGhiChu.ReadOnly = true;
                 btnConfirm.Enabled = false;
-
+                txtGhiChu.ReadOnly = true;
+                txtSlTra.ReadOnly = true;
 
                 // gán trang thái của HD vào cmb
                 List<int> TrangThai = new List<int>();
-                TrangThai.Add(int.Parse(row.Cells["TrangThai"].Value.ToString()));             
+                TrangThai.Add(int.Parse(row.Cells["TrangThai"].Value.ToString()));
                 cmbTrangThai.DataSource = TrangThai;
-               
+
 
             }
         }
@@ -83,14 +81,23 @@ namespace GUI.Forms.HoaDon
         // btn edit chi tiết HD
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            List<int> TrangThai = new List<int>();
-            TrangThai.Add(1);
-            TrangThai.Add(0);
+            var TrangThai = new Dictionary<string, int>
+            {
+                {"Không Trả Hàng",1 },
+                {"Trả Hành",0 }
+            }.ToList();
+
+
+
             cmbTrangThai.DataSource = null;
+            cmbTrangThai.DisplayMember = "Key";
+            cmbTrangThai.ValueMember = "Value";
             cmbTrangThai.DataSource = TrangThai;
             cmbTrangThai.Enabled = true;
 
             btnConfirm.Enabled = true;
+
+            txtSlTra.Enabled = true;
         }
 
 
@@ -100,12 +107,51 @@ namespace GUI.Forms.HoaDon
             // tao ra DataGridViewRow moi bang voi gia tri cua row cua row select
             try
             {
-                DataGridViewRow newValueRow = dgvDanhSachChiTietHD.Rows[SelectedRow];
-                newValueRow.Cells["TrangThai"].Value = cmbTrangThai.Text;
-                newValueRow.Cells["GhiChu"].Value = txtGhiChu.Text;
-                if (DGVhasChanged)
+                if (chkLoiKT.Checked == false && chkBinhThuong.Checked == false)
                 {
-                    btnSave.Enabled = true;
+                    MessageBox.Show("Chưa chọn tình trạng hàng hoá, vui lòng chọn", "Thông Báo");
+                }
+                else
+                {
+                    DataGridViewRow newValueRow = dgvDanhSachChiTietHD.Rows[SelectedRow];
+                    int tinhtrang;
+                    if (chkBinhThuong.Checked == true)
+                    {
+                        tinhtrang = 1;
+                    }
+                    else
+                    {
+                        tinhtrang = 0;
+                    }
+
+                    if (txtSlTra.Text == "")
+                    {
+
+                        newValueRow.Cells["TrangThai"].Value = cmbTrangThai.SelectedValue.ToString();
+                        newValueRow.Cells["SlTra"].Value = txtSL.Text.ToString();
+                        newValueRow.Cells["GhiChu"].Value = txtGhiChu.Text.ToString();
+                        newValueRow.Cells["TinhTrang"].Value = tinhtrang.ToString();
+                        if (DGVhasChanged)
+                        {
+                            btnSave.Enabled = true;
+                        }
+                        MessageBox.Show(tinhtrang.ToString());
+                    }
+                    else
+                    {
+                        //newValueRow = dgvDanhSachChiTietHD.Rows[SelectedRow];
+                        newValueRow.Cells["TrangThai"].Value = cmbTrangThai.SelectedValue.ToString();
+                        newValueRow.Cells["SlTra"].Value = txtSlTra.Text.ToString();
+                        newValueRow.Cells["GhiChu"].Value = txtGhiChu.Text.ToString();
+                        newValueRow.Cells["TinhTrang"].Value = tinhtrang.ToString();
+                        if (DGVhasChanged)
+                        {
+                            btnSave.Enabled = true;
+                        }
+                        MessageBox.Show(tinhtrang.ToString());
+
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -113,7 +159,6 @@ namespace GUI.Forms.HoaDon
 
                 MessageBox.Show("msg :: " + ex);
             }
-   
 
         }
 
@@ -130,19 +175,73 @@ namespace GUI.Forms.HoaDon
                     int coutUpdate = 0;
                     foreach (DataGridViewRow item in dgvDanhSachChiTietHD.Rows)
                     {
-                        object[] ChiTietHD = new object[] { int.Parse(item.Cells["ID_HD"].Value.ToString()), int.Parse(item.Cells["ID_SanPham"].Value.ToString()), int.Parse(item.Cells["TrangThai"].Value.ToString()), item.Cells["GhiChu"].Value.ToString() };
-                        if (B_ChiTietHoaDon.Instance.UpdateCTHoaDon(ChiTietHD))
+                        // update HD 
+                        object[] ChiTietHD = new object[]
                         {
-                            coutUpdate++;
+                            int.Parse(item.Cells["idhd"].Value.ToString()),
+                            int.Parse(item.Cells["ID_SanPham"].Value.ToString()),
+                            int.Parse(item.Cells["TrangThai"].Value.ToString()),
+                            item.Cells["GhiChu"].Value.ToString()
+                        };
+                    
+                        // neu nhu trang thai la khach hoang hang
+                        if (int.Parse(item.Cells["TrangThai"].Value.ToString()) == 0)
+                        {
+                            // insert HD_tra Hang
+                            object[] HD_Tra = new object[]
+                            {
+                             int.Parse(item.Cells["idhd"].Value.ToString()),
+                             int.Parse(item.Cells["ID_SanPham"].Value.ToString()),
+                             int.Parse(item.Cells["SlTra"].Value.ToString()),
+                             int.Parse(item.Cells["TinhTrang"].Value.ToString()),
+                             item.Cells["GhiChu"].Value.ToString()
+                            };
+
+                            if (B_ChiTietHoaDon.Instance.UpdateCTHoaDon(ChiTietHD) && B_HoaDon_Tra.Instance.IsInsertHD_Tra(HD_Tra))
+                            {
+
+                                object[] TraHang = new object[]
+                                {
+                                    int.Parse(item.Cells["idhd"].Value.ToString()),
+                                    int.Parse(item.Cells["ID_SanPham"].Value.ToString()),
+                                    int.Parse(item.Cells["SlTra"].Value.ToString()),
+                                };
+
+                                if (item.Cells["TinhTrang"].Value.ToString() == "1")
+                                {
+                                    object[] UpdateSl_SanPham = new object[]
+                                    {
+                                        int.Parse(item.Cells["ID_SanPham"].Value.ToString()),
+                                        int.Parse(item.Cells["SlTra"].Value.ToString())
+                                    };
+                                    B_SanPham.Instance.StokerUpdateSLSanPham(UpdateSl_SanPham);
+                                }
+                            
+                                B_ChiTietHoaDon.Instance.TraHang(TraHang);
+                                coutUpdate++;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Có Vấn Dề Trong Lúc Update", "Thông Báo");
+                            }
                         }
+                        // khong lam gi ca
                         else
                         {
-                            MessageBox.Show("Có Vấn Dề Trong Lúc Update", "Thông Báo");
+                            if (B_ChiTietHoaDon.Instance.UpdateCTHoaDon(ChiTietHD))
+                            {
+                                coutUpdate++;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Có Vấn Dề Trong Lúc Update", "Thông Báo");
+                            }
                         }
-                    }
-                    if (coutUpdate == dgvDanhSachChiTietHD.RowCount)
-                    {
-                        MessageBox.Show("Udate HD Thành Công", "Thông Báo");
+
+                        if (coutUpdate == dgvDanhSachChiTietHD.RowCount)
+                        {
+                            MessageBox.Show("Udate HD Thành Công", "Thông Báo");
+                        }
                     }
                 }
             }
@@ -157,6 +256,7 @@ namespace GUI.Forms.HoaDon
                 if (cmbTrangThai.SelectedValue.ToString() == "0")
                 {
                     txtGhiChu.ReadOnly = false;
+                    txtSlTra.ReadOnly = false;
                 }
             }
         }
@@ -164,13 +264,30 @@ namespace GUI.Forms.HoaDon
         private void dgvDanhSachChiTietHD_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             DGVhasChanged = true;
-            //MessageBox.Show("msg ::: " + DGVhasChanged.ToString());
         }
 
         private void dgvDanhSachChiTietHD_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             DGVhasChanged = true;
-            //MessageBox.Show("msg ::: " + DGVhasChanged.ToString());
+        }
+
+        private void txtSlTra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Bạn không thể nhập ký tự này", "Thông Báo");
+                e.Handled = true;
+            }
+        }
+
+        private void chkLoiKT_CheckedChanged(object sender, EventArgs e)
+        {
+            chkBinhThuong.Checked = !chkLoiKT.Checked;
+        }
+
+        private void chkBinhThuong_CheckedChanged(object sender, EventArgs e)
+        {
+            chkLoiKT.Checked = !chkBinhThuong.Checked;
         }
     }
 }

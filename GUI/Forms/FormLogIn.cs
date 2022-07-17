@@ -120,8 +120,8 @@ namespace GUI
             {
                 if (B_TaiKhoan.Instance.UserLogIn(accUesrLogIn, passUesrLogIn, ref message))
                 {
-
-                    if (B_TaiKhoan.Instance.pass == "123")
+                    string dfPass = "123";
+                    if (B_TaiKhoan.Instance.pass == dfPass)
                     {
                         MessageBox.Show("Vui long doi mat khau", "Thong Bao");
                         FormChangePassWord formChangePassWord = new FormChangePassWord(B_TaiKhoan.Instance.id);
@@ -130,6 +130,7 @@ namespace GUI
 
                     FormMainApp formMainApp = new FormMainApp();
                     formMainApp.Show();
+                    txtMatKhau.Clear();
                     B_TaiKhoan.Instance.updateStatusLogin(B_TaiKhoan.Instance.id);
                     this.Hide();
                     formMainApp.LogOut += FormMainApp_LogOut;

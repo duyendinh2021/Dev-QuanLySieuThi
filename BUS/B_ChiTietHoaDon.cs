@@ -61,5 +61,18 @@ namespace BUS
             }
             return true;
         }
+
+        [Obsolete]
+        public void TraHang(object[] parameter) {
+
+            try
+            {
+                D_ChiTietHoaDon.Instance.TraHang(parameter);
+            }
+            catch (Exception ex)
+            {
+                throw ex;         
+            }
+        }
     }
 }

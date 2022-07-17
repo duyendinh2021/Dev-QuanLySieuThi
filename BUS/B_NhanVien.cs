@@ -36,7 +36,12 @@ namespace BUS
             dt.DataSource = nhanViens;
         }
 
-
+        [Obsolete]
+        public void GetAllNhanVienTheoTrangThai(ref DataGridView data, int trangthai)
+        {
+            List<NhanVien> nhanViens = D_NhanVien.Instance.GetAllNhanVienTheoTrangThai(trangthai);
+            data.DataSource = nhanViens;
+        }
 
         Image ConvertBinaryToImage(byte[] data)
         {
@@ -129,7 +134,7 @@ namespace BUS
         [Obsolete]
         public void getNhanVienByTrangThai(ref DataGridView data, int trangThai)
         {
-            List<NhanVien> nhanVienByTrangThai = DAO.D_NhanVien.Instance.getNhanVienByTrangThai(trangThai);
+            List<NhanVien> nhanVienByTrangThai = D_NhanVien.Instance.getNhanVienByTrangThai(trangThai);
             data.DataSource = nhanVienByTrangThai;
         }
 

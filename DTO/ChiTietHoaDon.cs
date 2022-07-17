@@ -15,14 +15,14 @@ namespace DTO
         private int _chietkhau;
         private int _trangthai;
         private string _ghichu;
-
+        private int _sl_tra;
 
         public ChiTietHoaDon()
         {
 
         }
 
-        public ChiTietHoaDon(int idhd, int idsp, decimal dongia, int sl, int chietkhau, int trangthai, string ghichu)
+        public ChiTietHoaDon(int idhd, int idsp, decimal dongia, int sl, int chietkhau, int trangthai, string ghichu, int sl_tra)
         {
             _idhd=idhd;
             _idsp=idsp;
@@ -31,6 +31,7 @@ namespace DTO
             _chietkhau=chietkhau;
             _trangthai=trangthai;
             _ghichu=ghichu;
+            _sl_tra=sl_tra;
         }
 
         public int Idhd { get => _idhd; set => _idhd = value; }
@@ -40,5 +41,6 @@ namespace DTO
         public int Chietkhau { get => _chietkhau; set => _chietkhau = value; }
         public int Trangthai { get => _trangthai; set => _trangthai = value; }
         public string Ghichu { get => _ghichu; set => _ghichu=value; }
+        public int Sl_tra { get => _sl_tra; set => _sl_tra=value; }
     }
 }
