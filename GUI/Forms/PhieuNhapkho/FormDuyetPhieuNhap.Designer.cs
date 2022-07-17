@@ -1,6 +1,6 @@
 ﻿namespace GUI.Forms.PhieuNhapkho
 {
-    partial class FormChiTietPhieuNhapKho
+    partial class FormDuyetPhieuNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -26,7 +26,6 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        [System.Obsolete]
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -34,22 +33,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChiTietPhieuNhapKho));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDuyetPhieuNhap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachDetailsPhieuNhap = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIDSanPham = new System.Windows.Forms.TextBox();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.txtSL = new System.Windows.Forms.TextBox();
-            this.btnViewSanPham = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ID_PhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_SanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSL = new System.Windows.Forms.TextBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.txtIDSanPham = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnViewSanPham = new System.Windows.Forms.Button();
+            this.btnDuyet = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDetailsPhieuNhap)).BeginInit();
             this.SuspendLayout();
@@ -58,10 +58,10 @@
             // 
             this.groupBox1.Controls.Add(this.dgvDanhSachDetailsPhieuNhap);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 350);
+            this.groupBox1.Location = new System.Drawing.Point(0, 348);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1155, 304);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(1112, 304);
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Chi Tiết Phiếu Nhập Kho";
             // 
@@ -115,74 +115,9 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDanhSachDetailsPhieuNhap.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDanhSachDetailsPhieuNhap.RowTemplate.Height = 50;
-            this.dgvDanhSachDetailsPhieuNhap.Size = new System.Drawing.Size(1149, 283);
+            this.dgvDanhSachDetailsPhieuNhap.Size = new System.Drawing.Size(1106, 283);
             this.dgvDanhSachDetailsPhieuNhap.TabIndex = 31;
             this.dgvDanhSachDetailsPhieuNhap.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachDetailsPhieuNhap_CellMouseClick);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(87, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ID Sản Phẩm";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(87, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 25);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Đơn Giá";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(87, 253);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Số Lượng";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // txtIDSanPham
-            // 
-            this.txtIDSanPham.Location = new System.Drawing.Point(344, 52);
-            this.txtIDSanPham.Name = "txtIDSanPham";
-            this.txtIDSanPham.ReadOnly = true;
-            this.txtIDSanPham.Size = new System.Drawing.Size(463, 22);
-            this.txtIDSanPham.TabIndex = 2;
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.Location = new System.Drawing.Point(344, 154);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.ReadOnly = true;
-            this.txtDonGia.Size = new System.Drawing.Size(463, 22);
-            this.txtDonGia.TabIndex = 2;
-            // 
-            // txtSL
-            // 
-            this.txtSL.Location = new System.Drawing.Point(344, 256);
-            this.txtSL.Name = "txtSL";
-            this.txtSL.ReadOnly = true;
-            this.txtSL.Size = new System.Drawing.Size(463, 22);
-            this.txtSL.TabIndex = 2;
-            // 
-            // btnViewSanPham
-            // 
-            this.btnViewSanPham.Image = global::GUI.Properties.Resources.eye;
-            this.btnViewSanPham.Location = new System.Drawing.Point(917, 37);
-            this.btnViewSanPham.Name = "btnViewSanPham";
-            this.btnViewSanPham.Size = new System.Drawing.Size(83, 40);
-            this.btnViewSanPham.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnViewSanPham, "Nhấn Dể Xem Chi Tiết Sản Phẩm");
-            this.btnViewSanPham.UseVisualStyleBackColor = true;
-            this.btnViewSanPham.Click += new System.EventHandler(this.btnViewSanPham_Click);
             // 
             // ID_PhieuNhap
             // 
@@ -226,11 +161,88 @@
             this.TrangThai.ReadOnly = true;
             this.TrangThai.Visible = false;
             // 
-            // FormChiTietPhieuNhapKho
+            // txtSL
+            // 
+            this.txtSL.Location = new System.Drawing.Point(344, 238);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.ReadOnly = true;
+            this.txtSL.Size = new System.Drawing.Size(463, 22);
+            this.txtSL.TabIndex = 8;
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Location = new System.Drawing.Point(344, 136);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.ReadOnly = true;
+            this.txtDonGia.Size = new System.Drawing.Size(463, 22);
+            this.txtDonGia.TabIndex = 9;
+            // 
+            // txtIDSanPham
+            // 
+            this.txtIDSanPham.Location = new System.Drawing.Point(344, 34);
+            this.txtIDSanPham.Name = "txtIDSanPham";
+            this.txtIDSanPham.ReadOnly = true;
+            this.txtIDSanPham.Size = new System.Drawing.Size(463, 22);
+            this.txtIDSanPham.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(87, 235);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(212, 25);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Số Lượng";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(87, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(212, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Đơn Giá";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(87, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(212, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ID Sản Phẩm";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // btnViewSanPham
+            // 
+            this.btnViewSanPham.Image = global::GUI.Properties.Resources.eye;
+            this.btnViewSanPham.Location = new System.Drawing.Point(917, 19);
+            this.btnViewSanPham.Name = "btnViewSanPham";
+            this.btnViewSanPham.Size = new System.Drawing.Size(83, 40);
+            this.btnViewSanPham.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnViewSanPham, "Nhấn Dể Xem Chi Tiết Sản Phẩm");
+            this.btnViewSanPham.UseVisualStyleBackColor = true;
+            this.btnViewSanPham.Click += new System.EventHandler(this.btnViewSanPham_Click);
+            // 
+            // btnDuyet
+            // 
+            this.btnDuyet.Image = global::GUI.Properties.Resources.confirmation;
+            this.btnDuyet.Location = new System.Drawing.Point(917, 167);
+            this.btnDuyet.Name = "btnDuyet";
+            this.btnDuyet.Size = new System.Drawing.Size(122, 93);
+            this.btnDuyet.TabIndex = 11;
+            this.btnDuyet.UseVisualStyleBackColor = true;
+            this.btnDuyet.Click += new System.EventHandler(this.btnDuyet_Click);
+            // 
+            // FormDuyetPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 654);
+            this.ClientSize = new System.Drawing.Size(1112, 652);
+            this.Controls.Add(this.btnDuyet);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnViewSanPham);
             this.Controls.Add(this.txtSL);
             this.Controls.Add(this.txtDonGia);
@@ -238,13 +250,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormChiTietPhieuNhapKho";
+            this.Name = "FormDuyetPhieuNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiết Phiếu Nhập Kho";
-            this.Load += new System.EventHandler(this.FormChiTietPhieuNhapKho_Load);
+            this.Text = "Duyệt Phiếu Nhập";
+            this.Load += new System.EventHandler(this.FormDuyetPhieuNhap_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDetailsPhieuNhap)).EndInit();
             this.ResumeLayout(false);
@@ -255,19 +265,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtIDSanPham;
-        private System.Windows.Forms.TextBox txtDonGia;
-        private System.Windows.Forms.TextBox txtSL;
         private System.Windows.Forms.DataGridView dgvDanhSachDetailsPhieuNhap;
-        private System.Windows.Forms.Button btnViewSanPham;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_PhieuNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_SanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn SL;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.Button btnViewSanPham;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox txtSL;
+        private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.TextBox txtIDSanPham;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDuyet;
     }
 }

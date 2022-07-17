@@ -185,6 +185,12 @@
     <Compile Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.Designer.cs">
       <DependentUpon>FormChiTietPhieuNhapKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormDuyetPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuNhapkho\FormDuyetPhieuNhap.Designer.cs">
+      <DependentUpon>FormDuyetPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PhieuNhapkho\FormChiTietPhieuNhapKho.resx">
       <DependentUpon>FormChiTietPhieuNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuNhapkho\FormDuyetPhieuNhap.resx">
+      <DependentUpon>FormDuyetPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PhieuNhapkho\FormQuanLyPhieuNhapKho.resx">
       <DependentUpon>FormQuanLyPhieuNhapKho.cs</DependentUpon>

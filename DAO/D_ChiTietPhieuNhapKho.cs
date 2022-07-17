@@ -30,7 +30,7 @@ namespace DAO
         [Obsolete]
         public void stokerCreateDetailsReceipt(object[] parameter)
         {
-            string query = "EXEC InsertChiTietPhieuNhapKho @id_phieuNhap , @id_sp , @id_ncc , @dongia , @sl";
+            string query = "EXEC InsertChiTietPhieuNhapKho @id_phieuNhap , @id_sp , @dongia , @sl";
             connectionData.Instance.excuteNonQueryStoreProcedure(query, parameter);
         }
 
@@ -47,8 +47,7 @@ namespace DAO
                 {
                     ChiTietPhieuNhapKho chiTietPhieuNhap = new ChiTietPhieuNhapKho();
                     chiTietPhieuNhap.Idphieunhapkho = int.Parse(item["ID_PhieuNhapKho"].ToString());
-                    chiTietPhieuNhap.Idsp = int.Parse(item["ID_SanPham"].ToString());
-                    chiTietPhieuNhap.Idnhacungcap = int.Parse(item["ID_NhaCungCap"].ToString());
+                    chiTietPhieuNhap.Idsp = int.Parse(item["ID_SanPham"].ToString());                   
                     chiTietPhieuNhap.Dongia = decimal.Parse(item["DonGia"].ToString());
                     chiTietPhieuNhap.Sl = int.Parse(item["SoLuong"].ToString());
                     chiTietPhieuNhap.Trangthai = int.Parse(item["TrangThai"].ToString());

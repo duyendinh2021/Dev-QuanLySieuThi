@@ -16,6 +16,9 @@ namespace GUI.Forms.SanPham
     {
         private int baseQTY = 1;
 
+        private int id_ncc_Nhap;
+        private bool isNhapHang;
+
         [Obsolete]
         public FormNhapHang()
         {
@@ -26,9 +29,9 @@ namespace GUI.Forms.SanPham
         [Obsolete]
         private void FormNhapHang_Load(object sender, EventArgs e)
         {
-            BUS.B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSP);
+            B_LoaiSanPham.Instance.loadDataSourcecmbLoaiSp(ref cmbLoaiSP);
 
-            BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
+            B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
 
             B_NhaCungCap.Instance.loadComboBoxNhaCungCap(ref cmbNCC);
 
@@ -37,6 +40,9 @@ namespace GUI.Forms.SanPham
 
             dtgDSHangHoa.Columns["Hinh"].Visible = false;
             dtgDSHangHoa.Columns["Trangthai"].Visible = false;
+
+            cmbNCC.Enabled = true;
+            cmbLoaiSP.Enabled = true;
         }
 
 
@@ -65,52 +71,63 @@ namespace GUI.Forms.SanPham
                 }
             }
         }
+
+
         private void dtgDSHangHoa_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dtgDSHangHoa.Rows[e.RowIndex];
             if (e.RowIndex != -1)
             {
-                // btn nhap san pham
-                if (e.ColumnIndex == 0)
+                if (cmbNCC.SelectedIndex == -1)
                 {
-                    if (txtSl.Text == "")
+                    MessageBox.Show("Bạn chưa chọn nhà cung cấp, vui lòng chọn nhà cung cấp", "Thông Báo");
+                }
+                else
+                {
+                    // btn nhap san pham
+                    if (e.ColumnIndex == 0)
                     {
-                        MessageBox.Show("Vui lòng nhập sồ lượng muốn nhập");
-                        txtSl.Focus();
-                    }
-                    else
-                    {
-                        int sl = int.Parse(txtSl.Text);
-
-                        if (dgvHoaDonNhap.Rows.Count > 0)
+                        if (txtSl.Text == "")
                         {
-
-                            foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
-                            {
-
-                                if (item.Cells["ID"].Value.ToString() == row.Cells["ID_SP"].Value.ToString())
-                                {
-                                    item.Cells["QTY"].Value = (int.Parse(item.Cells["QTY"].Value.ToString()) + int.Parse(txtSl.Text));
-                                    item.Cells["COST"].Value = decimal.Parse(item.Cells["QTY"].Value.ToString()) * decimal.Parse(row.Cells["dongia"].Value.ToString());
-                                    tinhTongGia();
-
-                                    return;
-                                }
-
-                            }
-                            dgvHoaDonNhap.Rows.Add(row.Cells["Ten"].Value.ToString(), sl, decimal.Parse(row.Cells["dongia"].Value.ToString()) * decimal.Parse(txtSl.Text), row.Cells["ID_SP"].Value.ToString(), row.Cells["id_ncc"].Value.ToString());
+                            MessageBox.Show("Vui lòng nhập sồ lượng muốn nhập");
+                            txtSl.Focus();
                         }
                         else
                         {
-                            dgvHoaDonNhap.Rows.Add(row.Cells["Ten"].Value.ToString(), sl, (decimal.Parse(row.Cells["dongia"].Value.ToString()) * decimal.Parse(txtSl.Text)).ToString(), row.Cells["ID_SP"].Value.ToString(), row.Cells["id_ncc"].Value.ToString());
-                        }
+                            int sl = int.Parse(txtSl.Text);
 
-                        tinhTongGia();
+                            if (dgvHoaDonNhap.Rows.Count > 0)
+                            {
+
+                                foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
+                                {
+
+                                    if (item.Cells["ID"].Value.ToString() == row.Cells["ID_SP"].Value.ToString())
+                                    {
+                                        item.Cells["QTY"].Value = (int.Parse(item.Cells["QTY"].Value.ToString()) + int.Parse(txtSl.Text));
+                                        item.Cells["COST"].Value = decimal.Parse(item.Cells["QTY"].Value.ToString()) * decimal.Parse(row.Cells["dongia"].Value.ToString());
+                                        tinhTongGia();
+
+                                        return;
+                                    }
+
+                                }
+                                dgvHoaDonNhap.Rows.Add(row.Cells["Ten"].Value.ToString(), sl, decimal.Parse(row.Cells["dongia"].Value.ToString()) * decimal.Parse(txtSl.Text), row.Cells["ID_SP"].Value.ToString());
+                            }
+                            else
+                            {
+                                dgvHoaDonNhap.Rows.Add(row.Cells["Ten"].Value.ToString(), sl, (decimal.Parse(row.Cells["dongia"].Value.ToString()) * decimal.Parse(txtSl.Text)).ToString(), row.Cells["ID_SP"].Value.ToString());
+
+                                // cho biết là đã có hàng hoá nhập
+                                isNhapHang = true;
+                            }
+
+                            tinhTongGia();
+                        }
                     }
                 }
             }
         }
-
 
 
 
@@ -131,7 +148,12 @@ namespace GUI.Forms.SanPham
         {
             FormNhapSanPham formNhapSanPham = new FormNhapSanPham();
             formNhapSanPham.ShowDialog();
-            BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
+
+            // kiem tra xem da co hang hang hoa nao nhap chua
+            if (!isNhapHang)
+            {
+                B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
+            }
 
         }
 
@@ -151,19 +173,20 @@ namespace GUI.Forms.SanPham
                 else
                 {
                     decimal tonggia = decimal.Parse(txtTongGia.Text);
-                    object[] phieunhatkho = new object[] { B_TaiKhoan.Instance.id, tonggia };
+                    // them id nha cung cap
+                    object[] phieunhatkho = new object[] { B_TaiKhoan.Instance.id,id_ncc_Nhap, tonggia };
                     if (B_PhieuNhapKho.Instance.stokerCreatePhieuNhapKho(phieunhatkho))
                     {
                         int id_phieuNhap = B_PhieuNhapKho.Instance.stokerGetNewReceipt();
 
                         foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
                         {
-                            object[] chitietPhieuNhap = new object[] { id_phieuNhap, int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["id_ncc_PhieuNhap"].Value.ToString()), decimal.Parse(item.Cells["COST"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
+                            object[] chitietPhieuNhap = new object[] { id_phieuNhap, int.Parse(item.Cells["ID"].Value.ToString()), decimal.Parse(item.Cells["COST"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
                             B_ChiTietPhieuNhapKho.Instance.stokerCreateDetailsReceipt(chitietPhieuNhap);
 
-                            object[] UpdateSLSanPham = new object[] { int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
+                            //object[] UpdateSLSanPham = new object[] { int.Parse(item.Cells["ID"].Value.ToString()), int.Parse(item.Cells["QTY"].Value.ToString()) };
 
-                            B_SanPham.Instance.StokerUpdateSLSanPham(UpdateSLSanPham);
+                            //B_SanPham.Instance.StokerUpdateSLSanPham(UpdateSLSanPham);
                         }
                         MessageBox.Show("Tạo Phiếu Nhập kho Thành Công", "Tuyệt vời");
                     }
@@ -194,7 +217,10 @@ namespace GUI.Forms.SanPham
         {
             cmbLoaiSP.SelectedIndex = -1;
             cmbNCC.SelectedIndex = -1;
-            BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
+            B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
+
+            cmbNCC.Enabled = true;
+            cmbLoaiSP.Enabled = true;
         }
 
 
@@ -204,18 +230,33 @@ namespace GUI.Forms.SanPham
         {
             if (cmbNCC.SelectedIndex == -1)
             {
-                BUS.B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
+                B_SanPham.Instance.GetAllSanPhamNoDeleted(ref dtgDSHangHoa);
             }
             else
             {
                 if (cmbLoaiSP.SelectedIndex == -1)
                 {
-
+                    // load data 
                     B_SanPham.Instance.GetProductBySupplier(int.Parse(cmbNCC.SelectedValue.ToString()), ref dtgDSHangHoa);
+
+                    // gan id nha cung 
+                    id_ncc_Nhap = int.Parse(cmbNCC.SelectedValue.ToString());
+
+
+                    cmbNCC.Enabled = false;
+                    cmbLoaiSP.Enabled = false;
                 }
                 else
                 {
+                    // load data
                     B_SanPham.Instance.GetProductByProductTypeAndSupplier(int.Parse(cmbLoaiSP.SelectedValue.ToString()), int.Parse(cmbNCC.SelectedValue.ToString()), ref dtgDSHangHoa);
+
+                    // gan id nha cung 
+                    id_ncc_Nhap = int.Parse(cmbNCC.SelectedValue.ToString());
+
+
+                    cmbNCC.Enabled = false;
+                    cmbLoaiSP.Enabled = false;
                 }
             }
         }

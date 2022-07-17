@@ -14,6 +14,7 @@ namespace GUI.Forms.PhieuNhapkho
 {
     public partial class FormQuanLyPhieuNhapKho : Form
     {
+        [Obsolete]
         public FormQuanLyPhieuNhapKho()
         {
             InitializeComponent();
@@ -23,7 +24,17 @@ namespace GUI.Forms.PhieuNhapkho
         [Obsolete]
         private void FormQuanLyPhieuNhapKho_Load(object sender, EventArgs e)
         {
-            B_PhieuNhapKho.Instance.GetAllPhieuNhapKhoNoDeleted(ref dgvDanhSachPhieuNhap);
+            var TrangThaiPhieu = new Dictionary<string, int>
+            {
+                {"Phiếu Chưa Duyệt",0 },
+                {"Phiếu Dã Duyệt" ,1}
+            }.ToList();
+
+            cmbTrangPhieu.DisplayMember = "Key";
+            cmbTrangPhieu.ValueMember = "Value";
+            cmbTrangPhieu.DataSource = TrangThaiPhieu;
+
+            B_PhieuNhapKho.Instance.GetReceiptNotReceived(ref dgvDanhSachPhieuNhap);
             txtID.ReadOnly = true;
             txtTongTien.ReadOnly = true;
             dtpNgayLap.Enabled = false;
@@ -72,6 +83,17 @@ namespace GUI.Forms.PhieuNhapkho
                         }
                     }
                 }
+                // duyet phieu
+                if (e.ColumnIndex == 2)
+                {
+                    if (cmbTrangPhieu.SelectedValue.ToString() == 0.ToString())
+                    {
+                        FormDuyetPhieuNhap formDuyetPhieuNhap = new FormDuyetPhieuNhap(id_phieuNhap);
+                        formDuyetPhieuNhap.ShowDialog();
+                        B_PhieuNhapKho.Instance.GetReceiptNotReceived(ref dgvDanhSachPhieuNhap);
+                    }
+
+                }
 
                 txtID.Text = row.Cells["ID_NhanVien"].Value.ToString();
                 dtpNgayLap.Value = DateTime.Parse(row.Cells["NgayLap"].Value.ToString());
@@ -86,6 +108,13 @@ namespace GUI.Forms.PhieuNhapkho
             DateTime StarDate = dtpSearchNgayStar.Value;
             DateTime EndDate = dtpSearchNgayEnd.Value;
             B_PhieuNhapKho.Instance.GetReceiptInStarDateToEndDate(StarDate, EndDate,ref dgvDanhSachPhieuNhap);
+        }
+
+        [Obsolete]
+        private void cmbTrangPhieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int status = int.Parse(cmbTrangPhieu.SelectedValue.ToString());
+            B_PhieuNhapKho.Instance.GetReceiptNotReceivedByStatus(status, ref dgvDanhSachPhieuNhap);
         }
     }
 }

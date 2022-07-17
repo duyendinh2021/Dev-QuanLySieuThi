@@ -41,6 +41,21 @@ namespace BUS
             return true;
         }
 
+        [Obsolete]
+        public bool confirmReceipt(int id)
+        {
+            try
+            {
+                D_PhieuNhapKho.Instance.confirmReceipt(id);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
 
         [Obsolete]
         public int stokerGetNewReceipt() { 
@@ -48,6 +63,19 @@ namespace BUS
         }
 
 
+        [Obsolete]
+        public void GetReceiptNotReceivedByStatus(int status,ref DataGridView data)
+        {
+            List<PhieuNhapKho> phieuNhapKhos = D_PhieuNhapKho.Instance.GetReceiptNotReceivedByStatus(status);
+            data.DataSource = phieuNhapKhos;
+        }
+
+        [Obsolete]
+        public void GetReceiptNotReceived(ref DataGridView data)
+        {
+            List<PhieuNhapKho> phieuNhapKhos = D_PhieuNhapKho.Instance.GetReceiptNotReceived();
+            data.DataSource = phieuNhapKhos;
+        }
 
         [Obsolete]
         public void GetAllPhieuNhapKhoNoDeleted(ref DataGridView data)
