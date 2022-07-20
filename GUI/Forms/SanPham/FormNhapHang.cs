@@ -87,7 +87,7 @@ namespace GUI.Forms.SanPham
                     // btn nhap san pham
                     if (e.ColumnIndex == 0)
                     {
-                        if (txtSl.Text == "")
+                        if (txtSl.Text == "" || int.Parse(txtSl.Text) == 0)
                         {
                             MessageBox.Show("Vui lòng nhập sồ lượng muốn nhập");
                             txtSl.Focus();
@@ -95,13 +95,10 @@ namespace GUI.Forms.SanPham
                         else
                         {
                             int sl = int.Parse(txtSl.Text);
-
                             if (dgvHoaDonNhap.Rows.Count > 0)
                             {
-
                                 foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
                                 {
-
                                     if (item.Cells["ID"].Value.ToString() == row.Cells["ID_SP"].Value.ToString())
                                     {
                                         item.Cells["QTY"].Value = (int.Parse(item.Cells["QTY"].Value.ToString()) + int.Parse(txtSl.Text));
@@ -110,7 +107,6 @@ namespace GUI.Forms.SanPham
 
                                         return;
                                     }
-
                                 }
                                 dgvHoaDonNhap.Rows.Add(row.Cells["Ten"].Value.ToString(), sl, decimal.Parse(row.Cells["dongia"].Value.ToString()) * decimal.Parse(txtSl.Text), row.Cells["ID_SP"].Value.ToString());
                             }
@@ -121,14 +117,12 @@ namespace GUI.Forms.SanPham
                                 // cho biết là đã có hàng hoá nhập
                                 isNhapHang = true;
                             }
-
                             tinhTongGia();
                         }
                     }
                 }
             }
         }
-
 
 
         private void tinhTongGia()
@@ -189,6 +183,9 @@ namespace GUI.Forms.SanPham
                             //B_SanPham.Instance.StokerUpdateSLSanPham(UpdateSLSanPham);
                         }
                         MessageBox.Show("Tạo Phiếu Nhập kho Thành Công", "Tuyệt vời");
+                        dgvHoaDonNhap.Rows.Clear();
+                        txtTongGia.Clear();
+                        isNhapHang = false;
                     }
                     else
                     {
@@ -261,13 +258,17 @@ namespace GUI.Forms.SanPham
             }
         }
 
+        [Obsolete]
         private void btnClearDS_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in dgvHoaDonNhap.Rows)
             {
                 dgvHoaDonNhap.Rows.Clear();
             }
+            isNhapHang = false;
             tinhTongGia();
+            btnRefresh_Click(sender, e);
+            txtTongGia.Clear();
         }
 
         decimal GetBaseGia(int id_sp)
@@ -330,6 +331,7 @@ namespace GUI.Forms.SanPham
             //e.Control.KeyPress += new KeyPressEventHandler(DataGridViewCellEventArgs);
         }
 
+        //chi duoc nhap so
         private void DataGridViewCellEventArgs(object sender, KeyPressEventArgs e)
         {
             if (Rule_Regex.Instance.Number_Regex.IsMatch(e.KeyChar.ToString()) && !Char.IsControl(e.KeyChar))

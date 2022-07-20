@@ -48,14 +48,14 @@
             this.btnOrders = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panChildForm = new System.Windows.Forms.Panel();
+            this.ptcBgk = new System.Windows.Forms.PictureBox();
             this.panHeader = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.ptcBgk = new System.Windows.Forms.PictureBox();
             this.panelSettingsManage.SuspendLayout();
             this.panSideMenu.SuspendLayout();
             this.panChildForm.SuspendLayout();
-            this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptcBgk)).BeginInit();
+            this.panHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSettingsManage
@@ -432,6 +432,17 @@
             this.panChildForm.Size = new System.Drawing.Size(1578, 1051);
             this.panChildForm.TabIndex = 15;
             // 
+            // ptcBgk
+            // 
+            this.ptcBgk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptcBgk.Image = global::GUI.Properties.Resources.anhSieuTHi;
+            this.ptcBgk.Location = new System.Drawing.Point(0, 55);
+            this.ptcBgk.Name = "ptcBgk";
+            this.ptcBgk.Size = new System.Drawing.Size(1578, 996);
+            this.ptcBgk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcBgk.TabIndex = 8;
+            this.ptcBgk.TabStop = false;
+            // 
             // panHeader
             // 
             this.panHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -459,17 +470,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // ptcBgk
-            // 
-            this.ptcBgk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptcBgk.Image = global::GUI.Properties.Resources.anhSieuTHi;
-            this.ptcBgk.Location = new System.Drawing.Point(0, 55);
-            this.ptcBgk.Name = "ptcBgk";
-            this.ptcBgk.Size = new System.Drawing.Size(1578, 996);
-            this.ptcBgk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptcBgk.TabIndex = 8;
-            this.ptcBgk.TabStop = false;
-            // 
             // FormMainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -488,8 +488,8 @@
             this.panSideMenu.ResumeLayout(false);
             this.panSideMenu.PerformLayout();
             this.panChildForm.ResumeLayout(false);
-            this.panHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptcBgk)).EndInit();
+            this.panHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -52,7 +52,10 @@ namespace GUI.Forms.PhieuNhapkho
         {
             if (e.RowIndex != -1)
             {
+                int index = 0;
+
                 DataGridViewRow row = dgvDanhSachPhieuNhap.Rows[e.RowIndex];
+                index = e.RowIndex;
                 int id_phieuNhap = int.Parse(row.Cells["ID_PhieuNhapKho"].Value.ToString());
 
                 // btn view chi tiet phieu nhap
@@ -91,13 +94,17 @@ namespace GUI.Forms.PhieuNhapkho
                         FormDuyetPhieuNhap formDuyetPhieuNhap = new FormDuyetPhieuNhap(id_phieuNhap);
                         formDuyetPhieuNhap.ShowDialog();
                         B_PhieuNhapKho.Instance.GetReceiptNotReceived(ref dgvDanhSachPhieuNhap);
+                        //row = dgvDanhSachPhieuNhap.Rows[e.RowIndex];
                     }
 
                 }
-
-                txtID.Text = row.Cells["ID_NhanVien"].Value.ToString();
-                dtpNgayLap.Value = DateTime.Parse(row.Cells["NgayLap"].Value.ToString());
-                txtTongTien.Text = row.Cells["TongTien"].Value.ToString();
+                if (e.ColumnIndex != 1 && e.ColumnIndex != 2 && e.ColumnIndex != 0)
+                {
+                    DataGridViewRow row2 = dgvDanhSachPhieuNhap.Rows[e.RowIndex];
+                    txtID.Text = row2.Cells["ID_NhanVien"].Value.ToString();
+                    dtpNgayLap.Value = DateTime.Parse(row2.Cells["NgayLap"].Value.ToString());
+                    txtTongTien.Text = row2.Cells["TongTien"].Value.ToString();
+                }             
             }
         }
 
